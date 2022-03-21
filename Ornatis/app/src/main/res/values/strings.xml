@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ornatis</string>
+    <string name="tituloPerfilEstabeleciento">Perfil Estabelecimento</string>
+    <string name="contatoTelefone">Contato</string>
+</resources>
