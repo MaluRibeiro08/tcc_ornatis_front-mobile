@@ -10,18 +10,6 @@
     <include layout="@layout/topbar"/>
 
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/cardViewTitulo"-->
-<!--        android:layout_width="325dp"-->
-<!--        android:layout_height="43dp"-->
-<!--        android:layout_marginTop="40dp"-->
-
-<!--        android:background="@drawable/formato_card_titulo_cadastro">-->
-
-<!--    </androidx.cardview.widget.CardView>-->
-
-
-
     <TextView
         style="@style/textViewTitulo"
         android:layout_width="wrap_content"
@@ -34,7 +22,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="700dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,36 +83,6 @@
                 android:textSize="10dp" />
 
 
-            //REUTILIZAR EM OUTARS TELAS
-<!--            <TextView-->
-<!--                android:id="@+id/tv_tipo_atendimento"-->
-<!--                style="@style/textView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Os atendimentos são realizados em que espaço?" />-->
-
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_marginTop="7dp">-->
-
-<!--                <CheckBox-->
-<!--                    android:id="@+id/cb_tipo_atendimento_domicilio"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:text="Em domicílio"-->
-<!--                    android:textSize="13sp" />-->
-
-<!--                <CheckBox-->
-<!--                    android:id="@+id/cb_tipo_atendimento_estabelecimento"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:text="No estabelecimento"-->
-<!--                    android:textSize="13sp" />-->
-<!--            </LinearLayout>-->
-
             <TextView
                 android:id="@+id/tv_logo"
                 style="@style/textView"
@@ -133,13 +91,19 @@
                 android:text="Logo" />
 
 
-            //fazer um cardview?
+                //IMAGEM
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableStart="@drawable/ic_profile"-->
+<!--                android:layout_gravity="center"/>-->
+
             <ImageView
                 android:id="@+id/iv_foto_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_profile"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"/>
 
 
             <TextView
@@ -165,40 +129,85 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/formato_edit_text"
-                android:hint="Insira uma biografia para o perfil do estabelecimento"
+                android:hint="Insira uma biografia"
                 android:padding="10dp"
-                android:inputType="text"
-                android:textSize="13dp" />
+                android:inputType="textMultiLine"
+                android:textSize="13dp"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"
+                android:gravity="top"/>
 
+
+<!--            <ImageView-->
+<!--                android:id="@+id/tela_7"-->
+<!--                android:layout_width="5dp"-->
+<!--                android:layout_height="5dp"-->
+<!--                android:src="@drawable/ic_ellipse" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/tela_3"-->
+<!--                android:layout_width="5dp"-->
+<!--                android:layout_height="5dp"-->
+<!--                android:src="@drawable/ic_ellipse" />-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_arrow_back_24"/>
+                    android:drawableStart="@drawable/ic_arrow_back_24" />
 
-<!--                <ImageView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/ic_logo_ornatis_verde" />-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true">
+
+                    <!--                <ImageView-->
+                    <!--                    android:id="@+id/tela_1"-->
+                    <!--                    android:layout_width="10dp"-->
+                    <!--                    android:layout_height="10dp"-->
+                    <!--                    android:src="@drawable/ic_ellipse" />-->
+
+                    <!--                <ImageView-->
+                    <!--                    android:id="@+id/tela_2"-->
+                    <!--                    android:layout_width="10dp"-->
+                    <!--                    android:layout_height="10dp"-->
+                    <!--                    android:src="@drawable/ic_ellipse" -->
+                    <!--                    android:layout_alignRight="@id/tela_1"/>-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:id="@+id/tela_4"-->
+                    <!--                            android:layout_width="5dp"-->
+                    <!--                            android:layout_height="5dp"-->
+                    <!--                            android:src="@drawable/ic_ellipse" />-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:id="@+id/tela_5"-->
+                    <!--                            android:layout_width="5dp"-->
+                    <!--                            android:layout_height="5dp"-->
+                    <!--                            android:src="@drawable/ic_ellipse" />-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:id="@+id/tela_6"-->
+                    <!--                            android:layout_width="5dp"-->
+                    <!--                            android:layout_height="5dp"-->
+                    <!--                            android:src="@drawable/ic_ellipse" />-->
+
+                </RelativeLayout>
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_arrow_forward_24"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_alignParentEnd="true"
+                    android:drawableStart="@drawable/ic_arrow_forward_24" />
 
             </RelativeLayout>
 
-
         </LinearLayout>
 
-
     </ScrollView>
-
 
 </LinearLayout>
