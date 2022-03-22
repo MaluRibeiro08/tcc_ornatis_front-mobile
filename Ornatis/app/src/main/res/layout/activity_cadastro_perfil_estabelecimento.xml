@@ -152,11 +152,12 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
                     android:drawableStart="@drawable/ic_arrow_back_24" />
 
                 <RelativeLayout
@@ -164,45 +165,73 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true">
 
-                    <!--                <ImageView-->
-                    <!--                    android:id="@+id/tela_1"-->
-                    <!--                    android:layout_width="10dp"-->
-                    <!--                    android:layout_height="10dp"-->
-                    <!--                    android:src="@drawable/ic_ellipse" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                    <!--                <ImageView-->
-                    <!--                    android:id="@+id/tela_2"-->
-                    <!--                    android:layout_width="10dp"-->
-                    <!--                    android:layout_height="10dp"-->
-                    <!--                    android:src="@drawable/ic_ellipse" -->
-                    <!--                    android:layout_alignRight="@id/tela_1"/>-->
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse" />
 
-                    <!--                        <ImageView-->
-                    <!--                            android:id="@+id/tela_4"-->
-                    <!--                            android:layout_width="5dp"-->
-                    <!--                            android:layout_height="5dp"-->
-                    <!--                            android:src="@drawable/ic_ellipse" />-->
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
 
-                    <!--                        <ImageView-->
-                    <!--                            android:id="@+id/tela_5"-->
-                    <!--                            android:layout_width="5dp"-->
-                    <!--                            android:layout_height="5dp"-->
-                    <!--                            android:src="@drawable/ic_ellipse" />-->
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
 
-                    <!--                        <ImageView-->
-                    <!--                            android:id="@+id/tela_6"-->
-                    <!--                            android:layout_width="5dp"-->
-                    <!--                            android:layout_height="5dp"-->
-                    <!--                            android:src="@drawable/ic_ellipse" />-->
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+
+                    </LinearLayout>
+
 
                 </RelativeLayout>
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
                     android:layout_alignParentEnd="true"
                     android:drawableStart="@drawable/ic_arrow_forward_24" />
+
 
             </RelativeLayout>
 
