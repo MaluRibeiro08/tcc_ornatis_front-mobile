@@ -97,23 +97,27 @@
 
 
             <TextView
-                android:id="@+id/tv_biografia"
+                android:id="@+id/tv_observacoes"
                 style="@style/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Biografia" />
+                android:text="Obserevações" />
 
 
             <EditText
-                android:id="@+id/et_biografia"
+                android:id="@+id/et_oservacoes"
                 style="@style/editText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/formato_edit_text"
-                android:hint="Insira uma biografia para o perfil do estabelecimento"
-                android:inputType="text"
-                android:textSize="13dp" />
+                android:hint="Bandeiras aceitas, parcelamentos, acréscimos..."
+                android:padding="10dp"
+                android:inputType="textMultiLine"
+                android:textSize="12dp"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"
+                android:gravity="top"/>
 
 
 
@@ -155,14 +159,14 @@
                                 android:layout_height="5dp"
                                 android:layout_margin="5dp"
                                 android:src="@drawable/ic_ellipse"
-                                app:tint="@color/cinza_escuro"/>
+                                app:tint="@color/cinza_padrao"/>
 
                             <ImageView
                                 android:layout_width="5dp"
                                 android:layout_height="5dp"
                                 android:layout_margin="5dp"
                                 android:src="@drawable/ic_ellipse"
-                                app:tint="@color/cinza_escuro" />
+                                app:tint="@color/cinza_padrao" />
 
                             <ImageView
                                 android:layout_width="5dp"
@@ -175,28 +179,28 @@
                                 android:layout_height="5dp"
                                 android:layout_margin="5dp"
                                 android:src="@drawable/ic_ellipse"
-                                app:tint="@color/cinza_escuro" />
+                                app:tint="@color/cinza_padrao" />
 
                             <ImageView
                                 android:layout_width="5dp"
                                 android:layout_height="5dp"
                                 android:layout_margin="5dp"
                                 android:src="@drawable/ic_ellipse"
-                                app:tint="@color/cinza_escuro" />
+                                app:tint="@color/cinza_padrao" />
 
                             <ImageView
                                 android:layout_width="5dp"
                                 android:layout_height="5dp"
                                 android:layout_margin="5dp"
                                 android:src="@drawable/ic_ellipse"
-                                app:tint="@color/cinza_escuro" />
+                                app:tint="@color/cinza_padrao" />
 
                             <ImageView
                                 android:layout_width="5dp"
                                 android:layout_height="5dp"
                                 android:layout_margin="5dp"
                                 android:src="@drawable/ic_ellipse"
-                                app:tint="@color/cinza_escuro" />
+                                app:tint="@color/cinza_padrao" />
 
 
                         </LinearLayout>
