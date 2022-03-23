@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/formato_buttom.xml" value="0.468" />
         <entry key="app/src/main/res/drawable/formato_card_titulo_cadastro.xml" value="0.149" />
         <entry key="app/src/main/res/drawable/formato_edit_text.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/formato_retangulo_cinza.xml" value="0.455" />
         <entry key="app/src/main/res/drawable/ic_estabelecimento_24.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.468" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
@@ -27,13 +28,16 @@
         <entry key="app/src/main/res/layout/activity_cadastro_dados_login.xml" value="0.5072916666666667" />
         <entry key="app/src/main/res/layout/activity_cadastro_funcionamento.xml" value="0.5072916666666667" />
         <entry key="app/src/main/res/layout/activity_cadastro_perfil_administrador.xml" value="0.5072916666666667" />
-        <entry key="app/src/main/res/layout/activity_cadastro_perfil_estabelecimento.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_cadastro_perfil_estabelecimento.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_cadastro_recebimento.xml" value="0.5072916666666667" />
         <entry key="app/src/main/res/layout/activity_cadastro_regras_de_negocio.xml" value="0.5072916666666667" />
+        <entry key="app/src/main/res/layout/activity_home_prestador.xml" value="0.5505208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/bottom_navigation.xml" value="0.4981481481481482" />
         <entry key="app/src/main/res/layout/bottombar.xml" value="0.45" />
         <entry key="app/src/main/res/layout/menu_navigation.xml" value="0.5072916666666667" />
+        <entry key="app/src/main/res/layout/menu_navigation_prestador.xml" value="0.5645833333333333" />
+        <entry key="app/src/main/res/layout/menu_navigation_sem_login.xml" value="0.5427461139896373" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.2898148148148148" />
         <entry key="app/src/main/res/layout/topbar.xml" value="0.5072916666666667" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.2833333333333333" />

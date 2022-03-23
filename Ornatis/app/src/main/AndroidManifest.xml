@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis">
         <activity
+            android:name=".HomePrestador"
+            android:exported="false" />
+        <activity
             android:name=".CadastroFuncionamento"
             android:exported="false" />
         <activity

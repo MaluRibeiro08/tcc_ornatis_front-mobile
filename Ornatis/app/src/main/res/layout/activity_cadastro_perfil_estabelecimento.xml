@@ -138,17 +138,7 @@
                 android:gravity="top"/>
 
 
-<!--            <ImageView-->
-<!--                android:id="@+id/tela_7"-->
-<!--                android:layout_width="5dp"-->
-<!--                android:layout_height="5dp"-->
-<!--                android:src="@drawable/ic_ellipse" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/tela_3"-->
-<!--                android:layout_width="5dp"-->
-<!--                android:layout_height="5dp"-->
-<!--                android:src="@drawable/ic_ellipse" />-->
+            //SETAS BACK E FORWARD
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -182,42 +172,42 @@
                             android:layout_height="5dp"
                             android:layout_margin="5dp"
                             android:src="@drawable/ic_ellipse"
-                            app:tint="@color/cinza_escuro" />
+                            app:tint="@color/cinza_padrao" />
 
                         <ImageView
                             android:layout_width="5dp"
                             android:layout_height="5dp"
                             android:layout_margin="5dp"
                             android:src="@drawable/ic_ellipse"
-                            app:tint="@color/cinza_escuro" />
+                            app:tint="@color/cinza_padrao" />
 
                         <ImageView
                             android:layout_width="5dp"
                             android:layout_height="5dp"
                             android:layout_margin="5dp"
                             android:src="@drawable/ic_ellipse"
-                            app:tint="@color/cinza_escuro" />
+                            app:tint="@color/cinza_padrao" />
 
                         <ImageView
                             android:layout_width="5dp"
                             android:layout_height="5dp"
                             android:layout_margin="5dp"
                             android:src="@drawable/ic_ellipse"
-                            app:tint="@color/cinza_escuro" />
+                            app:tint="@color/cinza_padrao" />
 
                         <ImageView
                             android:layout_width="5dp"
                             android:layout_height="5dp"
                             android:layout_margin="5dp"
                             android:src="@drawable/ic_ellipse"
-                            app:tint="@color/cinza_escuro" />
+                            app:tint="@color/cinza_padrao" />
 
                         <ImageView
                             android:layout_width="5dp"
                             android:layout_height="5dp"
                             android:layout_margin="5dp"
                             android:src="@drawable/ic_ellipse"
-                            app:tint="@color/cinza_escuro" />
+                            app:tint="@color/cinza_padrao" />
 
 
                     </LinearLayout>
@@ -234,6 +224,7 @@
 
 
             </RelativeLayout>
+            //
 
         </LinearLayout>
 

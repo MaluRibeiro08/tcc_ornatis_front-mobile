@@ -34,7 +34,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="700dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,7 +89,6 @@
                 android:inputType="phone" />
 
 
-
             //REUTILIZAR EM OUTARS TELAS
             <!--            <TextView-->
             <!--                android:id="@+id/tv_tipo_atendimento"-->
@@ -132,30 +131,103 @@
                 android:id="@+id/iv_foto_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:src="@drawable/ic_profile" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Opcional*"
                 android:layout_gravity="center"
-                android:textSize="10dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:text="Opcional*"
+                android:textSize="10dp" />
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
 
-            //SETAS DE AVANÇAR E VOLTAR
-<!--                        <ImageView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:src="@drawable/ic_arrow_back_24"/>-->
+                <TextView
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:drawableStart="@drawable/ic_arrow_back_24" />
 
-<!--                        <ImageView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:src="@drawable/ic_arrow_forward_24"/>-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_escuro" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_alignParentEnd="true"
+                    android:drawableStart="@drawable/ic_arrow_forward_24" />
+
+
+            </RelativeLayout>
 
         </LinearLayout>
 
