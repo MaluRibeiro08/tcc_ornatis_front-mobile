@@ -2,6 +2,7 @@ package com.example.teste_tcc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toolbar;
 
@@ -18,6 +19,9 @@ public class CadastroPerfilEstabelecimento extends AppCompatActivity {
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+
+//        Intent intent = new Intent(this, CadastroDadosDeLocalizacao.class);
+//        startActivity(intent);
     }
 
 }

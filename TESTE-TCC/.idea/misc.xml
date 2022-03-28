@@ -4,16 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/formato_buttom.xml" value="0.5354166666666667" />
+        <entry key="app/src/main/res/drawable/ic_photo_profile.xml" value="0.5271794871794871" />
         <entry key="app/src/main/res/layout/activity_cadastro_dados_de_localizacao.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/activity_cadastro_dados_login.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/activity_cadastro_funcionamento.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/activity_cadastro_perfil_administrador.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/activity_cadastro_perfil_estabelecimento.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/activity_cadastro_recebimento.xml" value="0.4904891304347826" />
-        <entry key="app/src/main/res/layout/activity_cadastro_regras_de_negocio.xml" value="0.4904891304347826" />
+        <entry key="app/src/main/res/layout/activity_cadastro_regras_de_negocio.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_configuracao_conta.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/activity_home_prestador.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4904891304347826" />
+        <entry key="app/src/main/res/layout/dropdown_item.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/menu_navigation_prestador.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/menu_navigation_sem_login.xml" value="0.4904891304347826" />
         <entry key="app/src/main/res/layout/topbar.xml" value="0.4904891304347826" />

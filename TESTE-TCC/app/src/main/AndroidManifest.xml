@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis">
-        <activity
-            android:name=".ConfiguracaoConta"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ConfiguracaoConta"-->
+<!--            android:exported="false" />-->
         <!-- <activity -->
         <!-- android:name=".HomePrestador" -->
         <!-- android:exported="false" /> -->
@@ -37,7 +37,7 @@
         <!-- android:name=".CadastroPerfilEstabelecimento" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".CadastroPerfilEstabelecimento"
+            android:name=".ConfiguracaoConta"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
