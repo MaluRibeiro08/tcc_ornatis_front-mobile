@@ -19,9 +19,11 @@ public class CadastroPerfilEstabelecimento extends AppCompatActivity {
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-
+//
 //        Intent intent = new Intent(this, CadastroDadosDeLocalizacao.class);
 //        startActivity(intent);
+
+
     }
 
 }
