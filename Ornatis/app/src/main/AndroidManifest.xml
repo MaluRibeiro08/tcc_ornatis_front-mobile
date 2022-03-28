@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ornatis">
+    package="com.example.teste_tcc">
 
     <application
         android:allowBackup="true"
@@ -10,26 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis">
         <activity
-            android:name=".HomePrestador"
+            android:name=".ConfiguracaoConta"
             android:exported="false" />
-        <activity
-            android:name=".CadastroFuncionamento"
-            android:exported="false" />
-        <activity
-            android:name=".CadastroDadosLogin"
-            android:exported="false" />
-        <activity
-            android:name=".CadastroRegrasDeNegocio"
-            android:exported="false" />
-        <activity
-            android:name=".CadastroRecebimento"
-            android:exported="false" />
-        <activity
-            android:name=".CadastroDadosDeLocalizacao"
-            android:exported="false" />
-        <activity
-            android:name=".CadastroPerfilAdministrador"
-            android:exported="false" /> <!-- <activity -->
+        <!-- <activity -->
+        <!-- android:name=".HomePrestador" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CadastroFuncionamento" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CadastroDadosLogin" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CadastroRegrasDeNegocio" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CadastroRecebimento" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CadastroDadosDeLocalizacao" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CadastroPerfilAdministrador" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
         <!-- android:name=".CadastroPerfilEstabelecimento" -->
         <!-- android:exported="false" /> -->
         <activity

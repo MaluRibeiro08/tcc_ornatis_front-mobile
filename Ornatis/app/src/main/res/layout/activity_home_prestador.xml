@@ -36,6 +36,8 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_rectangle_79" />
 
+
+
         </LinearLayout>
 
 
@@ -51,8 +53,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
+                style="@style/textView"
                 android:text="@string/servicos" />
 
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
 
 
             <TextView
@@ -62,17 +72,33 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/produtos" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
+
+
             <TextView
                 style="@style/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:text="@string/criar_agendamentos" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
         </LinearLayout>
 
 <!--    </ScrollView>-->
 
-    <include layout="@layout/menu_navigation_prestador"/>
+    <include
+        layout="@layout/menu_navigation_prestador"/>
 
 
 </LinearLayout>
