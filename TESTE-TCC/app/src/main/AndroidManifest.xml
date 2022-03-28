@@ -37,7 +37,7 @@
         <!-- android:name=".CadastroPerfilEstabelecimento" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".ConfiguracaoConta"
+            android:name=".CadastroDadosLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
