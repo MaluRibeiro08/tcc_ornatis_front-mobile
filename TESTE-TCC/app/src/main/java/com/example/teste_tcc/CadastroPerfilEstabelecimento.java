@@ -22,7 +22,7 @@ public class CadastroPerfilEstabelecimento extends AppCompatActivity {
 //
 //        Intent intent = new Intent(this, CadastroDadosDeLocalizacao.class);
 //        startActivity(intent);
-
+//
 
     }
 
