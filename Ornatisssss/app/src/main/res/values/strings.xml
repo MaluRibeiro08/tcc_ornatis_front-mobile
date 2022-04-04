@@ -32,4 +32,8 @@
     <string name="pix">Pix</string>
     <string name="via_app">Via app</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="produtos">Produtos</string>
+    <string name="criar_agendamentos">Criar agendamentos</string>
+    <string name="servicos">Servicos</string>
+    <string name="agendamentos_proximos">Próximos agendamentos</string>
 </resources>

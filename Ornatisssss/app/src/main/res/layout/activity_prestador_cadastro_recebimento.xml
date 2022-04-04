@@ -199,6 +199,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigation"/>
+        app:menu="@menu/bottom_navigation_sem_cadastro"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

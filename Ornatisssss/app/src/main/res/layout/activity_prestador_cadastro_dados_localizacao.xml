@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroDadosLocalizacao">
+    tools:context=".PrestadorCadastroDadosLocalizacao">
 
     <include
         android:id="@+id/include3"
@@ -177,7 +177,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:id="@+id/arrow_back"
@@ -264,6 +265,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigation"/>
+        app:menu="@menu/bottom_navigation_sem_cadastro"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
