@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Ornatis</string>
-    <string name="tituloPerfilEstabeleciento">Perfil Estabelecimento</string>
-    <string name="contatoTelefone">Contato</string>
-    <string name="servicos">Serviços</string>
-    <string name="produtos">Produtos</string>
-    <string name="criar_agendamentos">Criar Agendamento</string>
-</resources>
