@@ -38,7 +38,6 @@
 
 
 
-
             <TextView
                 android:id="@+id/tv_tipo_recebimento"
                 style="@style/textView"
@@ -136,31 +135,32 @@
 
             </LinearLayout>
 
-            <!--            <RelativeLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent">-->
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
 
 
 
-            <!--                <EditText-->
-            <!--                    android:id="@+id/et_horas_tolerancia"-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_alignRight="@id/tv_tolerancia"-->
-            <!--                    android:layout_alignBottom="@+id/tv_tolerancia"-->
-            <!--                    android:layout_marginStart="-20dp"-->
-            <!--                    android:layout_marginBottom="-26dp"-->
-            <!--                    android:layout_toEndOf="@+id/tv_tolerancia"-->
-            <!--                    android:textSize="10d" />-->
+<!--                            <EditText-->
+<!--                                android:id="@+id/et_horas_tolerancia"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_alignRight="@id/tv_tolerancia"-->
+<!--                                android:layout_alignBottom="@+id/tv_tolerancia"-->
+<!--                                android:layout_marginStart="-20dp"-->
+<!--                                android:layout_marginBottom="-26dp"-->
+<!--                                android:layout_toEndOf="@+id/tv_tolerancia"-->
+<!--                                android:textSize="10d" />-->
 
 
-            <!--            </RelativeLayout>-->
+<!--                        </RelativeLayout>-->
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:layout_marginTop="90dp">
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp">
 
                 <TextView
                     android:id="@+id/arrow_back"
