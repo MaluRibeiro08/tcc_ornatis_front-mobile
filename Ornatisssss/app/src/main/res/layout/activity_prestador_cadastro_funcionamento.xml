@@ -11,7 +11,7 @@
         layout="@layout/topbar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_funcionamento"
         style="@style/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/tv_funcionamento">
 
 
         <LinearLayout
@@ -46,9 +46,9 @@
                 android:text="Quais dias da semana o estabelecimento funciona?" />
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
 
                 <CheckBox
                     android:id="@+id/cb_domingo"
@@ -58,15 +58,64 @@
                     android:text="Domingo"
                     android:textSize="13sp" />
 
-                <EditText
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@id/cb_domingo"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="238dp"
-                    android:layout_marginRight="-43dp" />
+<!--                <EditText-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignRight="@id/cb_domingo"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginEnd="238dp"-->
+<!--                    android:layout_marginRight="-43dp" />-->
 
-            </RelativeLayout>
+                <CheckBox
+                    android:id="@+id/cb_segunda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Segunda"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_terca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Terça"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_quarta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Quarta"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_quinta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Quinta"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_sexta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sexta"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_sabado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sábado"
+                    android:textSize="13sp" />
+
+
+<!--            </RelativeLayout>-->
 
             <TextView
                 style="@style/textView"
@@ -107,7 +156,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="90dp">
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="90dp">
 
                 <TextView
                     android:id="@+id/arrow_back"

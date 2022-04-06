@@ -11,10 +11,10 @@
     <color name="verde_padrao">#93DCD0</color>
     <color name="verde_claro">#C9E9E3</color>
     <color name="verde_escuro">#5F9F95</color>
+
     <color name="cinza_padrao">#AFACAC</color>
-
     <color name="cinza_escuro">#494343</color>
-
+    <color name="cinza_normal">#635F5F</color>
     <color name="cinza_claro">#F8F8F8</color>
 
 
