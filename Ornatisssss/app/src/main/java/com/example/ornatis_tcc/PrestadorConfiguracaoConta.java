@@ -40,8 +40,9 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
                 container_perfil_estabelecimento.setVisibility(View.VISIBLE);
             }
 
-
+    //fazer uma funcao para essa parte
 
         });
     }
+
 }

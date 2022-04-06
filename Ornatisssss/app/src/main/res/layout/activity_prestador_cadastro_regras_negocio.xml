@@ -45,9 +45,10 @@
                 android:layout_height="wrap_content"
                 android:text="Terá taxa de cancelamento?" />
 
-            <LinearLayout
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rb_cancelamento_sim"
@@ -59,9 +60,10 @@
                     android:id="@+id/rb_cancelamento_nao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Não"
-                    android:layout_marginStart="45dp"/>
-            </LinearLayout>
+
+                    android:layout_marginStart="45dp"
+                    android:text="Não"/>
+            </RadioGroup>
 
 
 
@@ -71,41 +73,50 @@
                 android:layout_height="wrap_content"
                 android:text="Configuração das taxas" />
 
-            <RadioButton
-                android:id="@+id/rb_taxa_unica"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Taxa Única" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="teste">
 
-            <EditText
-                android:id="@+id/et_taxa_unica"
-                android:layout_width="100dp"
-                android:layout_height="35dp"
-                style="@style/editText"
-                android:background="@drawable/formato_edit_text"
-                android:hint="Ex.:(10,00)"
-                android:padding="10dp"
-                android:textSize="10dp" />
+                <RadioButton
+                    android:id="@+id/rb_taxa_unica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taxa Única" />
 
-            <RadioButton
-                android:id="@+id/rb_personalizada"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Personalizada" />
+                <EditText
+                    android:id="@+id/et_taxa_unica"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    style="@style/editText"
+                    android:background="@drawable/formato_edit_text"
+                    android:hint="Ex.:(10,00)"
+                    android:padding="10dp"
+                    android:textSize="10dp"
+                    android:visibility="gone"/>
+
+                <RadioButton
+                    android:id="@+id/rb_personalizada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personalizada" />
+
+            </RadioGroup>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/formato_edit_text"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Valores do Serviço:"/>
 
-                //colocar o icone de lixeira mesmo???
+                //colocar o icone de lixeira mesmo??? e um +
 
                 <RadioButton
                     android:id="@+id/rb_abaixo_cem"

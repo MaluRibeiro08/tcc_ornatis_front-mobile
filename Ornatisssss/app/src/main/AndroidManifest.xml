@@ -10,34 +10,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis_TCC">
 <!--        <activity-->
-<!--            android:name=".PrestadorConfiguracaoConta"-->
+<!--            android:name=".TesteMudancaDeActivity"-->
 <!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".HomePrestador"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".PrestadorCadastroDadosLocalizacao"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".PrestadorCadastroRecebimento"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".PrestadorCadastroPerfilAdministrador"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".PrestadorCadastroFuncionamento"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".PrestadorDadosLogin"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".PrestadorCadastroRegrasNegocio"-->
-<!--            android:exported="true" />-->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorConfiguracaoConta" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".HomePrestador" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorCadastroDadosLocalizacao" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorCadastroRecebimento" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorCadastroPerfilAdministrador" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorCadastroFuncionamento" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorDadosLogin" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".PrestadorCadastroRegrasNegocio" -->
+        <!-- android:exported="true" /> -->
         <activity
-            android:name=".PrestadorConfiguracaoConta"
+            android:name=".PrestadorCadastroRegrasNegocio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

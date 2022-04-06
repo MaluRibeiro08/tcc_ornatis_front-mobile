@@ -123,18 +123,26 @@
                 android:layout_height="wrap_content"
                 android:text="Tempo de intervalo entre os horários?" />
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/rb_sim"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sim"/>
+                <RadioButton
+                    android:id="@+id/rb_sim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"/>
 
-            <RadioButton
-                android:id="@+id/rb_nao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não"/>
+                <RadioButton
+                    android:id="@+id/rb_nao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="Não"/>
+
+            </RadioGroup>
+
 
             <TextView
                 style="@style/textView"
