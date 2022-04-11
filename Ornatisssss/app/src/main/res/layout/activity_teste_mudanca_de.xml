@@ -5,32 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PrestadorCadastroPerfilEstabelecimento">
+    tools:context=".PrestadorCadastroPerfilEstabelecimento"
+    android:orientation="vertical">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/include_topbar"
         layout="@layout/topbar" />
 
-    <TextView
-        android:id="@+id/tv_perfil_estabelecimento"
-        style="@style/textViewTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/formato_card_titulo_cadastro"
-        android:drawableStart="@drawable/ic_estabelecimento_24"
-        android:text="  Perfil Estabelecimento"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        tools:ignore="MissingConstraints" />
-
     <LinearLayout
-        android:id="@+id/container_1"
+        android:id="@+id/container1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_perfil_estabelecimento"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
         android:visibility="visible">
 
+        <TextView
+            android:id="@+id/tv_perfil_estabelecimento"
+            style="@style/textViewTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/formato_card_titulo_cadastro"
+            android:drawableStart="@drawable/ic_estabelecimento_24"
+            android:text="  Perfil Estabelecimento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_topbar"
+            tools:ignore="MissingConstraints" />
+
+        //
 
         <ScrollView
             android:layout_width="match_parent"
@@ -108,12 +111,6 @@
                     android:text="@string/logo" />
 
 
-                <!--            <ImageView-->
-                <!--                android:id="@+id/iv_foto_perfil"-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:layout_gravity="center"-->
-                <!--                android:src="@drawable/ic_profile" />-->
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="120dp"
@@ -165,6 +162,7 @@
                     android:textSize="13dp" />
 
                 //SETAS BACK E FORWARD
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -172,7 +170,7 @@
                     android:layout_marginBottom="60dp">
 
                     <TextView
-                        android:id="@+id/arrow_back"
+                        android:id="@+id/arrow_back_container1"
                         android:layout_width="21dp"
                         android:layout_height="21dp"
                         android:drawableStart="@drawable/ic_arrow_back_24" />
@@ -251,32 +249,307 @@
 
 
                     <TextView
-                        android:id="@+id/arrow_forward"
+                        android:id="@+id/arrow_forward_container1"
                         android:layout_width="21dp"
                         android:layout_height="21dp"
                         android:layout_alignParentEnd="true"
                         android:drawableStart="@drawable/ic_arrow_forward_24" />
 
                 </RelativeLayout>
+
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
 
+//////
 
+<!--    <LinearLayout-->
+<!--        android:id="@+id/container2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="visible">-->
 
+<!--        -->
+
+<!--    </LinearLayout>-->
+
+//////
 
     <LinearLayout
-        android:id="@+id/container_2"
+        android:id="@+id/container3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_perfil_estabelecimento">
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
+        android:visibility="gone">
 
+        <TextView
+            android:id="@+id/tv_dados_localizacao"
+            style="@style/textViewTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/formato_card_titulo_cadastro"
+            android:drawableStart="@drawable/ic_local"
+            android:text="  Dados de Localização"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            tools:ignore="MissingConstraints" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dados_localizacao"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            tools:ignore="MissingConstraints,Suspicious0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="45dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_cep"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cep" />
+
+                <EditText
+                    android:id="@+id/et_cep"
+                    style="@style/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+
+                <TextView
+                    android:id="@+id/tv_bairro"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bairro" />
+
+                <EditText
+                    android:id="@+id/et_bairro"
+                    style="@style/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_rua"
+                        style="@style/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rua" />
+
+
+                    <TextView
+                        android:id="@+id/tv_numero"
+                        style="@style/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="235dp"
+                        android:text="@string/numero" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_rua"
+                        style="@style/editText"
+                        android:layout_width="248dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/et_numero"
+                        style="@style/editText"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:inputType="number" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_complemento"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/complemento" />
+
+                <EditText
+                    android:id="@+id/et_complemento"
+                    style="@style/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_cidade"
+                        style="@style/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cidade" />
+
+
+                    <TextView
+                        android:id="@+id/tv_uf"
+                        style="@style/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="220dp"
+                        android:text="@string/uf" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_cidade"
+                        style="@style/editText"
+                        android:layout_width="248dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoComplete" />
+
+                    <EditText
+                        android:id="@+id/et_uf"
+                        style="@style/editText"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:inputType="text" />
+                    //MUDAR PARA SPINNER????
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="60dp">
+
+                    <TextView
+                        android:id="@+id/arrow_back_container3"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:drawableStart="@drawable/ic_arrow_back_24" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_padrao" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_padrao" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_padrao" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_padrao" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_padrao" />
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_ellipse"
+                            app:tint="@color/cinza_padrao" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/arrow_forward_container3"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentEnd="true"
+                        android:drawableStart="@drawable/ic_arrow_forward_24" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 
+///////////
 
-
-
+<!--    <LinearLayout-->
+<!--        android:id="@+id/container3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="visible">-->
+<!--        -->
+<!--        -->
+<!--        -->
+<!--        -->
+<!--    </LinearLayout>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -288,4 +561,23 @@
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_navigation_sem_cadastro"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/container_2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_perfil_estabelecimento">-->
+
+
+<!--    </LinearLayout>-->
+
+
+
+
+
+
+<!--</LinearLayout>-->
