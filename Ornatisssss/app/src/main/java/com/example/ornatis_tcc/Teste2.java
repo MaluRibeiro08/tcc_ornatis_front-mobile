@@ -35,9 +35,11 @@ public class Teste2 extends AppCompatActivity {
         mostrarDiv(divAtual+1);
     }
 
-    public void mostrarDiv(divQueQueroIr){
-        container${divQueQueroIr}
-    }
+//    public void mostrarDiv(divQueQueroIr){
+//        container${divQueQueroIr}
+//    }
+
+    public void mostrarDiv()
 
 //        arrow_forward.setOnClickListener()
 
