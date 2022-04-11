@@ -105,13 +105,13 @@ public class ContaAdministradora {
             //    @Expose
             //    private TIME data_inicio;
 
-    @SerializedName("data_fim_excessao")
-    @Expose
-    private String data_fim_excessao;
-
-    @SerializedName("descricao")
-    @Expose
-    private String descricao;
+            //    @SerializedName("data_fim_excessao")
+            //    @Expose
+            //    private String data_fim_excessao;
+            //
+            //    @SerializedName("descricao")
+            //    @Expose
+            //    private String descricao;
 
 
     //DADOS DE LOGIN
@@ -119,6 +119,10 @@ public class ContaAdministradora {
 
     public ContaAdministradora() {
     }
+
+//    public ContaAdministradora(int id_empresa, ){
+//
+//    }
 
     public int getId_empresa() {
         return id_empresa;
@@ -256,11 +260,11 @@ public class ContaAdministradora {
         this.uf = uf;
     }
 
-    public String getData_fim_excessao() {
-        return data_fim_excessao;
-    }
-
-    public void setData_fim_excessao(String data_fim_excessao) {
-        this.data_fim_excessao = data_fim_excessao;
-    }
+//    public String getData_fim_excessao() {
+//        return data_fim_excessao;
+//    }
+//
+//    public void setData_fim_excessao(String data_fim_excessao) {
+//        this.data_fim_excessao = data_fim_excessao;
+//    }
 }

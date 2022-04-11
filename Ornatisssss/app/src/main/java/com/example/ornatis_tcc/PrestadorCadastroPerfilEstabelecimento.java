@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ornatis_tcc.remote.RouterInterface;
+
 public class PrestadorCadastroPerfilEstabelecimento extends AppCompatActivity {
 
     private EditText et_nome_do_negocio;
@@ -18,6 +20,8 @@ public class PrestadorCadastroPerfilEstabelecimento extends AppCompatActivity {
     private EditText et_biografia;
     private TextView arrow_back;
     private TextView arrow_forward;
+
+//    RouterInterface routerInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
