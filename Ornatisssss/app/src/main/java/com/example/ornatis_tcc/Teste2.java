@@ -39,11 +39,13 @@ public class Teste2 extends AppCompatActivity {
 
         arrow_forward.setOnClickListener(view -> {
             int numeroContainerDestino = numeroContainerAtual+1;
+            numeroContainerAtual = numeroContainerAtual+1;
             mostrarContainerDestino(numeroContainerDestino);
         });
 
         arrow_back.setOnClickListener(view -> {
             int numeroContainerAnterior = numeroContainerAtual-1;
+            numeroContainerAtual = numeroContainerAtual-1;
             mostrarContainerAnterior(numeroContainerAnterior);
         });
 
@@ -94,34 +96,39 @@ public class Teste2 extends AppCompatActivity {
         LinearLayout containerDestino = null;
         LinearLayout containerAtual = null;
 
-        if(numeroContainerDestino == 2) {
+        if(numeroContainerDestino == 1) {
             containerDestino = container1;
             containerAtual = container2;
         }
 
-        else if(numeroContainerDestino == 3) {
+        else if(numeroContainerDestino == 2) {
             containerDestino = container2;
             containerAtual = container3;
         }
 
-        else if(numeroContainerDestino == 4) {
+        else if(numeroContainerDestino == 3) {
             containerDestino = container3;
             containerAtual = container4;
         }
 
-        else if(numeroContainerDestino == 5) {
+        else if(numeroContainerDestino == 4) {
             containerDestino = container4;
             containerAtual = container5;
         }
 
-        else if(numeroContainerDestino == 6) {
+        else if(numeroContainerDestino == 5) {
             containerDestino = container5;
             containerAtual = container6;
         }
 
-        else {
+        else if(numeroContainerDestino == 6) {
             containerDestino = container6;
             containerAtual = container7;
+        }
+
+        else {
+            containerDestino = container7;
+            containerAtual = container1;
         }
 
         containerAtual.setVisibility(View.GONE);

@@ -14,11 +14,15 @@
         android:theme="@style/Theme.Ornatis_TCC">
         <activity
             android:name=".Teste2"
-            android:exported="false" />
-         <activity
-         android:name=".TesteMudancaDeActivity"
-         android:exported="false" />
-         <activity
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
          android:name=".PrestadorConfiguracaoConta"
          android:exported="false" />
          <activity
@@ -27,33 +31,8 @@
          <activity
          android:name=".MainActivity"
          android:exported="true" />
-         <activity
-         android:name=".PrestadorCadastroDadosLocalizacao"
-         android:exported="true" />
-         <activity
-         android:name=".PrestadorCadastroRecebimento"
-         android:exported="true" />
-         <activity
-         android:name=".PrestadorCadastroPerfilAdministrador"
-         android:exported="true" />
-         <activity
-         android:name=".PrestadorCadastroFuncionamento"
-         android:exported="true" />
-         <activity
-         android:name=".PrestadorDadosLogin"
-         android:exported="true" />
-         <activity
-         android:name=".PrestadorCadastroRegrasNegocio"
-         android:exported="true" />
-        <activity
-            android:name=".PrestadorCadastroPerfilEstabelecimento"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
     </application>
 
 </manifest>
