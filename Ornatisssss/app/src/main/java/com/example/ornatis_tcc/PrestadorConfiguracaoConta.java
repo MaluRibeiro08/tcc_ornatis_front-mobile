@@ -18,7 +18,8 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
 
     private TextView tv_dados_localizacao;
     private LinearLayout containcontainer_dados_localizacaoer_perfil_adm;
-         //variavel divatual = 1;
+
+//    variavel divatual = 1;
 
 
     @Override
@@ -26,7 +27,7 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_configuracao_conta);
 
-        text_view_perfil_estabelecimento = findViewById(R.id.text_view_perfil_estabelecimento);
+//        text_view_perfil_estabelecimento = findViewById(R.id.text_view_perfil_estabelecimento);
 //        container_perfil_estabelecimento1 = findViewById(R.id.container_perfil_estabelecimento);
 //        container_perfil_estabelecimento2 = findViewById(R.id.container_perfil_estabelecimento);
 //        container_perfil_estabelecimento3 = findViewById(R.id.container_perfil_estabelecimento);
@@ -48,7 +49,7 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
     }
 
 }
-
+//
 //clivouProximo (()=>{
 //
 //        mostrarDiv(divAtual+1)
@@ -62,7 +63,7 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
 //            divAtual = divPOndeQueremosIr
 //        }
 
-//
+
 //<EditText
 //                android:id="@+id/et_data"
 //                        android:layout_width="match_parent"

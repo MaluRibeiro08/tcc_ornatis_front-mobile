@@ -29,14 +29,14 @@
         <entry key="app/src/main/res/drawable/ic_rectangle_79.xml" value="0.3625" />
         <entry key="app/src/main/res/layout/activity_home_prestador.xml" value="0.3463541666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5192708333333333" />
-        <entry key="app/src/main/res/layout/activity_prestador_cadastro_dados_localizacao.xml" value="0.5046875" />
-        <entry key="app/src/main/res/layout/activity_prestador_cadastro_funcionamento.xml" value="0.5046875" />
+        <entry key="app/src/main/res/layout/activity_prestador_cadastro_dados_localizacao.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_prestador_cadastro_funcionamento.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_prestador_cadastro_perfil_administrador.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_prestador_cadastro_perfil_estabelecimento.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_prestador_cadastro_recebimento.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_prestador_cadastro_regras_negocio.xml" value="0.5046875" />
+        <entry key="app/src/main/res/layout/activity_prestador_cadastro_regras_negocio.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_prestador_configuracao_conta.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_prestador_dados_login.xml" value="0.5765625" />
+        <entry key="app/src/main/res/layout/activity_prestador_dados_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_teste2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_teste_mudanca_de.xml" value="0.1" />
         <entry key="app/src/main/res/layout/topbar.xml" value="0.5046875" />
