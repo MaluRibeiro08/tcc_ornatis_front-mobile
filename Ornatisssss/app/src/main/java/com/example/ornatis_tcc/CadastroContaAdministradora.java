@@ -170,7 +170,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
             ContaAdministradora contaAdministradora = new ContaAdministradora();
-            contaAdministradora()
+//            contaAdministradora()
 
             //Indo para a próxima intent
 //            Intent homePrestador =
