@@ -3,13 +3,10 @@ package com.example.ornatis_tcc.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Date;
 import java.util.concurrent.TimeoutException;
 
 public class ContaAdministradora {
-
-//    @SerializedName("cod_livro")
-//    @Expose
-//    private int cod_livro;
 
     //ESTABELECIMENTO
     @SerializedName("id_empresa")
@@ -37,9 +34,9 @@ public class ContaAdministradora {
     private String biografia;
 
     //ADMINISTRADOR
-//    @SerializedName("id_administrador")
-//    @Expose
-//    private String id_administrador;
+    @SerializedName("id_administrador")
+    @Expose
+    private int id_administrador;
 
     @SerializedName("nome_adm")
     @Expose
@@ -53,7 +50,6 @@ public class ContaAdministradora {
     @Expose
     private String cpf;
 
-    //foto do adm seria a do funcionario?
     @SerializedName("foto_perfil")
     @Expose
     private String foto_perfil;
@@ -80,49 +76,59 @@ public class ContaAdministradora {
     @Expose
     private String complemento;
 
-
-
-    //o que fazer com chaves estrangeiras?
-
-    @SerializedName("cidade")
+    @SerializedName("id_cidade")
     @Expose
-    private String cidade;
-
-    @SerializedName("uf")
-    @Expose
-    private String uf;
+    private int id_cidade;
 
 
-    //RECEBIMENTO
-    //e quando é check box ou radio button?
-
-    //REGRAS DE NEGÓCIO
+//    //RECEBIMENTO
+//    @SerializedName("dados_recebimento")
+//    @Expose
+//    private dados_recebimento;
+//
+//    //REGRAS DE NEGÓCIO
+//    @SerializedName("dados_taxa_cancelamento")
+//    @Expose
+//    private dados_taxa_cancelamento;
 
     //FUNCIONAMENTO
 
-    //O QUE FAZER QUANDO É TIME??
-            //    @SerializedName("data_inicio")
-            //    @Expose
-            //    private TIME data_inicio;
+    @SerializedName("dados_funcionamento")
+    @Expose
+    private int dados_funcionamento;
 
-            //    @SerializedName("data_fim_excessao")
-            //    @Expose
-            //    private String data_fim_excessao;
-            //
-            //    @SerializedName("descricao")
-            //    @Expose
-            //    private String descricao;
+    @SerializedName("id_dia_semana")
+    @Expose
+    private int id_dia_semana;
+
+    @SerializedName("data_inicio")
+    @Expose
+    private Date data_inicio;
+
+    @SerializedName("data_fim_excessao")
+    @Expose
+    private Date data_fim_excessao;
+
+    @SerializedName("descricao")
+    @Expose
+    private String descricao;
 
 
     //DADOS DE LOGIN
+    @SerializedName("email_adm")
+    @Expose
+    private String email_adm;
 
+    @SerializedName("senha_adm")
+    @Expose
+    private String senha_adm;
 
     public ContaAdministradora() {
     }
 
-//    public ContaAdministradora(int id_empresa, ){
-//
-//    }
+    public ContaAdministradora(int id_empresa){
+        this.id_administrador = id_empresa;
+    }
 
     public int getId_empresa() {
         return id_empresa;
@@ -170,6 +176,14 @@ public class ContaAdministradora {
 
     public void setBiografia(String biografia) {
         this.biografia = biografia;
+    }
+
+    public int getId_administrador() {
+        return id_administrador;
+    }
+
+    public void setId_administrador(int id_administrador) {
+        this.id_administrador = id_administrador;
     }
 
     public String getNome_adm() {
@@ -244,27 +258,67 @@ public class ContaAdministradora {
         this.complemento = complemento;
     }
 
-    public String getCidade() {
-        return cidade;
+    public int getId_cidade() {
+        return id_cidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setId_cidade(int id_cidade) {
+        this.id_cidade = id_cidade;
     }
 
-    public String getUf() {
-        return uf;
+    public int getDados_funcionamento() {
+        return dados_funcionamento;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setDados_funcionamento(int dados_funcionamento) {
+        this.dados_funcionamento = dados_funcionamento;
     }
 
-//    public String getData_fim_excessao() {
-//        return data_fim_excessao;
-//    }
-//
-//    public void setData_fim_excessao(String data_fim_excessao) {
-//        this.data_fim_excessao = data_fim_excessao;
-//    }
+    public int getId_dia_semana() {
+        return id_dia_semana;
+    }
+
+    public void setId_dia_semana(int id_dia_semana) {
+        this.id_dia_semana = id_dia_semana;
+    }
+
+    public Date getData_inicio() {
+        return data_inicio;
+    }
+
+    public void setData_inicio(Date data_inicio) {
+        this.data_inicio = data_inicio;
+    }
+
+    public Date getData_fim_excessao() {
+        return data_fim_excessao;
+    }
+
+    public void setData_fim_excessao(Date data_fim_excessao) {
+        this.data_fim_excessao = data_fim_excessao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getEmail_adm() {
+        return email_adm;
+    }
+
+    public void setEmail_adm(String email_adm) {
+        this.email_adm = email_adm;
+    }
+
+    public String getSenha_adm() {
+        return senha_adm;
+    }
+
+    public void setSenha_adm(String senha_adm) {
+        this.senha_adm = senha_adm;
+    }
 }

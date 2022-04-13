@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis_TCC">
         <activity
-            android:name=".Teste2"
+            android:name=".HomePrestador"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,14 @@
         </activity>
 
         <activity
+            android:name=".CadastroContaAdministradora"
+            android:exported="true" />
+        <activity
          android:name=".PrestadorConfiguracaoConta"
          android:exported="false" />
-         <activity
-         android:name=".HomePrestador"
-         android:exported="true" />
+<!--         <activity-->
+<!--         android:name=".HomePrestador"-->
+<!--         android:exported="true" />-->
          <activity
          android:name=".MainActivity"
          android:exported="true" />

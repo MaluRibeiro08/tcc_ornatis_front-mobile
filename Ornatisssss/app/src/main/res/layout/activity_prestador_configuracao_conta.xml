@@ -20,12 +20,22 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_photo_profile"
-            android:layout_marginTop="30dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#ff0000"
+            app:cardCornerRadius="60dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/iv_dash_foto_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile"/>
+
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/button"
@@ -62,7 +72,7 @@
 
             //Perfil estabelecimento
             <TextView
-                android:id="@+id/text_view_perfil_estabelecimento"
+                android:id="@+id/tv_perfil_estabelecimento"
                 style="@style/textViewTituloEdicaoPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -264,7 +274,8 @@
                     style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:enabled="false"/>
 
 
                 <TextView
@@ -279,7 +290,8 @@
                     style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:enabled="false"/>
 
 
                 <LinearLayout
@@ -315,7 +327,8 @@
                         style="@style/editText"
                         android:layout_width="248dp"
                         android:layout_height="wrap_content"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:enabled="false"/>
 
                     <EditText
                         android:id="@+id/et_numero"
@@ -323,7 +336,8 @@
                         android:layout_width="56dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:enabled="false"/>
                 </LinearLayout>
 
 
@@ -339,7 +353,8 @@
                     style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:enabled="false"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -374,7 +389,8 @@
                         style="@style/editText"
                         android:layout_width="248dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textAutoComplete" />
+                        android:inputType="textAutoComplete"
+                        android:enabled="false"/>
 
                     <EditText
                         android:id="@+id/et_uf"
@@ -382,7 +398,8 @@
                         android:layout_width="56dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:enabled="false"/>
 
                 </LinearLayout>
 
@@ -425,42 +442,48 @@
                     android:layout_height="35dp"
                     android:text="@string/dinheiro"
                     android:textSize="13sp"
-                    style="@style/checkbox"/>
+                    style="@style/checkbox"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_cartao_credito"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:text="@string/cartao_credito"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_cartao_debito"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="@string/cartao_debito"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_pix"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="@string/pix"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_via_app"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="@string/via_app"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <TextView
                     android:id="@+id/tv_observacoes"
                     style="@style/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Observações" />
+                    android:text="Observações"
+                    android:enabled="false"/>
 
 
                 <EditText
@@ -476,7 +499,8 @@
                     android:textSize="12dp"
                     android:scrollHorizontally="false"
                     android:scrollbars="vertical"
-                    android:gravity="top"/>
+                    android:gravity="top"
+                    android:enabled="false"/>
 
 
             </LinearLayout>
@@ -636,7 +660,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Domingo"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
 
                 <CheckBox
@@ -645,7 +670,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Segunda"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_terca"
@@ -653,7 +679,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Terça"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_quarta"
@@ -661,7 +688,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Quarta"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_quinta"
@@ -669,7 +697,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Quinta"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_sexta"
@@ -677,7 +706,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Sexta"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
                 <CheckBox
                     android:id="@+id/cb_sabado"
@@ -685,7 +715,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:text="Sábado"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:enabled="false"/>
 
 
                 <TextView
@@ -699,13 +730,15 @@
                     android:id="@+id/rb_sim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sim"/>
+                    android:text="Sim"
+                    android:enabled="false"/>
 
                 <RadioButton
                     android:id="@+id/rb_nao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Não"/>
+                    android:text="Não"
+                    android:enabled="false"/>
 
                 <TextView
                     style="@style/textView"
@@ -722,7 +755,8 @@
                     android:textSize="10dp"
                     android:padding="10dp"
                     android:layout_marginTop="10dp"
-                    style="@style/editText"/>
+                    style="@style/editText"
+                    android:enabled="false"/>
 
             </LinearLayout>
 

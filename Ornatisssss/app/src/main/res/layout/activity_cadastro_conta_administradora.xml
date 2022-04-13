@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Teste2"
+    tools:context=".CadastroContaAdministradora"
     android:orientation="vertical">
 
     <include
@@ -37,7 +37,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="900dp"
+            android:layout_height="800dp"
             app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
             app:layout_constraintTop_toBottomOf="@+id/tv_perfil_estabelecimento"
             app:layout_constraintVertical_bias="1.0"
@@ -995,13 +995,14 @@
 
 
 //IR E VOLTAR
+
     <RelativeLayout
         android:id="@+id/listagem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         android:layout_marginBottom="15dp"
-        android:background="@color/verde_claro">
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/container1">
 
         <TextView
             android:id="@+id/arrow_back"
@@ -1020,14 +1021,14 @@
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_margin="5dp"
-                android:src="@drawable/ic_ellipse"
-                app:tint="@color/cinza_padrao" />
+                android:src="@drawable/ic_ellipse" />
 
             <ImageView
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:layout_margin="5dp"
-                android:src="@drawable/ic_ellipse" />
+                android:src="@drawable/ic_ellipse"
+                app:tint="@color/cinza_padrao" />
 
             <ImageView
                 android:layout_width="5dp"
@@ -1072,8 +1073,8 @@
             android:layout_width="21dp"
             android:layout_height="21dp"
             android:layout_alignParentEnd="true"
-            android:drawableStart="@drawable/ic_arrow_forward_24"
-            android:layout_marginEnd="40dp"/>
+            android:layout_marginEnd="40dp"
+            android:drawableStart="@drawable/ic_arrow_forward_24" />
 
     </RelativeLayout>
 

@@ -2,6 +2,7 @@ package com.example.ornatis_tcc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,16 +11,27 @@ import android.widget.TextView;
 
 public class PrestadorConfiguracaoConta extends AppCompatActivity {
 
-    private TextView text_view_perfil_estabelecimento;
+    private TextView tv_perfil_estabelecimento;
     private LinearLayout container_perfil_estabelecimento;
 
     private TextView tv_perfil_adm;
     private LinearLayout container_perfil_adm;
 
     private TextView tv_dados_localizacao;
-    private LinearLayout containcontainer_dados_localizacaoer_perfil_adm;
+    private LinearLayout container_dados_localizacao;
 
-//    variavel divatual = 1;
+    private TextView tv_recebimento;
+    private LinearLayout container_recebimento;
+
+    private TextView tv_regras_negocio;
+    private LinearLayout container_regras_negocio;
+
+    private TextView tv_funcionamento;
+    private LinearLayout container_funcionamento;
+
+    private TextView tv_dados_login;
+    private LinearLayout container_dados_login;
+
 
 
     @Override
@@ -27,41 +39,114 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_configuracao_conta);
 
-//        text_view_perfil_estabelecimento = findViewById(R.id.text_view_perfil_estabelecimento);
-//        container_perfil_estabelecimento1 = findViewById(R.id.container_perfil_estabelecimento);
-//        container_perfil_estabelecimento2 = findViewById(R.id.container_perfil_estabelecimento);
-//        container_perfil_estabelecimento3 = findViewById(R.id.container_perfil_estabelecimento);
+        tv_perfil_estabelecimento = findViewById(R.id.tv_perfil_estabelecimento);
+        container_perfil_estabelecimento = findViewById(R.id.container_perfil_estabelecimento);
 
-        text_view_perfil_estabelecimento.setOnClickListener(view -> {
+        tv_perfil_adm = findViewById(R.id.tv_perfil_adm);
+        container_perfil_adm = findViewById(R.id.container_perfil_adm);
 
-            if(container_perfil_estabelecimento.getVisibility() == View.VISIBLE)
-            {
-                container_perfil_estabelecimento.setVisibility(View.GONE);
-            }
-            else
-            {
-                container_perfil_estabelecimento.setVisibility(View.VISIBLE);
-            }
+        tv_dados_localizacao = findViewById(R.id.tv_dados_localizacao);
+        container_dados_localizacao = findViewById(R.id.container_dados_localizacao);
 
-    //fazer uma funcao para essa parte
+        tv_recebimento = findViewById(R.id.tv_recebimento);
+        container_recebimento = findViewById(R.id.container_recebimento);
 
-        });
+        tv_regras_negocio = findViewById(R.id.tv_regras_negocio);
+        container_regras_negocio = findViewById(R.id.container_regras_negocio);
+
+        tv_funcionamento = findViewById(R.id.tv_funcionamento);
+        container_funcionamento = findViewById(R.id.container_funcionamento);
+
+        tv_dados_login = findViewById(R.id.tv_dados_login);
+        container_dados_login = findViewById(R.id.container_dados_login);
+
+
+        // quando clicar nos text views
+        //aparecer os containers
+        //fazer uma funcao para essa parte
+
+        mostrarContainersDeDados();
+
+
+
     }
 
-}
-//
-//clivouProximo (()=>{
-//
-//        mostrarDiv(divAtual+1)
-//
-//        }
-//
-//function mostrarDi(divPOndeQueremosIr)
-//        {
-//            container_perfil_estabelecimento${divPOndeQueremosIr}.setVisibility(View.TRUE);
-//            container_perfil_estabelecimento${divAtual}.setVisibility(View.GONE);
-//            divAtual = divPOndeQueremosIr
-//        }
+    private void mostrarContainersDeDados(){
+
+        tv_perfil_estabelecimento.setOnClickListener(view -> {
+
+            if (container_perfil_estabelecimento.getVisibility() == View.VISIBLE) {
+                container_perfil_estabelecimento.setVisibility(View.GONE);
+            } else {
+                container_perfil_estabelecimento.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tv_perfil_adm.setOnClickListener(view -> {
+
+            if (container_perfil_adm.getVisibility() == View.VISIBLE) {
+                container_perfil_adm.setVisibility(View.GONE);
+            } else {
+                container_perfil_adm.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tv_dados_localizacao.setOnClickListener(view -> {
+
+             if (container_dados_localizacao.getVisibility() == View.VISIBLE) {
+                 container_dados_localizacao.setVisibility(View.GONE);
+             } else {
+                 container_dados_localizacao.setVisibility(View.VISIBLE);
+             }
+        });
+
+
+        tv_recebimento.setOnClickListener(view -> {
+
+            if (container_recebimento.getVisibility() == View.VISIBLE) {
+                container_recebimento.setVisibility(View.GONE);
+            } else {
+                container_recebimento.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        tv_regras_negocio.setOnClickListener(view -> {
+
+            if (container_regras_negocio.getVisibility() == View.VISIBLE) {
+                container_regras_negocio.setVisibility(View.GONE);
+            } else {
+                container_regras_negocio.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tv_funcionamento.setOnClickListener(view -> {
+
+            if (container_funcionamento.getVisibility() == View.VISIBLE) {
+                container_funcionamento.setVisibility(View.GONE);
+            } else {
+                container_funcionamento.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tv_dados_login.setOnClickListener(view -> {
+
+            if (container_dados_login.getVisibility() == View.VISIBLE) {
+                container_dados_login.setVisibility(View.GONE);
+            } else {
+                container_dados_login.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+
+    }
+
+
+
+
+
+
 
 
 //<EditText
@@ -120,7 +205,7 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
 //
 //        }
 //
-//        }
+        }
 
 
 

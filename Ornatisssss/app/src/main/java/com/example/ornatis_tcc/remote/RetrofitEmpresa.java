@@ -21,8 +21,6 @@ public class RetrofitEmpresa {
             retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create(gsonCriado)).build();
 
         }
-
         return retrofit;
     }
-
 }
