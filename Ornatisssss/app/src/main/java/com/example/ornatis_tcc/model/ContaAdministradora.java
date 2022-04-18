@@ -1,8 +1,11 @@
 package com.example.ornatis_tcc.model;
 
+import android.provider.ContactsContract;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeoutException;
 
@@ -15,7 +18,7 @@ public class ContaAdministradora {
 
     @SerializedName("nome_fantasia")
     @Expose
-    private int nome_fantasia;
+    private String nome_fantasia;
 
     @SerializedName("cnpj")
     @Expose
@@ -44,7 +47,7 @@ public class ContaAdministradora {
 
     @SerializedName("data_nascimento")
     @Expose
-    private String data_nascimento;
+    private Date data_nascimento;
 
     @SerializedName("cpf")
     @Expose
@@ -80,38 +83,40 @@ public class ContaAdministradora {
     @Expose
     private int id_cidade;
 
+    //CONFERIR O NOME, SE TA "UF" MESMO
+    @SerializedName("uf")
+    @Expose
+    private String uf;
 
-//    //RECEBIMENTO
-//    @SerializedName("dados_recebimento")
-//    @Expose
-//    private dados_recebimento;
-//
-//    //REGRAS DE NEGÓCIO
-//    @SerializedName("dados_taxa_cancelamento")
-//    @Expose
-//    private dados_taxa_cancelamento;
+
+    //RECEBIMENTO
+    @SerializedName("dados_recebimento")
+    @Expose
+    private ArrayList dados_recebimento;
+
+    //REGRAS DE NEGÓCIO
+    @SerializedName("dados_taxa_cancelamento")
+    @Expose
+    private ArrayList dados_taxa_cancelamento;
 
     //FUNCIONAMENTO
 
     @SerializedName("dados_funcionamento")
     @Expose
-    private int dados_funcionamento;
+    private ArrayList dados_funcionamento;
 
-    @SerializedName("id_dia_semana")
-    @Expose
-    private int id_dia_semana;
 
-    @SerializedName("data_inicio")
+    @SerializedName("intervalo_tempo_padrao_servico")
     @Expose
-    private Date data_inicio;
+    private int intervalo_tempo_padrao_servico;
 
-    @SerializedName("data_fim_excessao")
+    @SerializedName("nome_usuario_instagram")
     @Expose
-    private Date data_fim_excessao;
+    private String nome_usuario_instagram;
 
-    @SerializedName("descricao")
+    @SerializedName("link_facebook")
     @Expose
-    private String descricao;
+    private String link_facebook;
 
 
     //DADOS DE LOGIN
@@ -126,8 +131,43 @@ public class ContaAdministradora {
     public ContaAdministradora() {
     }
 
-    public ContaAdministradora(int id_empresa){
-        this.id_administrador = id_empresa;
+
+    public ContaAdministradora(int id_empresa, String nome_fantasia, String cnpj, String telefone,
+                               String imagem_perfil, String biografia,
+                               int id_administrador, String nome_adm, Date data_nascimento,
+                               String cpf, String foto_perfil,
+                               String cep, String bairro, String rua, String numero,
+                               String complemento, int id_cidade, String uf, ArrayList dados_recebimento,
+                               ArrayList dados_taxa_cancelamento, ArrayList dados_funcionamento,
+                               int intervalo_tempo_padrao_servico, String nome_usuario_instagram,
+                               String link_facebook,
+                               String email_adm, String senha_adm) {
+        this.id_empresa = id_empresa;
+        this.nome_fantasia = nome_fantasia;
+        this.cnpj = cnpj;
+        this.telefone = telefone;
+        this.imagem_perfil = imagem_perfil;
+        this.biografia = biografia;
+        this.id_administrador = id_administrador;
+        this.nome_adm = nome_adm;
+        this.data_nascimento = data_nascimento;
+        this.cpf = cpf;
+        this.foto_perfil = foto_perfil;
+        this.cep = cep;
+        this.bairro = bairro;
+        this.rua = rua;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.id_cidade = id_cidade;
+        this.uf = uf;
+        this.dados_recebimento = dados_recebimento;
+        this.dados_taxa_cancelamento = dados_taxa_cancelamento;
+        this.dados_funcionamento = dados_funcionamento;
+        this.intervalo_tempo_padrao_servico = intervalo_tempo_padrao_servico;
+        this.nome_usuario_instagram = nome_usuario_instagram;
+        this.link_facebook = link_facebook;
+        this.email_adm = email_adm;
+        this.senha_adm = senha_adm;
     }
 
     public int getId_empresa() {
@@ -138,11 +178,11 @@ public class ContaAdministradora {
         this.id_empresa = id_empresa;
     }
 
-    public int getNome_fantasia() {
+    public String getNome_fantasia() {
         return nome_fantasia;
     }
 
-    public void setNome_fantasia(int nome_fantasia) {
+    public void setNome_fantasia(String nome_fantasia) {
         this.nome_fantasia = nome_fantasia;
     }
 
@@ -194,11 +234,11 @@ public class ContaAdministradora {
         this.nome_adm = nome_adm;
     }
 
-    public String getData_nascimento() {
+    public Date getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setData_nascimento(String data_nascimento) {
+    public void setData_nascimento(Date data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
 
@@ -266,44 +306,60 @@ public class ContaAdministradora {
         this.id_cidade = id_cidade;
     }
 
-    public int getDados_funcionamento() {
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public ArrayList getDados_recebimento() {
+        return dados_recebimento;
+    }
+
+    public void setDados_recebimento(ArrayList dados_recebimento) {
+        this.dados_recebimento = dados_recebimento;
+    }
+
+    public ArrayList getDados_taxa_cancelamento() {
+        return dados_taxa_cancelamento;
+    }
+
+    public void setDados_taxa_cancelamento(ArrayList dados_taxa_cancelamento) {
+        this.dados_taxa_cancelamento = dados_taxa_cancelamento;
+    }
+
+    public ArrayList getDados_funcionamento() {
         return dados_funcionamento;
     }
 
-    public void setDados_funcionamento(int dados_funcionamento) {
+    public void setDados_funcionamento(ArrayList dados_funcionamento) {
         this.dados_funcionamento = dados_funcionamento;
     }
 
-    public int getId_dia_semana() {
-        return id_dia_semana;
+    public int getIntervalo_tempo_padrao_servico() {
+        return intervalo_tempo_padrao_servico;
     }
 
-    public void setId_dia_semana(int id_dia_semana) {
-        this.id_dia_semana = id_dia_semana;
+    public void setIntervalo_tempo_padrao_servico(int intervalo_tempo_padrao_servico) {
+        this.intervalo_tempo_padrao_servico = intervalo_tempo_padrao_servico;
     }
 
-    public Date getData_inicio() {
-        return data_inicio;
+    public String getNome_usuario_instagram() {
+        return nome_usuario_instagram;
     }
 
-    public void setData_inicio(Date data_inicio) {
-        this.data_inicio = data_inicio;
+    public void setNome_usuario_instagram(String nome_usuario_instagram) {
+        this.nome_usuario_instagram = nome_usuario_instagram;
     }
 
-    public Date getData_fim_excessao() {
-        return data_fim_excessao;
+    public String getLink_facebook() {
+        return link_facebook;
     }
 
-    public void setData_fim_excessao(Date data_fim_excessao) {
-        this.data_fim_excessao = data_fim_excessao;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setLink_facebook(String link_facebook) {
+        this.link_facebook = link_facebook;
     }
 
     public String getEmail_adm() {
@@ -322,3 +378,8 @@ public class ContaAdministradora {
         this.senha_adm = senha_adm;
     }
 }
+
+
+
+
+

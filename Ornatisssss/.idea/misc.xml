@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/layout/activity_prestador_dados_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_teste2.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_teste_mudanca_de.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/setas_ir_voltar.xml" value="0.14722222222222223" />
         <entry key="app/src/main/res/layout/topbar.xml" value="0.5046875" />
         <entry key="app/src/main/res/menu/bottom_navigation_cadastrado.xml" value="0.5765625" />
         <entry key="app/src/main/res/menu/bottom_navigation_sem_cadastro.xml" value="0.5765625" />

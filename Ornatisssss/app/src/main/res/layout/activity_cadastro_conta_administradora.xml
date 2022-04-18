@@ -120,7 +120,7 @@
                     app:cardCornerRadius="60dp">
 
                     <ImageView
-                        android:id="@+id/iv_dash_foto_perfil_estabelecimento"
+                        android:id="@+id/iv_foto_perfil_estabelecimento"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
@@ -269,7 +269,7 @@
                     app:cardCornerRadius="60dp">
 
                     <ImageView
-                        android:id="@+id/iv_dash_foto_perfil"
+                        android:id="@+id/iv_foto_perfil_adm"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
@@ -996,13 +996,12 @@
 
 //IR E VOLTAR
 
+
     <RelativeLayout
         android:id="@+id/listagem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/container1">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/arrow_back"
@@ -1077,6 +1076,8 @@
             android:drawableStart="@drawable/ic_arrow_forward_24" />
 
     </RelativeLayout>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

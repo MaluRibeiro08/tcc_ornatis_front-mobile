@@ -1,6 +1,7 @@
 package com.example.ornatis_tcc;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,6 +9,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.remote.APIUtil;
+import com.example.ornatis_tcc.remote.RouterInterface;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PrestadorConfiguracaoConta extends AppCompatActivity {
 
@@ -32,6 +44,8 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
     private TextView tv_dados_login;
     private LinearLayout container_dados_login;
 
+
+    RouterInterface routerInterface;
 
 
     @Override
@@ -66,6 +80,39 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
         //fazer uma funcao para essa parte
 
         mostrarContainersDeDados();
+
+        routerInterface = APIUtil.getEmpresaInterface();
+
+//        retrofit2.Call<List<ContaAdministradora>> call = routerInterface.getContaAdministradora();
+//
+//        call.enqueue(new Callback<List<ContaAdministradora>>() {
+//            @Override
+//            public void onResponse(retrofit2.Call<List<ContaAdministradora>> call, Response<List<ContaAdministradora>> response) {
+//
+//                if (response.isSuccessful()){
+//                    List<Item> itens = new ArrayList<>();
+//
+//                    /** RECEBE OS DADOS DA API  **/
+//                    List<ContaAdministradora> list = new ArrayList<Livro>();
+//                    list = response.body();
+//
+//
+//                    for (int i = 0; i < list.size(); i++){
+//                        itens.add(new Item(0, list.get(i)));
+//                    }
+//                    RecyclerView recyclerView = findViewById(R.id./..../);
+//
+//                    recyclerView.setAdapter(new LivroAdapter(itens));
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<ContaAdministradora>> call, Throwable t) {
+//
+//            }
+//        });
 
 
 

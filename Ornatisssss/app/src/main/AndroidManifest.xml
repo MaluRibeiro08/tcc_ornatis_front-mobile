@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis_TCC">
         <activity
-            android:name=".HomePrestador"
+            android:name=".CadastroContaAdministradora"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".CadastroContaAdministradora"
+            android:name=".HomePrestador"
             android:exported="true" />
         <activity
          android:name=".PrestadorConfiguracaoConta"
