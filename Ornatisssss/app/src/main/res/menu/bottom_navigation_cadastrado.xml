@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_perfil"
+        android:icon="@drawable/ic_estabelecimento_24"
+        android:title="teste"/>
+
+    <item
+        android:id="@+id/menu_estatistica"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="teste"/>
+
+    <item
+        android:id="@+id/menu_agenda"
+        android:icon="@drawable/ic_estabelecimento_24"
+        android:title="teste"/>
+
+    <item
+        android:id="@+id/menu_feedback"
+        android:icon="@drawable/ic_estabelecimento_24"
+        android:title="teste"/>
+
+</menu>
