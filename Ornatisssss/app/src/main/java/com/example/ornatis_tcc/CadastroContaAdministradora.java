@@ -41,6 +41,11 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     //
     private Button btn_cadastrar;
 
+    private RadioButton rb_cancelamento_sim;
+    private RadioButton rb_cancelamento_nao;
+    private RadioButton rb_taxa_unica;
+    private RadioButton rb_personalizada;
+
     int numeroContainerAtual = 1;
 
     //estabelecimento
@@ -112,6 +117,12 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         arrow_back = findViewById(R.id.arrow_back);
         arrow_forward = findViewById(R.id.arrow_forward);
         btn_cadastrar = findViewById(R.id.btn_cadastrar);
+
+        rb_cancelamento_sim = findViewById(R.id.rb_cancelamento_sim);
+        rb_cancelamento_nao = findViewById(R.id.rb_cancelamento_nao);
+        rb_taxa_unica = findViewById(R.id.rb_taxa_unica);
+        rb_personalizada = findViewById(R.id.rb_personalizada);
+
 
         //ATRELAMENTO DA REPRESENTAÇÃO COM O COMPONENETE GRÁFICO
         //estabelecimento
