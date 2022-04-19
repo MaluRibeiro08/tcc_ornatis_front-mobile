@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f8f341bf-b5de-4502-b313-c5090a6b8cc0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/ornatisssss/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/CadastroContaAdministradora.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/HomePrestador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/PrestadorConfiguracaoConta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/model/ContaAdministradora.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/remote/APIUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/remote/RetrofitEmpresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ornatis_tcc/remote/RouterInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/formato_buttom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/formato_card_titulo_cadastro.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/formato_edit_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/formato_retangulo_cinza.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_arrow_back_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_arrow_forward_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_ellipse.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_estabelecimento_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_logo_ornatis.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_logo_ornatis_verde.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_menu_hamburguer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_paid.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_person_white24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_regras_negocio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/formato_retangulo_branco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_down_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_search_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_line_165.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_photo_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_plus.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_rectangle_79.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/profile.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastro_conta_administradora.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastro_conta_administradora.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_prestador.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_cadastro_dados_localizacao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_cadastro_funcionamento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_cadastro_perfil_administrador.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_cadastro_perfil_estabelecimento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_cadastro_recebimento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_cadastro_regras_negocio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_configuracao_conta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_prestador_dados_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/setas_ir_voltar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/topbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_cadastrado.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_sem_cadastro.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/style.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/ornatisssss/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/androidTest/java/com/example/teste_tcc/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroDadosDeLocalizacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroDadosLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroFuncionamento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroPerfilAdministrador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroPerfilEstabelecimento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroRecebimento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/CadastroRegrasDeNegocio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/ConfiguracaoConta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/HomePrestador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/java/com/example/teste_tcc/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-hdpi/ic_agenda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-hdpi/ic_estatistica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-hdpi/ic_home1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-hdpi/ic_person_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-hdpi/ic_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-mdpi/ic_agenda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-mdpi/ic_estatistica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-mdpi/ic_home1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-mdpi/ic_person_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-mdpi/ic_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xhdpi/ic_agenda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xhdpi/ic_estatistica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xhdpi/ic_home1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xhdpi/ic_person_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xhdpi/ic_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxhdpi/ic_agenda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxhdpi/ic_estatistica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxhdpi/ic_home1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxhdpi/ic_person_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxhdpi/ic_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxxhdpi/ic_agenda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxxhdpi/ic_estatistica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxxhdpi/ic_home1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxxhdpi/ic_person_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable-xxxhdpi/ic_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/formato_buttom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/formato_card_titulo_cadastro.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/formato_edit_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/formato_retangulo_cinza.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_arrow_back_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_arrow_down_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_arrow_forward_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_ellipse.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_estabelecimento_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_line_165.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_logo_ornatis.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_logo_ornatis_verde.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_menu_hamburguer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_paid.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_person_add_photo24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_person_white24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_photo_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_plus.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_plus1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_rectangle_79.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/drawable/ic_regras_negocio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/font/megrim.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/font/raleway.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_dados_de_localizacao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_dados_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_funcionamento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_perfil_administrador.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_perfil_estabelecimento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_recebimento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_cadastro_regras_de_negocio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_configuracao_conta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_home_prestador.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/menu_navigation_prestador.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/menu_navigation_sem_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/layout/topbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/menu/menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values/font_certs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values/preloaded_fonts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values/style.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/app/src/test/java/com/example/teste_tcc/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TESTE-TCC/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/suporte/.android/avd/Pixel_2_API_30.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="27KYTaHGRTj7rqxlLWp6xAVLFPT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
+    <key name="android.template.1805588726">
+      <recent name="com.example.ornatis_tcc" />
+    </key>
+    <key name="android.template.2277021">
+      <recent name="com.example.ornatis_tcc" />
+    </key>
+    <key name="android.template.532067426">
+      <recent name="com.example.ornatis_tcc" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.ornatis_tcc" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Ornatisssss.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8f341bf-b5de-4502-b313-c5090a6b8cc0" name="Default Changelist" comment="" />
+      <created>1649070254248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649070254248</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
