@@ -10,9 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,10 +43,14 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     //
     private Button btn_cadastrar;
 
+    private RadioGroup radio_group_sim_ou_nao;
     private RadioButton rb_cancelamento_sim;
     private RadioButton rb_cancelamento_nao;
     private RadioButton rb_taxa_unica;
     private RadioButton rb_personalizada;
+    private ImageButton adicionar_novo_conteiner_taxa_personalizada;
+    private LinearLayout conteiner_radiobutton_sim;
+    private LinearLayout linear_taxa_personalizada;
 
     int numeroContainerAtual = 1;
 
@@ -118,10 +124,17 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         arrow_forward = findViewById(R.id.arrow_forward);
         btn_cadastrar = findViewById(R.id.btn_cadastrar);
 
+        radio_group_sim_ou_nao = findViewById(R.id.radio_group_sim_ou_nao);
         rb_cancelamento_sim = findViewById(R.id.rb_cancelamento_sim);
         rb_cancelamento_nao = findViewById(R.id.rb_cancelamento_nao);
         rb_taxa_unica = findViewById(R.id.rb_taxa_unica);
         rb_personalizada = findViewById(R.id.rb_personalizada);
+
+        adicionar_novo_conteiner_taxa_personalizada = findViewById(R.id.adicionar_novo_conteiner_taxa_personalizada);
+
+        conteiner_radiobutton_sim = findViewById(R.id.conteiner_radiobutton_sim);
+
+        linear_taxa_personalizada = findViewById(R.id.linear_taxa_personalizada);
 
 
         //ATRELAMENTO DA REPRESENTAÇÃO COM O COMPONENETE GRÁFICO
@@ -167,10 +180,6 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 //        cb_sabado = findViewById(R.id.cb_sabado);
 
 
-        et_email = findViewById(R.id.et_email);
-        et_senha = findViewById(R.id.et_senha);
-        et_confirmar_senha = findViewById(R.id.et_confirmar_senha);
-
 
         //configurando router interface
         routerInterface = APIUtil.getEmpresaInterface();
@@ -189,6 +198,12 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             mostrarContainerAnterior(numeroContainerAnterior);
         });
 
+        adicionar_novo_conteiner_taxa_personalizada.setOnClickListener(view -> {
+//            aparecendoNovoContainerPersonalizado();
+            addNovoContainerPersonalizado();
+        });
+
+
         //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
             ContaAdministradora contaAdministradora = new ContaAdministradora();
@@ -200,7 +215,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             contaAdministradora.setBiografia(et_biografia.getText().toString());
 
             contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-          contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
+            contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
             contaAdministradora.setCpf(et_cpf.getText().toString());
 
 
@@ -234,17 +249,87 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             contaAdministradora.setEmail_adm(et_email.getText().toString());
             contaAdministradora.setSenha_adm(et_senha.getText().toString());
 
+        });
 
-//            addContaAdministradora(contaAdministradora);
+//        addContaAdministradora(contaAdministradora);
 
-            //Indo para a próxima intent
+        //Indo para a próxima intent
 //            Intent homePrestador =
 //                    new Intent(
 //                            CadastroContaAdministradora.this,
 //                            HomePrestador.class);
-        });
+
+
+
+
+//        boolean opcaoSim = rb_cancelamento_sim.isChecked();
+
+//        adicionar_novo_conteiner_taxa_personalizada.setOnClickListener(view -> {
+////            if (click)
+//        });
+
+
+
 
     }
+
+
+
+    //FUNCAO PARA APARECER NOVO CONTAINER (TESTESS)
+    private void addNovoContainerPersonalizado() {
+//        if (rb_personalizada.isSelected()){
+//            linear_taxa_personalizada.addView(linear_taxa_personalizada);
+
+//        linear_taxa_personalizada.appendChild(novaRegra);
+
+        }
+
+
+
+
+//    public void aparecendoNovoContainerPersonalizado(){
+//        if(radio_group_sim_ou_nao == null){
+//            rb_cancelamento_nao.isChecked();
+//            rb_cancelamento_nao.setOnClickListener(view -> {
+//                fecharContainer();
+//            });
+//        }
+//    }
+
+
+
+
+
+
+
+
+
+
+
+    //VERIFICANDO QUAL DOS RADIOBUTTONS ESTÁ SELECIONADO
+//    public void verificandoRadioButton(View view){
+        //verificando se é RADIO SIM OU NÃO
+//        if(rb_cancelamento_sim.isSelected()){
+//
+//        }
+
+
+//        int rb_cancelamento_sim = radio_group_sim_ou_nao.getCheckedRadioButtonId();
+//
+//        radio_group_sim_ou_nao = (RadioButton) findViewById();
+//        if ()
+
+
+//        if (rb_cancelamento_sim.setSelected()){
+//
+//        }
+
+//        rb_cancelamento_sim = rb_cancelamento_sim.isSelected();
+//        rb_cancelamento_sim.setSelected();
+
+//    }
+
+
 
     public void addContaAdministradora(ContaAdministradora contaAdministradora) {
         Call<ContaAdministradora> call = routerInterface.addEmpresa(contaAdministradora);
@@ -265,6 +350,10 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                 });
     }
 
+//
+//    public void adicionarNovoConteinerTaxaPersonalizada(View view){
+//
+//    }
 
 
 
@@ -364,3 +453,5 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     }
 
 }
+
+
