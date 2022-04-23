@@ -40,4 +40,7 @@
     <string name="sobreApp">Sobre o app</string>
     <string name="duvidas">Dúvidas</string>
     <string name="agendamentos">Agendamentos</string>
+    <string name="novoFuncionario">Novo Funcionário</string>
+    <string name="login">Login</string>
+    <string name="senha">Senha</string>
 </resources>

@@ -4,13 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/drawable-v24/formato_retangulo_cinza.xml" value="0.2101851851851852" />
+        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/drawable/formato_retangulo_curvado_cinza.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/drawable/ic_line_165.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/drawable/retangulo_verde.xml" value="0.2101851851851852" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_cadastro_conta_administradora.xml" value="0.2" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_cadastro_dados_localizacao.xml" value="0.2" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_home_prestador.xml" value="0.2" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastrar_funcionario.xml" value="0.2" />
+        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastrar_funcionario.xml" value="0.18" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastro_dados_localizacao.xml" value="0.2" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastro_funcionamento.xml" value="0.25" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastro_perfil_administrador.xml" value="0.2" />

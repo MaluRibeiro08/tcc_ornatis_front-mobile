@@ -24,17 +24,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".HomePrestador"
             android:exported="true" />
+
         <activity
             android:name=".PrestadorConfiguracaoConta"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".HomePrestador" -->
-        <!-- android:exported="true" /> -->
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>

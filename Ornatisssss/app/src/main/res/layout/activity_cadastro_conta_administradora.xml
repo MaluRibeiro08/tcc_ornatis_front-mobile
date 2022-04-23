@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/tv_perfil_estabelecimento"
@@ -700,6 +700,7 @@
                                 android:hint="Ex.:(10,00)"
                                 android:padding="10dp"
                                 android:textSize="10dp"
+                                android:inputType="number"
                                 android:visibility="gone"/>
 
                             <RadioButton
@@ -759,6 +760,7 @@
                                     android:layout_marginStart="69dp"
                                     android:layout_marginTop="-10dp"
                                     android:layout_toEndOf="@+id/tv_tolerancia"
+                                    android:inputType="number"
                                     android:textSize="15dp" />
 
                                 <TextView
@@ -790,6 +792,7 @@
                                     android:layout_alignParentTop="true"
                                     android:layout_marginStart="195dp"
                                     android:layout_marginTop="-10dp"
+                                    android:inputType="number"
                                     android:textSize="15dp" />
 
                                 <TextView
@@ -841,7 +844,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
         <TextView
             android:id="@+id/tv_funcionamento"

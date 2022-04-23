@@ -184,7 +184,10 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         //configurando router interface
         routerInterface = APIUtil.getEmpresaInterface();
 
-        abrindoMenu();
+        //abrindo menu - NÃO DEU CERTO!!!
+        menu_hambuguer.setOnClickListener(view -> {
+            abrindoMenu();
+        });
 
         //clique para ir para a próxima tela
         arrow_forward.setOnClickListener(view -> {
