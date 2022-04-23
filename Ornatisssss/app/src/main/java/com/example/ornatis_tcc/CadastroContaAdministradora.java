@@ -31,6 +31,7 @@ import retrofit2.Response;
 public class CadastroContaAdministradora extends AppCompatActivity {
 
     RouterInterface routerInterface;
+    private ImageView menu_hambuguer;
     private LinearLayout container1;
     private LinearLayout container2;
     private LinearLayout container3;
@@ -112,6 +113,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_conta_administradora);
 
+        menu_hambuguer = findViewById(R.id.menu_hambuguer);
         container1 = findViewById(R.id.container1);
         container2 = findViewById(R.id.container2);
         container3 = findViewById(R.id.container3);
@@ -131,9 +133,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         rb_personalizada = findViewById(R.id.rb_personalizada);
 
         adicionar_novo_conteiner_taxa_personalizada = findViewById(R.id.adicionar_novo_conteiner_taxa_personalizada);
-
         conteiner_radiobutton_sim = findViewById(R.id.conteiner_radiobutton_sim);
-
         linear_taxa_personalizada = findViewById(R.id.linear_taxa_personalizada);
 
 
@@ -183,6 +183,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
         //configurando router interface
         routerInterface = APIUtil.getEmpresaInterface();
+
+        abrindoMenu();
 
         //clique para ir para a próxima tela
         arrow_forward.setOnClickListener(view -> {
@@ -285,49 +287,38 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         }
 
 
-
-
-//    public void aparecendoNovoContainerPersonalizado(){
-//        if(radio_group_sim_ou_nao == null){
-//            rb_cancelamento_nao.isChecked();
-//            rb_cancelamento_nao.setOnClickListener(view -> {
-//                fecharContainer();
-//            });
-//        }
-//    }
-
-
-
-
-
-
-
-
-
+        //TENTANDO ABRIR MENU
+    public void abrindoMenu(){
+        //clique para abrir menu
+//        menu_hambuguer.setOnClickListener(view -> {
+            if (menu_hambuguer.isSelected()){
+                menu_hambuguer.setVisibility(View.VISIBLE);
+            }
+//        });
+    }
 
 
     //VERIFICANDO QUAL DOS RADIOBUTTONS ESTÁ SELECIONADO
-//    public void verificandoRadioButton(View view){
-        //verificando se é RADIO SIM OU NÃO
-//        if(rb_cancelamento_sim.isSelected()){
-//
-//        }
+    public void verificandoRadioButton(View view){
 
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
 
-//        int rb_cancelamento_sim = radio_group_sim_ou_nao.getCheckedRadioButtonId();
-//
-//        radio_group_sim_ou_nao = (RadioButton) findViewById();
-//        if ()
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.rb_cancelamento_sim:
+                if (checked)
+                    //show conteiner_radiobutton_sim
+                    conteiner_radiobutton_sim.setVisibility(View.VISIBLE);
+                    break;
+            case R.id.rb_cancelamento_nao:
+                if (checked)
+                    // don't show conteiner_radiobutton_sim
+                    conteiner_radiobutton_sim.setVisibility(View.INVISIBLE);
+                    break;
+        }
 
-
-//        if (rb_cancelamento_sim.setSelected()){
-//
-//        }
-
-//        rb_cancelamento_sim = rb_cancelamento_sim.isSelected();
-//        rb_cancelamento_sim.setSelected();
-
-//    }
+    }
 
 
 
@@ -349,11 +340,6 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                     }
                 });
     }
-
-//
-//    public void adicionarNovoConteinerTaxaPersonalizada(View view){
-//
-//    }
 
 
 

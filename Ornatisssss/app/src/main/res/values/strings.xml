@@ -34,6 +34,10 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="produtos">Produtos</string>
     <string name="criar_agendamentos">Criar agendamentos</string>
-    <string name="servicos">Servicos</string>
+    <string name="servicos">Serviços</string>
     <string name="agendamentos_proximos">Próximos agendamentos</string>
+    <string name="historico">Histórico</string>
+    <string name="sobreApp">Sobre o app</string>
+    <string name="duvidas">Dúvidas</string>
+    <string name="agendamentos">Agendamentos</string>
 </resources>

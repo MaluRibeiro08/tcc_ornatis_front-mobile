@@ -12,6 +12,10 @@
         android:id="@+id/include_topbar"
         layout="@layout/topbar" />
 
+    <include
+        layout="@layout/menu_deslizante"
+        android:visibility="gone"/>
+
 <!--    <LinearLayout-->
 <!--        android:id="@+id/container"-->
 <!--        android:layout_width="match_parent"-->
@@ -24,7 +28,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/tv_perfil_estabelecimento"
@@ -602,7 +606,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_regras_negocio"
@@ -649,7 +653,8 @@
                             android:id="@+id/rb_cancelamento_sim"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sim" />
+                            android:text="Sim"
+                            android:onClick="verificandoRadioButton"/>
 
                         <RadioButton
                             android:id="@+id/rb_cancelamento_nao"
@@ -664,7 +669,8 @@
                         android:id="@+id/conteiner_radiobutton_sim"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
 
 

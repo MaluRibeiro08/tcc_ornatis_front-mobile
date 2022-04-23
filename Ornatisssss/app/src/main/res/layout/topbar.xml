@@ -11,10 +11,11 @@
         android:layout_margin="20dp">
 
         <ImageView
+            android:id="@+id/menu_hambuguer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_hamburguer"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_menu_hamburguer" />
 
         <ImageView
             android:layout_width="117dp"
