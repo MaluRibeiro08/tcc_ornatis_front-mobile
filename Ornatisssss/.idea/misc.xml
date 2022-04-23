@@ -18,12 +18,14 @@
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastro_perfil_estabelecimento.xml" value="0.2" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastro_recebimento.xml" value="0.33" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_cadastro_regras_negocio.xml" value="0.25" />
-        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_configuracao_conta.xml" value="0.14814814814814814" />
+        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_configuracao_conta.xml" value="0.15" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/activity_prestador_dados_login.xml" value="0.1859375" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/menu_deslizante.xml" value="0.22" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/setas_ir_voltar.xml" value="0.1859375" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/layout/topbar.xml" value="0.2" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/menu/bottom_navigation.xml" value="0.2" />
+        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/menu/bottom_navigation_cadastrado.xml" value="0.2" />
+        <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/menu/bottom_navigation_sem_cadastro.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/saras/AndroidStudioProjects/tcc_ornatis_front-mobile/Ornatisssss/app/src/main/res/menu/menu.xml" value="0.2" />
         <entry key="app/src/main/res/drawable-v24/formato_edit_text.xml" value="0.5509259259259259" />
         <entry key="app/src/main/res/drawable-v24/formato_retangulo_cinza.xml" value="0.5208333333333334" />

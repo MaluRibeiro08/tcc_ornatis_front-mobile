@@ -43,4 +43,6 @@
     <string name="novoFuncionario">Novo Funcionário</string>
     <string name="login">Login</string>
     <string name="senha">Senha</string>
+    <string name="estatistica">Estatística</string>
+    <string name="sair">SAIR</string>
 </resources>

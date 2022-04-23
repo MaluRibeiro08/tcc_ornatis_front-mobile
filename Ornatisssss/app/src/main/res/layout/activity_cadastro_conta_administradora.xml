@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/tv_perfil_estabelecimento"
@@ -674,6 +674,7 @@
 
 
 
+
                         <TextView
                             android:id="@+id/tv_configuracao_taxas"
                             style="@style/textView"
@@ -805,11 +806,6 @@
 
                             </RelativeLayout>
 
-    <!--                        <TextView-->
-    <!--                            android:layout_width="match_parent"-->
-    <!--                            android:layout_height="wrap_content"-->
-    <!--                            android:text="Taxa sobre o valor do serviço: 5 (editavel) %" />-->
-
 
                         </LinearLayout>
 
@@ -844,7 +840,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_funcionamento"

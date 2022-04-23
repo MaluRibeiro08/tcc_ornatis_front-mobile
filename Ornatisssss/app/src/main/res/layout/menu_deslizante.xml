@@ -87,71 +87,91 @@
         android:baselineAligned="false"
         android:src="@drawable/ic_line_165" />
 
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_historico"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/historico"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            style="@style/textViewMenu"/>
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp">
 
-        <TextView
-            android:id="@+id/tv_sobreapp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sobreApp"
-            android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            style="@style/textViewMenu"/>
+            <TextView
+                android:id="@+id/tv_historico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/historico"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                style="@style/textViewMenu"/>
 
-        <TextView
-            android:id="@+id/tv_duvidas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/duvidas"
-            android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            style="@style/textViewMenu"/>
+            <TextView
+                android:id="@+id/tv_sobreapp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sobreApp"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
 
-        <TextView
-            android:id="@+id/tv_servicos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/servicos"
-            android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            style="@style/textViewMenu"/>
+            <TextView
+                android:id="@+id/tv_duvidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/duvidas"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
 
-        <TextView
-            android:id="@+id/tv_agendamentos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/agendamentos"
-            android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            style="@style/textViewMenu"/>
+            <TextView
+                android:id="@+id/tv_servicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/servicos"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
 
-        <TextView
-            android:id="@+id/tv_produtos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/produtos"
-            android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            style="@style/textViewMenu"/>
+            <TextView
+                android:id="@+id/tv_agendamentos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/agendamentos"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
+
+            <TextView
+                android:id="@+id/tv_produtos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/produtos"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
+
+            <TextView
+                android:id="@+id/tv_estatistica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estatistica"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
 
 
+            <TextView
+                android:id="@+id/tv_sair_conta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sair"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                style="@style/textViewMenu"/>
+        </LinearLayout>
 
-
-    </LinearLayout>
-
+    </ScrollView>
 
 </LinearLayout>

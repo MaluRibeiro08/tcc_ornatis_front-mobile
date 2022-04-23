@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 public class HomePrestador extends AppCompatActivity {
 
-    private TextView engrenagem;
+    private ImageView engrenagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
