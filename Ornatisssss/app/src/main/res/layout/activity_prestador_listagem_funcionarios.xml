@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@drawable/formato_retangulo_curvado_cinza"
-        android:text="@string/novoFuncionario"
+        android:text="@string/ListaDeFuncionario"
         style="@style/textViewTituloCadastroFuncionario"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,5 +22,8 @@
         android:layout_height="match_parent"
         android:layout_margin="30dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+
 
 </LinearLayout>

@@ -10,7 +10,13 @@
 <!--    <include layout="@layout/topbar"/>-->
 
 
-    <include layout="@layout/topbar"/>
+    <include
+        android:id="@+id/include_topbar"
+        layout="@layout/topbar" />
+
+    <include
+        layout="@layout/menu_deslizante"
+        android:visibility="gone"/>
 
     <ScrollView
         android:layout_width="match_parent"
