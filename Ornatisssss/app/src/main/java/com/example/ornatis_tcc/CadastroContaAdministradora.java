@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -286,12 +287,12 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
     //FUNCAO PARA APARECER NOVO CONTAINER (TESTESS)
     private void addNovoContainerPersonalizado() {
-//        if (rb_personalizada.isSelected()){
-//            linear_taxa_personalizada.addView(linear_taxa_personalizada);
+//        Log.d("TESTE_BTN_ADD_TAXA", "addNovoContainerPersonalizado: clicado");
 
-//        linear_taxa_personalizada.appendChild(novaRegra);
+        View view_novo_card_taxa = LayoutInflater.from(getApplicationContext()).inflate(R.layout.card_regra_negocio, null);
+        linear_taxa_personalizada.addView(view_novo_card_taxa);
 
-        }
+    }
 
 
         //TENTANDO ABRIR MENU
@@ -327,11 +328,13 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                 if (checked)
                     et_taxa_unica.setVisibility(View.VISIBLE);
                     linear_taxa_personalizada.setVisibility(View.GONE);
+                    adicionar_novo_conteiner_taxa_personalizada.setVisibility(View.GONE);
                     break;
 
             case R.id.rb_personalizada:
                 if (checked) et_taxa_unica.setVisibility(View.GONE);
                 linear_taxa_personalizada.setVisibility(View.VISIBLE);
+                adicionar_novo_conteiner_taxa_personalizada.setVisibility(View.VISIBLE);
                 break;
         }
 
