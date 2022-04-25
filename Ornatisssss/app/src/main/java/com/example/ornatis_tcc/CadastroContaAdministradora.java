@@ -55,6 +55,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
     int numeroContainerAtual = 1;
 
+    private EditText et_taxa_unica;
+
     //estabelecimento
     EditText et_nome_do_negocio;
     EditText et_cnpj;
@@ -112,6 +114,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_conta_administradora);
+
+        et_taxa_unica = findViewById(R.id.et_taxa_unica);
 
         menu_hambuguer = findViewById(R.id.menu_hambuguer);
         container1 = findViewById(R.id.container1);
@@ -319,6 +323,16 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                     // don't show conteiner_radiobutton_sim
                     conteiner_radiobutton_sim.setVisibility(View.INVISIBLE);
                     break;
+            case R.id.rb_taxa_unica:
+                if (checked)
+                    et_taxa_unica.setVisibility(View.VISIBLE);
+                    linear_taxa_personalizada.setVisibility(View.GONE);
+                    break;
+
+            case R.id.rb_personalizada:
+                if (checked) et_taxa_unica.setVisibility(View.GONE);
+                linear_taxa_personalizada.setVisibility(View.VISIBLE);
+                break;
         }
 
     }

@@ -661,9 +661,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="45dp"
-                            android:text="Não"/>
+                            android:text="Não"
+                            android:onClick="verificandoRadioButton"/>
                     </RadioGroup>
-
 
                     <LinearLayout
                         android:id="@+id/conteiner_radiobutton_sim"
@@ -690,7 +690,8 @@
                                 android:id="@+id/rb_taxa_unica"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Taxa Única" />
+                                android:text="Taxa Única"
+                                android:onClick="verificandoRadioButton"/>
 
                             <EditText
                                 android:id="@+id/et_taxa_unica"
@@ -708,7 +709,8 @@
                                 android:id="@+id/rb_personalizada"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Personalizada" />
+                                android:text="Personalizada"
+                                android:onClick="verificandoRadioButton"/>
 
                         </RadioGroup>
 
@@ -716,107 +718,117 @@
                             android:id="@+id/linear_taxa_personalizada"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/formato_edit_text"
                             android:orientation="vertical"
-                            android:padding="10dp"
-                            android:visibility="visible">
-
-                            <TextView
+                            android:visibility="gone">
+                            <LinearLayout
+                                android:id="@+id/taxa_personalizada"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Valores do Serviço:"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Valores do Serviço:"/>
 
 
-                            <RadioButton
-                                android:id="@+id/rb_abaixo_cem"
+                                <RadioButton
+                                    android:id="@+id/rb_abaixo_cem"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Abaixo de R$ 100,00" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_acima_cem"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Acima de R$ 100,00" />
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:id="@+id/tv_tolerancia"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Tolerância:" />
+
+                                    <EditText
+                                        android:id="@+id/et_valor_tolerancia"
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignLeft="@id/tv_tolerancia"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginStart="69dp"
+                                        android:layout_marginTop="-10dp"
+                                        android:layout_toEndOf="@+id/tv_tolerancia"
+                                        android:inputType="number"
+                                        android:textSize="15dp" />
+
+                                    <TextView
+                                        android:id="@+id/continuacao"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:layout_marginStart="108dp"
+                                        android:text="de antecedência" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp">
+
+                                    <TextView
+                                        android:id="@+id/tv_taxa_valor_servico"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Taxa sobre o valor do serviço:" />
+
+                                    <EditText
+                                        android:id="@+id/et_taxa_valor_servico"
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignLeft="@id/tv_taxa_valor_servico"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginStart="195dp"
+                                        android:layout_marginTop="-10dp"
+                                        android:inputType="number"
+                                        android:textSize="15dp" />
+
+                                    <TextView
+                                        android:id="@+id/simbolo_porcentagem"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="230dp"
+                                        android:gravity="center"
+                                        android:text="%" />
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/adicionar_novo_conteiner_taxa_personalizada"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Abaixo de R$ 100,00" />
-
-                            <RadioButton
-                                android:id="@+id/rb_acima_cem"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Acima de R$ 100,00" />
-
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="10dp">
-
-                                <TextView
-                                    android:id="@+id/tv_tolerancia"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Tolerância:" />
-
-                                <EditText
-                                    android:id="@+id/et_valor_tolerancia"
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignLeft="@id/tv_tolerancia"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginStart="69dp"
-                                    android:layout_marginTop="-10dp"
-                                    android:layout_toEndOf="@+id/tv_tolerancia"
-                                    android:inputType="number"
-                                    android:textSize="15dp" />
-
-                                <TextView
-                                    android:id="@+id/continuacao"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:layout_marginStart="108dp"
-                                    android:text="de antecedência" />
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp">
-
-                                <TextView
-                                    android:id="@+id/tv_taxa_valor_servico"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Taxa sobre o valor do serviço:" />
-
-                                <EditText
-                                    android:id="@+id/et_taxa_valor_servico"
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignLeft="@id/tv_taxa_valor_servico"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginStart="195dp"
-                                    android:layout_marginTop="-10dp"
-                                    android:inputType="number"
-                                    android:textSize="15dp" />
-
-                                <TextView
-                                    android:id="@+id/simbolo_porcentagem"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="230dp"
-                                    android:gravity="center"
-                                    android:text="%" />
-
-                            </RelativeLayout>
-
+                                android:src="@drawable/ic_add24"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="30dp"
+                                android:layout_gravity="center"/>
 
                         </LinearLayout>
 
-                        <ImageButton
-                            android:id="@+id/adicionar_novo_conteiner_taxa_personalizada"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_add24"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="30dp"
-                            android:layout_gravity="center"/>
+
 
     <!--                    android:onClick="adicionarNovoConteinerTaxaPersonalizada"-->
 
@@ -1206,7 +1218,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="40dp"
-                            android:text="Não"/>
+                            android:text="Não" />
 
                     </RadioGroup>
 
@@ -1331,6 +1343,7 @@
         </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/bolinhas_progresso_cadastro_conta_adm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
