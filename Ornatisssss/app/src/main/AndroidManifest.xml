@@ -12,9 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis_TCC">
-<!--        <activity-->
-<!--            android:name=".PrestadorCadastrarFuncionario"-->
-<!--            android:exported="true" />-->
+        <activity
+            android:name=".PrestadorListagemFuncionarios"
+            android:exported="true" />
+        <!-- <activity -->
+        <!-- android:name=".PrestadorCadastrarFuncionario" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".CadastroContaAdministradora"
             android:exported="true">
@@ -23,20 +26,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-<!--        <activity-->
-<!--            android:name=".HomePrestador"-->
-<!--            android:exported="true" />-->
-
+        </activity> <!-- <activity -->
+        <!-- android:name=".HomePrestador" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".PrestadorConfiguracaoConta"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
