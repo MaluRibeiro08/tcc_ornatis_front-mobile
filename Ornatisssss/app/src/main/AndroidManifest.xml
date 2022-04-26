@@ -14,8 +14,7 @@
         android:theme="@style/Theme.Ornatis_TCC">
         <activity
             android:name=".PrestadorListagemFuncionarios"
-            android:exported="true" />
-        <!-- <activity -->
+            android:exported="true" /> <!-- <activity -->
         <!-- android:name=".PrestadorCadastrarFuncionario" -->
         <!-- android:exported="true" /> -->
         <activity
