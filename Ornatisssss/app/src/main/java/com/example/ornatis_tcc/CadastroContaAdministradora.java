@@ -237,7 +237,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 //          contaAdministradora.setId_cidade(et_cidade.getText().toString());
             contaAdministradora.setNome_adm(et_uf.getText().toString());
 
-
+                getRegrasNegocio();
 //            contaAdministradora.setDados_recebimento(cb_tipo_dinheiro.getText().toString());
 //            contaAdministradora.setDados_recebimento(cb_cartao_credito.getText().toString());
 //            contaAdministradora.setDados_recebimento(cb_cartao_debito.getText().toString());
@@ -283,6 +283,10 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
     }
 
+    private void getRegrasNegocio()
+    {
+        Log.d("teste_funcao_get_regas", "getRegrasNegocio: GETTTT");
+    }
 
 
     //FUNCAO PARA APARECER NOVO CONTAINER (TESTESS)
@@ -372,6 +376,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         if(numeroContainerDestino == 2) {
             containerDestino = container2;
             containerAtual = container1;
+            arrow_back.setVisibility(View.VISIBLE);
         }
 
         else if(numeroContainerDestino == 3) {
@@ -393,9 +398,14 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             containerDestino = container6;
             containerAtual = container5;
         }
+        else if(numeroContainerDestino == 7) {
+            containerDestino = container7;
+            containerAtual = container6;
+            arrow_forward.setVisibility(View.INVISIBLE);
+        }
 
         else {
-            containerAtual = container6;
+            containerAtual = container7;
 //            containerDestino =
 
 //            startActivity(HomePrestador);
@@ -409,7 +419,10 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         }
 
         containerAtual.setVisibility(View.GONE);
-        containerDestino.setVisibility(View.VISIBLE);
+        if (containerDestino != null)
+        {
+            containerDestino.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -421,6 +434,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         if(numeroContainerDestino == 1) {
             containerDestino = container1;
             containerAtual = container2;
+            arrow_back.setVisibility(View.INVISIBLE);
         }
 
         else if(numeroContainerDestino == 2) {
@@ -446,6 +460,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         else if(numeroContainerDestino == 6) {
             containerDestino = container6;
             containerAtual = container7;
+            arrow_forward.setVisibility(View.VISIBLE);
         }
 
         else {
