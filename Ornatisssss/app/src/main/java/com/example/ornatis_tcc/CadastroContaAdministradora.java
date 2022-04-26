@@ -2,8 +2,6 @@ package com.example.ornatis_tcc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,7 +21,7 @@ import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
-import java.util.Date;
+import java.lang.reflect.Array;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,6 +53,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     private LinearLayout linear_taxa_personalizada;
 
     int numeroContainerAtual = 1;
+    int numero_regra_geral = 2;
 
     private EditText et_taxa_unica;
 
@@ -216,26 +215,26 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
         //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
-            ContaAdministradora contaAdministradora = new ContaAdministradora();
-
-            contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
-            contaAdministradora.setCnpj(et_cnpj.getText().toString());
-            contaAdministradora.setTelefone(et_contato.getText().toString());
-//            contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
-            contaAdministradora.setBiografia(et_biografia.getText().toString());
-
-            contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-            contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
-            contaAdministradora.setCpf(et_cpf.getText().toString());
-
-
-            contaAdministradora.setCep(et_cep.getText().toString());
-            contaAdministradora.setBairro(et_bairro.getText().toString());
-            contaAdministradora.setRua(et_rua.getText().toString());
-            contaAdministradora.setNumero(et_numero.getText().toString());
-            contaAdministradora.setComplemento(et_complemento.getText().toString());
-//          contaAdministradora.setId_cidade(et_cidade.getText().toString());
-            contaAdministradora.setNome_adm(et_uf.getText().toString());
+//            ContaAdministradora contaAdministradora = new ContaAdministradora();
+//
+//            contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
+//            contaAdministradora.setCnpj(et_cnpj.getText().toString());
+//            contaAdministradora.setTelefone(et_contato.getText().toString());
+////            contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
+//            contaAdministradora.setBiografia(et_biografia.getText().toString());
+//
+//            contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
+//            contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
+//            contaAdministradora.setCpf(et_cpf.getText().toString());
+//
+//
+//            contaAdministradora.setCep(et_cep.getText().toString());
+//            contaAdministradora.setBairro(et_bairro.getText().toString());
+//            contaAdministradora.setRua(et_rua.getText().toString());
+//            contaAdministradora.setNumero(et_numero.getText().toString());
+//            contaAdministradora.setComplemento(et_complemento.getText().toString());
+////          contaAdministradora.setId_cidade(et_cidade.getText().toString());
+//            contaAdministradora.setNome_adm(et_uf.getText().toString());
 
                 getRegrasNegocio();
 //            contaAdministradora.setDados_recebimento(cb_tipo_dinheiro.getText().toString());
@@ -256,8 +255,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
 
-            contaAdministradora.setEmail_adm(et_email.getText().toString());
-            contaAdministradora.setSenha_adm(et_senha.getText().toString());
+//            contaAdministradora.setEmail_adm(et_email.getText().toString());
+//            contaAdministradora.setSenha_adm(et_senha.getText().toString());
 
         });
 
@@ -286,6 +285,47 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     private void getRegrasNegocio()
     {
         Log.d("teste_funcao_get_regas", "getRegrasNegocio: GETTTT");
+        int quantidade_taxas = linear_taxa_personalizada.getChildCount();
+        int contador = 1;
+        int numero_regra = 1;
+
+        while (contador <= quantidade_taxas)
+        {
+            String tag = "taxa_" +numero_regra;
+
+            if (linear_taxa_personalizada.findViewWithTag(tag)!=null)
+            {
+                //Log.d("teste_funcao_get_regas", tag);
+
+                //pegando o ccointainer da taxa
+                LinearLayout taxa = linear_taxa_personalizada.findViewWithTag(tag);
+
+                //pegando os campos do container da taxa
+                RadioButton rb_acima_cem = (RadioButton) taxa.findViewById(R.id.rb_acima_cem);
+                EditText et_tolerancia = (EditText) taxa.findViewById(R.id.et_valor_tolerancia);
+                EditText et_taxa_valor_servico = (EditText) taxa.findViewById(R.id.et_taxa_valor_servico);
+
+                //pegando os valores do campo
+                int acima_cem = rb_acima_cem.isChecked() ? 1 : 0;
+                int tempo_tolerancia = Integer.parseInt(et_tolerancia.getText().toString());
+                int taxa_valor_servico = Integer.parseInt(et_taxa_valor_servico.getText().toString());
+
+                // ------------- CRIACAO DO OBJETOO
+                //devo criar uma classe RegraCancelamento e ir inserindo elas em uma lista?
+
+                Log.d("teste_funcao_get_regas", "acima de 100" + acima_cem);
+                Log.d("teste_funcao_get_regas", "tempo tolerancia " + tempo_tolerancia);
+                Log.d("teste_funcao_get_regas", "taxa " + taxa_valor_servico);
+
+                contador = contador+1;
+            }
+            else
+            {
+                Log.d("teste_funcao_get_regas", "getRegrasNegocio: nAO ACHOU");
+
+            }
+            numero_regra = numero_regra+1;
+        }
     }
 
 
@@ -294,8 +334,13 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 //        Log.d("TESTE_BTN_ADD_TAXA", "addNovoContainerPersonalizado: clicado");
 
         View view_novo_card_taxa = LayoutInflater.from(getApplicationContext()).inflate(R.layout.card_regra_negocio, null);
+
+        String tag_taxa = "taxa_" + numero_regra_geral;
+        view_novo_card_taxa.setTag(tag_taxa);
+
         linear_taxa_personalizada.addView(view_novo_card_taxa);
 
+        numero_regra_geral = numero_regra_geral +1;
     }
 
 

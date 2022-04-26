@@ -722,6 +722,7 @@
                             android:visibility="gone">
                             <LinearLayout
                                 android:id="@+id/taxa_personalizada"
+                                android:tag="taxa_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/formato_edit_text"
@@ -735,18 +736,21 @@
                                     android:text="Valores do Serviço:"/>
 
 
-                                <RadioButton
-                                    android:id="@+id/rb_abaixo_cem"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Abaixo de R$ 100,00" />
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <RadioButton
+                                        android:id="@+id/rb_abaixo_cem"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Abaixo de R$ 100,00" />
 
-                                <RadioButton
-                                    android:id="@+id/rb_acima_cem"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Acima de R$ 100,00" />
-
+                                    <RadioButton
+                                        android:id="@+id/rb_acima_cem"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Acima de R$ 100,00" />
+                                </RadioGroup>
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
