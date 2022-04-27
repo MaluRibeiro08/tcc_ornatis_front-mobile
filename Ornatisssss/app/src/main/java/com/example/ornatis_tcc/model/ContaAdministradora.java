@@ -1,13 +1,10 @@
 package com.example.ornatis_tcc.model;
 
-import android.provider.ContactsContract;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.TimeoutException;
 
 public class ContaAdministradora {
 
@@ -71,9 +68,9 @@ public class ContaAdministradora {
     @Expose
     private String rua;
 
-    @SerializedName("numero")
+    @SerializedName("numero_rua")
     @Expose
-    private String numero;
+    private String numero_rua;
 
     @SerializedName("complemento")
     @Expose
@@ -84,17 +81,26 @@ public class ContaAdministradora {
     private int id_cidade;
 
     //CONFERIR O NOME, SE TA "UF" MESMO
-    @SerializedName("uf")
-    @Expose
-    private String uf;
+//    @SerializedName("uf")
+//    @Expose
+//    private String uf;
 
 
     //RECEBIMENTO
-    @SerializedName("dados_recebimento")
+    @SerializedName("dados_formas_pagamento")
     @Expose
-    private ArrayList dados_recebimento;
+    private ArrayList dados_formas_pagamento;
+
+    @SerializedName("observacoes_pagamento")
+    @Expose
+    private String observacoes_pagamento;
 
     //REGRAS DE NEGÓCIO
+
+    @SerializedName("taxa_unica_cancelamento")
+    @Expose
+    private Integer taxa_unica_cancelamento;
+
     @SerializedName("dados_taxa_cancelamento")
     @Expose
     private ArrayList dados_taxa_cancelamento;
@@ -136,12 +142,15 @@ public class ContaAdministradora {
                                String imagem_perfil, String biografia,
                                int id_administrador, String nome_adm, Date data_nascimento,
                                String cpf, String foto_perfil,
-                               String cep, String bairro, String rua, String numero,
+                               String cep, String bairro, String rua, String numero_rua,
                                String complemento, int id_cidade, String uf, ArrayList dados_recebimento,
                                ArrayList dados_taxa_cancelamento, ArrayList dados_funcionamento,
                                int intervalo_tempo_padrao_servico, String nome_usuario_instagram,
                                String link_facebook,
-                               String email_adm, String senha_adm) {
+                               String email_adm, String senha_adm,
+                               int taxa_unica_cancelamento,
+                               String observacoes_pagamento)
+    {
         this.id_empresa = id_empresa;
         this.nome_fantasia = nome_fantasia;
         this.cnpj = cnpj;
@@ -156,11 +165,13 @@ public class ContaAdministradora {
         this.cep = cep;
         this.bairro = bairro;
         this.rua = rua;
-        this.numero = numero;
+        this.numero_rua = numero_rua;
         this.complemento = complemento;
         this.id_cidade = id_cidade;
-        this.uf = uf;
-        this.dados_recebimento = dados_recebimento;
+//        this.uf = uf;
+        this.observacoes_pagamento = observacoes_pagamento;
+        this.dados_formas_pagamento = dados_recebimento;
+        this.taxa_unica_cancelamento = taxa_unica_cancelamento;
         this.dados_taxa_cancelamento = dados_taxa_cancelamento;
         this.dados_funcionamento = dados_funcionamento;
         this.intervalo_tempo_padrao_servico = intervalo_tempo_padrao_servico;
@@ -282,12 +293,12 @@ public class ContaAdministradora {
         this.rua = rua;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNumero_rua() {
+        return numero_rua;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNumero_rua(String numero_rua) {
+        this.numero_rua = numero_rua;
     }
 
     public String getComplemento() {
@@ -306,20 +317,20 @@ public class ContaAdministradora {
         this.id_cidade = id_cidade;
     }
 
-    public String getUf() {
-        return uf;
+//    public String getUf() {
+//        return uf;
+//    }
+//
+//    public void setUf(String uf) {
+//        this.uf = uf;
+//    }
+
+    public ArrayList getDados_formas_pagamento() {
+        return dados_formas_pagamento;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
-    public ArrayList getDados_recebimento() {
-        return dados_recebimento;
-    }
-
-    public void setDados_recebimento(ArrayList dados_recebimento) {
-        this.dados_recebimento = dados_recebimento;
+    public void setDados_formas_pagamento(ArrayList dados_formas_pagamento) {
+        this.dados_formas_pagamento = dados_formas_pagamento;
     }
 
     public ArrayList getDados_taxa_cancelamento() {
@@ -376,6 +387,22 @@ public class ContaAdministradora {
 
     public void setSenha_adm(String senha_adm) {
         this.senha_adm = senha_adm;
+    }
+
+    public int getTaxa_unica_cancelamento() {
+        return taxa_unica_cancelamento;
+    }
+
+    public void setTaxa_unica_cancelamento(Integer taxa_unica_cancelamento) {
+        this.taxa_unica_cancelamento = taxa_unica_cancelamento;
+    }
+
+    public String getObservacoes_pagamento() {
+        return observacoes_pagamento;
+    }
+
+    public void setObservacoes_pagamento(String observacoes_pagamento) {
+        this.observacoes_pagamento = observacoes_pagamento;
     }
 }
 

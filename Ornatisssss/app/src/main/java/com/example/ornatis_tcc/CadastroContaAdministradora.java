@@ -18,10 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.model.RegraCancelamento;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +32,9 @@ import retrofit2.Response;
 public class CadastroContaAdministradora extends AppCompatActivity {
 
     RouterInterface routerInterface;
+
+    private int id_empresa = 1;
+    private String id_cidade = "3510609";
     private ImageView menu_hambuguer;
     private LinearLayout container1;
     private LinearLayout container2;
@@ -215,38 +220,56 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
         //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
-//            ContaAdministradora contaAdministradora = new ContaAdministradora();
+//            getFormasPagamento();
+            ContaAdministradora contaAdministradora = new ContaAdministradora();
 //
-//            contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
-//            contaAdministradora.setCnpj(et_cnpj.getText().toString());
-//            contaAdministradora.setTelefone(et_contato.getText().toString());
-////            contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
-//            contaAdministradora.setBiografia(et_biografia.getText().toString());
+//            //DADOS DA EMPRESA
+//                contaAdministradora.setId_empresa(id_empresa);
+//                contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
+//                contaAdministradora.setCnpj(et_cnpj.getText().toString());
+//                contaAdministradora.setTelefone(et_contato.getText().toString());
+//                //contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
+//                contaAdministradora.setBiografia(et_biografia.getText().toString());
 //
-//            contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-//            contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
-//            contaAdministradora.setCpf(et_cpf.getText().toString());
+//            //PERFIL ADM
+//                contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
+//                contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
+//                contaAdministradora.setCpf(et_cpf.getText().toString());
+//                contaAdministradora.setEmail_adm(et_email.getText().toString());
+//                contaAdministradora.setSenha_adm(et_senha.getText().toString());
+//
+//            //DADOS DE LOCALIZAÇÃO
+//                contaAdministradora.setCep(et_cep.getText().toString());
+//                contaAdministradora.setBairro(et_bairro.getText().toString());
+//                contaAdministradora.setRua(et_rua.getText().toString());
+//                contaAdministradora.setNumero_rua(et_numero.getText().toString());
+//                contaAdministradora.setComplemento(et_complemento.getText().toString());
+//                contaAdministradora.setId_cidade(Integer.parseInt(id_cidade));
+//
+//            //DADOS DE RECEBIMENTo
+                contaAdministradora.setDados_formas_pagamento(getFormasPagamento());
+//                contaAdministradora.setObservacoes_pagamento(et_observacoes.getText().toString());
 //
 //
-//            contaAdministradora.setCep(et_cep.getText().toString());
-//            contaAdministradora.setBairro(et_bairro.getText().toString());
-//            contaAdministradora.setRua(et_rua.getText().toString());
-//            contaAdministradora.setNumero(et_numero.getText().toString());
-//            contaAdministradora.setComplemento(et_complemento.getText().toString());
-////          contaAdministradora.setId_cidade(et_cidade.getText().toString());
-//            contaAdministradora.setNome_adm(et_uf.getText().toString());
-
-                getRegrasNegocio();
-//            contaAdministradora.setDados_recebimento(cb_tipo_dinheiro.getText().toString());
-//            contaAdministradora.setDados_recebimento(cb_cartao_credito.getText().toString());
-//            contaAdministradora.setDados_recebimento(cb_cartao_debito.getText().toString());
-//            contaAdministradora.setDados_recebimento(cb_pix.getText().toString());
-//            contaAdministradora.setDados_recebimento(cb_via_app.getText().toString());
-//            contaAdministradora.setDados_recebimento(et_observacoes.getText().toString());
-
-
-            //DADOS RECEBIMENTO?
-            //chamar função
+//            //DADOS REGRAS DE NEGÓCIO
+//                getTaxasCancelamento();
+//                if(rb_cancelamento_nao.isChecked() == true)
+//                {
+//                    contaAdministradora.setTaxa_unica_cancelamento(0);
+//                }
+//                else
+//                {
+//                    if(rb_taxa_unica.isChecked() == true)
+//                    {
+//                        int valor_taxa = Integer.parseInt(et_taxa_unica.getText().toString());
+//                        contaAdministradora.setTaxa_unica_cancelamento(valor_taxa);
+//                    }
+//                    else
+//                    {
+//                        contaAdministradora.setTaxa_unica_cancelamento(null);
+//                        contaAdministradora.setDados_taxa_cancelamento(getTaxasCancelamento());
+//                    }
+//                }
 
 
 
@@ -255,8 +278,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
 
-//            contaAdministradora.setEmail_adm(et_email.getText().toString());
-//            contaAdministradora.setSenha_adm(et_senha.getText().toString());
+
 
         });
 
@@ -282,12 +304,38 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
     }
 
-    private void getRegrasNegocio()
+    private ArrayList getFormasPagamento()
+    {
+        int id_forma_pagamento = 1;
+        ArrayList<Integer> arr_ids_formas_aceitas = new ArrayList<>();
+
+        while (id_forma_pagamento < 6)
+        {
+            LinearLayout linear_formas_pagamento = findViewById(R.id.linear_formas_pagamento);
+            String tag = "cb_forma_pagamento_" + id_forma_pagamento;
+            Log.d("teste_funcao_get_formas_pagamento", "getFormasPagamento: " + tag);
+
+            CheckBox cb_forma_pagamento = linear_formas_pagamento.findViewWithTag(tag);
+
+            if (cb_forma_pagamento.isChecked()==true)
+            {
+                arr_ids_formas_aceitas.add(id_forma_pagamento);
+            }
+
+            id_forma_pagamento = id_forma_pagamento+1;
+        }
+
+        Log.d("teste_funcao_get_formas_pagamento", String.valueOf(arr_ids_formas_aceitas.size()));
+        return arr_ids_formas_aceitas;
+    }
+
+    private ArrayList getTaxasCancelamento()
     {
         Log.d("teste_funcao_get_regas", "getRegrasNegocio: GETTTT");
         int quantidade_taxas = linear_taxa_personalizada.getChildCount();
         int contador = 1;
         int numero_regra = 1;
+        ArrayList<RegraCancelamento> lista_regras_cancelamento = new ArrayList<>();
 
         while (contador <= quantidade_taxas)
         {
@@ -307,16 +355,22 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
                 //pegando os valores do campo
                 int acima_cem = rb_acima_cem.isChecked() ? 1 : 0;
-                int tempo_tolerancia = Integer.parseInt(et_tolerancia.getText().toString());
-                int taxa_valor_servico = Integer.parseInt(et_taxa_valor_servico.getText().toString());
+                int horas_tolerancia = Integer.parseInt(et_tolerancia.getText().toString());
+                int porcentagem_cobrada = Integer.parseInt(et_taxa_valor_servico.getText().toString());
 
                 // ------------- CRIACAO DO OBJETOO
                 //devo criar uma classe RegraCancelamento e ir inserindo elas em uma lista?
 
-                Log.d("teste_funcao_get_regas", "acima de 100" + acima_cem);
-                Log.d("teste_funcao_get_regas", "tempo tolerancia " + tempo_tolerancia);
-                Log.d("teste_funcao_get_regas", "taxa " + taxa_valor_servico);
+                RegraCancelamento regraCancelamento = new RegraCancelamento();
+                regraCancelamento.setAcima_cem(acima_cem);
+                regraCancelamento.setHoras_tolerancia(horas_tolerancia);
+                regraCancelamento.setPorcentagem_sobre_valor_servico(porcentagem_cobrada);
 
+                Log.d("teste_funcao_get_regas", "acima de 100" + acima_cem);
+                Log.d("teste_funcao_get_regas", "tempo tolerancia " + horas_tolerancia);
+                Log.d("teste_funcao_get_regas", "taxa " + porcentagem_cobrada);
+
+                lista_regras_cancelamento.add(regraCancelamento);
                 contador = contador+1;
             }
             else
@@ -326,6 +380,9 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             }
             numero_regra = numero_regra+1;
         }
+        Log.d("teste_funcao_get_regas", "quantidade de itens " + String.valueOf(lista_regras_cancelamento.size()));
+
+        return lista_regras_cancelamento;
     }
 
 
