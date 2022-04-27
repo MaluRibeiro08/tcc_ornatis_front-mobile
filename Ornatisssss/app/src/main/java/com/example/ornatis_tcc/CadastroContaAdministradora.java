@@ -18,10 +18,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.model.DiaUtil;
 import com.example.ornatis_tcc.model.RegraCancelamento;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -42,9 +46,12 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     private LinearLayout container4;
     private LinearLayout container5;
     private LinearLayout container6;
+    private LinearLayout linear_intervalo_padrao;
     private LinearLayout container7;
     private TextView arrow_back;
     private TextView arrow_forward;
+    private LinearLayout linear_cb_dia_semana;
+    private LinearLayout linear_horarios;
     //
     private Button btn_cadastrar;
 
@@ -97,8 +104,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 //    RadioButton rb_cancelamento_nao;
 //    RadioButton rb_taxa_unica;
 //    RadioButton rb_personalizada;
-//    RadioButton rb_abaixo_cem;
-//    RadioButton rb_acima_cem;
+    RadioButton rb_sim_intervalo_padrao_servicos;
+    RadioButton rb_nao_intervalo_padrao_servicos;
 
     //funcionamento
 //    CheckBox cb_domingo;
@@ -130,6 +137,9 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         container5 = findViewById(R.id.container5);
         container6 = findViewById(R.id.container6);
         container7 = findViewById(R.id.container7);
+        linear_intervalo_padrao = findViewById(R.id.linear_intervalo_padrao);
+        linear_cb_dia_semana = findViewById(R.id.linear_cb_dia_semana);
+        linear_horarios = findViewById(R.id.linear_horarios);
 
         arrow_back = findViewById(R.id.arrow_back);
         arrow_forward = findViewById(R.id.arrow_forward);
@@ -140,6 +150,9 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         rb_cancelamento_nao = findViewById(R.id.rb_cancelamento_nao);
         rb_taxa_unica = findViewById(R.id.rb_taxa_unica);
         rb_personalizada = findViewById(R.id.rb_personalizada);
+
+        rb_sim_intervalo_padrao_servicos = findViewById(R.id.rb_sim_intervalo_padrao_servicos);
+        rb_nao_intervalo_padrao_servicos = findViewById(R.id.rb_nao_intervalo_padrao_servicos);
 
         adicionar_novo_conteiner_taxa_personalizada = findViewById(R.id.adicionar_novo_conteiner_taxa_personalizada);
         conteiner_radiobutton_sim = findViewById(R.id.conteiner_radiobutton_sim);
@@ -156,6 +169,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         et_nome_do_adm = findViewById(R.id.et_nome_do_adm);
         et_data_nascimento = findViewById(R.id.et_data_nascimento);
         et_cpf = findViewById(R.id.et_cpf);
+        et_email = findViewById(R.id.et_email);
+        et_senha = findViewById(R.id.et_senha);
 
         et_cep = findViewById(R.id.et_cep);
         et_bairro = findViewById(R.id.et_bairro);
@@ -170,7 +185,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 //        cb_cartao_debito = findViewById(R.id.cb_cartao_debito);
 //        cb_pix = findViewById(R.id.cb_pix);
 //        cb_via_app = findViewById(R.id.cb_via_app);
-//        et_observacoes = findViewById(R.id.et_observacoes);
+        et_observacoes = findViewById(R.id.et_observacoes);
 //
 //
 //        rb_cancelamento_sim = findViewById(R.id.rb_cancelamento_sim);
@@ -220,61 +235,83 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
         //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
-//            getFormasPagamento();
             ContaAdministradora contaAdministradora = new ContaAdministradora();
-//
-//            //DADOS DA EMPRESA
-//                contaAdministradora.setId_empresa(id_empresa);
-//                contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
-//                contaAdministradora.setCnpj(et_cnpj.getText().toString());
-//                contaAdministradora.setTelefone(et_contato.getText().toString());
-//                //contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
-//                contaAdministradora.setBiografia(et_biografia.getText().toString());
-//
-//            //PERFIL ADM
-//                contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-//                contaAdministradora.setData_nascimento((Date) et_data_nascimento.getText());
-//                contaAdministradora.setCpf(et_cpf.getText().toString());
-//                contaAdministradora.setEmail_adm(et_email.getText().toString());
-//                contaAdministradora.setSenha_adm(et_senha.getText().toString());
-//
-//            //DADOS DE LOCALIZAÇÃO
-//                contaAdministradora.setCep(et_cep.getText().toString());
-//                contaAdministradora.setBairro(et_bairro.getText().toString());
-//                contaAdministradora.setRua(et_rua.getText().toString());
-//                contaAdministradora.setNumero_rua(et_numero.getText().toString());
-//                contaAdministradora.setComplemento(et_complemento.getText().toString());
-//                contaAdministradora.setId_cidade(Integer.parseInt(id_cidade));
-//
-//            //DADOS DE RECEBIMENTo
+
+            //DADOS DA EMPRESA
+                contaAdministradora.setId_empresa(id_empresa);
+                contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
+                contaAdministradora.setCnpj(et_cnpj.getText().toString());
+                contaAdministradora.setTelefone(et_contato.getText().toString());
+                //contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
+                contaAdministradora.setBiografia(et_biografia.getText().toString());
+
+            //PERFIL ADM
+                contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
+            try {
+                contaAdministradora.setData_nascimento(SimpleDateFormat.getDateInstance().parse(et_data_nascimento.getText().toString()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            contaAdministradora.setCpf(et_cpf.getText().toString());
+                contaAdministradora.setEmail_adm(et_email.getText().toString());
+                contaAdministradora.setSenha_adm(et_senha.getText().toString());
+
+            //DADOS DE LOCALIZAÇÃO
+                contaAdministradora.setCep(et_cep.getText().toString());
+                contaAdministradora.setBairro(et_bairro.getText().toString());
+                contaAdministradora.setRua(et_rua.getText().toString());
+                contaAdministradora.setNumero_rua(et_numero.getText().toString());
+                contaAdministradora.setComplemento(et_complemento.getText().toString());
+                contaAdministradora.setId_cidade(Integer.parseInt(id_cidade));
+
+            //DADOS DE RECEBIMENTO
+                //getFormasPagamento();
                 contaAdministradora.setDados_formas_pagamento(getFormasPagamento());
-//                contaAdministradora.setObservacoes_pagamento(et_observacoes.getText().toString());
-//
-//
-//            //DADOS REGRAS DE NEGÓCIO
-//                getTaxasCancelamento();
-//                if(rb_cancelamento_nao.isChecked() == true)
-//                {
-//                    contaAdministradora.setTaxa_unica_cancelamento(0);
-//                }
-//                else
-//                {
-//                    if(rb_taxa_unica.isChecked() == true)
-//                    {
-//                        int valor_taxa = Integer.parseInt(et_taxa_unica.getText().toString());
-//                        contaAdministradora.setTaxa_unica_cancelamento(valor_taxa);
-//                    }
-//                    else
-//                    {
-//                        contaAdministradora.setTaxa_unica_cancelamento(null);
-//                        contaAdministradora.setDados_taxa_cancelamento(getTaxasCancelamento());
-//                    }
-//                }
+                contaAdministradora.setObservacoes_pagamento(et_observacoes.getText().toString());
 
 
+            //DADOS REGRAS DE NEGÓCIO
+                //getTaxasCancelamento();
+                if(rb_cancelamento_nao.isChecked() == true)
+                {
+                    contaAdministradora.setTaxa_unica_cancelamento(0);
+                }
+                else
+                {
+                    if(rb_taxa_unica.isChecked() == true)
+                    {
+                        int valor_taxa = Integer.parseInt(et_taxa_unica.getText().toString());
+                        contaAdministradora.setTaxa_unica_cancelamento(valor_taxa);
+                    }
+                    else
+                    {
+                        contaAdministradora.setTaxa_unica_cancelamento(null);
+                        contaAdministradora.setDados_taxa_cancelamento(getTaxasCancelamento());
+                    }
+                }
 
-            //FUNCIONAMENTO?
-            //chamar função
+            //FUNCIONAMENTO
+                if(rb_sim_intervalo_padrao_servicos.isChecked() == true)
+                {
+                    EditText et_minutos_intervalo = findViewById(R.id.et_minutos_intervalo);
+                    int taxa = Integer.parseInt(et_minutos_intervalo.getText().toString());
+                    contaAdministradora.setIntervalo_tempo_padrao_entre_servicos(taxa);
+
+                    Log.d("teste_funcao_get_fucnionamento", "taxa:  "+ taxa);
+                }
+                else
+                {
+                    contaAdministradora.setIntervalo_tempo_padrao_entre_servicos(0);
+
+                    Log.d("teste_funcao_get_fucnionamento", "taxa:  "+ 0);
+                }
+
+                contaAdministradora.setDados_funcionamento(getFuncionamento());
+
+            ArrayList dadosFuncionamento = getFuncionamento();
+                DiaUtil teste = (DiaUtil) dadosFuncionamento.get(0);
+            Log.d("teste_funcao_get_fucnionamento", "onCreate: " + teste.getHora_inicio());
+            //getFuncionamento();
 
 
 
@@ -302,6 +339,62 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
 
+    }
+
+    private ArrayList getFuncionamento()
+    {
+        int dia_da_semana_contador = 1;
+        ArrayList<DiaUtil> arr_dados_funcionamento = new ArrayList();
+
+
+        while (dia_da_semana_contador <=7)
+        {
+            String tag = "cb_dia_semana_"+ dia_da_semana_contador;
+            CheckBox cb_dia_semana = linear_cb_dia_semana.findViewWithTag(tag);
+
+
+            if (cb_dia_semana.isChecked() == true)
+            {
+                Log.d("teste_funcao_get_fucnionamento", "Tem horário pro dia: " + dia_da_semana_contador);
+
+                String tag_linear_especifico = "linear_horarios_dia_" + dia_da_semana_contador;
+                LinearLayout linear_horarios_dia = linear_horarios.findViewWithTag(tag_linear_especifico);
+
+                EditText edit1_hora_incio = linear_horarios_dia.findViewWithTag("edit1_hora_inicio");
+                EditText edit2_hora_incio = linear_horarios_dia.findViewWithTag("edit2_hora_inicio");
+//                EditText edit2_hora_incio = linear_horarios_dia.findViewWithTag(R.id.edit2_hora_incio);
+
+                if (edit1_hora_incio.getText().toString() != null && edit1_hora_incio.getText().toString() != "")
+                {
+                    EditText edit1_hora_termino = linear_horarios_dia.findViewWithTag("edit1_hora_termino");
+                    DiaUtil diaUtil = new DiaUtil(
+                            dia_da_semana_contador,
+                            LocalTime.parse(edit1_hora_incio.getText().toString()),
+                            LocalTime.parse(edit1_hora_termino.getText().toString())
+                    );
+
+                    Log.d("teste_funcao_get_fucnionamento", "Incio: " + edit1_hora_incio.getText().toString());
+                    Log.d("teste_funcao_get_fucnionamento", "Termino: " + edit1_hora_termino.getText().toString());
+
+                    arr_dados_funcionamento.add(diaUtil);
+                }
+//                if (edit2_hora_incio.getText().toString() != null && edit1_hora_incio.getText().toString() != "")
+//                {
+//                    EditText edit2_hora_termino = linear_horarios_dia.findViewWithTag("edit2_hora_termino");
+//                    DiaUtil diaUtil = new DiaUtil(
+//                            dia_da_semana_contador,
+//                            LocalTime.parse(edit2_hora_incio.getText().toString()),
+//                            LocalTime.parse(edit2_hora_termino.getText().toString())
+//                    );
+//
+//                    arr_dados_funcionamento.add(diaUtil);
+//                }
+            }
+            dia_da_semana_contador = dia_da_semana_contador+1;
+        }
+
+
+        return arr_dados_funcionamento;
     }
 
     private ArrayList getFormasPagamento()
@@ -442,6 +535,15 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                 linear_taxa_personalizada.setVisibility(View.VISIBLE);
                 adicionar_novo_conteiner_taxa_personalizada.setVisibility(View.VISIBLE);
                 break;
+
+            case R.id.rb_sim_intervalo_padrao_servicos:
+                if (checked)
+                    linear_intervalo_padrao.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.rb_nao_intervalo_padrao_servicos:
+                if (checked)
+                    linear_intervalo_padrao.setVisibility(View.GONE);
         }
 
     }
