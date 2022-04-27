@@ -908,12 +908,14 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
+                            android:id="@+id/linear_cb_dia_semana"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <CheckBox
                                 android:id="@+id/cb_domingo"
+                                android:tag="cb_dia_semana_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -930,6 +932,7 @@
 
                             <CheckBox
                                 android:id="@+id/cb_segunda"
+                                android:tag="cb_dia_semana_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -938,6 +941,7 @@
 
                             <CheckBox
                                 android:id="@+id/cb_terca"
+                                android:tag="cb_dia_semana_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -946,6 +950,7 @@
 
                             <CheckBox
                                 android:id="@+id/cb_quarta"
+                                android:tag="cb_dia_semana_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -954,6 +959,7 @@
 
                             <CheckBox
                                 android:id="@+id/cb_quinta"
+                                android:tag="cb_dia_semana_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -962,6 +968,7 @@
 
                             <CheckBox
                                 android:id="@+id/cb_sexta"
+                                android:tag="cb_dia_semana_6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -970,6 +977,7 @@
 
                             <CheckBox
                                 android:id="@+id/cb_sabado"
+                                android:tag="cb_dia_semana_7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
@@ -980,17 +988,20 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/linear_horarios"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_marginTop="10dp">
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1001,6 +1012,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1017,12 +1029,14 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="15dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1033,6 +1047,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1049,12 +1064,14 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="15dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1065,6 +1082,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1080,12 +1098,14 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="15dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1096,6 +1116,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1111,12 +1132,14 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="15dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1127,6 +1150,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1142,12 +1166,14 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="15dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1158,6 +1184,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1173,12 +1200,14 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:tag="linear_horarios_dia_7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="15dp">
 
                                 <EditText
+                                    android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"/>
@@ -1189,6 +1218,7 @@
                                     android:textColor="@color/cinza_escuro"
                                     android:layout_marginStart="10dp"/>
                                 <EditText
+                                    android:tag="edit1_hora_termino"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
@@ -1220,38 +1250,49 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:id="@+id/rb_sim"
+                            android:id="@+id/rb_sim_intervalo_padrao_servicos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sim"/>
+                            android:text="Sim"
+                            android:onClick="verificandoRadioButton"/>
 
                         <RadioButton
-                            android:id="@+id/rb_nao"
+                            android:id="@+id/rb_nao_intervalo_padrao_servicos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="40dp"
-                            android:text="Não" />
+                            android:text="Não"
+                            android:onClick="verificandoRadioButton"/>
 
                     </RadioGroup>
 
-
-                    <TextView
-                        style="@style/textView"
+                    <LinearLayout
+                        android:id="@+id/linear_intervalo_padrao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quantos minutos?" />
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
-                    <EditText
-                        android:id="@+id/et_minutos_intervalo"
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/formato_edit_text"
-                        android:hint="Ex.: (10 min)"
-                        android:textSize="10dp"
-                        android:padding="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="40dp"
-                        style="@style/editText"/>
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Quantos minutos?" />
+
+                        <EditText
+                            android:id="@+id/et_minutos_intervalo"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/formato_edit_text"
+                            android:hint="Ex.: (10 min)"
+                            android:textSize="10dp"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="40dp"
+                            style="@style/editText"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
