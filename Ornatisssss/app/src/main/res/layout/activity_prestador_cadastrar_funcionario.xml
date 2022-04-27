@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@drawable/formato_retangulo_curvado_cinza"
-        android:text="@string/novoFuncionario"
+        android:text="@string/funcionario"
         style="@style/textViewTituloCadastroFuncionario"/>
 
 
@@ -34,7 +34,7 @@
                 android:layout_marginTop="30dp">
 
                 <ImageView
-                    android:id="@+id/iv_foto_perfil_estabelecimento"
+                    android:id="@+id/iv_foto_perfil_funcionario"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
@@ -423,11 +423,13 @@
                     android:layout_marginBottom="120dp">
 
                     <Button
+                        android:id="@+id/btn_cancelar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cancelar"/>
 
                     <Button
+                        android:id="@+id/btn_cadastrar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Salvar"

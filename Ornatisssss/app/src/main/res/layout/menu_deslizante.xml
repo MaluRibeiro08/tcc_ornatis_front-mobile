@@ -2,22 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
     android:background="@drawable/formato_retangulo_verde"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/iv_notificacao"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_notifications_24"
+        app:tint="@color/cinza_clarinho" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="139dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="120dp"
@@ -25,7 +33,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="0dp"
                 app:cardBackgroundColor="#ff0000"
                 app:cardCornerRadius="60dp">
 
@@ -44,46 +52,51 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:text="Meu Perfil"
                     android:textColor="@color/white"
                     android:textSize="24dp"
                     android:textStyle="bold" />
 
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/iv_configuracoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
+                    android:src="@drawable/ic_settings_24"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    app:tint="@color/cinza_clarinho" />
 
-                    <ImageView
-                        android:id="@+id/iv_notificacoes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:src="@drawable/ic_estabelecimento_24" />
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp">-->
 
-                    <ImageView
-                        android:id="@+id/iv_engrenagem"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:src="@drawable/ic_estabelecimento_24" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/iv_notificacoes"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:src="@drawable/ic_notifications_24"-->
+<!--                        app:tint="@color/cinza_clarinho" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
             </LinearLayout>
         </LinearLayout>
+
+
+
     </LinearLayout>
 
-    <ImageView
+        <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
+            android:layout_marginTop="20dp"
         android:baselineAligned="false"
         android:src="@drawable/ic_line_165" />
 
@@ -96,7 +109,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="900dp">
 
             <TextView
                 android:id="@+id/tv_historico"

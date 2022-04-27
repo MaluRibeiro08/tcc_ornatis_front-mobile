@@ -1,6 +1,7 @@
 package com.example.ornatis_tcc.remote;
 
 import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.model.Funcionarios;
 
 import java.util.List;
 
@@ -11,12 +12,16 @@ import retrofit2.http.Body;
 
 public interface RouterInterface {
 
-    //INSERÇÃO
+    //INSERÇÃO DE CONTA
     @POST("/tcc_ornatis_back-end/api-ornatis/rotas/contaAdministradora/")//rota da req e o verbo http
     Call<ContaAdministradora> addEmpresa(@Body ContaAdministradora objUsuario);
 
-    //LISTAGEM
+    //LISTAGEM DE CONTA
     @GET("/tcc_ornatis_back-end/api-ornatis/rotas/????/")
     Call<List<ContaAdministradora>>getContaAdministradora();
+
+    //INSERÇÃO FUNCIONÁRIO
+    @POST("/tcc_ornatis_back-end/api-ornatis/rotas/contaAdministradora/")
+    Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
 
 }

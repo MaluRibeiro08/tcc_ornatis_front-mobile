@@ -46,4 +46,5 @@
     <string name="estatistica">Estatística</string>
     <string name="sair">SAIR</string>
     <string name="ListaDeFuncionario">Lista de funcionários</string>
+    <string name="funcionario">Funcionário</string>
 </resources>
