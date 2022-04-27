@@ -514,6 +514,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/linear_formas_pagamento"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="45dp"
@@ -533,6 +534,7 @@
 
                     <CheckBox
                         android:id="@+id/cb_tipo_dinheiro"
+                        android:tag="cb_forma_pagamento_3"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:text="@string/dinheiro"
@@ -541,6 +543,7 @@
 
                     <CheckBox
                         android:id="@+id/cb_cartao_credito"
+                        android:tag="cb_forma_pagamento_1"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:text="@string/cartao_credito"
@@ -548,6 +551,7 @@
 
                     <CheckBox
                         android:id="@+id/cb_cartao_debito"
+                        android:tag="cb_forma_pagamento_2"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="@string/cartao_debito"
@@ -555,6 +559,7 @@
 
                     <CheckBox
                         android:id="@+id/cb_pix"
+                        android:tag="cb_forma_pagamento_5"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="@string/pix"
@@ -562,10 +567,13 @@
 
                     <CheckBox
                         android:id="@+id/cb_via_app"
+                        android:tag="cb_forma_pagamento_4"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="@string/via_app"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:checked="true"
+                        android:clickable="false"/>
 
 
                     <TextView
