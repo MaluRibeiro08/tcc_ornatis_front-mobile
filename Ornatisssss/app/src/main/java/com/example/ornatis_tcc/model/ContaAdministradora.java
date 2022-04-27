@@ -114,7 +114,7 @@ public class ContaAdministradora {
 
     @SerializedName("intervalo_tempo_padrao_servico")
     @Expose
-    private int intervalo_tempo_padrao_servico;
+    private int intervalo_tempo_padrao_entre_servicos;
 
     @SerializedName("nome_usuario_instagram")
     @Expose
@@ -145,7 +145,7 @@ public class ContaAdministradora {
                                String cep, String bairro, String rua, String numero_rua,
                                String complemento, int id_cidade, String uf, ArrayList dados_recebimento,
                                ArrayList dados_taxa_cancelamento, ArrayList dados_funcionamento,
-                               int intervalo_tempo_padrao_servico, String nome_usuario_instagram,
+                               int intervalo_tempo_padrao_entre_servicos, String nome_usuario_instagram,
                                String link_facebook,
                                String email_adm, String senha_adm,
                                int taxa_unica_cancelamento,
@@ -174,7 +174,7 @@ public class ContaAdministradora {
         this.taxa_unica_cancelamento = taxa_unica_cancelamento;
         this.dados_taxa_cancelamento = dados_taxa_cancelamento;
         this.dados_funcionamento = dados_funcionamento;
-        this.intervalo_tempo_padrao_servico = intervalo_tempo_padrao_servico;
+        this.intervalo_tempo_padrao_entre_servicos = intervalo_tempo_padrao_entre_servicos;
         this.nome_usuario_instagram = nome_usuario_instagram;
         this.link_facebook = link_facebook;
         this.email_adm = email_adm;
@@ -349,12 +349,12 @@ public class ContaAdministradora {
         this.dados_funcionamento = dados_funcionamento;
     }
 
-    public int getIntervalo_tempo_padrao_servico() {
-        return intervalo_tempo_padrao_servico;
+    public int getIntervalo_tempo_padrao_entre_servicos() {
+        return intervalo_tempo_padrao_entre_servicos;
     }
 
-    public void setIntervalo_tempo_padrao_servico(int intervalo_tempo_padrao_servico) {
-        this.intervalo_tempo_padrao_servico = intervalo_tempo_padrao_servico;
+    public void setIntervalo_tempo_padrao_entre_servicos(int intervalo_tempo_padrao_entre_servicos) {
+        this.intervalo_tempo_padrao_entre_servicos = intervalo_tempo_padrao_entre_servicos;
     }
 
     public String getNome_usuario_instagram() {
