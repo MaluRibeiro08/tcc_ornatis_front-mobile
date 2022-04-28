@@ -1,4 +1,4 @@
-package com.example.ornatis_tcc;
+package com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.model.DiaUtil;
 import com.example.ornatis_tcc.model.RegraCancelamento;
@@ -27,7 +28,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -206,7 +206,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
         //configurando router interface
-        routerInterface = APIUtil.getEmpresaInterface();
+//        routerInterface = APIUtil.getEmpresaInterface();
 
         //abrindo menu - NÃO DEU CERTO!!!
         menu_hambuguer.setOnClickListener(view -> {
@@ -315,11 +315,11 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
 
-
-
+//            routerInterface = APIUtil.getEmpresaInterface();
+//            addContaAdministradora(contaAdministradora);
         });
 
-//        addContaAdministradora(contaAdministradora);
+        ;
 
         //Indo para a próxima intent
 //            Intent homePrestador =
@@ -563,7 +563,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ContaAdministradora> call, Throwable t) {
-                        Toast.makeText(CadastroContaAdministradora.this, "Empresa ao cadastrar livro", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
                         Log.d("ERRO_API=> ", t.getMessage());
                     }
                 });

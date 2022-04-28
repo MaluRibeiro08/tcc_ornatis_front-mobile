@@ -1,8 +1,10 @@
-package com.example.ornatis_tcc;
+package com.example.ornatis_tcc.UI.conta_administradora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.ornatis_tcc.R;
 
 public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 

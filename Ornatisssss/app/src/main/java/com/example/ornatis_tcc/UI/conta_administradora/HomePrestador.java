@@ -1,4 +1,4 @@
-package com.example.ornatis_tcc;
+package com.example.ornatis_tcc.UI.conta_administradora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta;
+import com.example.ornatis_tcc.R;
 
 public class HomePrestador extends AppCompatActivity {
 

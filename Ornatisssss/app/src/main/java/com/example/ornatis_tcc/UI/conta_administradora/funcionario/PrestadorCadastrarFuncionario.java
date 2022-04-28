@@ -1,20 +1,15 @@
-package com.example.ornatis_tcc;
+package com.example.ornatis_tcc.UI.conta_administradora.funcionario;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.model.Funcionarios;
 import com.example.ornatis_tcc.remote.RouterInterface;
 

@@ -11,14 +11,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ornatis_TCC">
+        android:theme="@style/Theme.Ornatis_TCC"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".PrestadorListagemFuncionarios"
+            android:name=".UI.conta_administradora.funcionario.PrestadorListagemFuncionarios"
             android:exported="true" /> <!-- <activity -->
         <!-- android:name=".PrestadorCadastrarFuncionario" -->
         <!-- android:exported="true" /> -->
         <activity
-            android:name=".HomePrestador"
+            android:name=".UI.conta_administradora.manutencao_conta.CadastroContaAdministradora"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +30,7 @@
         <!-- android:name=".HomePrestador" -->
         <!-- android:exported="true" /> -->
         <activity
-            android:name=".PrestadorConfiguracaoConta"
+            android:name=".UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -1,4 +1,4 @@
-package com.example.ornatis_tcc;
+package com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
