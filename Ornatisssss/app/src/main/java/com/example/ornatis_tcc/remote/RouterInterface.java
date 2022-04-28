@@ -13,15 +13,15 @@ import retrofit2.http.Body;
 public interface RouterInterface {
 
     //INSERÇÃO DE CONTA
-    @POST("/tcc_ornatis_back-end/api-ornatis/rotas/contaAdministradora/")//rota da req e o verbo http
+    @POST("/tcc_ornatis_back-end/api-ornatis/rotas/adm/contaAdministradora/")//rota da req e o verbo http
     Call<ContaAdministradora> addEmpresa(@Body ContaAdministradora objUsuario);
 
     //LISTAGEM DE CONTA
-    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/????/")
+    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/???")
     Call<List<ContaAdministradora>>getContaAdministradora();
 
     //INSERÇÃO FUNCIONÁRIO
-    @POST("/tcc_ornatis_back-end/api-ornatis/rotas/contaAdministradora/")
+    @POST("/tcc_ornatis_back-end/api-ornatis/rotas/adm/contaAdministradora/")
     Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
 
 }
