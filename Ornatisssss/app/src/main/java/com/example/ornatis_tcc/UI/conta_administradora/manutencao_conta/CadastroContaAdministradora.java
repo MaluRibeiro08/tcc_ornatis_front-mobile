@@ -26,6 +26,7 @@ import com.example.ornatis_tcc.remote.RouterInterface;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -247,11 +248,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
             //PERFIL ADM
                 contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-            try {
-                contaAdministradora.setData_nascimento(SimpleDateFormat.getDateInstance().parse(et_data_nascimento.getText().toString()));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+                contaAdministradora.setData_nascimento(LocalDate.of(1999,10,10));
+//                contaAdministradora.setData_nascimento(SimpleDateFormat.getDateInstance().parse(et_data_nascimento.getText().toString()));
             contaAdministradora.setCpf(et_cpf.getText().toString());
                 contaAdministradora.setEmail_adm(et_email.getText().toString());
                 contaAdministradora.setSenha_adm(et_senha.getText().toString());
@@ -315,8 +313,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
 
-//            routerInterface = APIUtil.getEmpresaInterface();
-//            addContaAdministradora(contaAdministradora);
+            routerInterface = APIUtil.getEmpresaInterface();
+            addContaAdministradora(contaAdministradora);
         });
 
         ;
@@ -551,14 +549,62 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
     public void addContaAdministradora(ContaAdministradora contaAdministradora) {
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_fantasia());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCnpj());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getTelefone());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getImagem_perfil());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getBiografia());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_adm());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getData_nascimento().toString());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCpf());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCep());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getRua());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNumero_rua());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getComplemento());
+        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getId_cidade()));
+
+        //FORMAS PAGAMENTO
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_formas_pagamento().size()));
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", "forma pagamento - " + String.valueOf(contaAdministradora.getDados_formas_pagamento().get(1)));
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getObservacoes_pagamento());
+
+        //FUNCIONAMENTO
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_funcionamento().size()));
+            DiaUtil teste = (DiaUtil) contaAdministradora.getDados_funcionamento().get(1);
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste.getId_dia_semana()));
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_inicio().toString());
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_termino().toString());
+
+        //TAXAS CANCELAMENTO
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_taxa_cancelamento().size()));
+            RegraCancelamento teste_taxas = (RegraCancelamento) contaAdministradora.getDados_taxa_cancelamento().get(0);
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getAcima_cem()));
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getHoras_tolerancia()));
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getPorcentagem_sobre_valor_servico()));
+            //Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getTaxa_unica_cancelamento()));
+
+        //LOGIN
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getEmail_adm());
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getSenha_adm());
+
         Call<ContaAdministradora> call = routerInterface.addEmpresa(contaAdministradora);
 
         //EXECUÇÃO DA CHAMADA DA ROTA - ENVIO DA REQ
-        call.enqueue(
+        /*call.enqueue(
                 new Callback<ContaAdministradora>() {
                     @Override
                     public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
-                        Toast.makeText(CadastroContaAdministradora.this, "Empresa cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                        if (response.isSuccessful()) //categoria 200
+                        {
+                            Toast.makeText(CadastroContaAdministradora.this, "Empresa cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                            Log.d("DEBUG_ENVIO_DADOS", "Passou da categoria 200");
+
+                            Log.d("DEBUG_ENVIO_DADOS", String.valueOf(response.raw()));
+                        }
+                        else
+                        {
+                            Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
@@ -566,7 +612,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                         Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
                         Log.d("ERRO_API=> ", t.getMessage());
                     }
-                });
+                });*/
     }
 
 
