@@ -47,4 +47,7 @@
     <string name="sair">SAIR</string>
     <string name="ListaDeFuncionario">Lista de funcionários</string>
     <string name="funcionario">Funcionário</string>
+    <string name="inicio">Início</string>
+    <string name="servico">Serviços</string>
+    <string name="feedbacks">Feedbacks</string>
 </resources>

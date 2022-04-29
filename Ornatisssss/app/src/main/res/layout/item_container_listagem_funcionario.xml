@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:orientation="horizontal"
         android:background="@drawable/formato_retangulo_arredondado_funcionario">
 
@@ -40,32 +40,40 @@
                 android:id="@+id/tv_nome_do_funcionario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome da pessoa"
+                android:text="José da Silva"
                 android:layout_gravity="center"
                 android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_profissao"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="10dp">
+                android:text="Manicure"
+                android:layout_gravity="center"
+                android:textSize="14sp" />
 
-                <ImageView
-                    android:id="@+id/editar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_edit"
-                    android:layout_marginEnd="20dp"/>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="10dp">-->
 
-                <ImageView
-                    android:id="@+id/excluir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_delete"
-                    android:layout_marginStart="10dp"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/editar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_edit"-->
+<!--                    android:layout_marginEnd="20dp"/>-->
 
-            </LinearLayout>
+<!--                <ImageView-->
+<!--                    android:id="@+id/excluir"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_delete"-->
+<!--                    android:layout_marginStart="10dp"/>-->
+
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 
