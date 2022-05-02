@@ -115,7 +115,7 @@
             android:id="@+id/tv_aba_servicos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/servico"
+            android:text="@string/servicos"
             android:layout_margin="10dp"/>
 
         <TextView

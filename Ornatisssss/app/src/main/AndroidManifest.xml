@@ -14,9 +14,6 @@
         android:theme="@style/Theme.Ornatis_TCC"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".TesteMenuBottomNavigation"
-            android:exported="true" />
-        <activity
             android:name=".UI.conta_administradora.servico.PrestadorCadastroServicos"
             android:exported="true" />
         <activity

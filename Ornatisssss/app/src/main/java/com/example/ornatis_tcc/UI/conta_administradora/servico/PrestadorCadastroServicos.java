@@ -11,6 +11,6 @@ public class PrestadorCadastroServicos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prestador_cadastro_servicos);
+        setContentView(R.layout.activity_prestador_cadastrar_servicos);
     }
 }

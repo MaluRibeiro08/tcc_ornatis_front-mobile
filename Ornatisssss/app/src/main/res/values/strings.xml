@@ -48,6 +48,9 @@
     <string name="ListaDeFuncionario">Lista de funcionários</string>
     <string name="funcionario">Funcionário</string>
     <string name="inicio">Início</string>
-    <string name="servico">Serviços</string>
     <string name="feedbacks">Feedbacks</string>
+    <string name="preco">Preço</string>
+    <string name="desconto">Desconto</string>
+    <string name="duracao">Duração</string>
+    <string name="publico_alvo">Público alvo</string>
 </resources>
