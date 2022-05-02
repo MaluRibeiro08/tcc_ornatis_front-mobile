@@ -53,4 +53,12 @@
     <string name="desconto">Desconto</string>
     <string name="duracao">Duração</string>
     <string name="publico_alvo">Público alvo</string>
+    <string name="detalhes">Detalhes</string>
+    <string name="local_atendimento">Local de atendimento</string>
+    <string name="estabelecimento">Estabelecimento</string>
+    <string name="domicilio">Domicílio</string>
+    <string name="servico_disponivel">Seviço ativo para uso?</string>
+    <string name="intervalo_entre_servico">Intervalo entre um serviço e outro</string>
+    <string name="categoria">Categoria</string>
+    <string name="parte_corpo">Parte do corpo</string>
 </resources>

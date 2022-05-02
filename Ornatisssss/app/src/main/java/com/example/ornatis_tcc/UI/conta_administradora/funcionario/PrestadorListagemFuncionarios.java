@@ -14,6 +14,8 @@ import com.example.ornatis_tcc.R;
 public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
     private TextView adicionando_novo_funcionario;
+    private ImageView iv_foto_perfil_funcionario;
+    private String tv_nome_do_funcionario, tv_profissao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

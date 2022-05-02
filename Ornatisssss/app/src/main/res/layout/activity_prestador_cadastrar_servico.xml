@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.conta_administradora.servico.PrestadorCadastroServico"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/formato_retangulo_curvado_cinza"
+        android:text="@string/servicos"
+        style="@style/textViewTituloCadastroFuncionario"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="130dp"
+            android:layout_marginEnd="45dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nome_do_funcionario"
+                style="@style/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nome" />
+
+            <EditText
+                android:id="@+id/et_nome_do_funcionario"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="30dp">
+
+                    <TextView
+                        android:id="@+id/tv_preco"
+                        style="@style/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/preco" />
+
+                    <EditText
+                        android:id="@+id/et_preco"
+                        style="@style/editText"
+                        android:background="@drawable/formato_edit_text"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:inputType="numberDecimal"
+                        android:hint="R$"
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="40dp">
+
+                    <TextView
+                        android:id="@+id/tv_desconto"
+                        style="@style/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/desconto" />
+
+                    <EditText
+                        android:id="@+id/et_desconto"
+                        style="@style/editText"
+                        android:background="@drawable/formato_edit_text"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="40dp">
+
+                    <TextView
+                        android:id="@+id/tv_duracao"
+                        style="@style/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/duracao" />
+
+                    <EditText
+                        android:id="@+id/et_tempo_duracao"
+                        style="@style/editText"
+                        android:background="@drawable/formato_edit_text"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:hint="30min"
+                        android:padding="5dp"
+                        android:inputType="time" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //detalhes
+            <TextView
+                android:id="@+id/tv_detalhes"
+                style="@style/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detalhes"
+                android:layout_marginTop="40dp"/>
+
+            <EditText
+                android:id="@+id/et_detalhes"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            //publico alvo
+            <TextView
+                android:id="@+id/tv_publico_alvo"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/publico_alvo" />
+
+            <Spinner
+                android:id="@+id/spinner_public_alvo"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/verde_claro" />
+
+
+            //categoria
+            <TextView
+                android:id="@+id/tv_categoria"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/categoria" />
+
+            <Spinner
+                android:id="@+id/spinner_categoria"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/verde_claro" />
+
+
+            //paret do corpo
+            <TextView
+                android:id="@+id/tv_parte_corpo"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parte_corpo" />
+
+            <Spinner
+                android:id="@+id/spinner_parte_corpo"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/verde_claro" />
+
+            //funcionarios
+            <TextView
+                android:id="@+id/tv_funcionario"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/funcionario" />
+
+            <CheckBox
+                android:id="@+id/cb_nome_do_funcionario1"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Sara"
+                android:textSize="13sp"
+                style="@style/checkbox"/>
+            <CheckBox
+                android:id="@+id/cb_nome_do_funcionario2"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Maria Luiza"
+                android:textSize="13sp"
+                style="@style/checkbox"/>
+            <CheckBox
+                android:id="@+id/cb_nome_do_funcionario3"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Ariely"
+                android:textSize="13sp"
+                style="@style/checkbox"/>
+
+
+            //local atendimento
+            <TextView
+                android:id="@+id/tv_local_atendimento"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/local_atendimento" />
+
+
+            <CheckBox
+                android:id="@+id/cb_estabelecimento"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="@string/estabelecimento"
+                android:textSize="13sp"
+                style="@style/checkbox"/>
+
+            <CheckBox
+                android:id="@+id/cb_dommicilio"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="@string/domicilio"
+                android:textSize="13sp"
+                style="@style/checkbox"/>
+
+
+            //servico disponivel ou nao
+            <TextView
+                android:id="@+id/tv_servico_disponivel"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/servico_disponivel" />
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_sim_ou_nao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_cancelamento_sim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"/>
+
+                <RadioButton
+                    android:id="@+id/rb_cancelamento_nao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:text="Não"/>
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_intervalo_entre_servico"
+                    style="@style/textView"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/intervalo_entre_servico" />
+
+                <EditText
+                    android:id="@+id/et_intervalo_entre_servico"
+                    style="@style/editText"
+                    android:background="@drawable/formato_edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="Ex.: 10min"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#ff0000"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="60dp">
+
+                <ImageView
+                    android:id="@+id/iv_foto_perfil_estabelecimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
+                android:layout_margin="40dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

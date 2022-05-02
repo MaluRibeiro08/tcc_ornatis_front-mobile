@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Ornatis_TCC"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UI.conta_administradora.servico.PrestadorCadastroServicos"
+            android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"
             android:exported="true" />
         <activity
             android:name=".UI.conta_administradora.funcionario.PrestadorListagemFuncionarios"

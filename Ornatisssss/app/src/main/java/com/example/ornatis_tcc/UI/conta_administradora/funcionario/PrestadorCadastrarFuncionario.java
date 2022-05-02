@@ -20,6 +20,9 @@ import retrofit2.Response;
 public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 
     RouterInterface routerInterface;
+//    private EditText et_nome_do_funcionario;
+//    private EditText et_login_acesso;
+//    private EditText et_senha;
     private Button btn_cancelar;
     private Button btn_cadastrar;
 
@@ -66,6 +69,7 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 
         });
 
+            //clique para cancelar
         btn_cancelar.setOnClickListener(view -> {
 
         });
