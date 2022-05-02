@@ -552,7 +552,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_fantasia());
         Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCnpj());
         Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getTelefone());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getImagem_perfil());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getImagem_perfil());
         Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getBiografia());
         Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_adm());
         Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getData_nascimento().toString());
@@ -570,7 +570,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
         //FUNCIONAMENTO
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_funcionamento().size()));
-            DiaUtil teste = (DiaUtil) contaAdministradora.getDados_funcionamento().get(1);
+            DiaUtil teste = (DiaUtil) contaAdministradora.getDados_funcionamento().get(0);
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste.getId_dia_semana()));
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_inicio().toString());
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_termino().toString());
@@ -590,20 +590,33 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         Call<ContaAdministradora> call = routerInterface.addEmpresa(contaAdministradora);
 
         //EXECUÇÃO DA CHAMADA DA ROTA - ENVIO DA REQ
-        /*call.enqueue(
+        call.enqueue(
                 new Callback<ContaAdministradora>() {
                     @Override
                     public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
                         if (response.isSuccessful()) //categoria 200
                         {
+                            ContaAdministradora teste = response.body();
+
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
                             Toast.makeText(CadastroContaAdministradora.this, "Empresa cadastrado com sucesso", Toast.LENGTH_SHORT).show();
                             Log.d("DEBUG_ENVIO_DADOS", "Passou da categoria 200");
 
                             Log.d("DEBUG_ENVIO_DADOS", String.valueOf(response.raw()));
+
                         }
                         else
                         {
-                            Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CadastroContaAdministradora.this, "OPS", Toast.LENGTH_SHORT).show();
+                            String teste = response.message();
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
+
+                            String teste1 = String.valueOf(response.raw());
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste1);
+
+                            String teste2 = String.valueOf(response.errorBody());
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste2);
+
                         }
                     }
 
@@ -612,7 +625,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                         Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
                         Log.d("ERRO_API=> ", t.getMessage());
                     }
-                });*/
+                });
     }
 
 

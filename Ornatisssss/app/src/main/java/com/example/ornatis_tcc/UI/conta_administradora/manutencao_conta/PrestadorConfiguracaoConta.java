@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -83,6 +84,26 @@ public class PrestadorConfiguracaoConta extends AppCompatActivity {
         mostrarContainersDeDados();
 
         routerInterface = APIUtil.getEmpresaInterface();
+
+        Call<ContaAdministradora> call = routerInterface.getContaAdministradora(1);
+
+        call.enqueue(
+                new Callback<ContaAdministradora>() {
+                    @Override
+                    public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
+                        if (response.isSuccessful())
+                        {
+                            Log.d("debug_get_contaAdm", "onResponseGetContaAdm: Deu certo");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ContaAdministradora> call, Throwable t)
+                    {
+                        Log.d("debug_get_contaAdm", "onFailure: Deu errado");
+                    }
+                }
+        );
 
 //        retrofit2.Call<List<ContaAdministradora>> call = routerInterface.getContaAdministradora();
 //
