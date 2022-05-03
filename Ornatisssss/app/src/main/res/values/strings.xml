@@ -61,4 +61,5 @@
     <string name="intervalo_entre_servico">Intervalo entre um serviço e outro</string>
     <string name="categoria">Categoria</string>
     <string name="parte_corpo">Parte do corpo</string>
+    <string name="hora_atendimento">Horário atendimento</string>
 </resources>
