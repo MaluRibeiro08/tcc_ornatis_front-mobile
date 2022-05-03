@@ -45,7 +45,7 @@ public class ContaAdministradora {
 
     @SerializedName("data_nascimento")
     @Expose
-    private LocalDate data_nascimento;
+    private Date data_nascimento;
 
     @SerializedName("cpf")
     @Expose
@@ -141,7 +141,7 @@ public class ContaAdministradora {
 
     public ContaAdministradora(int id_empresa, String nome_fantasia, String cnpj, String telefone,
                                String imagem_perfil, String biografia,
-                               int id_administrador, String nome_adm, LocalDate data_nascimento,
+                               int id_administrador, String nome_adm, Date data_nascimento,
                                String cpf, String foto_perfil,
                                String cep, String bairro, String rua, String numero_rua,
                                String complemento, int id_cidade, String uf, ArrayList dados_recebimento,
@@ -246,11 +246,11 @@ public class ContaAdministradora {
         this.nome_adm = nome_adm;
     }
 
-    public LocalDate getData_nascimento() {
+    public Date getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setData_nascimento(LocalDate data_nascimento) {
+    public void setData_nascimento(Date data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
 
