@@ -5,10 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical">
-
-<!--    tools:context=".Retorna"-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -144,267 +141,302 @@
             </LinearLayout>
 
 
-            //BIOGRAFIA
+            //LINEAR INÍCIO
             <LinearLayout
+                android:id="@+id/linear_inicio"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="50dp"
-                    android:src="@drawable/ic_quotation_mark_24" />
-
-                <TextView
-                    android:id="@+id/tv_biografia"
-                    android:layout_width="270dp"
-                    android:layout_height="80dp"
-                    android:layout_marginEnd="30dp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="Breve descrição - Lorem Ipsum has been the industry's standard dummy text ever since."/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:src="@drawable/ic_quotation_mark_24" />
-
-            </LinearLayout>
-
-            //slide de imagens
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="150dp">
-
+                //Biografia
                 <LinearLayout
-                    android:layout_marginStart="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/cabelos"
-                        android:scaleType="centerCrop" />
 
                     <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/cabelos"
-                        android:scaleType="centerCrop"
-                        android:layout_marginStart="10dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/ic_quotation_mark_24" />
 
+                    <TextView
+                        android:id="@+id/tv_biografia"
+                        android:layout_width="270dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="Breve descrição - Lorem Ipsum has been the industry's standard dummy text ever since."/>
 
                     <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/cabelos"
-                        android:scaleType="centerCrop"
-                        android:layout_marginStart="10dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:src="@drawable/ic_quotation_mark_24" />
 
                 </LinearLayout>
 
-            </HorizontalScrollView>
+                //Slide de imagens
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
 
+                    <LinearLayout
+                        android:layout_marginStart="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/cabelos"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/cabelos"
+                            android:scaleType="centerCrop"
+                            android:layout_marginStart="10dp"/>
+
+
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/cabelos"
+                            android:scaleType="centerCrop"
+                            android:layout_marginStart="10dp"/>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                //Container de informações salão
+                <LinearLayout
+                    android:id="@+id/container_de_informacoes_salao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="40dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hora_atendimento"
+                        style="@style/textView"/>
+
+                    <!--                <LinearLayout-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:orientation="horizontal">-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="40dp"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:text="Dom"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:background="@drawable/formato_circular"-->
+                    <!--                        android:layout_marginTop="20dp"/>-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        android:layout_marginStart="10dp"-->
+                    <!--                        android:text="9-18h"/>-->
+
+                    <!--                </LinearLayout>-->
+
+                    <!--                <LinearLayout-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:orientation="horizontal">-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="40dp"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:text="Dom"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:background="@drawable/formato_circular"-->
+                    <!--                        android:layout_marginTop="20dp"/>-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        android:layout_marginStart="10dp"-->
+                    <!--                        android:text="9-18h"/>-->
+
+                    <!--                </LinearLayout>-->
+
+                    <!--                <LinearLayout-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:orientation="horizontal">-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="40dp"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:text="Dom"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:background="@drawable/formato_circular"-->
+                    <!--                        android:layout_marginTop="20dp"/>-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        android:layout_marginStart="10dp"-->
+                    <!--                        android:text="9-18h"/>-->
+
+                    <!--                </LinearLayout>-->
+
+
+                    //ATENDIMENTO
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Atendimento:"
+                        style="@style/textView"
+                        android:layout_marginTop="40dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Salão"/>
+
+
+                    //DADOS DE CONTATO
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dados de contato:"
+                        android:layout_marginTop="32dp"
+                        style="@style/textView"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="  Clique aqui para falar conosco"
+                        android:drawableStart="@drawable/whatsapp" />
+
+
+                    //ENDEREÇO
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Endereço:"
+                        android:layout_marginTop="32dp"
+                        style="@style/textView"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Av. Pátria Amada Brasil, 1440"/>
+
+
+                    //REDES SOCIAIS
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Redes Sociais:"
+                        android:layout_marginTop="32dp"
+                        style="@style/textView"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BeatyHair_"
+                        android:drawablePadding="12dp"
+                        android:drawableStart="@drawable/img_redes_sociais2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Beaty Hair"
+                        android:drawablePadding="12dp"
+                        android:layout_marginTop="8dp"
+                        android:drawableStart="@drawable/img_redes_sociais1"/>
+
+
+                    //LISTA DE FUNCIONÁRIOS
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nossos funcionários:"
+                        android:layout_marginTop="32dp"
+                        style="@style/textView"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/formato_retangulo_cinza">
+
+                        <!--                    <TextView-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content" />-->
+
+                    </LinearLayout>
+
+
+                    //FORMAS DE PAGAMENTO
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Formas de pagamento:"
+                        style="@style/textView"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dinheiro"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cartão (débito e crédito)"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pix"/>
+
+                </LinearLayout> //container_de_informacoes_salao
+
+            </LinearLayout> // linear_inicio
+
+
+            //TELA DE SERVIÇOS
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="40dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/hora_atendimento"
-                    style="@style/textView"/>
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
-<!--                        android:text="Dom"-->
-<!--                        android:gravity="center"-->
-<!--                        android:background="@drawable/formato_circular"-->
-<!--                        android:layout_marginTop="20dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:text="9-18h"/>-->
-
-<!--                </LinearLayout>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
-<!--                        android:text="Dom"-->
-<!--                        android:gravity="center"-->
-<!--                        android:background="@drawable/formato_circular"-->
-<!--                        android:layout_marginTop="20dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:text="9-18h"/>-->
-
-<!--                </LinearLayout>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
-<!--                        android:text="Dom"-->
-<!--                        android:gravity="center"-->
-<!--                        android:background="@drawable/formato_circular"-->
-<!--                        android:layout_marginTop="20dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:text="9-18h"/>-->
-
-<!--                </LinearLayout>-->
-
-
-                //ATENDIMENTO
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Atendimento:"
+                    android:text="@string/categoria_servico"
                     style="@style/textView"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_margin="40dp"/>
 
-                <TextView
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Salão"/>
+                    android:layout_height="match_parent">
 
 
-                //DADOS DE CONTATO
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dados de contato:"
-                    android:layout_marginTop="32dp"
-                    style="@style/textView"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="  Clique aqui para falar conosco"
-                    android:drawableStart="@drawable/whatsapp" />
-
-
-                //ENDEREÇO
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Endereço:"
-                    android:layout_marginTop="32dp"
-                    style="@style/textView"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Av. Pátria Amada Brasil, 1440"/>
-
-
-                //REDES SOCIAIS
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Redes Sociais:"
-                    android:layout_marginTop="32dp"
-                    style="@style/textView"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="BeatyHair_"
-                    android:drawablePadding="12dp"
-                    android:drawableStart="@drawable/img_redes_sociais2" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Beaty Hair"
-                    android:drawablePadding="12dp"
-                    android:layout_marginTop="8dp"
-                    android:drawableStart="@drawable/img_redes_sociais1"/>
-
-
-                //LISTA DE FUNCIONÁRIOS
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nossos funcionários:"
-                    android:layout_marginTop="32dp"
-                    style="@style/textView"/>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@drawable/formato_retangulo_cinza">
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content" />-->
-
-                </LinearLayout>
-
-
-                //FORMAS DE PAGAMENTO
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Formas de pagamento:"
-                    style="@style/textView"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dinheiro"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cartão (débito e crédito)"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Pix"/>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </LinearLayout> //linear tela inteira
 
     </ScrollView>
 

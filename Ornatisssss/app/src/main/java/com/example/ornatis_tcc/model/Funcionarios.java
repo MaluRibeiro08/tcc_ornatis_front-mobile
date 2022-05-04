@@ -46,6 +46,18 @@ public class Funcionarios {
     public Funcionarios() {
     }
 
+    public Funcionarios(int id_funcionario, String nome_funcionario,
+                        String foto_perfil, String cod_funcionario,
+                        String login, String senha, ArrayList dados_funcionamento) {
+        this.id_funcionario = id_funcionario;
+        this.nome_funcionario = nome_funcionario;
+        this.foto_perfil = foto_perfil;
+        this.cod_funcionario = cod_funcionario;
+        this.login = login;
+        this.senha = senha;
+        this.dados_funcionamento = dados_funcionamento;
+    }
+
     public int getId_funcionario() {
         return id_funcionario;
     }

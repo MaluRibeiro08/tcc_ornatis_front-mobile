@@ -67,16 +67,21 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
             //dados de funcionamento ??
 
 
+            addFuncionario(funcionarios);
+
         });
 
             //clique para cancelar
-        btn_cancelar.setOnClickListener(view -> {
+//        btn_cancelar.setOnClickListener(view -> {
 
-        });
+//        });
 
         //COLOCANDO A SETA DE VOLTAR NA PARTE SUPERIOR DA TELA
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayHomeAsUpEnabled(true);
+
+
+        //CONECTANDO COM A API
 
     }
 

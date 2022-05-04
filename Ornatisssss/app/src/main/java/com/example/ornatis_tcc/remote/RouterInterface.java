@@ -21,8 +21,12 @@ public interface RouterInterface {
     @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/?id_empresa={id_empresa}&acao=carregarDadosConta")
     Call<ContaAdministradora>getContaAdministradora(@Path("id_empresa") int id_empresa);
 
-    //INSERÇÃO FUNCIONÁRIO
+    //INSERÇÃO DE FUNCIONÁRIO
     @POST("/tcc_ornatis_back-end/api-ornatis/rotas/adm/contaAdministradora/")
     Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
+
+    //LISTAGEM DE FUNCIONÁRIOS
+    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/????")
+    Call<Funcionarios>getFuncionario();
 
 }
