@@ -4,8 +4,8 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ContaAdministradora {
 
@@ -45,7 +45,9 @@ public class ContaAdministradora {
 
     @SerializedName("data_nascimento")
     @Expose
-    private Date data_nascimento;
+    private String data_nascimento;
+
+    private LocalDate data_nascimento_type_date;
 
     @SerializedName("cpf")
     @Expose
@@ -141,7 +143,7 @@ public class ContaAdministradora {
 
     public ContaAdministradora(int id_empresa, String nome_fantasia, String cnpj, String telefone,
                                String imagem_perfil, String biografia,
-                               int id_administrador, String nome_adm, Date data_nascimento,
+                               int id_administrador, String nome_adm, String data_nascimento,
                                String cpf, String foto_perfil,
                                String cep, String bairro, String rua, String numero_rua,
                                String complemento, int id_cidade, String uf, ArrayList dados_recebimento,
@@ -246,12 +248,15 @@ public class ContaAdministradora {
         this.nome_adm = nome_adm;
     }
 
-    public Date getData_nascimento() {
+    public String getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
+    public void setData_nascimento(LocalDate data_nascimento_localDate) {
+        this.data_nascimento_type_date = data_nascimento_localDate;
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        data_nascimento = this.data_nascimento_type_date.format(formatter);
     }
 
     public String getCpf() {

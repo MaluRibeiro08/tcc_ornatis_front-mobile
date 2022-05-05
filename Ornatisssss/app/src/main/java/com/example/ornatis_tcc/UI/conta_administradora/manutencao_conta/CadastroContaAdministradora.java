@@ -24,13 +24,10 @@ import com.example.ornatis_tcc.model.RegraCancelamento;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -248,17 +245,14 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                 //contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
                 contaAdministradora.setBiografia(et_biografia.getText().toString());
 
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
             //PERFIL ADM
                 contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-            try {
-                contaAdministradora.setData_nascimento(format.parse(et_data_nascimento.getText().toString()));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-//          contaAdministradora.setData_nascimento(SimpleDateFormat.getDateInstance().parse(et_data_nascimento.getText().toString()));
-            contaAdministradora.setCpf(et_cpf.getText().toString());
+                //DATA NASCIMENTO
+                    DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                    contaAdministradora.setData_nascimento(LocalDate.parse(et_data_nascimento.getText().toString(), formatador));
+
+                contaAdministradora.setCpf(et_cpf.getText().toString());
                 contaAdministradora.setEmail_adm(et_email.getText().toString());
                 contaAdministradora.setSenha_adm(et_senha.getText().toString());
 
