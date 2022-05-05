@@ -26,7 +26,11 @@ public interface RouterInterface {
     Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
 
     //LISTAGEM DE FUNCIONÁRIOS
-    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/????")
+    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
     Call<Funcionarios>getFuncionario();
+
+    //LISTAGEM DOS DADOS DO FUNCIONÁRIO
+    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
+    Call<Funcionarios>getFuncionarioId();
 
 }
