@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 public class ContaAdministradora {
 
+    @SerializedName("acao")
+    @Expose
+    private String acao;
+
     //ESTABELECIMENTO
     @SerializedName("id_empresa")
     @Expose
@@ -115,7 +119,7 @@ public class ContaAdministradora {
     private ArrayList dados_funcionamento;
 
 
-    @SerializedName("intervalo_tempo_padrao_servico")
+    @SerializedName("intervalo_tempo_padrao_entre_servicos")
     @Expose
     private int intervalo_tempo_padrao_entre_servicos;
 
@@ -182,6 +186,14 @@ public class ContaAdministradora {
         this.link_facebook = link_facebook;
         this.email_adm = email_adm;
         this.senha_adm = senha_adm;
+    }
+
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
     }
 
     public int getId_empresa() {
