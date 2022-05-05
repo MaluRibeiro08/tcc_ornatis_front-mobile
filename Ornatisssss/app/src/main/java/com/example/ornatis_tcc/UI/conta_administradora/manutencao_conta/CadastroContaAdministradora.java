@@ -310,11 +310,11 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
             ArrayList dadosFuncionamento = getFuncionamento();
                 DiaUtil teste = (DiaUtil) dadosFuncionamento.get(0);
-            Log.d("teste_funcao_get_fucnionamento", "onCreate: " + teste.getHora_inicio());
+            Log.d("teste_funcao_get_fucnionamento", "onCreate: " + teste.getHora_inicio_localtime());
             //getFuncionamento();
 
 
-
+            contaAdministradora.setAcao("create");
             routerInterface = APIUtil.getEmpresaInterface();
             addContaAdministradora(contaAdministradora);
         });
@@ -574,8 +574,8 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_funcionamento().size()));
             DiaUtil teste = (DiaUtil) contaAdministradora.getDados_funcionamento().get(0);
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste.getId_dia_semana()));
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_inicio().toString());
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_termino().toString());
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_inicio_localtime().toString());
+            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_termino_localtime().toString());
 
         //TAXAS CANCELAMENTO
             Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_taxa_cancelamento().size()));
