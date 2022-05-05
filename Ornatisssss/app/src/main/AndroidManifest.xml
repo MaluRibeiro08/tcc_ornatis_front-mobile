@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Ornatis_TCC"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".UI.conta_administradora.funcionario.PrestadorEditarFuncionario"
+            android:exported="false" />
+        <activity
             android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"
             android:exported="true" />
         <activity
