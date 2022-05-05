@@ -93,12 +93,16 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
                 new Callback<Funcionarios>() {
                     @Override
                     public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
-                        Toast.makeText(PrestadorCadastrarFuncionario.this, "Funcionário cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PrestadorCadastrarFuncionario.this,
+                                "Funcionário cadastrado com sucesso",
+                                Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailure(Call<Funcionarios> call, Throwable t) {
-                        Toast.makeText(PrestadorCadastrarFuncionario.this, "Erro ao cadastrar o funcionário", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PrestadorCadastrarFuncionario.this,
+                                "Erro ao cadastrar o funcionário",
+                                Toast.LENGTH_SHORT).show();
                         Log.d("Erro_api", t.getMessage());
                     }
                 }

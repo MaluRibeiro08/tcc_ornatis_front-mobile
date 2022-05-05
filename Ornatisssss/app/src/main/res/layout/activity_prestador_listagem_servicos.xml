@@ -50,8 +50,6 @@
         app:layout_constraintTop_toBottomOf="@+id/linear_add"
         tools:layout_editor_absoluteX="0dp">
 
-
-        //** PASSAR PARA UM ARQUIVO.XML DEPOIS PARA FAZER O RECYCLER VIEW **//
         <LinearLayout
             android:id="@+id/item_container_servico"
             android:layout_width="match_parent"

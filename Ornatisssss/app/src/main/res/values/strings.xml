@@ -63,4 +63,5 @@
     <string name="parte_corpo">Parte do corpo</string>
     <string name="hora_atendimento">Horário atendimento</string>
     <string name="categoria_servico">Cabelo</string>
+    <string name="editarFuncionario">Editar Funcionário</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.ornatis_tcc.UI.conta_administradora.funcionario;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.example.ornatis_tcc.model.Funcionarios;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,24 +37,45 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
         adicionando_novo_funcionario = findViewById(R.id.adicionando_novo_funcionario);
 
         routerInterface = APIUtil.getEmpresaInterface();
-        
-        /** CONTINUAR DESSA PARTE **/
-//        Call<List<Funcionarios>> call = routerInterface.getFuncionario();
-//
-//        call.enqueue(new Callback<List<Funcionarios>>() {
+
+//        Call<Funcionarios> call = routerInterface.getFuncionario();
+
+//        call.enqueue(new Callback<Funcionarios>() {
 //            @Override
-//            public void onResponse(Call<List<Funcionarios>> call, Response<List<Funcionarios>> response) {
+//            public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
+//                if (response.isSuccessful()){
+//                    List<Funcionarios> funcionarios = new ArrayList<>();
 //
+//                    List<Funcionarios> list = new ArrayList<>();
+////                    list = response.body();
+//
+////                    for(int i = 0; i < list.size(); i++){
+////                        funcionarios.add(new Funcionarios(0, list.get(i)));
+////                    }
+//
+//                    RecyclerView recyclerView = findViewById(R.id.recyclerView_funcionarios);
+////                    recyclerView.setAdapter(new FuncionariosAdapter(funcionarios));
+//
+//
+//                }
 //            }
 //
 //            @Override
-//            public void onFailure(Call<List<Funcionarios>> call, Throwable t) {
+//            public void onFailure(Call<Funcionarios> call, Throwable t) {
 //
 //            }
 //        });
 
 
-        //MUDAR DE TELA AO CLICAR NO +
+
+
+
+
+
+
+
+
+//        MUDAR DE TELA AO CLICAR NO +
 //        adicionando_novo_funcionario.setOnClickListener(view -> {
 //            startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
 //        });
