@@ -90,7 +90,8 @@
                         style="@style/editText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="14" />
 
 
                     <TextView
@@ -105,7 +106,8 @@
                         style="@style/editText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        android:maxLength="16"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,7 +171,8 @@
                         android:padding="10dp"
                         android:scrollbars="vertical"
                         android:scrollHorizontally="false"
-                        android:textSize="13dp" />
+                        android:textSize="13dp"
+                        android:maxLength="150"/>
 
 
                 </LinearLayout>
@@ -260,7 +263,8 @@
                         style="@style/editText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="11" />
 
 
                     <TextView
@@ -352,7 +356,8 @@
                         style="@style/editText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="8"/>
 
 
                     <TextView
@@ -411,7 +416,8 @@
                             android:layout_width="56dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:maxLength="4"/>
                     </LinearLayout>
 
 
@@ -471,7 +477,8 @@
                             android:layout_width="56dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:inputType="text" />
+                            android:inputType="text"
+                            android:maxLength="2"/>
                         //MUDAR PARA SPINNER????
 
                     </LinearLayout>
@@ -597,7 +604,8 @@
                         android:textSize="12dp"
                         android:scrollHorizontally="false"
                         android:scrollbars="vertical"
-                        android:gravity="top"/>
+                        android:gravity="top"
+                        android:maxLength="250"/>
 
                 </LinearLayout>
 
@@ -782,7 +790,8 @@
                                         android:layout_marginTop="-10dp"
                                         android:layout_toEndOf="@+id/tv_tolerancia"
                                         android:inputType="number"
-                                        android:textSize="15dp" />
+                                        android:textSize="15dp"
+                                        android:maxLength="2"/>
 
                                     <TextView
                                         android:id="@+id/continuacao"
@@ -814,7 +823,8 @@
                                         android:layout_marginStart="195dp"
                                         android:layout_marginTop="-10dp"
                                         android:inputType="number"
-                                        android:textSize="15dp" />
+                                        android:textSize="15dp"
+                                        android:maxLength="2"/>
 
                                     <TextView
                                         android:id="@+id/simbolo_porcentagem"
@@ -1004,7 +1014,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1016,7 +1028,10 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"
+                                    />
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1039,7 +1054,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1051,7 +1068,9 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1074,7 +1093,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1086,7 +1107,9 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1108,7 +1131,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1120,7 +1145,9 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1142,7 +1169,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1154,7 +1183,9 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1176,7 +1207,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1188,7 +1221,9 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1210,7 +1245,9 @@
                                     android:tag="edit1_hora_inicio"
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
-                                    android:background="@drawable/formato_edit_text"/>
+                                    android:background="@drawable/formato_edit_text"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1222,7 +1259,9 @@
                                     android:layout_width="50dp"
                                     android:layout_height="25dp"
                                     android:background="@drawable/formato_edit_text"
-                                    android:layout_marginStart="10dp"/>
+                                    android:layout_marginStart="10dp"
+                                    android:inputType="time"
+                                    android:maxLength="5"/>
 
                                 <ImageButton
                                     android:layout_width="15dp"
@@ -1282,14 +1321,15 @@
                         <EditText
                             android:id="@+id/et_minutos_intervalo"
                             android:layout_width="100dp"
-                            android:layout_height="30dp"
+                            android:layout_height="35dp"
                             android:background="@drawable/formato_edit_text"
                             android:hint="Ex.: (10 min)"
-                            android:textSize="10dp"
+                            android:textSize="12dp"
                             android:padding="10dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="40dp"
-                            style="@style/editText"/>
+                            style="@style/editText"
+                            android:maxLength="2"/>
 
                     </LinearLayout>
 
