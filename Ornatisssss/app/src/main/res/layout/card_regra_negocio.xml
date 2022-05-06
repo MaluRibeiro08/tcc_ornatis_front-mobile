@@ -55,7 +55,8 @@
             android:layout_marginTop="-10dp"
             android:layout_toEndOf="@+id/tv_tolerancia"
             android:inputType="number"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:maxLength="2"/>
 
         <TextView
             android:id="@+id/continuacao"
@@ -87,7 +88,8 @@
             android:layout_marginStart="195dp"
             android:layout_marginTop="-10dp"
             android:inputType="number"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:maxLength="2"/>
 
         <TextView
             android:id="@+id/simbolo_porcentagem"
