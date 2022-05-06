@@ -189,86 +189,9 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
         //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
-            ContaAdministradora contaAdministradora = new ContaAdministradora();
 
-            //DADOS DA EMPRESA
-                contaAdministradora.setId_empresa(id_empresa);
-                contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
-                contaAdministradora.setCnpj(et_cnpj.getText().toString());
-                contaAdministradora.setTelefone(et_contato.getText().toString());
-                //contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
-                contaAdministradora.setBiografia(et_biografia.getText().toString());
+            ContaAdministradora contaAdministradora = settarDadosFormularioContaAdministradora();
 
-
-            //PERFIL ADM
-                contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
-                //DATA NASCIMENTO
-                    DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                    contaAdministradora.setData_nascimento(LocalDate.parse(et_data_nascimento.getText().toString(), formatador));
-
-                contaAdministradora.setCpf(et_cpf.getText().toString());
-                contaAdministradora.setEmail_adm(et_email.getText().toString());
-                contaAdministradora.setSenha_adm(et_senha.getText().toString());
-
-            //DADOS DE LOCALIZAÇÃO
-                contaAdministradora.setCep(et_cep.getText().toString());
-                contaAdministradora.setBairro(et_bairro.getText().toString());
-                contaAdministradora.setRua(et_rua.getText().toString());
-                contaAdministradora.setNumero_rua(et_numero.getText().toString());
-                contaAdministradora.setComplemento(et_complemento.getText().toString());
-                contaAdministradora.setId_cidade(Integer.parseInt(id_cidade));
-
-            //DADOS DE RECEBIMENTO
-                //getFormasPagamento();
-                contaAdministradora.setDados_formas_pagamento(getFormasPagamento());
-                contaAdministradora.setObservacoes_pagamento(et_observacoes.getText().toString());
-
-
-            //DADOS REGRAS DE NEGÓCIO
-                //getTaxasCancelamento();
-                if(rb_cancelamento_nao.isChecked() == true)
-                {
-                    contaAdministradora.setTaxa_unica_cancelamento(0);
-                }
-                else
-                {
-                    if(rb_taxa_unica.isChecked() == true)
-                    {
-                        int valor_taxa = Integer.parseInt(et_taxa_unica.getText().toString());
-                        contaAdministradora.setTaxa_unica_cancelamento(valor_taxa);
-                    }
-                    else
-                    {
-                        contaAdministradora.setTaxa_unica_cancelamento(null);
-                        contaAdministradora.setDados_taxa_cancelamento(getTaxasCancelamento());
-                    }
-                }
-
-            //FUNCIONAMENTO
-                if(rb_sim_intervalo_padrao_servicos.isChecked() == true)
-                {
-                    EditText et_minutos_intervalo = findViewById(R.id.et_minutos_intervalo);
-                    int taxa = Integer.parseInt(et_minutos_intervalo.getText().toString());
-                    contaAdministradora.setIntervalo_tempo_padrao_entre_servicos(taxa);
-
-                    Log.d("teste_funcao_get_fucnionamento", "taxa:  "+ taxa);
-                }
-                else
-                {
-                    contaAdministradora.setIntervalo_tempo_padrao_entre_servicos(0);
-
-                    Log.d("teste_funcao_get_fucnionamento", "taxa:  "+ 0);
-                }
-
-                contaAdministradora.setDados_funcionamento(getFuncionamento());
-
-            ArrayList dadosFuncionamento = getFuncionamento();
-                DiaUtil teste = (DiaUtil) dadosFuncionamento.get(0);
-            Log.d("teste_funcao_get_fucnionamento", "onCreate: " + teste.getHora_inicio_localtime());
-            //getFuncionamento();
-
-
-            contaAdministradora.setAcao("create");
             routerInterface = APIUtil.getEmpresaInterface();
             addContaAdministradora(contaAdministradora);
         });
@@ -411,6 +334,91 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         return lista_regras_cancelamento;
     }
 
+    private ContaAdministradora settarDadosFormularioContaAdministradora ()
+    {
+        ContaAdministradora contaAdministradora = new ContaAdministradora();
+
+        //DADOS DA EMPRESA
+        contaAdministradora.setId_empresa(id_empresa);
+        contaAdministradora.setNome_fantasia(et_nome_do_negocio.getText().toString());
+        contaAdministradora.setCnpj(et_cnpj.getText().toString());
+        contaAdministradora.setTelefone(et_contato.getText().toString());
+        //contaAdministradora.setImagem_perfil(iv_foto_perfil_estabelecimento.getText.toString);
+        contaAdministradora.setBiografia(et_biografia.getText().toString());
+
+
+        //PERFIL ADM
+        contaAdministradora.setNome_adm(et_nome_do_adm.getText().toString());
+        //DATA NASCIMENTO
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        contaAdministradora.setData_nascimento(LocalDate.parse(et_data_nascimento.getText().toString(), formatador));
+
+        contaAdministradora.setCpf(et_cpf.getText().toString());
+        contaAdministradora.setEmail_adm(et_email.getText().toString());
+        contaAdministradora.setSenha_adm(et_senha.getText().toString());
+
+        //DADOS DE LOCALIZAÇÃO
+        contaAdministradora.setCep(et_cep.getText().toString());
+        contaAdministradora.setBairro(et_bairro.getText().toString());
+        contaAdministradora.setRua(et_rua.getText().toString());
+        contaAdministradora.setNumero_rua(et_numero.getText().toString());
+        contaAdministradora.setComplemento(et_complemento.getText().toString());
+        contaAdministradora.setId_cidade(Integer.parseInt(id_cidade));
+
+        //DADOS DE RECEBIMENTO
+        //getFormasPagamento();
+        contaAdministradora.setDados_formas_pagamento(getFormasPagamento());
+        contaAdministradora.setObservacoes_pagamento(et_observacoes.getText().toString());
+
+
+        //DADOS REGRAS DE NEGÓCIO
+        //getTaxasCancelamento();
+        if(rb_cancelamento_nao.isChecked() == true)
+        {
+            contaAdministradora.setTaxa_unica_cancelamento(0);
+        }
+        else
+        {
+            if(rb_taxa_unica.isChecked() == true)
+            {
+                int valor_taxa = Integer.parseInt(et_taxa_unica.getText().toString());
+                contaAdministradora.setTaxa_unica_cancelamento(valor_taxa);
+            }
+            else
+            {
+                contaAdministradora.setTaxa_unica_cancelamento(null);
+                contaAdministradora.setDados_taxa_cancelamento(getTaxasCancelamento());
+            }
+        }
+
+        //FUNCIONAMENTO
+        if(rb_sim_intervalo_padrao_servicos.isChecked() == true)
+        {
+            EditText et_minutos_intervalo = findViewById(R.id.et_minutos_intervalo);
+            int taxa = Integer.parseInt(et_minutos_intervalo.getText().toString());
+            contaAdministradora.setIntervalo_tempo_padrao_entre_servicos(taxa);
+
+            Log.d("teste_funcao_get_fucnionamento", "taxa:  "+ taxa);
+        }
+        else
+        {
+            contaAdministradora.setIntervalo_tempo_padrao_entre_servicos(0);
+
+            Log.d("teste_funcao_get_fucnionamento", "taxa:  "+ 0);
+        }
+
+        contaAdministradora.setDados_funcionamento(getFuncionamento());
+
+        ArrayList dadosFuncionamento = getFuncionamento();
+        DiaUtil teste = (DiaUtil) dadosFuncionamento.get(0);
+        Log.d("teste_funcao_get_fucnionamento", "onCreate: " + teste.getHora_inicio_localtime());
+        //getFuncionamento();
+
+
+        contaAdministradora.setAcao("create");
+
+        return contaAdministradora;
+    }
 
     //FUNCAO PARA APARECER NOVO CONTAINER (TESTESS)
     private void addNovoContainerPersonalizado() {
@@ -436,7 +444,6 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             }
 //        });
     }
-
 
     //VERIFICANDO QUAL DOS RADIOBUTTONS ESTÁ SELECIONADO
     public void verificandoRadioButton(View view){
@@ -482,7 +489,6 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     }
 
 
-
     public void addContaAdministradora(ContaAdministradora contaAdministradora) {
 //        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_fantasia());
 //        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCnpj());
@@ -525,44 +531,45 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         Call<ContaAdministradora> call = routerInterface.addEmpresa(contaAdministradora);
 
         //EXECUÇÃO DA CHAMADA DA ROTA - ENVIO DA REQ
-        call.enqueue(
-                new Callback<ContaAdministradora>() {
-                    @Override
-                    public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
-                        if (response.isSuccessful()) //categoria 200
-                        {
-                            ContaAdministradora teste = response.body();
+        call.enqueue
+        (
+            new Callback<ContaAdministradora>() {
+                @Override
+                public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
+                    if (response.isSuccessful()) //categoria 200
+                    {
+                        ContaAdministradora teste = response.body();
 
-                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
-                            Toast.makeText(CadastroContaAdministradora.this, "Empresa cadastrado com sucesso", Toast.LENGTH_SHORT).show();
-                            Log.d("DEBUG_ENVIO_DADOS", "Passou da categoria 200");
+                        Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
+                        Toast.makeText(CadastroContaAdministradora.this, "Empresa cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                        Log.d("DEBUG_ENVIO_DADOS", "Passou da categoria 200");
 
-                            Log.d("DEBUG_ENVIO_DADOS", String.valueOf(response.raw()));
+                        Log.d("DEBUG_ENVIO_DADOS", String.valueOf(response.raw()));
 
-                        }
-                        else
-                        {
-                            Toast.makeText(CadastroContaAdministradora.this, "OPS", Toast.LENGTH_SHORT).show();
-                            String teste = response.message();
-                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
-
-                            String teste1 = String.valueOf(response.raw());
-                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste1);
-
-                            String teste2 = String.valueOf(response.errorBody());
-                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste2);
-
-                        }
                     }
+                    else
+                    {
+                        Toast.makeText(CadastroContaAdministradora.this, "OPS", Toast.LENGTH_SHORT).show();
+                        String teste = response.message();
+                        Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
 
-                    @Override
-                    public void onFailure(Call<ContaAdministradora> call, Throwable t) {
-                        Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
-                        Log.d("ERRO_API=> ", t.getMessage());
+                        String teste1 = String.valueOf(response.raw());
+                        Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste1);
+
+                        String teste2 = String.valueOf(response.errorBody());
+                        Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste2);
+
                     }
-                });
+                }
+
+                @Override
+                public void onFailure(Call<ContaAdministradora> call, Throwable t) {
+                    Toast.makeText(CadastroContaAdministradora.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+                    Log.d("ERRO_API=> ", t.getMessage());
+                }
+            }
+        );
     }
-
 
 
     //IR PARA A PRÓXIMA TELA
