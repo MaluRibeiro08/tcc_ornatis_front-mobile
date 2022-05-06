@@ -91,30 +91,10 @@ public class CadastroContaAdministradora extends AppCompatActivity {
     EditText et_cidade;
     EditText et_uf;
 
-    //recebimento
-    CheckBox cb_tipo_dinheiro;
-    CheckBox cb_cartao_credito;
-    CheckBox cb_cartao_debito;
-    CheckBox cb_pix;
-    CheckBox cb_via_app;
     EditText et_observacoes;
 
-    //regras de negócio
-//    RadioButton rb_cancelamento_sim;
-//    RadioButton rb_cancelamento_nao;
-//    RadioButton rb_taxa_unica;
-//    RadioButton rb_personalizada;
     RadioButton rb_sim_intervalo_padrao_servicos;
     RadioButton rb_nao_intervalo_padrao_servicos;
-
-    //funcionamento
-//    CheckBox cb_domingo;
-//    CheckBox cb_segunda;
-//    CheckBox cb_terca;
-//    CheckBox cb_quarta;
-//    CheckBox cb_quinta;
-//    CheckBox cb_sexta;
-//    CheckBox cb_sabado;
 
     //dados de login
     EditText et_email;
@@ -180,33 +160,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
         et_cidade = findViewById(R.id.et_cidade);
         et_uf = findViewById(R.id.et_uf);
 
-//        cb_tipo_dinheiro = findViewById(R.id.cb_tipo_dinheiro);
-//        cb_cartao_credito = findViewById(R.id.cb_cartao_credito);
-//        cb_cartao_debito = findViewById(R.id.cb_cartao_debito);
-//        cb_pix = findViewById(R.id.cb_pix);
-//        cb_via_app = findViewById(R.id.cb_via_app);
         et_observacoes = findViewById(R.id.et_observacoes);
-//
-//
-//        rb_cancelamento_sim = findViewById(R.id.rb_cancelamento_sim);
-//        rb_cancelamento_nao = findViewById(R.id.rb_cancelamento_nao);
-//        rb_taxa_unica = findViewById(R.id.rb_taxa_unica);
-//        rb_personalizada = findViewById(R.id.rb_personalizada);
-//        rb_abaixo_cem = findViewById(R.id.rb_abaixo_cem);
-//        rb_acima_cem = findViewById(R.id.rb_acima_cem);
-//
-//        cb_domingo = findViewById(R.id.cb_domingo);
-//        cb_segunda = findViewById(R.id.cb_segunda);
-//        cb_terca = findViewById(R.id.cb_terca);
-//        cb_quarta = findViewById(R.id.cb_quarta);
-//        cb_quinta = findViewById(R.id.cb_quinta);
-//        cb_sexta = findViewById(R.id.cb_sexta);
-//        cb_sabado = findViewById(R.id.cb_sabado);
-
-
-
-        //configurando router interface
-//        routerInterface = APIUtil.getEmpresaInterface();
 
         //abrindo menu - NÃO DEU CERTO!!!
         menu_hambuguer.setOnClickListener(view -> {
@@ -318,27 +272,6 @@ public class CadastroContaAdministradora extends AppCompatActivity {
             routerInterface = APIUtil.getEmpresaInterface();
             addContaAdministradora(contaAdministradora);
         });
-
-        ;
-
-        //Indo para a próxima intent
-//            Intent homePrestador =
-//                    new Intent(
-//                            CadastroContaAdministradora.this,
-//                            HomePrestador.class);
-
-
-
-
-//        boolean opcaoSim = rb_cancelamento_sim.isChecked();
-
-//        adicionar_novo_conteiner_taxa_personalizada.setOnClickListener(view -> {
-////            if (click)
-//        });
-
-
-
-
     }
 
     private ArrayList getFuncionamento()
@@ -455,7 +388,7 @@ public class CadastroContaAdministradora extends AppCompatActivity {
                 //devo criar uma classe RegraCancelamento e ir inserindo elas em uma lista?
 
                 RegraCancelamento regraCancelamento = new RegraCancelamento();
-                regraCancelamento.setAcima_cem(acima_cem);
+                regraCancelamento.setValor_acima_de_100(acima_cem);
                 regraCancelamento.setHoras_tolerancia(horas_tolerancia);
                 regraCancelamento.setPorcentagem_sobre_valor_servico(porcentagem_cobrada);
 
@@ -551,43 +484,43 @@ public class CadastroContaAdministradora extends AppCompatActivity {
 
 
     public void addContaAdministradora(ContaAdministradora contaAdministradora) {
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_fantasia());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCnpj());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getTelefone());
-//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getImagem_perfil());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getBiografia());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_adm());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getData_nascimento().toString());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCpf());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCep());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getRua());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNumero_rua());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getComplemento());
-        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getId_cidade()));
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_fantasia());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCnpj());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getTelefone());
+////        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getImagem_perfil());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getBiografia());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNome_adm());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getData_nascimento().toString());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCpf());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getCep());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getRua());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getNumero_rua());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getComplemento());
+//        Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getId_cidade()));
 
         //FORMAS PAGAMENTO
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_formas_pagamento().size()));
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", "forma pagamento - " + String.valueOf(contaAdministradora.getDados_formas_pagamento().get(1)));
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getObservacoes_pagamento());
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_formas_pagamento().size()));
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", "forma pagamento - " + String.valueOf(contaAdministradora.getDados_formas_pagamento().get(1)));
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getObservacoes_pagamento());
 
         //FUNCIONAMENTO
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_funcionamento().size()));
-            DiaUtil teste = (DiaUtil) contaAdministradora.getDados_funcionamento().get(0);
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste.getId_dia_semana()));
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_inicio_localtime().toString());
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_termino_localtime().toString());
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_funcionamento().size()));
+//            DiaUtil teste = (DiaUtil) contaAdministradora.getDados_funcionamento().get(0);
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste.getId_dia_semana()));
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_inicio_localtime().toString());
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", teste.getHora_termino_localtime().toString());
 
         //TAXAS CANCELAMENTO
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_taxa_cancelamento().size()));
-            RegraCancelamento teste_taxas = (RegraCancelamento) contaAdministradora.getDados_taxa_cancelamento().get(0);
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getAcima_cem()));
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getHoras_tolerancia()));
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getPorcentagem_sobre_valor_servico()));
-            //Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getTaxa_unica_cancelamento()));
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getDados_taxa_cancelamento().size()));
+//            RegraCancelamento teste_taxas = (RegraCancelamento) contaAdministradora.getDados_taxa_cancelamento().get(0);
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getValor_acima_de_100()));
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getHoras_tolerancia()));
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(teste_taxas.getPorcentagem_sobre_valor_servico()));
+//            //Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", String.valueOf(contaAdministradora.getTaxa_unica_cancelamento()));
 
         //LOGIN
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getEmail_adm());
-            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getSenha_adm());
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getEmail_adm());
+//            Log.d("DEBUG DADOS RECEBIDOS_ADD_CONTA_ADM", contaAdministradora.getSenha_adm());
 
         Call<ContaAdministradora> call = routerInterface.addEmpresa(contaAdministradora);
 
