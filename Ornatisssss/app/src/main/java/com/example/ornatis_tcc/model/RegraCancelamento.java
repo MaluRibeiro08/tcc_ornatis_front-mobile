@@ -2,7 +2,7 @@ package com.example.ornatis_tcc.model;
 
 public class RegraCancelamento
 {
-    private int acima_cem;
+    private int valor_acima_de_100;
     private int porcentagem_sobre_valor_servico;
     private int horas_tolerancia;
 
@@ -11,21 +11,21 @@ public class RegraCancelamento
 
 
     //CONSTRUTOR COM OS ATRIBUTOS
-    public RegraCancelamento(int acima_cem, int porcentagem_sobre_valor_servico, int horas_tolerancia)
+    public RegraCancelamento(int valor_acima_de_100, int porcentagem_sobre_valor_servico, int horas_tolerancia)
     {
-        this.acima_cem = acima_cem;
+        this.valor_acima_de_100 = valor_acima_de_100;
         this.porcentagem_sobre_valor_servico = porcentagem_sobre_valor_servico;
         this.horas_tolerancia = horas_tolerancia;
     }
 
-    public int getAcima_cem()
+    public int getValor_acima_de_100()
     {
-        return acima_cem;
+        return valor_acima_de_100;
     }
 
-    public void setAcima_cem(int acima_cem)
+    public void setValor_acima_de_100(int valor_acima_de_100)
     {
-        this.acima_cem = acima_cem;
+        this.valor_acima_de_100 = valor_acima_de_100;
     }
 
     public int getPorcentagem_sobre_valor_servico()
