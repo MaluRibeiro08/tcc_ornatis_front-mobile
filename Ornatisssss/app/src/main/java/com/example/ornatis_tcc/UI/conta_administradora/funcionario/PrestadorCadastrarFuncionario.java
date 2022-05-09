@@ -5,13 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
+import com.example.ornatis_tcc.model.DiaUtil;
 import com.example.ornatis_tcc.model.Funcionarios;
+import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
+
+import java.time.LocalTime;
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,6 +32,8 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 //    private EditText et_senha;
     private Button btn_cancelar;
     private Button btn_cadastrar;
+    private LinearLayout linear_cb_dia_semana;
+    private LinearLayout linear_horarios;
 
     ImageView iv_foto_perfil_funcionario;
     EditText et_nome_do_funcionario;
@@ -48,6 +57,8 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 
         btn_cadastrar = findViewById(R.id.btn_cadastrar);
         btn_cancelar = findViewById(R.id.btn_cancelar);
+        linear_cb_dia_semana = findViewById(R.id.linear_cb_dia_semana);
+        linear_horarios = findViewById(R.id.linear_horarios);
 
         //ATRELAMENTO DA REPRESENTAÇÃO COM O COMPONENETE GRÁFICO
 //      IMAGEM  iv_foto_perfil_funcionario = findViewById(R.id.et_nome_do_funcionario);
@@ -57,17 +68,25 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 //
 //        //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
-            Funcionarios funcionarios = new Funcionarios();
 
+
+            Funcionarios funcionario = settarDadosFormularioFuncionario();
+
+            //CHAMAR ROUTERINTERFACE
+            routerInterface = APIUtil.getEmpresaInterface();
+            addFuncionario(funcionario);
+
+//            Funcionarios funcionarios = new Funcionarios();
+//
 //          funcionarios.setFoto_perfil(iv_foto_perfil_funcionario.toString);
-            funcionarios.setNome_funcionario(et_nome_do_funcionario.getText().toString());
-            funcionarios.setLogin(et_login_acesso.getText().toString());
-            funcionarios.setSenha(et_senha.getText().toString());
+//            funcionarios.setNome_funcionario(et_nome_do_funcionario.getText().toString());
+//            funcionarios.setLogin(et_login_acesso.getText().toString());
+//            funcionarios.setSenha(et_senha.getText().toString());
 
             //dados de funcionamento ??
 
 
-            addFuncionario(funcionarios);
+//            addFuncionario(funcionarios);
 
         });
 
@@ -81,7 +100,82 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 //        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
-        //CONECTANDO COM A API
+    }    /**FIM DO ON CREATE **/
+
+    private Funcionarios settarDadosFormularioFuncionario() {
+
+        Funcionarios funcionario = new Funcionarios();
+
+        //DADOS PESSOAIS
+//        funcionario.setFoto_perfil(iv_foto_perfil_funcionario.toString);
+        funcionario.setNome_funcionario(et_nome_do_funcionario.getText().toString());
+        funcionario.setLogin(et_login_acesso.getText().toString());
+        funcionario.setSenha(et_senha.getText().toString());
+
+        //DADOS DOS DIAS DE TRABALHO
+        funcionario.setDados_funcionamento(getDiaDeTrabalho());
+        ArrayList dadosDiaDeTrabalho = getDiaDeTrabalho();
+        DiaUtil teste = (DiaUtil) dadosDiaDeTrabalho.get(0);
+        Log.d("teste_funcao_get_fucnionamento", "onCreate: " + teste.getHora_inicio_localtime());
+
+        return funcionario;
+    }
+
+
+
+
+    private ArrayList getDiaDeTrabalho(){
+
+        int dia_da_semana_contador = 1;
+        ArrayList<DiaUtil> arr_dados_dia_trabalho = new ArrayList();
+
+        while (dia_da_semana_contador <=7)
+        {
+            String tag = "cb_dia_semana_"+ dia_da_semana_contador;
+            CheckBox cb_dia_semana = linear_cb_dia_semana.findViewWithTag(tag);
+
+
+            if (cb_dia_semana.isChecked() == true)
+            {
+                Log.d("teste_funcao_get_fucnionamento", "Tem horário pro dia: " + dia_da_semana_contador);
+
+                String tag_linear_especifico = "linear_horarios_dia_" + dia_da_semana_contador;
+                LinearLayout linear_horarios_dia = linear_horarios.findViewWithTag(tag_linear_especifico);
+
+                EditText edit1_hora_incio = linear_horarios_dia.findViewWithTag("edit1_hora_inicio");
+                EditText edit2_hora_incio = linear_horarios_dia.findViewWithTag("edit2_hora_inicio");
+//                EditText edit2_hora_incio = linear_horarios_dia.findViewWithTag(R.id.edit2_hora_incio);
+
+                if (edit1_hora_incio.getText().toString() != null && edit1_hora_incio.getText().toString() != "")
+                {
+                    EditText edit1_hora_termino = linear_horarios_dia.findViewWithTag("edit1_hora_termino");
+                    DiaUtil diaUtil = new DiaUtil(
+                            dia_da_semana_contador,
+                            LocalTime.parse(edit1_hora_incio.getText().toString()),
+                            LocalTime.parse(edit1_hora_termino.getText().toString())
+                    );
+
+                    Log.d("teste_funcao_get_fucnionamento", "Incio: " + edit1_hora_incio.getText().toString());
+                    Log.d("teste_funcao_get_fucnionamento", "Termino: " + edit1_hora_termino.getText().toString());
+
+                    arr_dados_dia_trabalho.add(diaUtil);
+                }
+//                if (edit2_hora_incio.getText().toString() != null && edit1_hora_incio.getText().toString() != "")
+//                {
+//                    EditText edit2_hora_termino = linear_horarios_dia.findViewWithTag("edit2_hora_termino");
+//                    DiaUtil diaUtil = new DiaUtil(
+//                            dia_da_semana_contador,
+//                            LocalTime.parse(edit2_hora_incio.getText().toString()),
+//                            LocalTime.parse(edit2_hora_termino.getText().toString())
+//                    );
+//
+//                    arr_dados_funcionamento.add(diaUtil);
+//                }
+            }
+            dia_da_semana_contador = dia_da_semana_contador+1;
+        }
+
+        return arr_dados_dia_trabalho;
 
     }
 
@@ -108,6 +202,10 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
                 }
         );
     }
+
+
+
+
 
     //COLOCANDO A SETA DE VOLTAR NA PARTE SUPERIOR DA TELA
 //    @Override

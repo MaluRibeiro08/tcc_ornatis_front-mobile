@@ -85,7 +85,8 @@
                     style="@style/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:enabled="true"/>
 
                 <TextView
                     android:id="@+id/tv_senha"
@@ -118,6 +119,7 @@
                     android:layout_gravity="center">
 
                     <LinearLayout
+                        android:id="@+id/linear_cb_dia_semana"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -190,6 +192,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/linear_horarios"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
