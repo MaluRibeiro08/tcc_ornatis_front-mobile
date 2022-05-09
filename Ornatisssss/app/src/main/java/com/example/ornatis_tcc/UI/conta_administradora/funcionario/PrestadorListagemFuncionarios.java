@@ -47,33 +47,38 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
         routerInterface = APIUtil.getEmpresaInterface();
 
-        Call<ArrayList<Funcionarios>> call = routerInterface.getFuncionario();
 
-        call.enqueue(new Callback<ArrayList<Funcionarios>>() {
-                         @Override
-                         public void onResponse(Call<ArrayList<Funcionarios>> call, Response<ArrayList<Funcionarios>> response) {
-                             if (response.isSuccessful()){
-                                 ArrayList<Funcionarios> funcionarios = new ArrayList<>();
 
-                                 //RECEBE OS DADOS DA API
-                                 ArrayList<Funcionarios> arrayList = new ArrayList<Funcionarios>();
-                                 arrayList = response.body();
 
-                                 for (int i = 0; i < arrayList.size(); i++){
-                                     funcionarios.add(new Funcionarios());
-                                     //o que ser colocado dentro desse ultimo parenteses de Funcionarios()
-                                 }
+//        Call<ArrayList<Funcionarios>> call = routerInterface.getFuncionario();
+//
+//        call.enqueue(new Callback<ArrayList<Funcionarios>>() {
+//                         @Override
+//                         public void onResponse(Call<ArrayList<Funcionarios>> call, Response<ArrayList<Funcionarios>> response) {
+//                             if (response.isSuccessful()){
+//                                 ArrayList<Funcionarios> funcionarios = new ArrayList<>();
+//
+//                                 //RECEBE OS DADOS DA API
+//                                 ArrayList<Funcionarios> arrayList = new ArrayList<Funcionarios>();
+//                                 arrayList = response.body();
+//
+//                                 for (int i = 0; i < arrayList.size(); i++){
+//                                     funcionarios.add(new Funcionarios());
+//                                     //o que ser colocado dentro desse ultimo parenteses de Funcionarios()
+//                                 }
+//
+//                                 RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionarios);
+////                                 recyclerView.setAdapter(new FuncionarioAdapter()); //funcionarios -> colocar dentro desse parenteses?
+//                             }
+//                         }
+//
+//                         @Override
+//                         public void onFailure(Call<ArrayList<Funcionarios>> call, Throwable t) {
+//
+//                         }
+//                     });
 
-                                 RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionarios);
-//                                 recyclerView.setAdapter(new FuncionarioAdapter()); //funcionarios -> colocar dentro desse parenteses?
-                             }
-                         }
 
-                         @Override
-                         public void onFailure(Call<ArrayList<Funcionarios>> call, Throwable t) {
-
-                         }
-                     });
 
 
         //        MUDAR DE TELA AO CLICAR NO +
@@ -113,34 +118,92 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
             /** DADOS DE FUNCIONÁRIO **/
 //            if (getItemViewType(position) == 0){
-//                Funcionarios funcionarios = (Funcionarios) funcionario.get(position).getObject();
-//                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioData(funcioanrio);
+//                Funcionarios funcionarios = (Funcionarios) funcionario.get(position);
+//                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionario);
 //            }
 //        }
 //
 //        @Override
 //        public int getItemCount() {
-//            return 0;
+//            return funcionario.size();
 //        }
-
-
+//
+//
+//
+//
 //        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
-//            public FuncionarioViewHolder(View inflate) {
-////                super();
+//
+//            private TextView tv_nome_do_funcionario, tv_profissao;
+////            private ImageView iv_foto_perfil_funcionario;
+//            private int cod_funcionario;
+//
+//            public FuncionarioViewHolder(View itemFuncionario) {
+//                super(itemFuncionario);
+//
+//                tv_nome_do_funcionario = findViewById(R.id.tv_nome_do_funcionario);
+//
+//                itemFuncionario.setOnClickListener(view -> {
+//                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
+//                            .setMessage("Escolha a ação que deseja executar")
+//                            .setPositiveButton("EDITAR", (dialog, witch)->{
+//
+//                                //1
+//                                Intent intent = new Intent(PrestadorListagemFuncionarios.this, PrestadorEditarFuncionario.class);
+//
+//                                //3 - passando o codigo
+//                                intent.putExtra("cod_funcionario", cod_funcionario);
+//
+//                                //2
+//                                startActivity(intent);
+//
+//                            })
+//                            .setNegativeButton("EXCLUIR", (dialog, witch)->{
+//
+//                                routerInterface = APIUtil.getEmpresaInterface();
+//
+//                                Call<Funcionarios> call = routerInterface.deleteLivro(cod_funcionario);
+//
+//                                //retornando a chamada
+//                                call.enqueue(new Callback<Funcionarios>() {
+//                                    @Override
+//                                    public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
+//                                        //tratar a resposta
+//                                        Toast.makeText(PrestadorListagemFuncionarios.this, "FUNCIONÁRIO EXCLUÍDO COM SUCESSO!", Toast.LENGTH_SHORT).show();
+//
+//                                        startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
+//
+//                                    }
+//
+//                                    @Override
+//                                    public void onFailure(Call<Funcionarios> call, Throwable t) {
+//                                        //tratar um problema que não há nenhuma resposta
+//                                    }
+//                                });
+//
+//                            });
+//                });
+//
+//            }
+//
+//
+//
+//            public void setFuncionarioDados(ArrayList<Funcionarios> funcionario) {
+////                tv_nome_do_funcionario.setText(funcionario.getNome_funcionario);
+////                tv_profissao.setText(funcionario.);
+////                cod_funcionario = funcionario.getCod_funcionario;
+//
 //            }
 //        } /** FIM DA CLASSE VIEWHOLDER **/
-//
+
+
+
 //    } /****** FIM DA CLASSE ADAPTER ******/
 
 
 
 //        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios){
-//            this.funcionarios = funcionarios;
+////            this.funcionarios = funcionarios;
 //        }
-
-
-
-
 
 //    }
 
