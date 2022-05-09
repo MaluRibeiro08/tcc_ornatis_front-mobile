@@ -18,20 +18,28 @@ public interface RouterInterface {
     @POST("/contaAdministradora/cadastrarConta")//rota da req e o verbo http
     Call<ContaAdministradora> addEmpresa(@Body ContaAdministradora objUsuario);
 
-    //LISTAGEM DE CONTA
-    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/?id_empresa={id_empresa}&acao=carregarDadosConta")
-    Call<ContaAdministradora>getContaAdministradora(@Path("id_empresa") int id_empresa);
+    //LISTAGEM DE DADOS DE PERFIL
+    @GET("/contaAdministradora/listarPerfil")
+    Call<ContaAdministradora> getDadosPerfilEstabelecimento(@Path("id_empresa") int id_empresa);
 
     //INSERÇÃO DE FUNCIONÁRIO
-    @POST("/tcc_ornatis_back-end/api-ornatis/rotas/adm/contaAdministradora/")
+    @POST("/contaAdministradora/cadastroFuncionario")
     Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
 
-    //LISTAGEM DE FUNCIONÁRIOS
-    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
-    Call<ArrayList<Funcionarios>>getFuncionario();
+    //DESATUALIZADAS
 
-    //LISTAGEM DOS DADOS DO FUNCIONÁRIO
-    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
-    Call<Funcionarios>getFuncionarioId();
+        //LISTAGEM DE CONTA
+    //    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/?id_empresa={id_empresa}&acao=carregarDadosConta")
+    //    Call<ContaAdministradora>getContaAdministradora(@Path("id_empresa") int id_empresa);
+
+        //LISTAGEM DE FUNCIONÁRIOS
+    //    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
+    //    Call<ArrayList<Funcionarios>>getFuncionario();
+
+        //LISTAGEM DOS DADOS DO FUNCIONÁRIO
+    //    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
+    //    Call<Funcionarios>getFuncionarioId();
+
+
 
 }
