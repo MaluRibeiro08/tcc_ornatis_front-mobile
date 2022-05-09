@@ -3,16 +3,26 @@ package com.example.ornatis_tcc.UI.conta_administradora;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ornatis_tcc.R;
+import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.remote.APIUtil;
+import com.example.ornatis_tcc.remote.RouterInterface;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
+    RouterInterface routerInterface;
     TextView tv_aba_inicio;
     TextView tv_aba_servicos;
     TextView tv_aba_produtos;
@@ -21,6 +31,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
     LinearLayout container_servicos;
     LinearLayout container_produtos;
     LinearLayout container_feedbacks;
+    int id_empresa = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,31 +53,55 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
 
             //EVENTOS DE CLICK E NAVEGACAO
-            tv_aba_inicio.setOnClickListener(view ->
-                {
-                    trocarVisualizacaoAbas(container_inicio);
-                }
-            );
-            tv_aba_servicos.setOnClickListener(view ->
+                tv_aba_inicio.setOnClickListener(view ->
                     {
-                        trocarVisualizacaoAbas(container_servicos);
+                        trocarVisualizacaoAbas(container_inicio);
                     }
-            );
-            tv_aba_produtos.setOnClickListener(view ->
-                    {
-                        trocarVisualizacaoAbas(container_produtos);
-                    }
-            );
-            tv_aba_feedback.setOnClickListener(view ->
-                    {
-                        trocarVisualizacaoAbas(container_feedbacks);
-                    }
-            );
+                );
+                tv_aba_servicos.setOnClickListener(view ->
+                        {
+                            trocarVisualizacaoAbas(container_servicos);
+                        }
+                );
+                tv_aba_produtos.setOnClickListener(view ->
+                        {
+                            trocarVisualizacaoAbas(container_produtos);
+                        }
+                );
+                tv_aba_feedback.setOnClickListener(view ->
+                        {
+                            trocarVisualizacaoAbas(container_feedbacks);
+                        }
+                );
         //BUSCAR OS DADOS E PREENCHER SECAO 'INICIO'
 
+        ContaAdministradora contaAdministradora = getDadosPerfilEstabelecimento(id_empresa);
 
     }
 
+    public ContaAdministradora getDadosPerfilEstabelecimento (int id_empresa)
+    {
+        routerInterface = APIUtil.getEmpresaInterface(); //criamos a conexAo com a API
+        Call<ContaAdministradora> call = routerInterface.getDadosPerfilEstabelecimento(id_empresa); //executando a chamada para a rota de livros
+
+        call.enqueue(
+                new Callback<ContaAdministradora>() {
+                    @Override
+                    public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
+                        Log.d("dados_perfil", "onResponse: deu certo ");
+                    }
+
+                    @Override
+                    public void onFailure(Call<ContaAdministradora> call, Throwable t) {
+                        Log.d("dados_perfil", "onFailure: deu errado: " + t.getMessage());
+                    }
+                }
+        );
+
+        ContaAdministradora contaAdministradora = new ContaAdministradora();
+
+        return contaAdministradora;
+    }
     public void trocarVisualizacaoAbas(LinearLayout linearASerVisualizado)
     {
         LinearLayout [] containers = new LinearLayout[] {container_inicio, container_servicos, container_produtos, container_feedbacks};
