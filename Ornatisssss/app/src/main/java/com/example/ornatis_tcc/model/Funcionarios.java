@@ -19,10 +19,9 @@ public class Funcionarios {
     @Expose
     private String foto_perfil;
 
-    //??
-//    @SerializedName("id_empresa")
-//    @Expose
-//    private int id_empresa;
+    @SerializedName("id_empresa")
+    @Expose
+    private int id_empresa;
 
     @SerializedName("cod_funcionario")
     @Expose
@@ -47,16 +46,18 @@ public class Funcionarios {
     }
 
     public Funcionarios(int id_funcionario, String nome_funcionario,
-                        String foto_perfil, String cod_funcionario,
+                        String foto_perfil, int id_empresa, String cod_funcionario,
                         String login, String senha, ArrayList dados_funcionamento) {
         this.id_funcionario = id_funcionario;
         this.nome_funcionario = nome_funcionario;
         this.foto_perfil = foto_perfil;
+        this.id_empresa = id_empresa;
         this.cod_funcionario = cod_funcionario;
         this.login = login;
         this.senha = senha;
         this.dados_funcionamento = dados_funcionamento;
     }
+
 
     public int getId_funcionario() {
         return id_funcionario;
@@ -80,6 +81,14 @@ public class Funcionarios {
 
     public void setFoto_perfil(String foto_perfil) {
         this.foto_perfil = foto_perfil;
+    }
+
+    public int getId_empresa() {
+        return id_empresa;
+    }
+
+    public void setId_empresa(int id_empresa) {
+        this.id_empresa = id_empresa;
     }
 
     public String getCod_funcionario() {
