@@ -31,7 +31,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
     LinearLayout container_servicos;
     LinearLayout container_produtos;
     LinearLayout container_feedbacks;
-    int id_empresa = 1;
+    int id_empresa =33;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -50,7 +50,6 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 container_servicos = findViewById(R.id.linear_container_aba_servicos_adm);
                 container_produtos = findViewById(R.id.linear_container_aba_produtos_adm);
                 container_feedbacks = findViewById(R.id.linear_container_aba_feedbacks_adm);
-
 
             //EVENTOS DE CLICK E NAVEGACAO
                 tv_aba_inicio.setOnClickListener(view ->
@@ -88,7 +87,22 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 new Callback<ContaAdministradora>() {
                     @Override
                     public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
-                        Log.d("dados_perfil", "onResponse: deu certo ");
+                        if (response.isSuccessful())
+                        {
+                            Log.d("dados_perfil", "onResponse: deu certo ");
+
+                            ContaAdministradora conta = new ContaAdministradora();
+
+                            conta = response.body();
+
+                            String teste = conta.getNome_fantasia();
+
+                            Log.d("dados_perfil", "onResponse: " + teste);
+                            Log.d("dados_perfil", "onResponse: " + response.body().getCep());
+
+                        }
+                        Log.d("dados_perfil", "onResponse: "+ response.message());
+
                     }
 
                     @Override
