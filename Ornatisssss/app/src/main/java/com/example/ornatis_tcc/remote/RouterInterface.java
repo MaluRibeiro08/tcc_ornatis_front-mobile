@@ -19,7 +19,7 @@ public interface RouterInterface {
     Call<ContaAdministradora> addEmpresa(@Body ContaAdministradora objUsuario);
 
     //LISTAGEM DE DADOS DE PERFIL
-    @GET("/contaAdministradora/listarPerfil")
+    @GET("/contaAdministradora/listarPerfil/{id_empresa}")
     Call<ContaAdministradora> getDadosPerfilEstabelecimento(@Path("id_empresa") int id_empresa);
 
     //INSERÇÃO DE FUNCIONÁRIO
@@ -29,7 +29,7 @@ public interface RouterInterface {
     //DESATUALIZADAS
 
         //LISTAGEM DE CONTA
-        @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/?id_empresa={id_empresa}&acao=carregarDadosConta")
+        @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/{id_empresa}&acao=carregarDadosConta")
         Call<ContaAdministradora>getContaAdministradora(@Path("id_empresa") int id_empresa);
 
         //LISTAGEM DE FUNCIONÁRIOS
