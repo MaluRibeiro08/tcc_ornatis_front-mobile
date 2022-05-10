@@ -86,7 +86,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:enabled="true"/>
+                    android:enabled="false"
+                    android:hint="Login gerado automaticamente"/>
 
                 <TextView
                     android:id="@+id/tv_senha"
@@ -207,7 +208,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_gravity="center"/>
+                                android:layout_gravity="center"
+                                android:textSize="12dp"
+                                android:padding="5dp"
+                                android:inputType="time"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -218,7 +222,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -238,7 +244,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -249,7 +257,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -270,7 +280,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -281,7 +293,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -301,7 +315,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -312,7 +328,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -332,7 +350,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -343,7 +363,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -363,7 +385,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -374,7 +398,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -394,7 +420,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -405,7 +433,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
