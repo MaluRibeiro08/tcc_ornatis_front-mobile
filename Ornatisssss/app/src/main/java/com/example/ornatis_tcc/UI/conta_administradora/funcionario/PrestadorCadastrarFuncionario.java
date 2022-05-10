@@ -37,7 +37,6 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 
     ImageView iv_foto_perfil_funcionario;
     EditText et_nome_do_funcionario;
-    EditText et_login_acesso;
     EditText et_senha;
 
 
@@ -63,7 +62,6 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         //ATRELAMENTO DA REPRESENTAÇÃO COM O COMPONENETE GRÁFICO
 //      IMAGEM  iv_foto_perfil_funcionario = findViewById(R.id.et_nome_do_funcionario);
         et_nome_do_funcionario = findViewById(R.id.et_nome_do_funcionario);
-        et_login_acesso = findViewById(R.id.et_login_acesso);
         et_senha = findViewById(R.id.et_senha);
 //
 //        //clique para cadastrar
@@ -76,17 +74,6 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
             routerInterface = APIUtil.getEmpresaInterface();
             addFuncionario(funcionario);
 
-//            Funcionarios funcionarios = new Funcionarios();
-//
-//          funcionarios.setFoto_perfil(iv_foto_perfil_funcionario.toString);
-//            funcionarios.setNome_funcionario(et_nome_do_funcionario.getText().toString());
-//            funcionarios.setLogin(et_login_acesso.getText().toString());
-//            funcionarios.setSenha(et_senha.getText().toString());
-
-            //dados de funcionamento ??
-
-
-//            addFuncionario(funcionarios);
 
         });
 
@@ -109,7 +96,6 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         //DADOS PESSOAIS
 //        funcionario.setFoto_perfil(iv_foto_perfil_funcionario.toString);
         funcionario.setNome_funcionario(et_nome_do_funcionario.getText().toString());
-        funcionario.setLogin(et_login_acesso.getText().toString());
         funcionario.setSenha(et_senha.getText().toString());
 
         //DADOS DOS DIAS DE TRABALHO

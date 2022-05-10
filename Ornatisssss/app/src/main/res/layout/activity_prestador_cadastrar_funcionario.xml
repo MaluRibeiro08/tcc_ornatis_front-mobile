@@ -86,7 +86,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:enabled="true"/>
+                    android:enabled="false"
+                    android:hint="Login gerado automaticamente"/>
 
                 <TextView
                     android:id="@+id/tv_senha"
@@ -140,8 +141,73 @@
                         <!--                    android:layout_marginEnd="238dp"-->
                         <!--                    android:layout_marginRight="-43dp" />-->
 
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_segunda"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Segunda"-->
+<!--                            android:textSize="13sp" />-->
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_terca"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Terça"-->
+<!--                            android:textSize="13sp" />-->
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_quarta"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Quarta"-->
+<!--                            android:textSize="13sp" />-->
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_quinta"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Quinta"-->
+<!--                            android:textSize="13sp" />-->
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_sexta"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Sexta"-->
+<!--                            android:textSize="13sp" />-->
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_sabado"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Sábado"-->
+<!--                            android:textSize="13sp" />-->
+                        <CheckBox
+                            android:id="@+id/cb_domingo"
+                            android:tag="cb_dia_semana_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Domingo"
+                            android:textSize="13sp" />
+
+                        <!--                <EditText-->
+                        <!--                    android:layout_width="20dp"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:layout_alignRight="@id/cb_domingo"-->
+                        <!--                    android:layout_alignParentEnd="true"-->
+                        <!--                    android:layout_marginEnd="238dp"-->
+                        <!--                    android:layout_marginRight="-43dp" />-->
+
                         <CheckBox
                             android:id="@+id/cb_segunda"
+                            android:tag="cb_dia_semana_2"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
@@ -150,6 +216,7 @@
 
                         <CheckBox
                             android:id="@+id/cb_terca"
+                            android:tag="cb_dia_semana_3"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
@@ -158,6 +225,7 @@
 
                         <CheckBox
                             android:id="@+id/cb_quarta"
+                            android:tag="cb_dia_semana_4"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
@@ -166,6 +234,7 @@
 
                         <CheckBox
                             android:id="@+id/cb_quinta"
+                            android:tag="cb_dia_semana_5"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
@@ -174,6 +243,7 @@
 
                         <CheckBox
                             android:id="@+id/cb_sexta"
+                            android:tag="cb_dia_semana_6"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
@@ -182,6 +252,7 @@
 
                         <CheckBox
                             android:id="@+id/cb_sabado"
+                            android:tag="cb_dia_semana_7"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
@@ -207,7 +278,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_gravity="center"/>
+                                android:layout_gravity="center"
+                                android:textSize="12dp"
+                                android:padding="5dp"
+                                android:inputType="time"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -218,7 +292,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -238,7 +314,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -249,7 +327,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -270,7 +350,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -281,7 +363,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -301,7 +385,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -312,7 +398,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -332,7 +420,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -343,7 +433,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -363,7 +455,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -374,7 +468,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
@@ -394,7 +490,9 @@
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"/>
+                                android:background="@drawable/formato_edit_text"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -405,7 +503,9 @@
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"/>
+                                android:layout_marginStart="10dp"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
 
                             <ImageButton
                                 android:layout_width="15dp"
