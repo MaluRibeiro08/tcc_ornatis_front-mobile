@@ -125,13 +125,13 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <CheckBox
-                            android:id="@+id/cb_domingo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Domingo"
-                            android:textSize="13sp" />
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_domingo"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Domingo"-->
+<!--                            android:textSize="13sp" />-->
 
                         <!--                <EditText-->
                         <!--                    android:layout_width="20dp"-->
@@ -269,52 +269,267 @@
                         android:orientation="vertical"
                         android:layout_marginTop="10dp">
 
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"-->
+<!--                                android:inputType="time"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:layout_marginTop="15dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:layout_marginTop="15dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:layout_marginTop="15dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:layout_marginTop="15dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:layout_marginTop="15dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:layout_marginTop="15dp">-->
+
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="até"-->
+<!--                                android:textColor="@color/cinza_escuro"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+<!--                            <EditText-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                android:background="@drawable/formato_edit_text"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:padding="5dp"/>-->
+
+<!--                            <ImageButton-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/ic_add24"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginStart="10dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+
                         <LinearLayout
+                            android:tag="linear_horarios_dia_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp">
 
                             <EditText
+                                android:tag="edit1_hora_inicio"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
-                                android:layout_gravity="center"
-                                android:textSize="12dp"
-                                android:padding="5dp"
-                                android:inputType="time"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="até"
-                                android:textColor="@color/cinza_escuro"
-                                android:layout_marginStart="10dp"/>
-                            <EditText
-                                android:layout_width="50dp"
-                                android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"
-                                android:layout_marginStart="10dp"
-                                android:textSize="12dp"
-                                android:padding="5dp"/>
-
-                            <ImageButton
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:src="@drawable/ic_add24"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="10dp"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="15dp">
-
-                            <EditText
-                                android:layout_width="50dp"
-                                android:layout_height="25dp"
-                                android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
                             <TextView
@@ -324,10 +539,13 @@
                                 android:textColor="@color/cinza_escuro"
                                 android:layout_marginStart="10dp"/>
                             <EditText
+                                android:tag="edit1_hora_termino"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
                                 android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
 
@@ -342,15 +560,19 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:tag="linear_horarios_dia_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="15dp">
 
                             <EditText
+                                android:tag="edit1_hora_inicio"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
                             <TextView
@@ -360,10 +582,56 @@
                                 android:textColor="@color/cinza_escuro"
                                 android:layout_marginStart="10dp"/>
                             <EditText
+                                android:tag="edit1_hora_termino"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
                                 android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
+
+                            <ImageButton
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/ic_add24"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:tag="linear_horarios_dia_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp">
+
+                            <EditText
+                                android:tag="edit1_hora_inicio"
+                                android:layout_width="50dp"
+                                android:layout_height="25dp"
+                                android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
+                                android:textSize="12dp"
+                                android:padding="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="até"
+                                android:textColor="@color/cinza_escuro"
+                                android:layout_marginStart="10dp"/>
+                            <EditText
+                                android:tag="edit1_hora_termino"
+                                android:layout_width="50dp"
+                                android:layout_height="25dp"
+                                android:background="@drawable/formato_edit_text"
+                                android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
 
@@ -377,15 +645,19 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:tag="linear_horarios_dia_4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="15dp">
 
                             <EditText
+                                android:tag="edit1_hora_inicio"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
                             <TextView
@@ -395,10 +667,13 @@
                                 android:textColor="@color/cinza_escuro"
                                 android:layout_marginStart="10dp"/>
                             <EditText
+                                android:tag="edit1_hora_termino"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
                                 android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
 
@@ -412,15 +687,19 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:tag="linear_horarios_dia_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="15dp">
 
                             <EditText
+                                android:tag="edit1_hora_inicio"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
                             <TextView
@@ -430,10 +709,13 @@
                                 android:textColor="@color/cinza_escuro"
                                 android:layout_marginStart="10dp"/>
                             <EditText
+                                android:tag="edit1_hora_termino"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
                                 android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
 
@@ -447,15 +729,19 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:tag="linear_horarios_dia_6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="15dp">
 
                             <EditText
+                                android:tag="edit1_hora_inicio"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
                             <TextView
@@ -465,10 +751,13 @@
                                 android:textColor="@color/cinza_escuro"
                                 android:layout_marginStart="10dp"/>
                             <EditText
+                                android:tag="edit1_hora_termino"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
                                 android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
 
@@ -482,15 +771,19 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:tag="linear_horarios_dia_7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="15dp">
 
                             <EditText
+                                android:tag="edit1_hora_inicio"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
                             <TextView
@@ -500,10 +793,13 @@
                                 android:textColor="@color/cinza_escuro"
                                 android:layout_marginStart="10dp"/>
                             <EditText
+                                android:tag="edit1_hora_termino"
                                 android:layout_width="50dp"
                                 android:layout_height="25dp"
                                 android:background="@drawable/formato_edit_text"
                                 android:layout_marginStart="10dp"
+                                android:inputType="time"
+                                android:maxLength="5"
                                 android:textSize="12dp"
                                 android:padding="5dp"/>
 
@@ -515,6 +811,8 @@
                                 android:layout_marginStart="10dp"/>
 
                         </LinearLayout>
+
+
                     </LinearLayout>
                 </LinearLayout>
 

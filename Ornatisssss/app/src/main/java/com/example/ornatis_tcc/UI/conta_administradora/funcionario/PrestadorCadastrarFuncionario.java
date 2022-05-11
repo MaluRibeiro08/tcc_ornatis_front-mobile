@@ -98,6 +98,9 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         funcionario.setNome_funcionario(et_nome_do_funcionario.getText().toString());
         funcionario.setSenha(et_senha.getText().toString());
 
+        funcionario.setAcao("createFuncionario");
+        funcionario.setId_empresa(19);
+
         //DADOS DOS DIAS DE TRABALHO
         funcionario.setDados_funcionamento(getDiaDeTrabalho());
         ArrayList dadosDiaDeTrabalho = getDiaDeTrabalho();
@@ -176,6 +179,9 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
                         Toast.makeText(PrestadorCadastrarFuncionario.this,
                                 "Funcionário cadastrado com sucesso",
                                 Toast.LENGTH_SHORT).show();
+
+
+
                     }
 
                     @Override

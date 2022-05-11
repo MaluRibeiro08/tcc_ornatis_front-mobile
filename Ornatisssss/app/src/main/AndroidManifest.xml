@@ -25,7 +25,7 @@
         <!-- android:name=".PrestadorCadastrarFuncionario" -->
         <!-- android:exported="true" /> -->
         <activity
-            android:name=".UI.conta_administradora.manutencao_conta.CadastroContaAdministradora"
+            android:name=".UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 public class Funcionarios {
 
+    @SerializedName("acao")
+    @Expose
+    private String acao;
+
     @SerializedName("id_funcionario")
     @Expose
     private int id_funcionario;
@@ -37,17 +41,20 @@ public class Funcionarios {
 
 
     //CONFERIR O NOME "dados_funcionamento"
-    @SerializedName("dados_funcionamento")
+    @SerializedName("dados_dia_trabalho")
     @Expose
     private ArrayList dados_funcionamento;
+
+
 
 
     public Funcionarios() {
     }
 
-    public Funcionarios(int id_funcionario, String nome_funcionario,
+    public Funcionarios(String acao, int id_funcionario, String nome_funcionario,
                         String foto_perfil, int id_empresa, String cod_funcionario,
                         String login, String senha, ArrayList dados_funcionamento) {
+        this.acao = acao;
         this.id_funcionario = id_funcionario;
         this.nome_funcionario = nome_funcionario;
         this.foto_perfil = foto_perfil;
@@ -58,6 +65,13 @@ public class Funcionarios {
         this.dados_funcionamento = dados_funcionamento;
     }
 
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
+    }
 
     public int getId_funcionario() {
         return id_funcionario;
