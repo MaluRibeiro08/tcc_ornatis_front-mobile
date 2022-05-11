@@ -26,6 +26,10 @@ public interface RouterInterface {
     @POST("/contaAdministradora/cadastroFuncionario")
     Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
 
+    //LISTAGEM DE FUNCIONÁRIOS
+    @GET("/contaAdministradora/listarFunscionarios/{id_funcionario}")
+    Call<Funcionarios> getFuncionario(@Path("id_funcionario") int id_funcionario);
+
     //DESATUALIZADAS
 
         //LISTAGEM DE CONTA
