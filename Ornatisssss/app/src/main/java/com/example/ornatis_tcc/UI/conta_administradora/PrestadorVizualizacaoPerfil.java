@@ -93,12 +93,19 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
                             ContaAdministradora conta = new ContaAdministradora();
 
+                            Log.d("dados_perfil", "onResponse: infos: " + response.body().getCep());
+
                             conta = response.body();
 
                             String teste = conta.getNome_fantasia();
 
                             Log.d("dados_perfil", "onResponse: " + teste);
-                            Log.d("dados_perfil", "onResponse: " + response.body().getCep());
+                            Log.d("dados_perfil", "onResponse: olho o cep aí " + response.body().getCep());
+                            Log.d("dados_perfil", "onResponse: olho o funcionamento aí " + response.body().getDados_funcionamento().get(0));
+                            Log.d("dados_perfil", "onResponse: olha as formas de pagamento aí " + response.body().getDados_formas_pagamento().get(0));
+                            Log.d("dados_perfil", "onResponse: olha as observacoes de pagamento aí " + response.body().getObservacoes_pagamento());
+//                            Log.d("dados_perfil", "onResponse: olha as taxas aí" + response.body().getDados_taxa_cancelamento().get(0));
+                            Log.d("dados_perfil", "onResponse: olha taxa unica aí " + response.body().getTaxa_unica_cancelamento());
 
                         }
                         Log.d("dados_perfil", "onResponse: "+ response.message());
