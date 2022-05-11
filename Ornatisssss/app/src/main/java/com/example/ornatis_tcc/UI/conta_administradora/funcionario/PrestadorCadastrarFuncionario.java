@@ -2,6 +2,7 @@ package com.example.ornatis_tcc.UI.conta_administradora.funcionario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -66,7 +67,6 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 //
 //        //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
-
 
             Funcionarios funcionario = settarDadosFormularioFuncionario();
 
@@ -180,7 +180,11 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
                                 "Funcionário cadastrado com sucesso",
                                 Toast.LENGTH_SHORT).show();
 
+                                if (response.isSuccessful()){
 
+                                    Intent intentListagemFuncionario = new Intent(PrestadorCadastrarFuncionario.this, PrestadorListagemFuncionarios.class);
+                                    startActivity(intentListagemFuncionario);
+                                }
 
                     }
 
