@@ -87,10 +87,13 @@ public class ContaAdministradora {
     @Expose
     private int id_cidade;
 
-    //CONFERIR O NOME, SE TA "UF" MESMO
-//    @SerializedName("uf")
-//    @Expose
-//    private String uf;
+    @SerializedName("nome_cidade")
+    @Expose
+    private String nome_cidade;
+
+    @SerializedName("sigla_estado")
+    @Expose
+    private String sigla_estado;
 
 
     //RECEBIMENTO
@@ -335,13 +338,21 @@ public class ContaAdministradora {
         this.id_cidade = id_cidade;
     }
 
-//    public String getUf() {
-//        return uf;
-//    }
-//
-//    public void setUf(String uf) {
-//        this.uf = uf;
-//    }
+    public String getNome_cidade() {
+        return nome_cidade;
+    }
+
+    public void setNome_cidade(String nome_cidade) {
+        this.nome_cidade = nome_cidade;
+    }
+
+    public String getSigla_estado() {
+        return sigla_estado;
+    }
+
+    public void setSigla_estado(String sigla_estado) {
+        this.sigla_estado = sigla_estado;
+    }
 
     public ArrayList getDados_formas_pagamento() {
         return dados_formas_pagamento;
