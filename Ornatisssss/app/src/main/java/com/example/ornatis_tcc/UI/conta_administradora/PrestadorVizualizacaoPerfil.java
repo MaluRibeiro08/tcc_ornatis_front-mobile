@@ -10,8 +10,12 @@ import android.widget.TextView;
 
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.model.DiaUtil;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
+import com.google.gson.internal.LinkedTreeMap;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,7 +50,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
 
 //    ContaAdministradora contaAdministradora;
-    int id_empresa =30;
+    int id_empresa =33;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -197,22 +201,73 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
 
         //FORMAS DE PAGAMENTO
-            int contador = 0;
+            int contador_pagamento = 0;
 
-            while (contador < contaAdministradora.getDados_formas_pagamento().size())
+            while (contador_pagamento < contaAdministradora.getDados_formas_pagamento().size())
             {
-                String tag = "tv_forma_pagto_" + contaAdministradora.getDados_formas_pagamento().get(contador);
+                String tag = "tv_forma_pagto_" + contaAdministradora.getDados_formas_pagamento().get(contador_pagamento);
                 TextView txt_forma_pagamento = ln_container_formas_pagamento_perfil.findViewWithTag(tag);
 
                 txt_forma_pagamento.setVisibility(View.VISIBLE);
 
-                contador= contador+1;
+                contador_pagamento= contador_pagamento+1;
             }
 
 
         //FUNCIONAMENTO
-            //pegar os lineares pelo id container_geral_dos_horarios
-            //pegar os elementos pelo tag
+            ArrayList<ArrayList<LinkedTreeMap>> lista_dias_semama = contaAdministradora.getDados_funcionamento();
+
+            LinearLayout linear_geral_horarios = findViewById(R.id.container_geral_dos_horarios);
+            int contador_funcionamento = 0;
+
+            while (contador_funcionamento <= 6)
+            {
+                String tag = "ln_container_horarios_dia_" + String.valueOf(contador_funcionamento + 1);
+                LinearLayout linear_horarios_dia_semana = linear_geral_horarios.findViewWithTag(tag);
+
+                Log.d("funcionamento", String.valueOf(linear_horarios_dia_semana.getChildCount()));
+                if (lista_dias_semama.get(contador_funcionamento) == null)
+                {
+                    Log.d("funcionamento", tag + "nao tem horario");
+
+                }
+                else
+                {
+                    ArrayList<LinkedTreeMap> lista_horarios_do_dia = lista_dias_semama.get(contador_funcionamento);
+
+                    if (lista_horarios_do_dia.size() == 1)
+                    {
+                        Log.d("funcionamento", "dois horarios para essse dia");
+
+                        //HORA INICIO
+                            String hora_inicio = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
+                        //HORA TERMINO
+                            String hora_termino = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
+
+                        //INSERINDO VALORES NOS TEXTVIEWS
+                            LinearLayout teste = linear_horarios_dia_semana.findViewWithTag("ln_primeiros_horarios");
+                            TextView primeiro_horario_inicio = teste.findViewWithTag("primeiro_horario_inicio");
+
+                            primeiro_horario_inicio.setText(hora_inicio);
+                            linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+
+                            Log.d("funcionamento", String.valueOf(teste.getChildCount()));
+                            Log.d("funcionamento", primeiro_horario_inicio.getText().toString());
+
+
+                    }
+                    else if (lista_horarios_do_dia.size() == 2)
+                    {
+
+                    }
+                    Log.d("funcionamento", String.valueOf(lista_dias_semama.get(contador_funcionamento)));
+
+                }
+
+                contador_funcionamento = contador_funcionamento+1;
+            }
+
+
 
         //OBSERVACOES DE PAGAMENTO
         //REGRAS DE NEGÓCIO
