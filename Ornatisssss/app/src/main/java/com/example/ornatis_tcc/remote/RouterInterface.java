@@ -27,8 +27,8 @@ public interface RouterInterface {
     Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
 
     //LISTAGEM DE FUNCIONÁRIOS
-    @GET("/contaAdministradora/listarFunscionarios/{id_funcionario}")
-    Call<Funcionarios> getFuncionario(@Path("id_funcionario") int id_funcionario);
+    @GET("/contaAdministradora/listarFuncionarios/{id_empresa}")
+    Call<ArrayList<Funcionarios>> getFuncionarios(@Path("id_empresa") int id_empresa);
 
     //DESATUALIZADAS
 
@@ -43,7 +43,5 @@ public interface RouterInterface {
         //LISTAGEM DOS DADOS DO FUNCIONÁRIO
     //    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
     //    Call<Funcionarios>getFuncionarioId();
-
-
 
 }

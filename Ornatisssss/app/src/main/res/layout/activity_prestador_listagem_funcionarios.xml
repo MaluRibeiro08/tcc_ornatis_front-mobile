@@ -133,23 +133,23 @@
 
         /** RECYCLER VIEW **/
 
-        <!--        <androidx.recyclerview.widget.RecyclerView-->
-        <!--            android:id="@+id/recyclerView_funcionarios"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/header_listagem_funcionarios"-->
-        <!--            tools:listitem="@layout/item_container_listagem_funcionario" />-->
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/recyclerView_funcionarios"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/header_listagem_funcionarios"-->
+<!--                    tools:listitem="@layout/item_container_listagem_funcionario" />-->
 
 
         //ESSE DAQUI É O OFICIAL
-        <!--            <androidx.recyclerview.widget.RecyclerView-->
-        <!--                android:id="@+id/recyclerView"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="match_parent"-->
-        <!--                android:padding="8dp"-->
-        <!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-        <!--                app:layout_constraintTop_toBottomOf="@id/header_listagem_funcionarios"-->
-        <!--                tools:listitem="@layout/item_container_listagem_funcionario"/>-->
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recyclerViewFuncionarios"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:padding="8dp"-->
+<!--                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/header_listagem_funcionarios"-->
+<!--                        tools:listitem="@layout/item_container_listagem_funcionario"/>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -167,9 +167,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,43 +49,43 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
         routerInterface = APIUtil.getEmpresaInterface();
 
 
+        Call<ArrayList<Funcionarios>> call = routerInterface.getFuncionarios(19);
 
+        call.enqueue(new Callback<ArrayList<Funcionarios>>() {
+                         @Override
+                         public void onResponse(Call<ArrayList<Funcionarios>> call, Response<ArrayList<Funcionarios>> response) {
+                             if (response.isSuccessful()){
+                                 Log.d("listagem", "onResponse: chegou");
+                                 ArrayList<Funcionarios> funcionarios = new ArrayList<>();
 
-//        Call<ArrayList<Funcionarios>> call = routerInterface.getFuncionario();
-////
-//        call.enqueue(new Callback<ArrayList<Funcionarios>>() {
-//                         @Override
-//                         public void onResponse(Call<ArrayList<Funcionarios>> call, Response<ArrayList<Funcionarios>> response) {
-//                             if (response.isSuccessful()){
-//                                 ArrayList<Funcionarios> funcionarios = new ArrayList<>();
-//
-//                                 //RECEBE OS DADOS DA API
-//                                 ArrayList<Funcionarios> arrayList = new ArrayList<Funcionarios>();
-//                                 arrayList = response.body();
-//
-//                                 for (int i = 0; i < arrayList.size(); i++){
-//                                     funcionarios.add(new Funcionarios());
-//                                     //o que ser colocado dentro desse ultimo parenteses de Funcionarios()
-//                                 }
-//
-//                                 RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionarios);
-//                                 recyclerView.setAdapter(new FuncionarioAdapter(funcionarios)); //funcionarios -> colocar dentro desse parenteses?
-//                             }
-//                         }
-//
-//                         @Override
-//                         public void onFailure(Call<ArrayList<Funcionarios>> call, Throwable t) {
-//
-//                         }
-//                     });
+                                 //RECEBE OS DADOS DA API
+                                 ArrayList<Funcionarios> arrayList = new ArrayList<Funcionarios>();
+                                 arrayList = response.body();
+
+                                 Log.d("listagem", String.valueOf(arrayList.get(0).getNome_funcionario()));
+
+                                 for (int i = 0; i < arrayList.size(); i++){
+                                     funcionarios.add(arrayList.get(i));
+                                 }
+
+                                 RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionarios);
+                                 recyclerView.setAdapter(new FuncionarioAdapter(funcionarios)); //funcionarios -> colocar dentro desse parenteses?
+                             }
+                         }
+
+                         @Override
+                         public void onFailure(Call<ArrayList<Funcionarios>> call, Throwable t) {
+                             Log.d("listagem", "onResponse: ops");
+                         }
+                     });
 
 
 
 
              //MUDAR DE TELA AO CLICAR NO +
-                adicionando_novo_funcionario.setOnClickListener(view -> {
-                    startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
-                });
+//                adicionando_novo_funcionario.setOnClickListener(view -> {
+//                    startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
+//                });
 
 
     }//fim do método onCreate
@@ -92,60 +93,61 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
 
     /** ADAPTER - RECYCLERVIEW **/
-//    private class FuncionarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-//
-//        ArrayList<Funcionarios> funcionarios;
-//
-//        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios) {
-//            this.funcionarios = funcionarios;
-//        }
+    private class FuncionarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-//        @NonNull
-//        @Override
-//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//            return new FuncionarioAdapter.FuncionarioViewHolder(
-//                    LayoutInflater.from(
-//                            parent.getContext()).inflate(
-//                                R.layout.item_container_listagem_funcionario,
-//                                parent,
-//                                false
-//                            ));
-//        }
+        ArrayList<Funcionarios> funcionarios;
 
-//        @Override
-//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//
-//            /** DADOS DE FUNCIONÁRIO **/
-//                if (getItemViewType(position) == 0){
-//                Funcionarios funcionarios = (Funcionarios) funcionarios.get(position);
-//                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionarios);
-//            }
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return funcionarios.size();
-//        }
+        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios) {
+            this.funcionarios = funcionarios;
+        }
 
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+            return new FuncionarioAdapter.FuncionarioViewHolder(
+                    LayoutInflater.from(
+                            parent.getContext()).inflate(
+                                R.layout.item_container_listagem_funcionario,
+                                parent,
+                                false
+                            ));
+        }
 
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+            /** DADOS DE FUNCIONÁRIO **/
+
+                Funcionarios funcionarios = (Funcionarios) this.funcionarios.get(position);
+                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionarios);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return funcionarios.size();
+        }
 
 
         /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
-//        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
-//
-//            private TextView tv_nome_do_funcionario;
-//            private ImageView iv_foto_perfil_funcionario;
-//            private int id_funcionario;
-//
-//            public FuncionarioViewHolder(View itemViewFuncionario) {
-//                super(itemViewFuncionario);
-//
-//                tv_nome_do_funcionario = findViewById(R.id.tv_nome_do_funcionario);
-//
-//
+        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
+
+            private TextView tv_nome_do_funcionario;
+            private ImageView iv_foto_perfil_funcionario;
+            private int id_funcionario;
+
+            public FuncionarioViewHolder(View itemViewFuncionario) {
+                super(itemViewFuncionario);
+
+                tv_nome_do_funcionario = findViewById(R.id.tv_nome_do_funcionario);
+
+
+
+
+                /** APARECENDO UMA DIALOG COM DUAS OPÇÕES: EDITAR E EXCLUIR **/
 //                itemViewFuncionario.setOnClickListener(view -> {
+
 //                    /**
 //                     setMessage -> Título da caixa de alerta
 //                     PARÂMETROS:
@@ -161,9 +163,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                     1- Título
 //                     2- Ação a ser executada
 //                     **/
-//                });
-//
-//                itemFuncionario.setOnClickListener(view -> {
+
 //                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
 //                            .setMessage("Escolha a ação que deseja executar")
 //                            .setPositiveButton("EDITAR", (dialog, witch)->{
@@ -172,7 +172,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                                Intent intent = new Intent(PrestadorListagemFuncionarios.this, PrestadorEditarFuncionario.class);
 //
 //                                //3 - passando o codigo
-//                                intent.putExtra("cod_funcionario", id_funcionario);
+//                                intent.putExtra("id_funcionario", id_funcionario);
 //
 //                                //2
 //                                startActivity(intent);
@@ -181,9 +181,10 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                            .setNegativeButton("EXCLUIR", (dialog, witch)->{
 //
 //                                routerInterface = APIUtil.getEmpresaInterface();
-//
+
+                            //EXCLUIR FUNCIONÁRIO
 //                                Call<Funcionarios> call = routerInterface.deleteLivro(id_funcionario);
-//
+
 //                                //retornando a chamada
 //                                call.enqueue(new Callback<Funcionarios>() {
 //                                    @Override
@@ -200,40 +201,21 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                                        //tratar um problema que não há nenhuma resposta
 //                                    }
 //                                });
-//
+
 //                            });
+                } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
+
+//                itemFuncionario.setOnClickListener(view -> {
+
 //                });
-//
-//
-//            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
 
+                public void setFuncionarioDados(Funcionarios funcionario) {
+                    tv_nome_do_funcionario.setText(funcionario.getNome_funcionario());
+                    id_funcionario = funcionario.getId_funcionario();
+                }
 
+            } /** FIM DA CLASSE VIEWHOLDER **/
 
-//            public void setFuncionarioDados(ArrayList<Funcionarios> funcionario) {
-//                tv_nome_do_funcionario.setText(funcionario.getNome_funcionario);
-//                id_funcionario = funcionario.getId_funcionario;
-//            }
+        } /****** FIM DA CLASSE FUNCIONÁRIO ADAPTER ******/
 
-
-//        } /** FIM DA CLASSE VIEWHOLDER **/
-
-
-
-//    } /****** FIM DA CLASSE ADAPTER ******/
-
-
-
-//        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios){
-//            this.funcionarios = funcionarios;
-//        }
-
-//    }
-
-
-}
-
-
-
-
-
-
+    }
