@@ -77,21 +77,21 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //
 //                         }
 //                     });
-//
-//
-//
-//
-//        //        MUDAR DE TELA AO CLICAR NO +
-//        //        adicionando_novo_funcionario.setOnClickListener(view -> {
-//        //            startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
-//        //        });
-//
-//
-//    }//fim do método onCreate
-//
-//
-//
-//    /** ADAPTER - RECYCLERVIEW **/
+
+
+
+
+             //MUDAR DE TELA AO CLICAR NO +
+                adicionando_novo_funcionario.setOnClickListener(view -> {
+                    startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
+                });
+
+
+    }//fim do método onCreate
+
+
+
+    /** ADAPTER - RECYCLERVIEW **/
 //    private class FuncionarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //
 //        ArrayList<Funcionarios> funcionarios;
@@ -99,7 +99,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios) {
 //            this.funcionarios = funcionarios;
 //        }
-//
+
 //        @NonNull
 //        @Override
 //        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -112,14 +112,14 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                                false
 //                            ));
 //        }
-//
+
 //        @Override
 //        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 //
 //            /** DADOS DE FUNCIONÁRIO **/
 //                if (getItemViewType(position) == 0){
 //                Funcionarios funcionarios = (Funcionarios) funcionarios.get(position);
-////                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionarios);
+//                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionarios);
 //            }
 //        }
 //
@@ -127,12 +127,12 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //        public int getItemCount() {
 //            return funcionarios.size();
 //        }
-//
-//
-//
-//
-//
-//        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
+
+
+
+
+
+        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
 //        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
 //
 //            private TextView tv_nome_do_funcionario;
@@ -163,46 +163,46 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                     **/
 //                });
 //
-////                itemFuncionario.setOnClickListener(view -> {
-////                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
-////                            .setMessage("Escolha a ação que deseja executar")
-////                            .setPositiveButton("EDITAR", (dialog, witch)->{
-////
-////                                //1
-////                                Intent intent = new Intent(PrestadorListagemFuncionarios.this, PrestadorEditarFuncionario.class);
-////
-////                                //3 - passando o codigo
-////                                intent.putExtra("cod_funcionario", id_funcionario);
-////
-////                                //2
-////                                startActivity(intent);
-////
-////                            })
-////                            .setNegativeButton("EXCLUIR", (dialog, witch)->{
-////
-////                                routerInterface = APIUtil.getEmpresaInterface();
-////
-////                                Call<Funcionarios> call = routerInterface.deleteLivro(id_funcionario);
-////
-////                                //retornando a chamada
-////                                call.enqueue(new Callback<Funcionarios>() {
-////                                    @Override
-////                                    public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
-////                                        //tratar a resposta
-////                                        Toast.makeText(PrestadorListagemFuncionarios.this, "FUNCIONÁRIO EXCLUÍDO COM SUCESSO!", Toast.LENGTH_SHORT).show();
-////
-////                                        startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
-////
-////                                    }
-////
-////                                    @Override
-////                                    public void onFailure(Call<Funcionarios> call, Throwable t) {
-////                                        //tratar um problema que não há nenhuma resposta
-////                                    }
-////                                });
-////
-////                            });
-////                });
+//                itemFuncionario.setOnClickListener(view -> {
+//                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
+//                            .setMessage("Escolha a ação que deseja executar")
+//                            .setPositiveButton("EDITAR", (dialog, witch)->{
+//
+//                                //1
+//                                Intent intent = new Intent(PrestadorListagemFuncionarios.this, PrestadorEditarFuncionario.class);
+//
+//                                //3 - passando o codigo
+//                                intent.putExtra("cod_funcionario", id_funcionario);
+//
+//                                //2
+//                                startActivity(intent);
+//
+//                            })
+//                            .setNegativeButton("EXCLUIR", (dialog, witch)->{
+//
+//                                routerInterface = APIUtil.getEmpresaInterface();
+//
+//                                Call<Funcionarios> call = routerInterface.deleteLivro(id_funcionario);
+//
+//                                //retornando a chamada
+//                                call.enqueue(new Callback<Funcionarios>() {
+//                                    @Override
+//                                    public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
+//                                        //tratar a resposta
+//                                        Toast.makeText(PrestadorListagemFuncionarios.this, "FUNCIONÁRIO EXCLUÍDO COM SUCESSO!", Toast.LENGTH_SHORT).show();
+//
+//                                        startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
+//
+//                                    }
+//
+//                                    @Override
+//                                    public void onFailure(Call<Funcionarios> call, Throwable t) {
+//                                        //tratar um problema que não há nenhuma resposta
+//                                    }
+//                                });
+//
+//                            });
+//                });
 //
 //
 //            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
@@ -215,21 +215,21 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //            }
 
 
-        } /** FIM DA CLASSE VIEWHOLDER **/
-//
-//
-//
+//        } /** FIM DA CLASSE VIEWHOLDER **/
+
+
+
 //    } /****** FIM DA CLASSE ADAPTER ******/
-//
-//
-//
+
+
+
 //        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios){
-////            this.funcionarios = funcionarios;
+//            this.funcionarios = funcionarios;
 //        }
-//
+
 //    }
-//
-//
+
+
 }
 
 
