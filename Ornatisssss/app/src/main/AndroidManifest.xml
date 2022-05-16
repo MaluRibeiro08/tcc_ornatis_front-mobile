@@ -16,9 +16,9 @@
         <activity
             android:name=".UI.conta_administradora.funcionario.PrestadorEditarFuncionario"
             android:exported="false" />
-        <activity
-            android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".UI.conta_administradora.funcionario.PrestadorListagemFuncionarios"
             android:exported="true" /> <!-- <activity -->
