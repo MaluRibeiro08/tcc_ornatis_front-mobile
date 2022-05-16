@@ -150,8 +150,7 @@
                 android:id="@+id/spinner_public_alvo"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/verde_claro" />
+                android:layout_marginTop="10dp" />
 
 
             //categoria
@@ -167,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/verde_claro" />
+                android:background="@color/verde_claro"/>
 
 
             //paret do corpo
@@ -324,6 +323,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="120dp">
 
                 <Button
