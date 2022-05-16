@@ -55,8 +55,8 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_cadastrar_funcionario);
 
-        btn_cadastrar_funcionario = findViewById(R.id.btn_cadastrar);
-        btn_cancelar_funcionario = findViewById(R.id.btn_cancelar);
+        btn_cadastrar_funcionario = findViewById(R.id.btn_cadastrar_funcionario);
+        btn_cancelar_funcionario = findViewById(R.id.btn_cancelar_funcionario);
         linear_cb_dia_semana = findViewById(R.id.linear_cb_dia_semana);
         linear_horarios = findViewById(R.id.linear_horarios);
 
