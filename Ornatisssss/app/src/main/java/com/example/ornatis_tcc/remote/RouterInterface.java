@@ -2,6 +2,7 @@ package com.example.ornatis_tcc.remote;
 
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.model.Funcionario;
+import com.example.ornatis_tcc.model.Servico;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,15 @@ public interface RouterInterface {
     //LISTAGEM DE FUNCIONÁRIOS
     @GET("/contaAdministradora/listarFuncionarios/{id_empresa}")
     Call<ArrayList<Funcionario>> getFuncionarios(@Path("id_empresa") int id_empresa);
+
+    //INSERÇÃO DE SERVIÇO
+    @POST("/contaAdministradora/cadastroServico")
+    Call<Servico> addServico(@Body Servico objServico);
+
+    //LISTAGEM DE SERVIÇOS
+//    @GET("/contaAdministradora/listarServicoss/{id_empresa}")
+//    Call<ArrayList<Servico>> getServicos(@Path("id_empresa") int id_empresa);
+
 
     //DESATUALIZADAS
 

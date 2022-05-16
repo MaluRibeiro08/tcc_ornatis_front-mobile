@@ -234,7 +234,7 @@
                 style="@style/checkbox"/>
 
             <CheckBox
-                android:id="@+id/cb_dommicilio"
+                android:id="@+id/cb_domicilio"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:text="@string/domicilio"
@@ -319,11 +319,27 @@
             </androidx.cardview.widget.CardView>
 
 
-            <Button
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Salvar"
-                android:layout_margin="40dp"/>
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="120dp">
+
+                <Button
+                    android:id="@+id/btn_cancelar_servico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"/>
+
+                <Button
+                    android:id="@+id/btn_cadastrar_servico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salvar"
+                    android:layout_marginStart="20dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -824,13 +824,13 @@
                     android:layout_marginBottom="120dp">
 
                     <Button
-                        android:id="@+id/btn_cancelar"
+                        android:id="@+id/btn_cancelar_funcionario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cancelar"/>
 
                     <Button
-                        android:id="@+id/btn_cadastrar"
+                        android:id="@+id/btn_cadastrar_funcionario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Salvar"

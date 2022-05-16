@@ -31,8 +31,8 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 //    private EditText et_nome_do_funcionario;
 //    private EditText et_login_acesso;
 //    private EditText et_senha;
-    private Button btn_cancelar;
-    private Button btn_cadastrar;
+    private Button btn_cancelar_funcionario;
+    private Button btn_cadastrar_funcionario;
     private LinearLayout linear_cb_dia_semana;
     private LinearLayout linear_horarios;
 
@@ -55,8 +55,8 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_cadastrar_funcionario);
 
-        btn_cadastrar = findViewById(R.id.btn_cadastrar);
-        btn_cancelar = findViewById(R.id.btn_cancelar);
+        btn_cadastrar_funcionario = findViewById(R.id.btn_cadastrar);
+        btn_cancelar_funcionario = findViewById(R.id.btn_cancelar);
         linear_cb_dia_semana = findViewById(R.id.linear_cb_dia_semana);
         linear_horarios = findViewById(R.id.linear_horarios);
 
@@ -66,7 +66,7 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         et_senha = findViewById(R.id.et_senha);
 //
 //        //clique para cadastrar
-        btn_cadastrar.setOnClickListener(view -> {
+        btn_cadastrar_funcionario.setOnClickListener(view -> {
 
             Funcionario funcionario = settarDadosFormularioFuncionario();
 
