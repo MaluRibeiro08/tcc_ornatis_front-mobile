@@ -31,8 +31,8 @@ public interface RouterInterface {
     Call<ArrayList<Funcionario>> getFuncionarios(@Path("id_empresa") int id_empresa);
 
     //INSERÇÃO DE SERVIÇO
-    @POST("/contaAdministradora/cadastroServico")
-    Call<Servico> addServico(@Body Servico objServico);
+//    @POST("/contaAdministradora/cadastroServico")
+//    Call<Servico> addServico(@Body Servico objServico);
 
     //LISTAGEM DE SERVIÇOS
 //    @GET("/contaAdministradora/listarServicoss/{id_empresa}")
