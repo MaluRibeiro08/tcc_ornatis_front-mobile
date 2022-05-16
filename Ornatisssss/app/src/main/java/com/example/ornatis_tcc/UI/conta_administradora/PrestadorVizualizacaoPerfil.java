@@ -1,7 +1,10 @@
 package com.example.ornatis_tcc.UI.conta_administradora;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,7 +53,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
 
 //    ContaAdministradora contaAdministradora;
-    int id_empresa =33;
+    int id_empresa =29;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -219,9 +222,12 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
             LinearLayout linear_geral_horarios = findViewById(R.id.container_geral_dos_horarios);
             int contador_funcionamento = 0;
+            boolean temAlgumHorarioVisivel = false;
 
             while (contador_funcionamento <= 6)
             {
+
+
                 String tag = "ln_container_horarios_dia_" + String.valueOf(contador_funcionamento + 1);
                 LinearLayout linear_horarios_dia_semana = linear_geral_horarios.findViewWithTag(tag);
 
@@ -235,30 +241,86 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 {
                     ArrayList<LinkedTreeMap> lista_horarios_do_dia = lista_dias_semama.get(contador_funcionamento);
 
-                    if (lista_horarios_do_dia.size() == 1)
+                    if (lista_horarios_do_dia.size() >= 1)
                     {
-                        Log.d("funcionamento", "dois horarios para essse dia");
+                        //HABILITANDO NAVEGACAO PARA ESTE DIA
+                            LinearLayout linear_pai_navegacao = findViewById(R.id.ln_container_geral_dia_semana);
+                            TextView link_dia_semana = linear_pai_navegacao.findViewWithTag("tv_dia_semana_" + String.valueOf(contador_funcionamento+1));
 
-                        //HORA INICIO
-                            String hora_inicio = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
-                        //HORA TERMINO
-                            String hora_termino = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
+                            int finalContador_funcionamento = contador_funcionamento;
+
+                            link_dia_semana.setOnClickListener
+                            (
+                                view -> {mudarVisualizacaoHorarios(finalContador_funcionamento +1);}
+                            );
+
+                        //PEGANDO DADO HORA INICIO
+                            String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
+                            String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
+
+                        //PEGANDO DADO HORA TERMINO
+                            String hora_termino_inteira = String.valueOf(lista_horarios_do_dia.get(0).get("hora_termino"));
+                            String hora_termino = hora_termino_inteira.substring(0, hora_termino_inteira.lastIndexOf(":"));
 
                         //INSERINDO VALORES NOS TEXTVIEWS
-                            LinearLayout teste = linear_horarios_dia_semana.findViewWithTag("ln_primeiros_horarios");
-                            TextView primeiro_horario_inicio = teste.findViewWithTag("primeiro_horario_inicio");
 
-                            primeiro_horario_inicio.setText(hora_inicio);
-                            linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+                            //PEGANDO LINEAR PAI DOS HORARIOS
+                                LinearLayout ln_container_primeiros_horarios_funcionamento = linear_horarios_dia_semana.findViewWithTag("ln_primeiros_horarios");
 
-                            Log.d("funcionamento", String.valueOf(teste.getChildCount()));
-                            Log.d("funcionamento", primeiro_horario_inicio.getText().toString());
+                            //PEGANDO OS CAMPOS DE HORARIOS DESTE PAI
+                                TextView primeiro_horario_inicio = ln_container_primeiros_horarios_funcionamento.findViewWithTag("primeiro_horario_inicio");
+                                TextView primeiro_horario_termino = ln_container_primeiros_horarios_funcionamento.findViewWithTag("primeiro_horario_termino");
+
+                            //SETTANDO OS VALORES NOS SEUS RESPECTIVOS CAMPOS
+                                primeiro_horario_inicio.setText(hora_inicio);
+                                primeiro_horario_termino.setText(hora_termino);
+
+
+                        //SETTANDO VISIBILIDADE DO PAI
+                            if (temAlgumHorarioVisivel == false)
+                            {
+                                linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+                                temAlgumHorarioVisivel = true;
+                                link_dia_semana.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.black));
+                            }
+
+                            Log.d("funcionamento", String.valueOf(ln_container_primeiros_horarios_funcionamento.getChildCount()));
+                            Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
+
 
 
                     }
-                    else if (lista_horarios_do_dia.size() == 2)
+                    if (lista_horarios_do_dia.size() == 2)
                     {
 
+                        Log.d("funcionamento", "dois horarios para essse dia");
+                        //HORA INICIO
+                            String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_inicio"));
+                            String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
+
+                        //HORA TERMINO
+                            String hora_termino_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_termino"));
+                            String hora_termino = hora_termino_inteira.substring(0, hora_termino_inteira.lastIndexOf(":"));
+
+                        //INSERINDO VALORES NOS TEXTVIEWS
+
+                            //PEGANDO LINEAR PAI DOS HORARIOS E FAZENDO-O VISIVEL
+                                LinearLayout ln_container_segundos_horarios_funcionamento = linear_horarios_dia_semana.findViewWithTag("ln_segundos_horarios");
+                                ln_container_segundos_horarios_funcionamento.setVisibility(View.VISIBLE);
+
+                            //PEGANDO OS CAMPOS DE HORARIOS DESTE PAI
+                                TextView primeiro_horario_inicio = ln_container_segundos_horarios_funcionamento.findViewWithTag("segundo_horario_inicio");
+                                TextView primeiro_horario_termino = ln_container_segundos_horarios_funcionamento.findViewWithTag("segundo_horario_termino");
+
+                            //SETTANDO OS VALORES NOS SEUS RESPECTIVOS CAMPOS
+                                primeiro_horario_inicio.setText(hora_inicio);
+                                primeiro_horario_termino.setText(hora_termino);
+
+                        //SETTANDO VISIBILIDADE DO PAI
+                            //linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+
+                        Log.d("funcionamento", String.valueOf(ln_container_segundos_horarios_funcionamento.getChildCount()));
+                        Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
                     }
                     Log.d("funcionamento", String.valueOf(lista_dias_semama.get(contador_funcionamento)));
 
@@ -267,12 +329,15 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 contador_funcionamento = contador_funcionamento+1;
             }
 
-
-
         //OBSERVACOES DE PAGAMENTO
         //REGRAS DE NEGÓCIO
 
 
 
+    }
+
+    public void mudarVisualizacaoHorarios(int numero_secao_destino)
+    {
+        Log.d("funcionamento", "destino" + String.valueOf(numero_secao_destino));
     }
 }

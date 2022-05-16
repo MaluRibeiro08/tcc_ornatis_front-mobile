@@ -247,7 +247,7 @@
                             android:paddingRight="8dp">
 
                             <TextView
-                                android:id="@+id/tv_dia_semana_1"
+                                android:tag="tv_dia_semana_1"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -260,7 +260,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/tv_dia_semana_2"
+                                android:tag="tv_dia_semana_2"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -272,7 +272,7 @@
                                 android:gravity="center"
                                 />
                             <TextView
-                                android:id="@+id/tv_dia_semana_3"
+                                android:tag="tv_dia_semana_3"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -283,7 +283,7 @@
                                 android:gravity="center"
                                 />
                             <TextView
-                                android:id="@+id/tv_dia_semana_4"
+                                android:tag="tv_dia_semana_4"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -296,7 +296,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/tv_dia_semana_5"
+                                android:tag="tv_dia_semana_5"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -309,7 +309,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/tv_dia_semana_6"
+                                android:tag="tv_dia_semana_6"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -321,7 +321,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/tv_dia_semana_7"
+                                android:tag="tv_dia_semana_7"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="25dp"
@@ -364,7 +364,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -376,7 +376,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -387,20 +387,22 @@
                                 android:layout_width="15dp"
                                 android:layout_height="wrap_content"
                                 android:text="|"
-                                android:textSize="20sp"/>
+                                android:textSize="20sp"
+                                android:visibility="gone"/>
 
                                 <LinearLayout
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -412,7 +414,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -443,7 +445,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -455,7 +457,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -466,20 +468,22 @@
                                     android:layout_width="15dp"
                                     android:layout_height="wrap_content"
                                     android:text="|"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
 
                                 <LinearLayout
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -491,7 +495,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -522,7 +526,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -534,7 +538,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -551,16 +555,18 @@
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
-                                        android:gravity="center"/>
+                                        android:gravity="center"
+                                        android:visibility="gone"/>
                                     <TextView
                                         android:layout_width="15dp"
                                         android:layout_height="wrap_content"
@@ -570,7 +576,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -601,7 +607,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -613,7 +619,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -624,20 +630,22 @@
                                     android:layout_width="15dp"
                                     android:layout_height="wrap_content"
                                     android:text="|"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
 
                                 <LinearLayout
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -649,7 +657,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -680,7 +688,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -692,7 +700,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -703,20 +711,22 @@
                                     android:layout_width="15dp"
                                     android:layout_height="wrap_content"
                                     android:text="|"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
 
                                 <LinearLayout
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -728,7 +738,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -759,7 +769,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -771,7 +781,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -782,20 +792,22 @@
                                     android:layout_width="15dp"
                                     android:layout_height="wrap_content"
                                     android:text="|"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
 
                                 <LinearLayout
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -807,7 +819,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -825,7 +837,7 @@
                                 android:gravity="center"
                                 android:background="@drawable/formato_container_horarios_dias_semana_perfil"
                                 android:backgroundTint="#f8f8f8"
-                                android:visibility="visible">
+                                android:visibility="gone">
 
                                 <LinearLayout
                                     android:tag="ln_primeiros_horarios"
@@ -838,7 +850,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -850,7 +862,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
@@ -861,20 +873,22 @@
                                     android:layout_width="15dp"
                                     android:layout_height="wrap_content"
                                     android:text="|"
-                                    android:textSize="20sp"/>
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
 
                                 <LinearLayout
                                     android:tag="ln_segundos_horarios"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
 
                                     <TextView
                                         android:tag="segundo_horario_inicio"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
                                     <TextView
@@ -886,7 +900,7 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:layout_height="wrap_content"
-                                        android:text="11:50"
+                                        android:text="00:00"
                                         android:textSize="16sp"
                                         android:gravity="center"/>
 
