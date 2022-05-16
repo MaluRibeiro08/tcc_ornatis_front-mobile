@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class Funcionarios {
+public class Funcionario {
 
     @SerializedName("acao")
     @Expose
@@ -48,12 +48,12 @@ public class Funcionarios {
 
 
 
-    public Funcionarios() {
+    public Funcionario() {
     }
 
-    public Funcionarios(String acao, int id_funcionario, String nome_funcionario,
-                        String foto_perfil, int id_empresa, String cod_funcionario,
-                        String login, String senha, ArrayList dados_funcionamento) {
+    public Funcionario(String acao, int id_funcionario, String nome_funcionario,
+                       String foto_perfil, int id_empresa, String cod_funcionario,
+                       String login, String senha, ArrayList dados_funcionamento) {
         this.acao = acao;
         this.id_funcionario = id_funcionario;
         this.nome_funcionario = nome_funcionario;

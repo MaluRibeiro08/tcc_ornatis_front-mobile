@@ -1,16 +1,10 @@
 package com.example.ornatis_tcc.UI.conta_administradora.servico;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
 
 import com.example.ornatis_tcc.R;
-import com.example.ornatis_tcc.model.Funcionarios;
-
-import java.util.ArrayList;
 
 public class PrestadorListagemServicos extends AppCompatActivity {
 

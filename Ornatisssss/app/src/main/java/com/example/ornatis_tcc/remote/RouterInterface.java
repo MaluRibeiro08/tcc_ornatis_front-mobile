@@ -1,10 +1,9 @@
 package com.example.ornatis_tcc.remote;
 
 import com.example.ornatis_tcc.model.ContaAdministradora;
-import com.example.ornatis_tcc.model.Funcionarios;
+import com.example.ornatis_tcc.model.Funcionario;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -24,11 +23,11 @@ public interface RouterInterface {
 
     //INSERÇÃO DE FUNCIONÁRIO
     @POST("/contaAdministradora/cadastroFuncionario")
-    Call<Funcionarios> addFuncionario(@Body Funcionarios objFuncionario);
+    Call<Funcionario> addFuncionario(@Body Funcionario objFuncionario);
 
     //LISTAGEM DE FUNCIONÁRIOS
     @GET("/contaAdministradora/listarFuncionarios/{id_empresa}")
-    Call<ArrayList<Funcionarios>> getFuncionarios(@Path("id_empresa") int id_empresa);
+    Call<ArrayList<Funcionario>> getFuncionarios(@Path("id_empresa") int id_empresa);
 
     //DESATUALIZADAS
 

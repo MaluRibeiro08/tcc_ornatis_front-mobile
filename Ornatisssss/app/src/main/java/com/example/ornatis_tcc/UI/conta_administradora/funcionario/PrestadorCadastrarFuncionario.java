@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.model.DiaUtil;
-import com.example.ornatis_tcc.model.Funcionarios;
+import com.example.ornatis_tcc.model.Funcionario;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
@@ -68,7 +68,7 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 //        //clique para cadastrar
         btn_cadastrar.setOnClickListener(view -> {
 
-            Funcionarios funcionario = settarDadosFormularioFuncionario();
+            Funcionario funcionario = settarDadosFormularioFuncionario();
 
             //CHAMAR ROUTERINTERFACE
             routerInterface = APIUtil.getEmpresaInterface();
@@ -89,9 +89,9 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
 
     }    /**FIM DO ON CREATE **/
 
-    private Funcionarios settarDadosFormularioFuncionario() {
+    private Funcionario settarDadosFormularioFuncionario() {
 
-        Funcionarios funcionario = new Funcionarios();
+        Funcionario funcionario = new Funcionario();
 
         //DADOS PESSOAIS
 //        funcionario.setFoto_perfil(iv_foto_perfil_funcionario.toString);
@@ -169,13 +169,13 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
     }
 
 
-    public void addFuncionario(Funcionarios funcionarios){
-        Call<Funcionarios> call = routerInterface.addFuncionario(funcionarios);
+    public void addFuncionario(Funcionario funcionarios){
+        Call<Funcionario> call = routerInterface.addFuncionario(funcionarios);
 
         call.enqueue(
-                new Callback<Funcionarios>() {
+                new Callback<Funcionario>() {
                     @Override
-                    public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
+                    public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
                         Toast.makeText(PrestadorCadastrarFuncionario.this,
                                 "Funcionário cadastrado com sucesso",
                                 Toast.LENGTH_SHORT).show();
@@ -189,7 +189,7 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<Funcionarios> call, Throwable t) {
+                    public void onFailure(Call<Funcionario> call, Throwable t) {
                         Toast.makeText(PrestadorCadastrarFuncionario.this,
                                 "Erro ao cadastrar o funcionário",
                                 Toast.LENGTH_SHORT).show();

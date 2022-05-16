@@ -1,32 +1,23 @@
 package com.example.ornatis_tcc.UI.conta_administradora.funcionario;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
-import com.example.ornatis_tcc.model.Funcionarios;
-import com.example.ornatis_tcc.model.Item;
+import com.example.ornatis_tcc.model.Funcionario;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,17 +40,17 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
         routerInterface = APIUtil.getEmpresaInterface();
 
 
-        Call<ArrayList<Funcionarios>> call = routerInterface.getFuncionarios(19);
+        Call<ArrayList<Funcionario>> call = routerInterface.getFuncionarios(19);
 
-        call.enqueue(new Callback<ArrayList<Funcionarios>>() {
+        call.enqueue(new Callback<ArrayList<Funcionario>>() {
                          @Override
-                         public void onResponse(Call<ArrayList<Funcionarios>> call, Response<ArrayList<Funcionarios>> response) {
+                         public void onResponse(Call<ArrayList<Funcionario>> call, Response<ArrayList<Funcionario>> response) {
                              if (response.isSuccessful()){
                                  Log.d("listagem", "onResponse: chegou");
-                                 ArrayList<Funcionarios> funcionarios = new ArrayList<>();
+                                 ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
                                  //RECEBE OS DADOS DA API
-                                 ArrayList<Funcionarios> arrayList = new ArrayList<Funcionarios>();
+                                 ArrayList<Funcionario> arrayList = new ArrayList<Funcionario>();
                                  arrayList = response.body();
 
                                  Log.d("listagem", String.valueOf(arrayList.get(0).getNome_funcionario()));
@@ -74,7 +65,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
                          }
 
                          @Override
-                         public void onFailure(Call<ArrayList<Funcionarios>> call, Throwable t) {
+                         public void onFailure(Call<ArrayList<Funcionario>> call, Throwable t) {
                              Log.d("listagem", "onResponse: ops");
                          }
                      });
@@ -95,9 +86,9 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
     /** ADAPTER - RECYCLERVIEW **/
     private class FuncionarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-        ArrayList<Funcionarios> funcionarios;
+        ArrayList<Funcionario> funcionarios;
 
-        public FuncionarioAdapter(ArrayList<Funcionarios> funcionarios) {
+        public FuncionarioAdapter(ArrayList<Funcionario> funcionarios) {
             this.funcionarios = funcionarios;
         }
 
@@ -119,7 +110,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
             /** DADOS DE FUNCIONÁRIO **/
 
-                Funcionarios funcionarios = (Funcionarios) this.funcionarios.get(position);
+                Funcionario funcionarios = (Funcionario) this.funcionarios.get(position);
                 ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionarios);
 
         }
@@ -209,7 +200,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
 //                });
 
-                public void setFuncionarioDados(Funcionarios funcionario) {
+                public void setFuncionarioDados(Funcionario funcionario) {
                     tv_nome_do_funcionario.setText(funcionario.getNome_funcionario());
                     id_funcionario = funcionario.getId_funcionario();
                 }

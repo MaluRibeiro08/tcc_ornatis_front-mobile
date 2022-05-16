@@ -3,17 +3,13 @@ package com.example.ornatis_tcc.UI.conta_administradora.funcionario;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.telecom.Call;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.ornatis_tcc.R;
-import com.example.ornatis_tcc.model.Funcionarios;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
-
-import java.util.List;
 
 public class PrestadorEditarFuncionario extends AppCompatActivity {
 
