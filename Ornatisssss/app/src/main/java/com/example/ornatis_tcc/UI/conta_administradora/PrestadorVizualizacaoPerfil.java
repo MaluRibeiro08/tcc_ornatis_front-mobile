@@ -4,6 +4,7 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ornatis_tcc.R;
+import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorListagemFuncionarios;
+import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta;
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.model.DiaUtil;
 import com.example.ornatis_tcc.remote.APIUtil;
@@ -46,14 +49,18 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         TextView tv_instagram_salao_perfil;
         TextView tv_facebook_salao_perfil;
         LinearLayout ln_container_formas_pagamento_perfil;
+        LinearLayout ln_link_listagem_funcionarios;
 
 
 
 
-
+//PENDENCIAS
+    //REGRAS DE NEGÓCIO
+    //EVENTO PARA ABERTURA DA TELA DE LISTAGEM DE FUNCIONARIOS
+    //NAVEGACAO ENTRE AS ABAS PRINCIPAIS (INICIO ....) (COLORIR ABINHAS)
 
 //    ContaAdministradora contaAdministradora;
-    int id_empresa =29;
+    int id_empresa =33;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -206,6 +213,9 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         //FORMAS DE PAGAMENTO
             int contador_pagamento = 0;
 
+            TextView observacoes_pagamento = findViewById(R.id.tv_observacoes_pagamento_perfil);
+            observacoes_pagamento.setText("OBS: " + contaAdministradora.getObservacoes_pagamento());
+
             while (contador_pagamento < contaAdministradora.getDados_formas_pagamento().size())
             {
                 String tag = "tv_forma_pagto_" + contaAdministradora.getDados_formas_pagamento().get(contador_pagamento);
@@ -231,10 +241,14 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 String tag = "ln_container_horarios_dia_" + String.valueOf(contador_funcionamento + 1);
                 LinearLayout linear_horarios_dia_semana = linear_geral_horarios.findViewWithTag(tag);
 
-                Log.d("funcionamento", String.valueOf(linear_horarios_dia_semana.getChildCount()));
+                //Log.d("funcionamento", String.valueOf(linear_horarios_dia_semana.getChildCount()));
                 if (lista_dias_semama.get(contador_funcionamento) == null)
                 {
-                    Log.d("funcionamento", tag + "nao tem horario");
+                    LinearLayout linear_pai_navegacao = findViewById(R.id.ln_container_geral_dia_semana);
+                    TextView link_dia_semana = linear_pai_navegacao.findViewWithTag("tv_dia_semana_" + String.valueOf(contador_funcionamento+1));
+
+                    link_dia_semana.setTextColor(this.getResources().getColor(R.color.cinza_padrao));
+                    //Log.d("funcionamento", tag + "nao tem horario");
 
                 }
                 else
@@ -251,7 +265,15 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
                             link_dia_semana.setOnClickListener
                             (
-                                view -> {mudarVisualizacaoHorarios(finalContador_funcionamento +1);}
+                                view ->
+                                {
+                                    mudarVisualizacaoHorarios
+                                    (
+                                        finalContador_funcionamento +1,
+                                            linear_pai_navegacao,
+                                            linear_geral_horarios
+                                    );
+                                }
                             );
 
                         //PEGANDO DADO HORA INICIO
@@ -279,13 +301,17 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                         //SETTANDO VISIBILIDADE DO PAI
                             if (temAlgumHorarioVisivel == false)
                             {
+                                //DEIXANDO UM DOS HORÁRIOS VISIVEIS
                                 linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+                                link_dia_semana.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_horarios));
+
                                 temAlgumHorarioVisivel = true;
-                                link_dia_semana.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.black));
+
+                                //link_dia_semana.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.black));
                             }
 
-                            Log.d("funcionamento", String.valueOf(ln_container_primeiros_horarios_funcionamento.getChildCount()));
-                            Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
+                            //Log.d("funcionamento", String.valueOf(ln_container_primeiros_horarios_funcionamento.getChildCount()));
+                            //Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
 
 
 
@@ -293,7 +319,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                     if (lista_horarios_do_dia.size() == 2)
                     {
 
-                        Log.d("funcionamento", "dois horarios para essse dia");
+                        //Log.d("funcionamento", "dois horarios para essse dia");
                         //HORA INICIO
                             String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_inicio"));
                             String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
@@ -316,13 +342,13 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                                 primeiro_horario_inicio.setText(hora_inicio);
                                 primeiro_horario_termino.setText(hora_termino);
 
-                        //SETTANDO VISIBILIDADE DO PAI
-                            //linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+                        //SETTANDO VISIBILIDADE SEPARADOS
+                            linear_horarios_dia_semana.findViewWithTag("simbolo_e_comercial").setVisibility(View.VISIBLE);
 
-                        Log.d("funcionamento", String.valueOf(ln_container_segundos_horarios_funcionamento.getChildCount()));
-                        Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
+                        //Log.d("funcionamento", String.valueOf(ln_container_segundos_horarios_funcionamento.getChildCount()));
+                        //Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
                     }
-                    Log.d("funcionamento", String.valueOf(lista_dias_semama.get(contador_funcionamento)));
+                    //Log.d("funcionamento", String.valueOf(lista_dias_semama.get(contador_funcionamento)));
 
                 }
 
@@ -336,8 +362,60 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
     }
 
-    public void mudarVisualizacaoHorarios(int numero_secao_destino)
+    public void mudarVisualizacaoHorarios(int numero_secao_destino, LinearLayout ln_pai_tv_link_navegacao, LinearLayout ln_pai_containers_horarios)
     {
+        //TIRAR O HORÁRIO QUE ESTÁ
+            //TIRAR DESTAQUE DO LINK
+                ArrayList<TextView> arr_links_navegacao = new ArrayList<>();
+                int contadorLinks = 0;
+
+                while (contadorLinks < ln_pai_tv_link_navegacao.getChildCount())
+                {
+                    arr_links_navegacao.add((TextView) ln_pai_tv_link_navegacao.getChildAt(contadorLinks));
+
+                    Log.d("funcionamento", "io");
+                    Log.d("funcionamento", String.valueOf(ln_pai_tv_link_navegacao.getChildAt(contadorLinks)));
+
+                    contadorLinks = contadorLinks+1;
+                }
+
+                arr_links_navegacao.forEach(link -> {link.setBackgroundTintList(this.getResources().getColorStateList(R.color.white));});
+
+              //Log.d("funcionamento", String.valueOf(arr_links_navegacao));
+
+                //int contador_apagamento_links = 0;
+
+                //while (contador_apagamento_links < arr_links_navegacao.size())
+                //{
+                    //TextView link = arr_links_navegacao.get(contador_apagamento_links);
+                    //Log.d("funcionamentoa", String.valueOf(contador_apagamento_links));
+
+                    //link.setBackgroundTintList(this.getResources().getColorStateList(R.color.white));
+
+                    //contador_apagamento_links = contador_apagamento_links+1;
+                //}
+
+            //FECHAR CONTAINER
+                ArrayList<LinearLayout> arr_container_horarios_dias_semana = new ArrayList<>();
+                int contadorLineares = 0;
+
+                while (contadorLineares < ln_pai_containers_horarios.getChildCount())
+                {
+                    arr_container_horarios_dias_semana.add((LinearLayout) ln_pai_containers_horarios.getChildAt(contadorLineares));
+                    contadorLineares = contadorLineares+1;
+                }
+               arr_container_horarios_dias_semana.forEach(linearLayout -> {linearLayout.setVisibility(View.GONE);});
+
+        //MOSTRAR O HORARIO QUE SE DESEJA
+            //DESTACAR LINK
+                TextView link_dia_semana = ln_pai_tv_link_navegacao.findViewWithTag("tv_dia_semana_" + numero_secao_destino);
+                link_dia_semana.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_horarios));
+
+            //MOSTRAR CONTAINER DE HORARIOS
+                String tag = "ln_container_horarios_dia_" + numero_secao_destino;
+                LinearLayout linear_horarios_dia_semana = ln_pai_containers_horarios.findViewWithTag(tag);
+                linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+
         Log.d("funcionamento", "destino" + String.valueOf(numero_secao_destino));
     }
 }
