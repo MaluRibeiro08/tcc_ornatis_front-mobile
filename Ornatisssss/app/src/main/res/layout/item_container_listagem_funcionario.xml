@@ -37,7 +37,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/tv_nome_do_funcionario"
+                android:id="@+id/tv_nome_do_funcionario_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="José da Silva"

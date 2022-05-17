@@ -46,7 +46,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
                          @Override
                          public void onResponse(Call<ArrayList<Funcionario>> call, Response<ArrayList<Funcionario>> response) {
                              if (response.isSuccessful()){
-                                 Log.d("listagem", "onResponse: chegou");
+//                                 Log.d("listagem", "onResponse: chegou");
                                  ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
                                  //RECEBE OS DADOS DA API
@@ -110,8 +110,9 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
             /** DADOS DE FUNCIONÁRIO **/
 
-                Funcionario funcionarios = (Funcionario) this.funcionarios.get(position);
-                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionarios);
+                Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
+            Log.d("listagem", funcionario.getNome_funcionario());
+                ((FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionario);
 
         }
 
@@ -128,10 +129,11 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
             private ImageView iv_foto_perfil_funcionario;
             private int id_funcionario;
 
-            public FuncionarioViewHolder(View itemViewFuncionario) {
+
+            public FuncionarioViewHolder(@NonNull View itemViewFuncionario) {
                 super(itemViewFuncionario);
 
-                tv_nome_do_funcionario = findViewById(R.id.tv_nome_do_funcionario);
+                tv_nome_do_funcionario = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
 
 
 
