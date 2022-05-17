@@ -7,6 +7,7 @@ import com.example.ornatis_tcc.model.Servico;
 import java.util.ArrayList;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Body;
@@ -29,6 +30,10 @@ public interface RouterInterface {
     //LISTAGEM DE FUNCIONÁRIOS
     @GET("/contaAdministradora/listarFuncionarios/{id_empresa}")
     Call<ArrayList<Funcionario>> getFuncionarios(@Path("id_empresa") int id_empresa);
+
+    //EXCLUSÃO DE FUNCIONÁRIO
+    @DELETE("/contaAdministradora/excluirFuncionario/{id_funcionario}")
+    Call<Funcionario> deleteFuncioanrio(@Path("id_funcionario") int id_funcionario);
 
     //INSERÇÃO DE SERVIÇO
 //    @POST("/contaAdministradora/cadastroServico")
