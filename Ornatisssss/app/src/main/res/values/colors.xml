@@ -17,6 +17,7 @@
     <color name="cinza_normal">#635F5F</color>
     <color name="cinza_claro">#F8F8F8</color>
     <color name="cinza_clarinho">#eeeeee</color>
+    <color name="cinza_horarios">#f8f8f8</color>
 
 
 </resources>
