@@ -77,6 +77,8 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 tv_instagram_salao_perfil= findViewById(R.id.tv_instagram_salao_perfil);
                 tv_facebook_salao_perfil= findViewById(R.id.tv_facebook_salao_perfil);
                 ln_container_formas_pagamento_perfil = findViewById(R.id.ln_container_formas_pagamento_perfil);
+                ln_link_listagem_funcionarios = findViewById(R.id.ln_link_listagem_funcionarios);
+
 
         //NAVEGAÇÃO ENTRE AS SECOES
             //ATRIBUINDO OS ELEMENTOS GRÁFICOS À VARIAVEL
@@ -93,26 +95,36 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             //EVENTOS DE CLICK E NAVEGACAO
                 tv_aba_inicio.setOnClickListener(view ->
                     {
-                        trocarVisualizacaoAbas(container_inicio);
+                        trocarVisualizacaoAbas(container_inicio, tv_aba_inicio);
                     }
                 );
                 tv_aba_servicos.setOnClickListener(view ->
                         {
-                            trocarVisualizacaoAbas(container_servicos);
+                            trocarVisualizacaoAbas(container_servicos, tv_aba_servicos);
                         }
                 );
                 tv_aba_produtos.setOnClickListener(view ->
                         {
-                            trocarVisualizacaoAbas(container_produtos);
+                            trocarVisualizacaoAbas(container_produtos, tv_aba_produtos);
                         }
                 );
                 tv_aba_feedback.setOnClickListener(view ->
                         {
-                            trocarVisualizacaoAbas(container_feedbacks);
+                            trocarVisualizacaoAbas(container_feedbacks, tv_aba_feedback);
                         }
                 );
+
         //BUSCAR OS DADOS E PREENCHER SECAO 'INICIO'
+        ln_link_listagem_funcionarios.setOnClickListener(view ->
+        {
+            startActivity(new Intent(
+                    PrestadorVizualizacaoPerfil.this,
+                    PrestadorListagemFuncionarios.class
+            ));
+
+        });
             getDadosPerfilEstabelecimento(id_empresa);
+
     }
 
     public ContaAdministradora getDadosPerfilEstabelecimento (int id_empresa)
@@ -159,18 +171,22 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         return contaAdministradora;
     }
 
-    public void trocarVisualizacaoAbas(LinearLayout linearASerVisualizado)
+    public void trocarVisualizacaoAbas(LinearLayout linearASerVisualizado, TextView aba_destino)
     {
         LinearLayout [] containers = new LinearLayout[] {container_inicio, container_servicos, container_produtos, container_feedbacks};
+        TextView [] abas = new TextView[] {tv_aba_inicio, tv_aba_servicos, tv_aba_produtos, tv_aba_feedback};
         int contador = 0;
 
         while (contador < containers.length)
         {
             containers[contador].setVisibility(View.GONE);
+            abas[contador].setBackgroundTintList(this.getResources().getColorStateList(R.color.white));
+
             contador = contador+1;
         }
 
         linearASerVisualizado.setVisibility(View.VISIBLE);
+        aba_destino.setBackgroundTintList(this.getResources().getColorStateList(R.color.verde_claro));
     }
 
     public void preencherInformacoesAbaInicial(ContaAdministradora contaAdministradora)
@@ -199,7 +215,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             {
                 tv_instagram_salao_perfil.setText(contaAdministradora.getNome_usuario_instagram());
             }
-            if (contaAdministradora.getNome_usuario_instagram() == null)
+            if (contaAdministradora.getLink_facebook() == null)
             {
 
                 tv_facebook_salao_perfil.setText("Não cadastrado :/");

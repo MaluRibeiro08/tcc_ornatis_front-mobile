@@ -106,6 +106,7 @@
 
             //ABAS PARA MUDAR DE TELA
             <LinearLayout
+                android:id="@+id/ln_links_abas_principais"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -116,28 +117,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/inicio"
-                    android:layout_marginEnd="40dp"/>
+                    android:layout_marginEnd="40dp"
+                    android:padding="10dp"
+                    android:background="@drawable/formato_tv_dias_semana_perfil" />
 
                 <TextView
                     android:id="@+id/tv_aba_servicos_adm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/servicos"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/formato_tv_dias_semana_perfil"/>
 
                 <TextView
                     android:id="@+id/tv_aba_produtos_adm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/produtos"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:padding="10dp"
+                    android:background="@drawable/formato_tv_dias_semana_perfil"/>
 
                 <TextView
                     android:id="@+id/tv_aba_feedback_adm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/feedbacks"
-                    android:layout_marginStart="40dp"/>
+                    android:layout_marginStart="40dp"
+                    android:padding="10dp"
+                    android:background="@drawable/formato_tv_dias_semana_perfil"/>
 
             </LinearLayout>
 
@@ -153,70 +162,86 @@
                 //Biografia
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="50dp"
-                        android:src="@drawable/ic_quotation_mark_24" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_quotation_mark_24" />
+                    </LinearLayout>
+
 
                     <TextView
                         android:id="@+id/tv_biografia_perfil"
-                        android:layout_width="270dp"
-                        android:layout_height="80dp"
-                        android:layout_marginEnd="30dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="20dp"
                         android:gravity="center"
                         android:layout_gravity="center"
                         android:text="Breve descrição - Lorem Ipsum has been the industry's standard dummy text ever since."/>
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:src="@drawable/ic_quotation_mark_24" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="bottom">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_quotation_mark_24"
+                            android:gravity="bottom"/>
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 //Slide de imagens
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp">
+<!--                <HorizontalScrollView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="150dp">-->
 
-                    <LinearLayout
-                        android:layout_marginStart="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+<!--                    <LinearLayout-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal">-->
 
-                        <ImageView
-                            android:layout_width="200dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/cabelos"
-                            android:scaleType="centerCrop" />
+<!--                        <ImageView-->
+<!--                            android:layout_width="200dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:src="@drawable/cabelos"-->
+<!--                            android:scaleType="centerCrop" />-->
 
-                        <ImageView
-                            android:layout_width="200dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/cabelos"
-                            android:scaleType="centerCrop"
-                            android:layout_marginStart="10dp"/>
+<!--                        <ImageView-->
+<!--                            android:layout_width="200dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:src="@drawable/cabelos"-->
+<!--                            android:scaleType="centerCrop"-->
+<!--                            android:layout_marginStart="10dp"/>-->
 
 
-                        <ImageView
-                            android:layout_width="200dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/cabelos"
-                            android:scaleType="centerCrop"
-                            android:layout_marginStart="10dp"/>
+<!--                        <ImageView-->
+<!--                            android:layout_width="200dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:src="@drawable/cabelos"-->
+<!--                            android:scaleType="centerCrop"-->
+<!--                            android:layout_marginStart="10dp"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                </HorizontalScrollView>
+<!--                </HorizontalScrollView>-->
 
                 //Container de informações salão
                 <LinearLayout
@@ -224,12 +249,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_margin="40dp">
+                    android:layout_marginHorizontal="40dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/hora_atendimento"
+                        android:layout_marginBottom="20dp"
                         style="@style/textView"/>
 
                     <LinearLayout
@@ -350,7 +376,7 @@
                                 android:paddingBottom="5dp"
                                 android:gravity="center"
                                 android:background="@drawable/formato_container_horarios_dias_semana_perfil"
-                                android:backgroundTint="#f8f8f8"
+                                android:backgroundTint="@color/cinza_horarios"
                                 android:visibility="gone">
 
                                 <LinearLayout
@@ -512,7 +538,7 @@
                                 android:paddingBottom="5dp"
                                 android:gravity="center"
                                 android:background="@drawable/formato_container_horarios_dias_semana_perfil"
-                                android:backgroundTint="@color/cinza_clarinho"
+                                android:backgroundTint="@color/cinza_horarios"
                                 android:visibility="gone">
 
                                 <LinearLayout
@@ -593,7 +619,7 @@
                                 android:paddingBottom="5dp"
                                 android:gravity="center"
                                 android:background="@drawable/formato_container_horarios_dias_semana_perfil"
-                                android:backgroundTint="@color/cinza_clarinho"
+                                android:backgroundTint="@color/cinza_horarios"
                                 android:visibility="gone">
 
                                 <LinearLayout
@@ -674,7 +700,7 @@
                                 android:paddingBottom="5dp"
                                 android:gravity="center"
                                 android:background="@drawable/formato_container_horarios_dias_semana_perfil"
-                                android:backgroundTint="@color/cinza_clarinho"
+                                android:backgroundTint="@color/cinza_horarios"
                                 android:visibility="gone">
 
                                 <LinearLayout
@@ -755,7 +781,7 @@
                                 android:paddingBottom="5dp"
                                 android:gravity="center"
                                 android:background="@drawable/formato_container_horarios_dias_semana_perfil"
-                                android:backgroundTint="@color/cinza_clarinho"
+                                android:backgroundTint="@color/cinza_horarios"
                                 android:visibility="gone">
 
                                 <LinearLayout
@@ -919,7 +945,9 @@
                         android:layout_height="wrap_content"
                         android:text="Atendimento:"
                         style="@style/textView"
-                        android:layout_marginTop="40dp"/>
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="10dp"
+                        />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -933,6 +961,7 @@
                         android:layout_height="wrap_content"
                         android:text="Dados de contato:"
                         android:layout_marginTop="32dp"
+                        android:layout_marginBottom="10dp"
                         style="@style/textView"/>
 
                     <TextView
@@ -950,6 +979,7 @@
                         android:layout_height="wrap_content"
                         android:text="Endereço:"
                         android:layout_marginTop="32dp"
+                        android:layout_marginBottom="10dp"
                         style="@style/textView"/>
 
                     <TextView
@@ -965,7 +995,9 @@
                         android:layout_height="wrap_content"
                         android:text="Redes Sociais:"
                         android:layout_marginTop="32dp"
-                        style="@style/textView"/>
+                        style="@style/textView"
+                        android:layout_marginBottom="10dp"
+                        />
 
                     <TextView
                         android:id="@+id/tv_instagram_salao_perfil"
@@ -991,17 +1023,25 @@
                         android:layout_height="wrap_content"
                         android:text="Nossos funcionários:"
                         android:layout_marginTop="32dp"
+                        android:layout_marginBottom="10dp"
                         style="@style/textView"/>
 
 
                     <LinearLayout
+                        android:id="@+id/ln_link_listagem_funcionarios"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@drawable/formato_retangulo_cinza">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                        android:backgroundTint="@color/cinza_horarios"
+                        android:elevation="1dp">
 
-                        <!--                    <TextView-->
-                        <!--                        android:layout_width="match_parent"-->
-                        <!--                        android:layout_height="wrap_content" />-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Clique para acessar os seus funcionários"
+                            android:textAlignment="center"/>
 
                     </LinearLayout>
 
@@ -1079,6 +1119,14 @@
                             android:layout_marginBottom="10dp"
                             android:text="Via App"
                             android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tv_observacoes_pagamento_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="40dp"
+                            android:text=""
+                            android:textAlignment="textStart"/>
 
 
                     </LinearLayout>
