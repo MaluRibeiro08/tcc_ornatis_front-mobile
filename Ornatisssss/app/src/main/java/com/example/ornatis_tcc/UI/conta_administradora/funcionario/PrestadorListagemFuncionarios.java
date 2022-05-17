@@ -1,9 +1,11 @@
 package com.example.ornatis_tcc.UI.conta_administradora.funcionario;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.model.Funcionario;
@@ -137,9 +140,23 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
 
 
+//
+//                /** APARECENDO UMA DIALOG COM DUAS OPÇÕES: EDITAR E EXCLUIR **/
+                itemViewFuncionario.setOnClickListener(view -> {
 
-                /** APARECENDO UMA DIALOG COM DUAS OPÇÕES: EDITAR E EXCLUIR **/
-//                itemViewFuncionario.setOnClickListener(view -> {
+
+                    Log.d("listagem", "oie");
+
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
+                            .setMessage("Qual ação você deseja executar")
+                            .setPositiveButton("Ver detalhes", (dialog, witch)->{})
+                            .setNegativeButton("Excluir", ((dialog, witch)->{
+
+
+
+                            }));
+
+                });
 
 //                    /**
 //                     setMessage -> Título da caixa de alerta
@@ -157,9 +174,10 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                     2- Ação a ser executada
 //                     **/
 
+
 //                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
-//                            .setMessage("Escolha a ação que deseja executar")
-//                            .setPositiveButton("EDITAR", (dialog, witch)->{
+//                            .setMessage("Qual ação você deseja executar")
+//                            .setPositiveButton("Ver detalhes", (dialog, witch) -> {
 //
 //                                //1
 //                                Intent intent = new Intent(PrestadorListagemFuncionarios.this, PrestadorEditarFuncionario.class);
@@ -171,17 +189,17 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                                startActivity(intent);
 //
 //                            })
-//                            .setNegativeButton("EXCLUIR", (dialog, witch)->{
+//                            .setNegativeButton("EXCLUIR", (dialog, witch) -> {
 //
 //                                routerInterface = APIUtil.getEmpresaInterface();
-
-                            //EXCLUIR FUNCIONÁRIO
-//                                Call<Funcionarios> call = routerInterface.deleteLivro(id_funcionario);
-
+//
+////                            EXCLUIR FUNCIONÁRIO
+//                                Call<Funcionario> call = routerInterface.deleteFuncioanrio(id_funcionario);
+//
 //                                //retornando a chamada
-//                                call.enqueue(new Callback<Funcionarios>() {
+//                                call.enqueue(new Callback<Funcionario>() {
 //                                    @Override
-//                                    public void onResponse(Call<Funcionarios> call, Response<Funcionarios> response) {
+//                                    public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
 //                                        //tratar a resposta
 //                                        Toast.makeText(PrestadorListagemFuncionarios.this, "FUNCIONÁRIO EXCLUÍDO COM SUCESSO!", Toast.LENGTH_SHORT).show();
 //
@@ -190,12 +208,14 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 //                                    }
 //
 //                                    @Override
-//                                    public void onFailure(Call<Funcionarios> call, Throwable t) {
+//                                    public void onFailure(Call<Funcionario> call, Throwable t) {
 //                                        //tratar um problema que não há nenhuma resposta
 //                                    }
 //                                });
-
+//
 //                            });
+
+
                 } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
 
 //                itemFuncionario.setOnClickListener(view -> {
