@@ -20,12 +20,13 @@
 <!--            android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"-->
 <!--            android:exported="true" />-->
         <activity
-            android:name=".UI.conta_administradora.funcionario.PrestadorListagemFuncionarios"
-            android:exported="true" /> <!-- <activity -->
-        <!-- android:name=".PrestadorCadastrarFuncionario" -->
-        <!-- android:exported="true" /> -->
+            android:name=".UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario"
+            android:exported="true" />
+<!--        <activity -->
+<!--         android:name=".UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario" -->
+<!--         android:exported="true" />-->
         <activity
-            android:name=".UI.conta_administradora.manutencao_conta.CadastroContaAdministradora"
+            android:name=".UI.conta_administradora.funcionario.PrestadorListagemFuncionarios"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -33,6 +33,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
     private ImageView iv_foto_perfil_funcionario;
     private String tv_nome_do_funcionario, tv_profissao;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +47,11 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
         Call<ArrayList<Funcionario>> call = routerInterface.getFuncionarios(19);
 
         call.enqueue(new Callback<ArrayList<Funcionario>>() {
-                         @Override
-                         public void onResponse(Call<ArrayList<Funcionario>> call, Response<ArrayList<Funcionario>> response) {
-                             if (response.isSuccessful()){
+                        @Override
+                        public void onResponse(Call<ArrayList<Funcionario>> call, Response<ArrayList<Funcionario>> response) {
+//                            Log.d("listagem", "teste2222");
+
+                            if (response.isSuccessful()){
 //                                 Log.d("listagem", "onResponse: chegou");
                                  ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
@@ -77,9 +80,9 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
 
              //MUDAR DE TELA AO CLICAR NO +
-//                adicionando_novo_funcionario.setOnClickListener(view -> {
-//                    startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
-//                });
+                adicionando_novo_funcionario.setOnClickListener(view -> {
+                    startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorCadastrarFuncionario.class));
+                });
 
 
     }//fim do método onCreate
@@ -128,102 +131,62 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
         /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
         class FuncionarioViewHolder extends RecyclerView.ViewHolder {
 
-            private TextView tv_nome_do_funcionario;
-            private ImageView iv_foto_perfil_funcionario;
+            private TextView tv_nome_do_funcionario_card;
+//            private ImageView iv_foto_perfil_funcionario;
+            private ImageView excluir_funcionario;
             private int id_funcionario;
 
 
             public FuncionarioViewHolder(@NonNull View itemViewFuncionario) {
                 super(itemViewFuncionario);
 
-                tv_nome_do_funcionario = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
+                tv_nome_do_funcionario_card = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
+                excluir_funcionario = itemViewFuncionario.findViewById(R.id.excluir_funcionario);
 
 
+                //AÇÃO DE CLIQUE NA LIXEIRA
+                excluir_funcionario.setOnClickListener(view -> {
 
-//
-//                /** APARECENDO UMA DIALOG COM DUAS OPÇÕES: EDITAR E EXCLUIR **/
-                itemViewFuncionario.setOnClickListener(view -> {
+                    routerInterface = APIUtil.getEmpresaInterface();
+
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.setAcao("desabilitarFuncionario");
+                    funcionario.setId_funcionario(1);
+
+                    Call<Funcionario> call = routerInterface.deleteFuncionario(funcionario);
+
+                    call.enqueue(new Callback<Funcionario>() {
+                        @Override
+                        public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
+                            Toast.makeText(PrestadorListagemFuncionarios.this,
+                                            "O funcionário foi excluído da sua lista",
+                                            Toast.LENGTH_SHORT).show();
+
+                            startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
+                        }
+
+                        @Override
+                        public void onFailure(Call<Funcionario> call, Throwable t) {
+                            Log.d("exclusao", "FALHOU!");
 
 
-                    Log.d("listagem", "oie");
+                            Toast.makeText(PrestadorListagemFuncionarios.this,
+                                    "FALHA AO EXCLUIR FUNCIONÁRIO",
+                                    Toast.LENGTH_SHORT).show();
 
-                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
-                            .setMessage("Qual ação você deseja executar")
-                            .setPositiveButton("Ver detalhes", (dialog, witch)->{})
-                            .setNegativeButton("Excluir", ((dialog, witch)->{
-
-
-
-                            }));
-
+                        }
+                    });
                 });
 
-//                    /**
-//                     setMessage -> Título da caixa de alerta
-//                     PARÂMETROS:
-//                     1- Título
-//
-//                     setPositiveButton -> Define uma opção de ação
-//                     PARÂMETROS:
-//                     1- Título
-//                     2- Ação a ser executada
-//
-//                     setNegativeButton -> Define uma opção de ação
-//                     PARÂMETROS:
-//                     1- Título
-//                     2- Ação a ser executada
-//                     **/
 
-
-//                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrestadorListagemFuncionarios.this)
-//                            .setMessage("Qual ação você deseja executar")
-//                            .setPositiveButton("Ver detalhes", (dialog, witch) -> {
-//
-//                                //1
-//                                Intent intent = new Intent(PrestadorListagemFuncionarios.this, PrestadorEditarFuncionario.class);
-//
-//                                //3 - passando o codigo
-//                                intent.putExtra("id_funcionario", id_funcionario);
-//
-//                                //2
-//                                startActivity(intent);
-//
-//                            })
-//                            .setNegativeButton("EXCLUIR", (dialog, witch) -> {
-//
-//                                routerInterface = APIUtil.getEmpresaInterface();
-//
-////                            EXCLUIR FUNCIONÁRIO
-//                                Call<Funcionario> call = routerInterface.deleteFuncioanrio(id_funcionario);
-//
-//                                //retornando a chamada
-//                                call.enqueue(new Callback<Funcionario>() {
-//                                    @Override
-//                                    public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
-//                                        //tratar a resposta
-//                                        Toast.makeText(PrestadorListagemFuncionarios.this, "FUNCIONÁRIO EXCLUÍDO COM SUCESSO!", Toast.LENGTH_SHORT).show();
-//
-//                                        startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
-//
-//                                    }
-//
-//                                    @Override
-//                                    public void onFailure(Call<Funcionario> call, Throwable t) {
-//                                        //tratar um problema que não há nenhuma resposta
-//                                    }
-//                                });
-//
-//                            });
-
-
-                } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
+            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
 
 //                itemFuncionario.setOnClickListener(view -> {
 
 //                });
 
                 public void setFuncionarioDados(Funcionario funcionario) {
-                    tv_nome_do_funcionario.setText(funcionario.getNome_funcionario());
+                    tv_nome_do_funcionario_card.setText(funcionario.getNome_funcionario());
                     id_funcionario = funcionario.getId_funcionario();
                 }
 

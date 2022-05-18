@@ -32,8 +32,12 @@ public interface RouterInterface {
     Call<ArrayList<Funcionario>> getFuncionarios(@Path("id_empresa") int id_empresa);
 
     //EXCLUSÃO DE FUNCIONÁRIO
+    @DELETE("/contaAdministradora/excluirFuncionario")
+    Call<Funcionario> deleteFuncionario(@Body Funcionario funcionario);
+
+
     @DELETE("/contaAdministradora/excluirFuncionario/{id_funcionario}")
-    Call<Funcionario> deleteFuncioanrio(@Path("id_funcionario") int id_funcionario);
+    Call<Funcionario> deleteFuncionario(@Path("id_funcionario") int id_funcionario, @Path("acao") String acao);
 
     //INSERÇÃO DE SERVIÇO
 //    @POST("/contaAdministradora/cadastroServico")
