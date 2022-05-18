@@ -1131,6 +1131,286 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:id="@+id/container_primarios_regras_negocio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ln_container_titulo_secoes_regras_negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Regras de Cancelamento:"
+                                style="@style/textView"
+                                android:paddingBottom="10dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ln_container_conteudo_secao_regras_negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ln_container_taxa_unica_nula"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_taxa_unica_nula_perfil"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cancelamentos não são cobrados!"
+                                    android:drawableStart="@drawable/ic_bloqueado_proibido"
+                                    android:drawableTint="@color/verde_padrao"
+                                    android:gravity="center_vertical"
+                                    android:drawablePadding="3dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ln_container_geral_regras_variadas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible"
+                                >
+                                <LinearLayout
+                                    android:id="@+id/ln_container_explicacao"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp">
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Valor serviço"/>
+
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/formato_container_formas_cancelamento">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Valor em fução da antecedência do cancelamento"
+                                            android:paddingStart="8dp"
+                                            android:layout_margin="5dp"
+                                            />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_container_geral_regras_abaixo_cem"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp"
+                                    >
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Abaixo de cem"/>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_container_regras_abaixo_cem"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/formato_container_formas_cancelamento">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:tag="tv_valor"
+                                                android:layout_width="80dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="15%"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+
+                                            <TextView
+                                                android:tag="tv_antecedencia"
+                                                android:layout_width="0dp"
+                                                android:layout_weight="1"
+                                                android:layout_height="wrap_content"
+                                                android:text="6 h"
+                                                android:background="@drawable/formato_container_formas_cancelamento"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:tag="tv_valor"
+                                                android:layout_width="80dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="R$ 20,00"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+
+                                            <TextView
+                                                android:tag="tv_antecedencia"
+                                                android:layout_width="0dp"
+                                                android:layout_weight="1"
+                                                android:layout_height="wrap_content"
+                                                android:text="6 h"
+                                                android:background="@drawable/formato_container_formas_cancelamento"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_container_geral_regras_acima_cem"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp">
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Acima cem"/>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_container_regras_acima_cem"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/formato_container_formas_cancelamento">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:tag="tv_valor"
+                                                android:layout_width="80dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="R$ 20,00"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+
+                                            <TextView
+                                                android:tag="tv_antecedencia"
+                                                android:layout_width="0dp"
+                                                android:layout_weight="1"
+                                                android:layout_height="wrap_content"
+                                                android:text="6 h"
+                                                android:background="@drawable/formato_container_formas_cancelamento"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:tag="tv_valor"
+                                                android:layout_width="80dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="R$ 20,00"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+
+                                            <TextView
+                                                android:tag="tv_antecedencia"
+                                                android:layout_width="0dp"
+                                                android:layout_weight="1"
+                                                android:layout_height="wrap_content"
+                                                android:text="6 h"
+                                                android:background="@drawable/formato_container_formas_cancelamento"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:tag="tv_valor"
+                                                android:layout_width="80dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="R$ 20,00"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+
+                                            <TextView
+                                                android:tag="tv_antecedencia"
+                                                android:layout_width="0dp"
+                                                android:layout_weight="1"
+                                                android:layout_height="wrap_content"
+                                                android:text="6 h"
+                                                android:background="@drawable/formato_container_formas_cancelamento"
+                                                android:paddingStart="8dp"
+                                                android:layout_margin="5dp"
+                                                />
+                                        </LinearLayout>
+                                        
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                    </LinearLayout>
+
 
                 </LinearLayout> //container_de_informacoes_salao
 

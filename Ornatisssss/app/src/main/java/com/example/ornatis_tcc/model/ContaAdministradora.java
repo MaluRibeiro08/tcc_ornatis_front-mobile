@@ -418,7 +418,7 @@ public class ContaAdministradora {
         this.senha_adm = senha_adm;
     }
 
-    public int getTaxa_unica_cancelamento() {
+    public Integer getTaxa_unica_cancelamento() {
         return taxa_unica_cancelamento;
     }
 

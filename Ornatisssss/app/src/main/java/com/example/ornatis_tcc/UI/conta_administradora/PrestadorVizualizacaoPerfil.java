@@ -1,22 +1,18 @@
 package com.example.ornatis_tcc.UI.conta_administradora;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorListagemFuncionarios;
-import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta;
 import com.example.ornatis_tcc.model.ContaAdministradora;
-import com.example.ornatis_tcc.model.DiaUtil;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 import com.google.gson.internal.LinkedTreeMap;
@@ -55,8 +51,8 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
 
 //PENDENCIAS
-    //REGRAS DE NEGÓCIO
-    //EVENTO PARA ABERTURA DA TELA DE LISTAGEM DE FUNCIONARIOS
+    //REGRAS DE NEGÓCIO OK
+    //EVENTO PARA ABERTURA DA TELA DE LISTAGEM DE FUNCIONARIOS OK
     //NAVEGACAO ENTRE AS ABAS PRINCIPAIS (INICIO ....) (COLORIR ABINHAS)
 
 //    ContaAdministradora contaAdministradora;
@@ -371,11 +367,80 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 contador_funcionamento = contador_funcionamento+1;
             }
 
-        //OBSERVACOES DE PAGAMENTO
         //REGRAS DE NEGÓCIO
+            if (contaAdministradora.getDados_taxa_cancelamento() !=null && contaAdministradora.getTaxa_unica_cancelamento() != null)
+            {
+                Log.d("regras_negocio", "o salao não cobra nada");
+            }
+            else
+            {
+                if (contaAdministradora.getTaxa_unica_cancelamento() != null)
+                {
+                    TextView tv_taxa_unica = findViewById(R.id.tv_taxa_unica_nula_perfil);
+                    String texto_taxa = "Cobra-se R$ " + contaAdministradora.getTaxa_unica_cancelamento() + ",00 por cancelamento!";
+
+                    tv_taxa_unica.setText(texto_taxa);
+                    tv_taxa_unica.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_cifrao, 0, 0, 0);
+                }
+                else
+                {
+                    findViewById(R.id.ln_container_taxa_unica_nula).setVisibility(View.GONE);
+                    findViewById(R.id.ln_container_geral_regras_variadas).setVisibility(View.VISIBLE);
+
+                    int contador_regras = 0;
+                    ArrayList<LinkedTreeMap> regras_cancelamento = contaAdministradora.getDados_taxa_cancelamento();
+
+                    while (contador_regras < regras_cancelamento.size())
+                    {
+                        LinkedTreeMap regra = regras_cancelamento.get(contador_regras);
+                        int acima_cem = Integer.parseInt(regra.get("valor_acima_de_100").toString().substring(0, regra.get("valor_acima_de_100").toString().lastIndexOf(".")));
+                        int horas_tolerancia = Integer.parseInt(regra.get("horas_tolerancia").toString().substring(0, regra.get("valor_acima_de_100").toString().lastIndexOf(".")));
+                        int taxa = Integer.parseInt(regra.get("porcentagem_sobre_valor_servico").toString().substring(0, regra.get("valor_acima_de_100").toString().lastIndexOf(".")));
+
+
+                        Log.d("regras_negocio", String.valueOf(taxa));
+
+                        addTaxa(
+                                acima_cem,
+                                horas_tolerancia,
+                                taxa
+                        );
+                        contador_regras = contador_regras + 1;
+                    }
+
+                }
+            }
+        Log.d("regras_negocio", String.valueOf(contaAdministradora.getTaxa_unica_cancelamento()));
 
 
 
+    }
+    public void addTaxa(int acimaCem, int tolerancia, int taxa) {
+
+        LinearLayout card_nova_regra = (LinearLayout) LayoutInflater.from(getApplicationContext()).inflate(R.layout.card_regra_negocio_perfil, null);
+        TextView  tv_valor_taxa =  (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tv_valor_regra_cancelmento_perfil, null);
+        TextView  tv_tolerancia =  (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tv_tempo_tolerancia_regra_cancelmento_perfil, null);
+
+
+        tv_valor_taxa.setText(taxa + "%");
+        tv_tolerancia.setText(tolerancia + " h");
+
+        card_nova_regra.addView(tv_valor_taxa);
+        card_nova_regra.addView(tv_tolerancia);
+
+        LinearLayout container;
+
+        if (acimaCem == 1)
+        {
+            container = findViewById(R.id.ln_container_regras_acima_cem);
+        }
+        else
+        {
+            container = findViewById(R.id.ln_container_regras_abaixo_cem);
+
+        }
+        container.addView(card_nova_regra);
+        container.setVisibility(View.VISIBLE);
     }
 
     public void mudarVisualizacaoHorarios(int numero_secao_destino, LinearLayout ln_pai_tv_link_navegacao, LinearLayout ln_pai_containers_horarios)
