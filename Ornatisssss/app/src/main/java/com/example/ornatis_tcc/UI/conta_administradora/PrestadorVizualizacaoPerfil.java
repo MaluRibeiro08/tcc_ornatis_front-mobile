@@ -423,7 +423,9 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
 
         tv_valor_taxa.setText(taxa + "%");
+        tv_valor_taxa.setWidth(100);
         tv_tolerancia.setText(tolerancia + " h");
+        tv_tolerancia.setWidth(150);
 
         card_nova_regra.addView(tv_valor_taxa);
         card_nova_regra.addView(tv_tolerancia);
@@ -498,5 +500,10 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 linear_horarios_dia_semana.setVisibility(View.VISIBLE);
 
         Log.d("funcionamento", "destino" + String.valueOf(numero_secao_destino));
+    }
+
+    public void mudarSecaoPerfil (int numero_secao_destino, LinearLayout ln_pai_tv_link_navegacao)
+    {
+
     }
 }
