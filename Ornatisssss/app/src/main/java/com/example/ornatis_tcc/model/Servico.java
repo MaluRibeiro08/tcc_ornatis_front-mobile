@@ -41,7 +41,7 @@ public class Servico {
     //CATEGORIA
     //PARTE DO CORPO
 
-    //LISTA DE FUNCIONÁRIO (ARRAY??)
+    //LISTA DE FUNCIONÁRIO
 
     //LOCAL DE ATENDIMENTO
 
