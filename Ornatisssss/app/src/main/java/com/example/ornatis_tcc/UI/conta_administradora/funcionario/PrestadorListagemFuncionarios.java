@@ -153,11 +153,12 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
                     funcionario.setAcao("desabilitarFuncionario");
                     funcionario.setId_funcionario(1);
 
-                    Call<Funcionario> call = routerInterface.deleteFuncionario(funcionario);
+                    Call<Funcionario> call = routerInterface.deleteFuncionario(funcionario.getId_funcionario());
 
                     call.enqueue(new Callback<Funcionario>() {
                         @Override
                         public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
+                            Log.d("exclusao1", String.valueOf(response.body()));
                             Toast.makeText(PrestadorListagemFuncionarios.this,
                                             "O funcionário foi excluído da sua lista",
                                             Toast.LENGTH_SHORT).show();
@@ -167,7 +168,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<Funcionario> call, Throwable t) {
-                            Log.d("exclusao", "FALHOU!");
+                            Log.d("exclusao2", "FALHOU!");
 
 
                             Toast.makeText(PrestadorListagemFuncionarios.this,

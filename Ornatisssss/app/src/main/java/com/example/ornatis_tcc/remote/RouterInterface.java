@@ -32,12 +32,12 @@ public interface RouterInterface {
     Call<ArrayList<Funcionario>> getFuncionarios(@Path("id_empresa") int id_empresa);
 
     //EXCLUSÃO DE FUNCIONÁRIO
-    @DELETE("/contaAdministradora/excluirFuncionario")
-    Call<Funcionario> deleteFuncionario(@Body Funcionario funcionario);
+//    @DELETE("/contaAdministradora/excluirFuncionario")
+//    Call<Funcionario> deleteFuncionario(@Body Funcionario funcionario);
 
 
-    @DELETE("/contaAdministradora/excluirFuncionario/{id_funcionario}")
-    Call<Funcionario> deleteFuncionario(@Path("id_funcionario") int id_funcionario, @Path("acao") String acao);
+    @DELETE("/contaAdministradora/desabilitarFuncionario/{id_funcionario}")
+    Call<Funcionario> deleteFuncionario(@Path("id_funcionario") int id_funcionario);
 
     //INSERÇÃO DE SERVIÇO
 //    @POST("/contaAdministradora/cadastroServico")
@@ -54,7 +54,8 @@ public interface RouterInterface {
         @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/{id_empresa}&acao=carregarDadosConta")
         Call<ContaAdministradora>getContaAdministradora(@Path("id_empresa") int id_empresa);
 
-        //LISTAGEM DE FUNCIONÁRIOS
+
+    //LISTAGEM DE FUNCIONÁRIOS
     //    @GET("/tcc_ornatis_back-end/api-ornatis/rotas/adm/")
     //    Call<ArrayList<Funcionarios>>getFuncionario();
 
