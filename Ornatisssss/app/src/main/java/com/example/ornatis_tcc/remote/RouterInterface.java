@@ -40,8 +40,8 @@ public interface RouterInterface {
     Call<Funcionario> deleteFuncionario(@Path("id_funcionario") int id_funcionario);
 
     //INSERÇÃO DE SERVIÇO
-//    @POST("/contaAdministradora/cadastroServico")
-//    Call<Servico> addServico(@Body Servico objServico);
+    @POST("/contaAdministradora/cadastroServico")
+    Call<Servico> addServico(@Body Servico objServico);
 
     //LISTAGEM DE SERVIÇOS
 //    @GET("/contaAdministradora/listarServicoss/{id_empresa}")
