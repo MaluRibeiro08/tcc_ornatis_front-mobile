@@ -1,23 +1,30 @@
 package com.example.ornatis_tcc.UI.conta_administradora;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorListagemFuncionarios;
 import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.model.Servico;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,16 +54,8 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         LinearLayout ln_container_formas_pagamento_perfil;
         LinearLayout ln_link_listagem_funcionarios;
 
-
-
-
-//PENDENCIAS
-    //REGRAS DE NEGÓCIO OK
-    //EVENTO PARA ABERTURA DA TELA DE LISTAGEM DE FUNCIONARIOS OK
-    //NAVEGACAO ENTRE AS ABAS PRINCIPAIS (INICIO ....) (COLORIR ABINHAS)
-
-//    ContaAdministradora contaAdministradora;
-    int id_empresa =33;
+    int id_empresa =2;
+    boolean servicos_carregados = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -95,19 +94,25 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                     }
                 );
                 tv_aba_servicos.setOnClickListener(view ->
+                    {
+                        trocarVisualizacaoAbas(container_servicos, tv_aba_servicos);
+                        if (servicos_carregados == false)
                         {
-                            trocarVisualizacaoAbas(container_servicos, tv_aba_servicos);
+                            getDadosServicosEstabelecimento(id_empresa);
+
+                            servicos_carregados = true;
                         }
+                    }
                 );
                 tv_aba_produtos.setOnClickListener(view ->
-                        {
-                            trocarVisualizacaoAbas(container_produtos, tv_aba_produtos);
-                        }
+                    {
+                        trocarVisualizacaoAbas(container_produtos, tv_aba_produtos);
+                    }
                 );
                 tv_aba_feedback.setOnClickListener(view ->
-                        {
-                            trocarVisualizacaoAbas(container_feedbacks, tv_aba_feedback);
-                        }
+                    {
+                        trocarVisualizacaoAbas(container_feedbacks, tv_aba_feedback);
+                    }
                 );
 
         //BUSCAR OS DADOS E PREENCHER SECAO 'INICIO'
@@ -119,28 +124,30 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             ));
 
         });
-            getDadosPerfilEstabelecimento(id_empresa);
+
+        getDadosPerfilEstabelecimento(id_empresa);
 
     }
 
-    public ContaAdministradora getDadosPerfilEstabelecimento (int id_empresa)
-    {
-        routerInterface = APIUtil.getEmpresaInterface(); //criamos a conexAo com a API
-        Call<ContaAdministradora> call = routerInterface.getDadosPerfilEstabelecimento(id_empresa); //executando a chamada para a rota de livros
+    //BUSCA E PREENCHIMENTO ABA INICIO
+        public ContaAdministradora getDadosPerfilEstabelecimento (int id_empresa)
+        {
+            routerInterface = APIUtil.getEmpresaInterface(); //criamos a conexAo com a API
+            Call<ContaAdministradora> call = routerInterface.getDadosPerfilEstabelecimento(id_empresa); //executando a chamada para a rota
 
-        call.enqueue(
-                new Callback<ContaAdministradora>() {
-                    @Override
-                    public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
-                        if (response.isSuccessful())
-                        {
-                            Log.d("dados_perfil", "onResponse: deu certo ");
+            call.enqueue(
+                    new Callback<ContaAdministradora>() {
+                        @Override
+                        public void onResponse(Call<ContaAdministradora> call, Response<ContaAdministradora> response) {
+                            if (response.isSuccessful())
+                            {
+                                Log.d("dados_perfil", "onResponse: deu certo ");
 
-                            ContaAdministradora conta = response.body();
+                                ContaAdministradora conta = response.body();
 
-                            conta = response.body();
+                                conta = response.body();
 
-                           preencherInformacoesAbaInicial(conta);
+                               preencherInformacoesAbaInicial(conta);
 
                             //DEBUGANDO
                                 //Log.d("dados_perfil", "onResponse: infos: " + response.body().getCep());
@@ -152,56 +159,38 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                                 //Log.d("dados_perfil", "onResponse: olha as taxas aí" + response.body().getDados_taxa_cancelamento().get(0));
                                 //Log.d("dados_perfil", "onResponse: olha taxa unica aí " + conta.getTaxa_unica_cancelamento());
 
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ContaAdministradora> call, Throwable t) {
+                            Log.d("dados_perfil", "onFailure: deu errado: " + t.getMessage());
                         }
                     }
+            );
 
-                    @Override
-                    public void onFailure(Call<ContaAdministradora> call, Throwable t) {
-                        Log.d("dados_perfil", "onFailure: deu errado: " + t.getMessage());
-                    }
-                }
-        );
+            ContaAdministradora contaAdministradora = new ContaAdministradora();
 
-        ContaAdministradora contaAdministradora = new ContaAdministradora();
-
-        return contaAdministradora;
-    }
-
-    public void trocarVisualizacaoAbas(LinearLayout linearASerVisualizado, TextView aba_destino)
-    {
-        LinearLayout [] containers = new LinearLayout[] {container_inicio, container_servicos, container_produtos, container_feedbacks};
-        TextView [] abas = new TextView[] {tv_aba_inicio, tv_aba_servicos, tv_aba_produtos, tv_aba_feedback};
-        int contador = 0;
-
-        while (contador < containers.length)
-        {
-            containers[contador].setVisibility(View.GONE);
-            abas[contador].setBackgroundTintList(this.getResources().getColorStateList(R.color.white));
-
-            contador = contador+1;
+            return contaAdministradora;
         }
 
-        linearASerVisualizado.setVisibility(View.VISIBLE);
-        aba_destino.setBackgroundTintList(this.getResources().getColorStateList(R.color.verde_claro));
-    }
+        public void preencherInformacoesAbaInicial(ContaAdministradora contaAdministradora)
+        {
 
-    public void preencherInformacoesAbaInicial(ContaAdministradora contaAdministradora)
-    {
+            Log.d("DADOS_CONTA", "preencherInformacoesPerfilSalao: " + contaAdministradora.getNome_fantasia());
 
-        Log.d("DADOS_CONTA", "preencherInformacoesPerfilSalao: " + contaAdministradora.getNome_fantasia());
+            String endereco_salao = contaAdministradora.getRua() + ", " +
+                    contaAdministradora.getNumero_rua() + ". " +
+                    contaAdministradora.getBairro() + ", " +
+                    contaAdministradora.getNome_cidade() + "/" +
+                    contaAdministradora.getSigla_estado() + ". " +
+                    contaAdministradora.getCep() + ".";
+            tv_nome_do_negocio_perfil.setText(contaAdministradora.getNome_fantasia());
+            tv_biografia_perfil.setText(contaAdministradora.getBiografia());
+            tv_contato_perfil.setText(contaAdministradora.getTelefone());
+            tv_endereco_perfil.setText(endereco_salao);
 
-        String endereco_salao = contaAdministradora.getRua() + ", " +
-                                                    contaAdministradora.getNumero_rua() + ". " +
-                                                    contaAdministradora.getBairro() + ", " +
-                                                    contaAdministradora.getNome_cidade() + "/" +
-                                                    contaAdministradora.getSigla_estado() + ". " +
-                                                    contaAdministradora.getCep() + ".";
-        tv_nome_do_negocio_perfil.setText(contaAdministradora.getNome_fantasia());
-        tv_biografia_perfil.setText(contaAdministradora.getBiografia());
-        tv_contato_perfil.setText(contaAdministradora.getTelefone());
-        tv_endereco_perfil.setText(endereco_salao);
-
-        //REDES SOCIAIS
+            //REDES SOCIAIS
             if (contaAdministradora.getNome_usuario_instagram() == null)
             {
 
@@ -222,7 +211,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             }
 
 
-        //FORMAS DE PAGAMENTO
+            //FORMAS DE PAGAMENTO
             int contador_pagamento = 0;
 
             TextView observacoes_pagamento = findViewById(R.id.tv_observacoes_pagamento_perfil);
@@ -239,12 +228,14 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             }
 
 
-        //FUNCIONAMENTO
+            //FUNCIONAMENTO
             ArrayList<ArrayList<LinkedTreeMap>> lista_dias_semama = contaAdministradora.getDados_funcionamento();
 
             LinearLayout linear_geral_horarios = findViewById(R.id.container_geral_dos_horarios);
             int contador_funcionamento = 0;
             boolean temAlgumHorarioVisivel = false;
+            boolean containerAbaixoCemVisivel = false;
+            boolean containerAcimaCemVisivel = false;
 
             while (contador_funcionamento <= 6)
             {
@@ -270,60 +261,60 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                     if (lista_horarios_do_dia.size() >= 1)
                     {
                         //HABILITANDO NAVEGACAO PARA ESTE DIA
-                            LinearLayout linear_pai_navegacao = findViewById(R.id.ln_container_geral_dia_semana);
-                            TextView link_dia_semana = linear_pai_navegacao.findViewWithTag("tv_dia_semana_" + String.valueOf(contador_funcionamento+1));
+                        LinearLayout linear_pai_navegacao = findViewById(R.id.ln_container_geral_dia_semana);
+                        TextView link_dia_semana = linear_pai_navegacao.findViewWithTag("tv_dia_semana_" + String.valueOf(contador_funcionamento+1));
 
-                            int finalContador_funcionamento = contador_funcionamento;
+                        int finalContador_funcionamento = contador_funcionamento;
 
-                            link_dia_semana.setOnClickListener
-                            (
-                                view ->
-                                {
-                                    mudarVisualizacaoHorarios
-                                    (
-                                        finalContador_funcionamento +1,
-                                            linear_pai_navegacao,
-                                            linear_geral_horarios
-                                    );
-                                }
-                            );
+                        link_dia_semana.setOnClickListener
+                                (
+                                        view ->
+                                        {
+                                            mudarVisualizacaoHorarios
+                                                    (
+                                                            finalContador_funcionamento +1,
+                                                            linear_pai_navegacao,
+                                                            linear_geral_horarios
+                                                    );
+                                        }
+                                );
 
                         //PEGANDO DADO HORA INICIO
-                            String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
-                            String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
+                        String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(0).get("hora_inicio"));
+                        String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
 
                         //PEGANDO DADO HORA TERMINO
-                            String hora_termino_inteira = String.valueOf(lista_horarios_do_dia.get(0).get("hora_termino"));
-                            String hora_termino = hora_termino_inteira.substring(0, hora_termino_inteira.lastIndexOf(":"));
+                        String hora_termino_inteira = String.valueOf(lista_horarios_do_dia.get(0).get("hora_termino"));
+                        String hora_termino = hora_termino_inteira.substring(0, hora_termino_inteira.lastIndexOf(":"));
 
                         //INSERINDO VALORES NOS TEXTVIEWS
 
-                            //PEGANDO LINEAR PAI DOS HORARIOS
-                                LinearLayout ln_container_primeiros_horarios_funcionamento = linear_horarios_dia_semana.findViewWithTag("ln_primeiros_horarios");
+                        //PEGANDO LINEAR PAI DOS HORARIOS
+                        LinearLayout ln_container_primeiros_horarios_funcionamento = linear_horarios_dia_semana.findViewWithTag("ln_primeiros_horarios");
 
-                            //PEGANDO OS CAMPOS DE HORARIOS DESTE PAI
-                                TextView primeiro_horario_inicio = ln_container_primeiros_horarios_funcionamento.findViewWithTag("primeiro_horario_inicio");
-                                TextView primeiro_horario_termino = ln_container_primeiros_horarios_funcionamento.findViewWithTag("primeiro_horario_termino");
+                        //PEGANDO OS CAMPOS DE HORARIOS DESTE PAI
+                        TextView primeiro_horario_inicio = ln_container_primeiros_horarios_funcionamento.findViewWithTag("primeiro_horario_inicio");
+                        TextView primeiro_horario_termino = ln_container_primeiros_horarios_funcionamento.findViewWithTag("primeiro_horario_termino");
 
-                            //SETTANDO OS VALORES NOS SEUS RESPECTIVOS CAMPOS
-                                primeiro_horario_inicio.setText(hora_inicio);
-                                primeiro_horario_termino.setText(hora_termino);
+                        //SETTANDO OS VALORES NOS SEUS RESPECTIVOS CAMPOS
+                        primeiro_horario_inicio.setText(hora_inicio);
+                        primeiro_horario_termino.setText(hora_termino);
 
 
                         //SETTANDO VISIBILIDADE DO PAI
-                            if (temAlgumHorarioVisivel == false)
-                            {
-                                //DEIXANDO UM DOS HORÁRIOS VISIVEIS
-                                linear_horarios_dia_semana.setVisibility(View.VISIBLE);
-                                link_dia_semana.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_horarios));
+                        if (temAlgumHorarioVisivel == false)
+                        {
+                            //DEIXANDO UM DOS HORÁRIOS VISIVEIS
+                            linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+                            link_dia_semana.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_horarios));
 
-                                temAlgumHorarioVisivel = true;
+                            temAlgumHorarioVisivel = true;
 
-                                //link_dia_semana.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.black));
-                            }
+                            //link_dia_semana.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.black));
+                        }
 
-                            //Log.d("funcionamento", String.valueOf(ln_container_primeiros_horarios_funcionamento.getChildCount()));
-                            //Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
+                        //Log.d("funcionamento", String.valueOf(ln_container_primeiros_horarios_funcionamento.getChildCount()));
+                        //Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
 
 
 
@@ -333,29 +324,29 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
                         //Log.d("funcionamento", "dois horarios para essse dia");
                         //HORA INICIO
-                            String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_inicio"));
-                            String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
+                        String hora_inicio_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_inicio"));
+                        String hora_inicio = hora_inicio_inteira.substring(0, hora_inicio_inteira.lastIndexOf(":"));
 
                         //HORA TERMINO
-                            String hora_termino_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_termino"));
-                            String hora_termino = hora_termino_inteira.substring(0, hora_termino_inteira.lastIndexOf(":"));
+                        String hora_termino_inteira = String.valueOf(lista_horarios_do_dia.get(1).get("hora_termino"));
+                        String hora_termino = hora_termino_inteira.substring(0, hora_termino_inteira.lastIndexOf(":"));
 
                         //INSERINDO VALORES NOS TEXTVIEWS
 
-                            //PEGANDO LINEAR PAI DOS HORARIOS E FAZENDO-O VISIVEL
-                                LinearLayout ln_container_segundos_horarios_funcionamento = linear_horarios_dia_semana.findViewWithTag("ln_segundos_horarios");
-                                ln_container_segundos_horarios_funcionamento.setVisibility(View.VISIBLE);
+                        //PEGANDO LINEAR PAI DOS HORARIOS E FAZENDO-O VISIVEL
+                        LinearLayout ln_container_segundos_horarios_funcionamento = linear_horarios_dia_semana.findViewWithTag("ln_segundos_horarios");
+                        ln_container_segundos_horarios_funcionamento.setVisibility(View.VISIBLE);
 
-                            //PEGANDO OS CAMPOS DE HORARIOS DESTE PAI
-                                TextView primeiro_horario_inicio = ln_container_segundos_horarios_funcionamento.findViewWithTag("segundo_horario_inicio");
-                                TextView primeiro_horario_termino = ln_container_segundos_horarios_funcionamento.findViewWithTag("segundo_horario_termino");
+                        //PEGANDO OS CAMPOS DE HORARIOS DESTE PAI
+                        TextView primeiro_horario_inicio = ln_container_segundos_horarios_funcionamento.findViewWithTag("segundo_horario_inicio");
+                        TextView primeiro_horario_termino = ln_container_segundos_horarios_funcionamento.findViewWithTag("segundo_horario_termino");
 
-                            //SETTANDO OS VALORES NOS SEUS RESPECTIVOS CAMPOS
-                                primeiro_horario_inicio.setText(hora_inicio);
-                                primeiro_horario_termino.setText(hora_termino);
+                        //SETTANDO OS VALORES NOS SEUS RESPECTIVOS CAMPOS
+                        primeiro_horario_inicio.setText(hora_inicio);
+                        primeiro_horario_termino.setText(hora_termino);
 
                         //SETTANDO VISIBILIDADE SEPARADOS
-                            linear_horarios_dia_semana.findViewWithTag("simbolo_e_comercial").setVisibility(View.VISIBLE);
+                        linear_horarios_dia_semana.findViewWithTag("simbolo_e_comercial").setVisibility(View.VISIBLE);
 
                         //Log.d("funcionamento", String.valueOf(ln_container_segundos_horarios_funcionamento.getChildCount()));
                         //Log.d("funcionamento0", primeiro_horario_termino.getText().toString());
@@ -367,7 +358,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 contador_funcionamento = contador_funcionamento+1;
             }
 
-        //REGRAS DE NEGÓCIO
+            //REGRAS DE NEGÓCIO
             if (contaAdministradora.getDados_taxa_cancelamento() !=null && contaAdministradora.getTaxa_unica_cancelamento() != null)
             {
                 Log.d("regras_negocio", "o salao não cobra nada");
@@ -397,6 +388,14 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                         int horas_tolerancia = Integer.parseInt(regra.get("horas_tolerancia").toString().substring(0, regra.get("valor_acima_de_100").toString().lastIndexOf(".")));
                         int taxa = Integer.parseInt(regra.get("porcentagem_sobre_valor_servico").toString().substring(0, regra.get("valor_acima_de_100").toString().lastIndexOf(".")));
 
+                        if (acima_cem == 1 && containerAcimaCemVisivel== false)
+                        {
+                            findViewById(R.id.ln_container_geral_regras_acima_cem).setVisibility(View.VISIBLE);
+                        }
+                        else if (acima_cem == 0 && containerAcimaCemVisivel== false)
+                        {
+                            findViewById(R.id.ln_container_geral_regras_abaixo_cem).setVisibility(View.VISIBLE);
+                        }
 
                         Log.d("regras_negocio", String.valueOf(taxa));
 
@@ -410,100 +409,259 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
                 }
             }
-        Log.d("regras_negocio", String.valueOf(contaAdministradora.getTaxa_unica_cancelamento()));
+            Log.d("regras_negocio", String.valueOf(contaAdministradora.getTaxa_unica_cancelamento()));
 
 
-
-    }
-    public void addTaxa(int acimaCem, int tolerancia, int taxa) {
-
-        LinearLayout card_nova_regra = (LinearLayout) LayoutInflater.from(getApplicationContext()).inflate(R.layout.card_regra_negocio_perfil, null);
-        TextView  tv_valor_taxa =  (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tv_valor_regra_cancelmento_perfil, null);
-        TextView  tv_tolerancia =  (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tv_tempo_tolerancia_regra_cancelmento_perfil, null);
-
-
-        tv_valor_taxa.setText(taxa + "%");
-        tv_valor_taxa.setWidth(100);
-        tv_tolerancia.setText(tolerancia + " h");
-        tv_tolerancia.setWidth(150);
-
-        card_nova_regra.addView(tv_valor_taxa);
-        card_nova_regra.addView(tv_tolerancia);
-
-        LinearLayout container;
-
-        if (acimaCem == 1)
-        {
-            container = findViewById(R.id.ln_container_regras_acima_cem);
-        }
-        else
-        {
-            container = findViewById(R.id.ln_container_regras_abaixo_cem);
 
         }
-        container.addView(card_nova_regra);
-        container.setVisibility(View.VISIBLE);
-    }
 
-    public void mudarVisualizacaoHorarios(int numero_secao_destino, LinearLayout ln_pai_tv_link_navegacao, LinearLayout ln_pai_containers_horarios)
-    {
-        //TIRAR O HORÁRIO QUE ESTÁ
-            //TIRAR DESTAQUE DO LINK
-                ArrayList<TextView> arr_links_navegacao = new ArrayList<>();
-                int contadorLinks = 0;
+    //BUSCA E PREENCHIMENTO ABA SERVICOS
+        public ArrayList<Servico> getDadosServicosEstabelecimento (int id_empresa)
+        {
+            ArrayList<Servico> arr_servicos = null;
 
-                while (contadorLinks < ln_pai_tv_link_navegacao.getChildCount())
-                {
-                    arr_links_navegacao.add((TextView) ln_pai_tv_link_navegacao.getChildAt(contadorLinks));
 
-                    Log.d("funcionamento", "io");
-                    Log.d("funcionamento", String.valueOf(ln_pai_tv_link_navegacao.getChildAt(contadorLinks)));
+            routerInterface = APIUtil.getEmpresaInterface(); //criamos a conexAo com a API
+            Call<ArrayList<Servico>> call = routerInterface.getServicos(id_empresa); //executando a chamada para a rota de servicos
 
-                    contadorLinks = contadorLinks+1;
+            call.enqueue(new Callback<ArrayList<Servico>>()
+            {
+                @Override
+                public void onResponse(Call<ArrayList<Servico>> call, Response<ArrayList<Servico>> response) {
+                    if (response.isSuccessful())
+                    {
+                        Log.d("SERVICOS-ONRESPONSE-SUCESS", String.valueOf(response.body()));
+
+//                        List<Servico> itens = new ArrayList<>();
+
+                        //recebe os dados da API
+                        List<Servico> list = new ArrayList<Servico>();
+
+                        list = response.body(); //o que veio no corpo da resposta  | DADOS
+
+
+                        RecyclerView recyclerView = findViewById(R.id.recyclerViewServicosPerfilCat1);//  RECYCLERVIEW
+                        recyclerView.setAdapter(new ServicoAdapter(list)); //passando os dados para a adapter
+
+                    }
+                    else
+                    {
+                        Log.d("SERVICOS-ONRESPONSE-NAO-SUCESS", "deu bom não");
+
+                    }
                 }
 
-                arr_links_navegacao.forEach(link -> {link.setBackgroundTintList(this.getResources().getColorStateList(R.color.white));});
-
-              //Log.d("funcionamento", String.valueOf(arr_links_navegacao));
-
-                //int contador_apagamento_links = 0;
-
-                //while (contador_apagamento_links < arr_links_navegacao.size())
-                //{
-                    //TextView link = arr_links_navegacao.get(contador_apagamento_links);
-                    //Log.d("funcionamentoa", String.valueOf(contador_apagamento_links));
-
-                    //link.setBackgroundTintList(this.getResources().getColorStateList(R.color.white));
-
-                    //contador_apagamento_links = contador_apagamento_links+1;
-                //}
-
-            //FECHAR CONTAINER
-                ArrayList<LinearLayout> arr_container_horarios_dias_semana = new ArrayList<>();
-                int contadorLineares = 0;
-
-                while (contadorLineares < ln_pai_containers_horarios.getChildCount())
+                @Override
+                public void onFailure(Call<ArrayList<Servico>> call, Throwable t)
                 {
-                    arr_container_horarios_dias_semana.add((LinearLayout) ln_pai_containers_horarios.getChildAt(contadorLineares));
-                    contadorLineares = contadorLineares+1;
+                    Log.d("SERVICOS-ON-FAILURE", t.getMessage());
                 }
-               arr_container_horarios_dias_semana.forEach(linearLayout -> {linearLayout.setVisibility(View.GONE);});
+            });
 
-        //MOSTRAR O HORARIO QUE SE DESEJA
-            //DESTACAR LINK
-                TextView link_dia_semana = ln_pai_tv_link_navegacao.findViewWithTag("tv_dia_semana_" + numero_secao_destino);
-                link_dia_semana.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_horarios));
 
-            //MOSTRAR CONTAINER DE HORARIOS
-                String tag = "ln_container_horarios_dia_" + numero_secao_destino;
-                LinearLayout linear_horarios_dia_semana = ln_pai_containers_horarios.findViewWithTag(tag);
-                linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+            preencherInformacoesAbaServicos(arr_servicos);
 
-        Log.d("funcionamento", "destino" + String.valueOf(numero_secao_destino));
-    }
+            return arr_servicos;
+        }
 
-    public void mudarSecaoPerfil (int numero_secao_destino, LinearLayout ln_pai_tv_link_navegacao)
-    {
+        public void preencherInformacoesAbaServicos (ArrayList<Servico> servicos)
+        {
+            Log.d("SERVICOS", String.valueOf(servicos));
+        }
 
-    }
+    //UTILS
+        public void trocarVisualizacaoAbas(LinearLayout linearASerVisualizado, TextView aba_destino)
+        {
+            LinearLayout [] containers = new LinearLayout[] {container_inicio, container_servicos, container_produtos, container_feedbacks};
+            TextView [] abas = new TextView[] {tv_aba_inicio, tv_aba_servicos, tv_aba_produtos, tv_aba_feedback};
+            int contador = 0;
+
+            while (contador < containers.length)
+            {
+                containers[contador].setVisibility(View.GONE);
+                abas[contador].setBackgroundTintList(this.getResources().getColorStateList(R.color.white));
+
+                contador = contador+1;
+            }
+
+            linearASerVisualizado.setVisibility(View.VISIBLE);
+            aba_destino.setBackgroundTintList(this.getResources().getColorStateList(R.color.verde_claro));
+        }
+
+        public void addTaxa(int acimaCem, int tolerancia, int taxa) {
+
+            LinearLayout card_nova_regra = (LinearLayout) LayoutInflater.from(getApplicationContext()).inflate(R.layout.card_regra_negocio_perfil, null);
+            TextView  tv_valor_taxa =  (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tv_valor_regra_cancelmento_perfil, null);
+            TextView  tv_tolerancia =  (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tv_tempo_tolerancia_regra_cancelmento_perfil, null);
+
+
+            tv_valor_taxa.setText(taxa + "%");
+            tv_valor_taxa.setWidth(100);
+            tv_tolerancia.setText(tolerancia + " h");
+            tv_tolerancia.setWidth(150);
+
+            card_nova_regra.addView(tv_valor_taxa);
+            card_nova_regra.addView(tv_tolerancia);
+
+            LinearLayout container;
+
+            if (acimaCem == 1)
+            {
+                container = findViewById(R.id.ln_container_regras_acima_cem);
+            }
+            else
+            {
+                container = findViewById(R.id.ln_container_regras_abaixo_cem);
+
+            }
+            container.addView(card_nova_regra);
+            container.setVisibility(View.VISIBLE);
+        }
+
+        public void mudarVisualizacaoHorarios(int numero_secao_destino, LinearLayout ln_pai_tv_link_navegacao, LinearLayout ln_pai_containers_horarios)
+        {
+            //TIRAR O HORÁRIO QUE ESTÁ
+                //TIRAR DESTAQUE DO LINK
+                    ArrayList<TextView> arr_links_navegacao = new ArrayList<>();
+                    int contadorLinks = 0;
+
+                    while (contadorLinks < ln_pai_tv_link_navegacao.getChildCount())
+                    {
+                        arr_links_navegacao.add((TextView) ln_pai_tv_link_navegacao.getChildAt(contadorLinks));
+
+                        Log.d("funcionamento", "io");
+                        Log.d("funcionamento", String.valueOf(ln_pai_tv_link_navegacao.getChildAt(contadorLinks)));
+
+                        contadorLinks = contadorLinks+1;
+                    }
+
+                    arr_links_navegacao.forEach(link -> {link.setBackgroundTintList(this.getResources().getColorStateList(R.color.white));});
+
+                  //Log.d("funcionamento", String.valueOf(arr_links_navegacao));
+
+                    //int contador_apagamento_links = 0;
+
+                    //while (contador_apagamento_links < arr_links_navegacao.size())
+                    //{
+                        //TextView link = arr_links_navegacao.get(contador_apagamento_links);
+                        //Log.d("funcionamentoa", String.valueOf(contador_apagamento_links));
+
+                        //link.setBackgroundTintList(this.getResources().getColorStateList(R.color.white));
+
+                        //contador_apagamento_links = contador_apagamento_links+1;
+                    //}
+
+                //FECHAR CONTAINER
+                    ArrayList<LinearLayout> arr_container_horarios_dias_semana = new ArrayList<>();
+                    int contadorLineares = 0;
+
+                    while (contadorLineares < ln_pai_containers_horarios.getChildCount())
+                    {
+                        arr_container_horarios_dias_semana.add((LinearLayout) ln_pai_containers_horarios.getChildAt(contadorLineares));
+                        contadorLineares = contadorLineares+1;
+                    }
+                   arr_container_horarios_dias_semana.forEach(linearLayout -> {linearLayout.setVisibility(View.GONE);});
+
+            //MOSTRAR O HORARIO QUE SE DESEJA
+                //DESTACAR LINK
+                    TextView link_dia_semana = ln_pai_tv_link_navegacao.findViewWithTag("tv_dia_semana_" + numero_secao_destino);
+                    link_dia_semana.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_horarios));
+
+                //MOSTRAR CONTAINER DE HORARIOS
+                    String tag = "ln_container_horarios_dia_" + numero_secao_destino;
+                    LinearLayout linear_horarios_dia_semana = ln_pai_containers_horarios.findViewWithTag(tag);
+                    linear_horarios_dia_semana.setVisibility(View.VISIBLE);
+
+            Log.d("funcionamento", "destino" + String.valueOf(numero_secao_destino));
+        }
+
+//    private class ServicoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> // vai "abrir" o pacote de conteúdo criado pela viewholder. Ao ser criada, a ServicoAdapter procura uma viewHoolder no seu corpo
+//    {
+//        List<Item> itens;
+//
+//        public ServicoAdapter(List<Item> itens)
+//        {
+//            this.itens = itens; //passa a response para a variavel da classe
+//        }
+//
+//        @NonNull
+//        @Override
+//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) //depois de passar os dados, cria a viewHolder (ela roda o construtor da classe livroViewHolder alí em baixo)
+//        {//renderiza
+//            return new ServicoAdapter.ServicoViewHolder
+//                    (
+//                            LayoutInflater.from
+//                                    (
+//                                            parent.getContext() //vai fazer um inflate a partir do pai
+//                                    )
+//                                    .inflate
+//                                            (
+//                                                    R.layout.item_container_livro,parent, false //representa o layout que será usado, diz onde vai acontecer (no pai)
+//                                            )
+//                    );//
+//        }
+//
+//        @Override
+//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) //passa os dados para a viewHolder colocar nos lugares certos
+//        {
+//            if (getItemViewType(position) == 0) // dados de servico
+//            {
+//                Servico servico = (Servico) itens.get(position).getObject(); //retorna um servico - pega o object de item e converte para servico
+//                ((ServicoAdapter.ServicoViewHolder) holder).setServicoData(servico); //converte a variavel holder para um ServicoAdapter.ServicoViewHolder para que chamemos o método que passa os dados dando a elas esses dados
+//            }
+//            else if (getItemViewType(position) == 1) // dados de HQ
+//            {
+//
+//            }
+//        }
+//
+//        @Override
+//        public int getItemCount() // controla a quantidade de itens passados
+//        {
+//            return itens.size();
+//        }
+//
+//        public int getItemViewType (int position) //posicao do item na lista
+//        {
+//            return itens.get(position).getType(); //pega o tipo do ___ item da lista
+//        }
+//
+//
+//        //a classe item recebe os tipos de item que eu tenho no app. Depois que buscamos no banco, jogamos no item pra classificar.
+//
+//        class ServicoViewHolder extends RecyclerView.ViewHolder//monta a estrutura em si. Junta os dados ao fragmento de layout
+//        {
+//            //atributos da classe livroviewholder - eles quem vao receber dados lá na view holder
+//            private TextView txtTitulo, txtDescricao;
+//            private int cod_livro;
+//
+//            public ServicoViewHolder(@NonNull View itemView) //elemento gráfico - no nosso caso o itemContainerServico
+//            {
+//                super(itemView);//método construtor de viewHolder recebe o modelo de elemento gráfico que ele vai ter que construir
+//
+//                txtTitulo = itemView.findViewById(R.id.txtServicoTituloCardView);
+//                txtDescricao = itemView.findViewById(R.id.txtServicoDescricaoCardView);
+//
+//                //acao de click para editar servico e excluir servico
+//                itemView.setOnClickListener
+//                        (
+//                                view ->
+//                                {
+//
+//                                }
+//                        );
+//            }
+//
+//            //metodo que carrega os dados nos elementos de view
+//            public void setServicoData (Servico servico)
+//            {
+//                txtTitulo.setText(servico.getTitulo());
+//                txtDescricao.setText(servico.getDescricao());
+//                cod_livro= servico.getCod_livro();
+//            }
+//        }
+//
+//
+//    }
+    
 }
