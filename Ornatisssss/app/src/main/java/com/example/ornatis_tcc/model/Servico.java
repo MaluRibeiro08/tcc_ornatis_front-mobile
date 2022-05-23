@@ -3,6 +3,8 @@ package com.example.ornatis_tcc.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class Servico {
 
     @SerializedName("acao")
@@ -38,11 +40,22 @@ public class Servico {
     private String detalhes;
 
     //PÚBLICO ALVO
+//    @SerializedName("publico_alvo")
+//    @Expose
+//    private ArrayList publico_alvo;
+
     //CATEGORIA
+//    @SerializedName("especialidade")
+//    @Expose
+//    private ArrayList especialidade;
+
     //PARTE DO CORPO
+//    @SerializedName("parte_corpo")
+//    @Expose
+//    private ArrayList parte_corpo;
+
 
     //LISTA DE FUNCIONÁRIO
-
     //LOCAL DE ATENDIMENTO
 
 
@@ -59,7 +72,8 @@ public class Servico {
 
     public Servico(String acao, int id_empresa, int id_servico, String nome_servico,
                    float preco, int desconto, int tempo_duracao,
-                   String detalhes, int intervalo, String imagem_servico) {
+                   String detalhes, ArrayList publico_alvo, ArrayList especialidade,
+                   ArrayList parte_corpo, int intervalo, String imagem_servico) {
         this.acao = acao;
         this.id_empresa = id_empresa;
         this.id_servico = id_servico;
@@ -68,6 +82,9 @@ public class Servico {
         this.desconto = desconto;
         this.tempo_duracao = tempo_duracao;
         this.detalhes = detalhes;
+//        this.publico_alvo = publico_alvo;
+//        this.especialidade = especialidade;
+//        this.parte_corpo = parte_corpo;
         this.intervalo = intervalo;
         this.imagem_servico = imagem_servico;
     }
@@ -135,6 +152,16 @@ public class Servico {
     public void setDetalhes(String detalhes) {
         this.detalhes = detalhes;
     }
+
+
+//    public ArrayList getPublico_alvo() {
+//        return publico_alvo;
+//    }
+//
+//    public void setPublico_alvo(ArrayList publico_alvo) {
+//        this.publico_alvo = publico_alvo;
+//    }
+
 
     public int getIntervalo() {
         return intervalo;

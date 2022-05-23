@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
+import com.example.ornatis_tcc.UI.conta_administradora.HomePrestador;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorListagemFuncionarios;
 import com.example.ornatis_tcc.model.Funcionario;
@@ -50,9 +51,8 @@ public class PrestadorCadastroServico extends AppCompatActivity {
     ImageView iv_foto_perfil_estabelecimento;
 
     private Spinner spinner_publico_alvo;
-    private Spinner spinner_categoria;
+    private Spinner spinner_especialidade;
     private Spinner spinner_parte_corpo;
-
 
 
     @Override
@@ -73,45 +73,48 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         iv_foto_perfil_estabelecimento = findViewById(R.id.iv_foto_perfil_estabelecimento);
 
 
-        //spinner parte do corpo
+        //spinner público alvo
         spinner_publico_alvo = findViewById(R.id.spinner_publico_alvo);
         final List<String> publicoAlvo = new ArrayList<String>();
-        publicoAlvo.add("1");
-        publicoAlvo.add("2");
-        publicoAlvo.add("3");
-        publicoAlvo.add("4");
-        publicoAlvo.add("5");
+        publicoAlvo.add("Ambos");
+        publicoAlvo.add("Feminino");
+        publicoAlvo.add("Masculino");
 
         ArrayAdapter<String> adapterPublicoAlvo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, publicoAlvo);
         adapterPublicoAlvo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_publico_alvo.setAdapter(adapterPublicoAlvo);
 
-//        spinner_categoria = findViewById(R.id.spinner_categoria);
-//        final List<String> categoria = new ArrayList<String>();
-//        categoria.add("Olhos");
-//        categoria.add("Sobrancelhas");
-//        categoria.add("Boca");
-//        categoria.add("Cabeça");
-//        categoria.add("Mãos");
-//
-//        ArrayAdapter<String> adapterCategoria = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, categoria);
-//        adapterCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner_publico_alvo.setAdapter(adapterCategoria);
-//
-//
-//        spinner_parte_corpo = findViewById(R.id.spinner_parte_corpo);
-//        final List<String> parteCorpo = new ArrayList<String>();
-//        parteCorpo.add("66");
-//        parteCorpo.add("7");
-//        parteCorpo.add("8");
-//        parteCorpo.add("9");
-//        parteCorpo.add("0");
-//
-//
-//        ArrayAdapter<String> adapterParteCorpo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, parteCorpo);
-//        adapterParteCorpo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner_publico_alvo.setAdapter(adapterParteCorpo);
 
+        //spinner categoria
+        spinner_especialidade = findViewById(R.id.spinner_especialidade);
+        final List<String> especialidade = new ArrayList<String>();
+        especialidade.add("especialidade1");
+        especialidade.add("especialidade2");
+        especialidade.add("especialidade3");
+        especialidade.add("especialidade4");
+
+        ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, especialidade);
+        adapterEspecialidade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_especialidade.setAdapter(adapterEspecialidade);
+
+
+        //spinner parte do corpo
+        spinner_parte_corpo = findViewById(R.id.spinner_parte_corpo);
+        final List<String> parteCorpo = new ArrayList<String>();
+        parteCorpo.add("Rosto");
+        parteCorpo.add("Olhos");
+        parteCorpo.add("Sobrancelhas");
+        parteCorpo.add("Boca");
+        parteCorpo.add("Cabeça");
+        parteCorpo.add("Pés");
+        parteCorpo.add("Mãos");
+
+        ArrayAdapter<String> adapterParteCorpo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, parteCorpo);
+        adapterParteCorpo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_parte_corpo.setAdapter(adapterParteCorpo);
+
+
+        //AÇÃO DE CLIQUE PARA CRIAR UM NOVO SERVIÇO
         btn_cadastrar_servico.setOnClickListener(view -> {
             Servico servico = setDadosFormularioServico();
 
@@ -120,6 +123,14 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         });
 
 
+        //AÇÃO DE CLIQUE PARA CANCELAR E VOLTAR PARA A PÁGINA ANTERIOR
+        btn_cancelar_servico.setOnClickListener(view -> {
+
+            Intent intent = new Intent(PrestadorCadastroServico.this, HomePrestador.class);
+            startActivity(intent);
+            finish();
+
+        });
 
     }
 
@@ -128,10 +139,23 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         Servico servico = new Servico();
 
         servico.setNome_servico(et_nome_do_servico.getText().toString());
-        //preco (float)
+
+        //preco
+//        servico.setPreco();
+
         //desconto
+//        servico.setDesconto();
+
         //tempo de duracao
+//        servico.setTempo_duracao();
+        
+        //detalhes
         servico.setDetalhes(et_detalhes_servico.getText().toString());
+        //publico alvo
+        //especialidade
+        //parte do corpo
+        //lista de funcioanrio
+        //local de atendimento
         //intervalo
         //imagem
 
