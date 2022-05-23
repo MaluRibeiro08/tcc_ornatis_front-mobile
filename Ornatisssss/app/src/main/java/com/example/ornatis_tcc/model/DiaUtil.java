@@ -1,13 +1,31 @@
 package com.example.ornatis_tcc.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.time.LocalTime;
 
 public class DiaUtil {
-    private int id_dia_semana;
+
+//    @SerializedName("id_dia_semana")
+//    @Expose
+    private float id_dia_semana;
+
     private LocalTime hora_inicio_localtime;
+
+//    @SerializedName("hora_inicio")
+//    @Expose
     private String hora_inicio;
+
     private LocalTime hora_termino_localtime;
+
+//    @SerializedName("hora_termino")
+//    @Expose
     private String hora_termino;
+
+//    @SerializedName("dia_da_semana")
+//    @Expose
+    private String dia_semana;
 
     public DiaUtil(int id_dia_semana, LocalTime hora_inicio_localtime, LocalTime hora_termino_localtime)
     {
@@ -19,11 +37,11 @@ public class DiaUtil {
         this.hora_termino = hora_termino_localtime.toString();
     }
 
-    public int getId_dia_semana() {
+    public float getId_dia_semana() {
         return id_dia_semana;
     }
 
-    public void setId_dia_semana(int id_dia_semana) {
+    public void setId_dia_semana(float id_dia_semana) {
         this.id_dia_semana = id_dia_semana;
     }
 

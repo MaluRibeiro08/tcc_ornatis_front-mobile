@@ -24,6 +24,7 @@ import com.example.ornatis_tcc.remote.RouterInterface;
 import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -419,9 +420,8 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         public ArrayList<Servico> getDadosServicosEstabelecimento (int id_empresa)
         {
             ArrayList<Servico> arr_servicos = null;
-
-
             routerInterface = APIUtil.getEmpresaInterface(); //criamos a conexAo com a API
+
             Call<ArrayList<Servico>> call = routerInterface.getServicos(id_empresa); //executando a chamada para a rota de servicos
 
             call.enqueue(new Callback<ArrayList<Servico>>()
@@ -432,16 +432,83 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                     {
                         Log.d("SERVICOS-ONRESPONSE-SUCESS", String.valueOf(response.body()));
 
-//                        List<Servico> itens = new ArrayList<>();
+//                        List<Servico> servicos = new ArrayList<>();
 
                         //recebe os dados da API
                         List<Servico> list = new ArrayList<Servico>();
 
                         list = response.body(); //o que veio no corpo da resposta  | DADOS
 
+                        Log.d("SERVICOS-ONRESPONSE-SUCESS", String.valueOf(list.get(0).getId_especialidade()));
 
-                        RecyclerView recyclerView = findViewById(R.id.recyclerViewServicosPerfilCat1);//  RECYCLERVIEW
-                        recyclerView.setAdapter(new ServicoAdapter(list)); //passando os dados para a adapter
+                        int contador = 0;
+
+                        Log.d("SERVICOS-ONRESPONSE-SUCESS", "list size" + String.valueOf(list.size()));
+
+                        ArrayList<ArrayList<Servico>> arr_arr_servicos_por_especialidade = new ArrayList<ArrayList<Servico>>(Collections.nCopies(20, null));
+
+                        while (contador < list.size())
+                        {
+                            Servico servico = list.get(contador);
+                            int id_especialidade_servico = servico.getId_especialidade();
+                                if (arr_arr_servicos_por_especialidade.get(servico.getId_especialidade()) != null)
+                                {
+                                    arr_arr_servicos_por_especialidade.get(servico.getId_especialidade()).add(servico);
+                                }
+
+                                else
+                                {
+                                    //ADICIONA AO ARRAY PAI UM ARRAY FILHO VAZIO PARA A CATEGORIA X
+                                    ArrayList<Servico> arr_list_generico = new ArrayList<Servico>();
+                                        arr_arr_servicos_por_especialidade.set(id_especialidade_servico,arr_list_generico);
+                                        Log.d("servicos", String.valueOf(arr_arr_servicos_por_especialidade.get(id_especialidade_servico)));
+
+                                    //ADICIONA ARRAY FILHO O SERVICO EM QUESTÃO
+                                    arr_arr_servicos_por_especialidade.get(servico.getId_especialidade()).add(servico);
+                                }
+//                            Log.d("SERVICOS-ONRESPONSE-SUCESS", "item contador" + String.valueOf(servico));
+//                            Log.d("SERVICOS-ONRESPONSE-SUCESS", "numero contador" + String.valueOf(contador));
+
+                            contador = contador +1;
+                        }
+                        Log.d("servicos", String.valueOf(arr_arr_servicos_por_especialidade.get(3).get(0).getNome_especialidade()));
+
+                        int contador_recycler = 0;
+                        while (contador_recycler < arr_arr_servicos_por_especialidade.size())
+                        {
+                            if (arr_arr_servicos_por_especialidade.get(contador_recycler) != null)
+                            {
+                                ArrayList<Servico> lista_servicos_especialidade = arr_arr_servicos_por_especialidade.get(contador_recycler);
+
+                                // PEGANDO O CONTAINER PAI E O DEIXANDO VISIVEL
+                                LinearLayout ln_container_listagems = findViewById(R.id.ln_container_geral_conteudo_listagem_perfil);
+                                String tag_container_listagem_servicos_categoria =  "ln_container_geral_listagem_categoria_"+ contador_recycler;
+                                LinearLayout container_listagem_servicos_categoria = ln_container_listagems.findViewWithTag(tag_container_listagem_servicos_categoria);
+                                container_listagem_servicos_categoria.setVisibility(View.VISIBLE);
+
+
+                                //SETANDO O TITULO DA LISTAGEM
+                                    String tag_tv_titulo = "titulo_recycler_categoria" + contador_recycler;
+                                    TextView tv_titulo_categoria = container_listagem_servicos_categoria.findViewWithTag(tag_tv_titulo);
+                                    tv_titulo_categoria.setText(lista_servicos_especialidade.get(0).getNome_especialidade());
+
+                                //PEGANDO O RECICLERVIEW
+                                    String tag_recycler_categoria =  "recyclerViewServicosPerfilCat"+ contador_recycler;
+                                    RecyclerView recyclerView = container_listagem_servicos_categoria.findViewWithTag(tag_recycler_categoria);//  RECYCLERVIEW
+                                    recyclerView.setAdapter(new ServicoAdapter(lista_servicos_especialidade)); //passando os dados para a adapter
+
+                                Log.d("servicos", String.valueOf(lista_servicos_especialidade));
+
+                            }
+                            else
+                            {
+                                Log.d("servicos", "NÃO tem servico para a especialidade " + contador_recycler);
+                            }
+
+                            contador_recycler = contador_recycler+1;
+                        }
+//                        RecyclerView recyclerView = findViewById(R.id.ln_container_geral_conteudo_listagem_perfil).findViewWithTag("recyclerViewServicosPerfilCat1");//  RECYCLERVIEW
+//                        recyclerView.setAdapter(new ServicoAdapter(list)); //passando os dados para a adapter
 
                     }
                     else
@@ -575,93 +642,109 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             Log.d("funcionamento", "destino" + String.valueOf(numero_secao_destino));
         }
 
-//    private class ServicoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> // vai "abrir" o pacote de conteúdo criado pela viewholder. Ao ser criada, a ServicoAdapter procura uma viewHoolder no seu corpo
-//    {
-//        List<Item> itens;
-//
-//        public ServicoAdapter(List<Item> itens)
-//        {
-//            this.itens = itens; //passa a response para a variavel da classe
-//        }
-//
-//        @NonNull
-//        @Override
-//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) //depois de passar os dados, cria a viewHolder (ela roda o construtor da classe livroViewHolder alí em baixo)
-//        {//renderiza
-//            return new ServicoAdapter.ServicoViewHolder
-//                    (
-//                            LayoutInflater.from
-//                                    (
-//                                            parent.getContext() //vai fazer um inflate a partir do pai
-//                                    )
-//                                    .inflate
-//                                            (
-//                                                    R.layout.item_container_livro,parent, false //representa o layout que será usado, diz onde vai acontecer (no pai)
-//                                            )
-//                    );//
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) //passa os dados para a viewHolder colocar nos lugares certos
-//        {
-//            if (getItemViewType(position) == 0) // dados de servico
-//            {
-//                Servico servico = (Servico) itens.get(position).getObject(); //retorna um servico - pega o object de item e converte para servico
-//                ((ServicoAdapter.ServicoViewHolder) holder).setServicoData(servico); //converte a variavel holder para um ServicoAdapter.ServicoViewHolder para que chamemos o método que passa os dados dando a elas esses dados
-//            }
-//            else if (getItemViewType(position) == 1) // dados de HQ
-//            {
-//
-//            }
-//        }
-//
-//        @Override
-//        public int getItemCount() // controla a quantidade de itens passados
-//        {
-//            return itens.size();
-//        }
-//
-//        public int getItemViewType (int position) //posicao do item na lista
-//        {
-//            return itens.get(position).getType(); //pega o tipo do ___ item da lista
-//        }
-//
-//
-//        //a classe item recebe os tipos de item que eu tenho no app. Depois que buscamos no banco, jogamos no item pra classificar.
-//
-//        class ServicoViewHolder extends RecyclerView.ViewHolder//monta a estrutura em si. Junta os dados ao fragmento de layout
-//        {
-//            //atributos da classe livroviewholder - eles quem vao receber dados lá na view holder
-//            private TextView txtTitulo, txtDescricao;
-//            private int cod_livro;
-//
-//            public ServicoViewHolder(@NonNull View itemView) //elemento gráfico - no nosso caso o itemContainerServico
-//            {
-//                super(itemView);//método construtor de viewHolder recebe o modelo de elemento gráfico que ele vai ter que construir
-//
-//                txtTitulo = itemView.findViewById(R.id.txtServicoTituloCardView);
-//                txtDescricao = itemView.findViewById(R.id.txtServicoDescricaoCardView);
-//
-//                //acao de click para editar servico e excluir servico
-//                itemView.setOnClickListener
-//                        (
-//                                view ->
-//                                {
-//
-//                                }
-//                        );
-//            }
-//
-//            //metodo que carrega os dados nos elementos de view
-//            public void setServicoData (Servico servico)
-//            {
-//                txtTitulo.setText(servico.getTitulo());
-//                txtDescricao.setText(servico.getDescricao());
-//                cod_livro= servico.getCod_livro();
-//            }
-//        }
-//
-//
-//    }
+    private class ServicoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> // vai "abrir" o pacote de conteúdo criado pela viewholder. Ao ser criada, a ServicoAdapter procura uma viewHoolder no seu corpo
+    {
+        List<Servico> servicos;
+
+        public ServicoAdapter(List<Servico> servicos)
+        {
+            this.servicos = servicos; //passa a response para a variavel da classe
+        }
+
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) //depois de passar os dados, cria a viewHolder (ela roda o construtor da classe livroViewHolder alí em baixo)
+        {//renderiza
+            return new ServicoAdapter.ServicoViewHolder
+                    (
+                            LayoutInflater.from
+                                    (
+                                            parent.getContext() //vai fazer um inflate a partir do pai
+                                    )
+                                    .inflate
+                                            (
+                                                    R.layout.item_container_listagem_servico,parent, false //representa o layout que será usado, diz onde vai acontecer (no pai)
+                                            )
+                    );//
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) //passa os dados para a viewHolder colocar nos lugares certos
+        {
+            Servico servico = servicos.get(position); //retorna um servico - pega o object de item e converte para servico
+            ((ServicoAdapter.ServicoViewHolder) holder).setServicoData(servico); //converte a variavel holder para um ServicoAdapter.ServicoViewHolder para que chamemos o método que passa os dados dando a elas esses dados
+        }
+
+        @Override
+        public int getItemCount() // controla a quantidade de servicos passados
+        {
+            return servicos.size();
+        }
+
+
+        //a classe item recebe os tipos de item que eu tenho no app. Depois que buscamos no banco, jogamos no item pra classificar.
+
+        class ServicoViewHolder extends RecyclerView.ViewHolder//monta a estrutura em si. Junta os dados ao fragmento de layout
+        {
+            //atributos da classe livroviewholder - eles quem vao receber dados lá na view holder
+            private TextView tv_nome_servico, tv_valor_servico;
+            private LinearLayout container_ic_excluir_servico;
+            private int id_servico;
+
+            public ServicoViewHolder(@NonNull View itemView) //elemento gráfico - no nosso caso o itemContainerServico
+            {
+                super(itemView);//método construtor de viewHolder recebe o modelo de elemento gráfico que ele vai ter que construir
+
+                tv_nome_servico = itemView.findViewById(R.id.tv_nome_do_servico);
+                tv_valor_servico = itemView.findViewById(R.id.tv_valor);
+                container_ic_excluir_servico = itemView.findViewById(R.id.container_ic_excluir_servico);
+
+                //acao de click para editar servico e excluir servico
+                container_ic_excluir_servico.setOnClickListener
+                        (
+                                view ->
+                                {
+                                    Log.d("SERVICO_LISTENER_CARD", "Clicou no serviço" + id_servico + " :)") ;
+
+                                    AlertDialog.Builder alertDialog = new AlertDialog.Builder
+                                            (
+                                                    PrestadorVizualizacaoPerfil.this // onde o alert dialog deve abrir
+                                            )
+                                            .setMessage // titulo da caixa de alerta
+                                            ("Deixe um cumprimento pro serviço qeu deseja excluir:")
+
+                                            .setPositiveButton //define uma opcao de acao
+                                            (
+                                                    "OI",
+                                                    (dialog1, witch)->
+                                                    {
+                                                        Log.d("SERVICO_CLICK_CARD_NEGATIVE_BTN", "Oi! :)");
+                                                    }
+                                            )
+
+                                            .setNegativeButton //define uma opcao de acao
+                                            (
+                                                    "Olá!",
+                                                    (dialog1, witch)->
+                                                    {
+                                                        Log.d("SERVICO_CLICK_CARD_NEGATIVE_BTN", "Olá! :)");
+                                                    }
+                                            );
+                                    alertDialog.show();
+                                }
+                        );
+            }
+
+            //metodo que carrega os dados nos elementos de view
+            public void setServicoData (Servico servico)
+            {
+                tv_nome_servico.setText(servico.getNome_servico());
+                tv_valor_servico.setText(String.valueOf(servico.getPreco()));
+                id_servico = servico.getId_servico();
+            }
+        }
+
+
+    }
     
 }

@@ -15,6 +15,22 @@ public class Servico {
     @Expose
     private int id_empresa;
 
+    @SerializedName("id_especialidade")
+    @Expose
+    private int id_especialidade;
+
+    @SerializedName("nome_especialidade")
+    @Expose
+    private String nome_especialidade;
+
+    @SerializedName("id_parte_corpo")
+    @Expose
+    private int id_parte_corpo;
+
+    @SerializedName("nome_parte_corpo")
+    @Expose
+    private String nome_parte_corpo;
+
     @SerializedName("id_servico")
     @Expose
     private int id_servico;
@@ -177,5 +193,37 @@ public class Servico {
 
     public void setImagem_servico(String imagem_servico) {
         this.imagem_servico = imagem_servico;
+    }
+
+    public int getId_especialidade() {
+        return id_especialidade;
+    }
+
+    public void setId_especialidade(int id_especialidade) {
+        this.id_especialidade = id_especialidade;
+    }
+
+    public int getId_parte_corpo() {
+        return id_parte_corpo;
+    }
+
+    public void setId_parte_corpo(int id_parte_corpo) {
+        this.id_parte_corpo = id_parte_corpo;
+    }
+
+    public String getNome_especialidade() {
+        return nome_especialidade;
+    }
+
+    public void setNome_especialidade(String nome_especialidade) {
+        this.nome_especialidade = nome_especialidade;
+    }
+
+    public String getNome_parte_corpo() {
+        return nome_parte_corpo;
+    }
+
+    public void setNome_parte_corpo(String nome_parte_corpo) {
+        this.nome_parte_corpo = nome_parte_corpo;
     }
 }

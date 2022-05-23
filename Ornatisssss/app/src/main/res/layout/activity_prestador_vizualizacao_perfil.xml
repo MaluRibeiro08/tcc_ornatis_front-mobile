@@ -1514,13 +1514,15 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/ln_container_geral_listagem_categoria_1"
+                        android:tag="ln_container_geral_listagem_categoria_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
 
                         <TextView
+                            android:tag="titulo_recycler_categoria1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Cabelos"
@@ -1533,7 +1535,7 @@
                             android:orientation="vertical">
 
                             <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recyclerViewServicosPerfilCat1"
+                                android:tag="recyclerViewServicosPerfilCat1"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
@@ -1544,13 +1546,15 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/ln_container_geral_listagem_categoria_2"
+                        android:tag="ln_container_geral_listagem_categoria_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginBottom="20dp">
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
 
                         <TextView
+                            android:tag="titulo_recycler_categoria2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Cabelos"
@@ -1563,7 +1567,38 @@
                             android:orientation="vertical">
 
                             <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recyclerViewServicosPerfilCat2"
+                                android:tag="recyclerViewServicosPerfilCat2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:tag="ln_container_geral_listagem_categoria_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:tag="titulo_recycler_categoria3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cabelos"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:tag="recyclerViewServicosPerfilCat3"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
