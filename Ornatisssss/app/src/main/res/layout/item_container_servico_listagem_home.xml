@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+    android:gravity="center_horizontal"
+    android:layout_margin="15dp">
+
+    <ImageView
+        android:id="@+id/imv_foto_servico_listagem_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/foto_maos"
+        android:background="@drawable/formato_imagem_card_listagem_servico"
+        android:scaleType="fitXY"
+        android:clipToOutline="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_nome_servico_listagem_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:maxLines="2"
+            android:text="Micropigmentação definitiva em Henna e Tatto"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_preco_servico_listagem_home"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:maxLines="2"
+            android:text="R$ 1.120.30"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/verde_escuro"
+            android:gravity="center"
+            android:layout_gravity="top"
+
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
