@@ -690,6 +690,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
             private TextView tv_nome_servico, tv_valor_servico;
             private LinearLayout container_ic_excluir_servico;
             private int id_servico;
+            private String nome_servico;
 
             public ServicoViewHolder(@NonNull View itemView) //elemento gráfico - no nosso caso o itemContainerServico
             {
@@ -711,23 +712,58 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                                                     PrestadorVizualizacaoPerfil.this // onde o alert dialog deve abrir
                                             )
                                             .setMessage // titulo da caixa de alerta
-                                            ("Deixe um cumprimento pro serviço qeu deseja excluir:")
+                                            ("Tem certeza que seja excluir o serviço " + nome_servico + "?")
 
                                             .setPositiveButton //define uma opcao de acao
                                             (
-                                                    "OI",
+                                                    "Sim!",
                                                     (dialog1, witch)->
                                                     {
-                                                        Log.d("SERVICO_CLICK_CARD_NEGATIVE_BTN", "Oi! :)");
+                                                        Log.d("SERVICO_CLICK_CARD_NEGATIVE_BTN", String.valueOf(id_servico));
+
+                                                        routerInterface = APIUtil.getEmpresaInterface(); //abre a conexao
+                                                        Call<Servico> call = routerInterface.deleteServico(id_servico); //o valor de cod veio do set livro data || Mmanda a requisicao
+                                                        call.enqueue //recebendo a response surgida do call
+                                                        (
+                                                                new Callback<Servico>()
+                                                                {
+                                                                    @Override
+                                                                    public void onResponse(Call<Servico> call, Response<Servico> response)
+                                                                    {
+                                                                        //RECARREGAR PÁGINA
+                                                                            finish();
+                                                                            overridePendingTransition(0, 0);
+                                                                            startActivity(getIntent());
+                                                                            overridePendingTransition(0, 0);
+                                                                            //OU
+                                                                            //recreate();
+
+                                                                        Toast.makeText(PrestadorVizualizacaoPerfil.this, "Serviço excluido com sucesso!", Toast.LENGTH_SHORT).show();
+
+                                                                    }
+
+                                                                    @Override
+                                                                    public void onFailure(Call<Servico> call, Throwable t)
+                                                                    {
+                                                                        Log.d("SERVICO_CLICK_CARD_NEGATIVE_BTN", "Oi! :)");
+
+                                                                        Toast.makeText(PrestadorVizualizacaoPerfil.this, "Erro ao excluir servico!", Toast.LENGTH_SHORT).show();
+
+                                                                    }
+                                                                }
+
+                                                        );
                                                     }
                                             )
 
                                             .setNegativeButton //define uma opcao de acao
                                             (
-                                                    "Olá!",
+                                                    "Não!",
                                                     (dialog1, witch)->
                                                     {
                                                         Log.d("SERVICO_CLICK_CARD_NEGATIVE_BTN", "Olá! :)");
+                                                        Toast.makeText(PrestadorVizualizacaoPerfil.this, "Exclusão cancelada!", Toast.LENGTH_SHORT).show();
+
                                                     }
                                             );
                                     alertDialog.show();
@@ -741,6 +777,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                 tv_nome_servico.setText(servico.getNome_servico());
                 tv_valor_servico.setText(String.valueOf(servico.getPreco()));
                 id_servico = servico.getId_servico();
+                nome_servico = servico.getNome_servico();
             }
         }
 
