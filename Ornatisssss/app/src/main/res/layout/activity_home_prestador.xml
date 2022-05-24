@@ -97,37 +97,62 @@
                         android:fontFamily="sans-serif"
                         android:text="@string/servicos" />
 
+
                     <LinearLayout
                         android:layout_width="300dp"
-                        android:layout_height="150dp"
-                        android:gravity="center">
+                        android:layout_height="300dp"
+                        android:gravity="center_vertical">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_plus" />
+                            android:src="@drawable/ic_plus"
+                            android:layout_marginLeft="20dp"/>
 
-                    </LinearLayout>
-
-
-                    <TextView
-                        style="@style/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif"
-                        android:text="@string/produtos" />
-
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="150dp"
-                        android:gravity="center">
-
-                        <ImageView
+                        <HorizontalScrollView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_plus" />
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerViewServicosHome"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+                                </androidx.recyclerview.widget.RecyclerView>
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
 
                     </LinearLayout>
+
+
+<!--                    <TextView-->
+<!--                        style="@style/textView"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="sans-serif"-->
+<!--                        android:text="@string/produtos" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="150dp"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:src="@drawable/ic_plus" />-->
+
+<!--                    </LinearLayout>-->
 
 
                     <TextView
