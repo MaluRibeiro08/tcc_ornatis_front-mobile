@@ -60,7 +60,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
                                  ArrayList<Funcionario> arrayList = new ArrayList<Funcionario>();
                                  arrayList = response.body();
 
-                                 Log.d("listagem", String.valueOf(arrayList.get(0).getNome_funcionario()));
+                                 Log.d("listagem", String.valueOf(arrayList.size()));
 
                                  for (int i = 0; i < arrayList.size(); i++){
                                      funcionarios.add(arrayList.get(i));
