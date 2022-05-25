@@ -32,6 +32,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
     private TextView adicionando_novo_funcionario;
     private ImageView iv_foto_perfil_funcionario;
     private String tv_nome_do_funcionario, tv_profissao;
+    private int id_empresa =2;
 
 
     @Override
@@ -44,7 +45,7 @@ public class PrestadorListagemFuncionarios extends AppCompatActivity {
         routerInterface = APIUtil.getEmpresaInterface();
 
 
-        Call<ArrayList<Funcionario>> call = routerInterface.getFuncionarios(19);
+        Call<ArrayList<Funcionario>> call = routerInterface.getFuncionarios(id_empresa);
 
         call.enqueue(new Callback<ArrayList<Funcionario>>() {
                         @Override

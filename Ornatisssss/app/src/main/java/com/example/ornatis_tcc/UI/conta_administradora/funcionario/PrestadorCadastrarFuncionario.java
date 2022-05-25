@@ -35,6 +35,7 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
     private Button btn_cadastrar_funcionario;
     private LinearLayout linear_cb_dia_semana;
     private LinearLayout linear_horarios;
+    private int id_empresa = 2;
 
     ImageView iv_foto_perfil_funcionario;
     EditText et_nome_do_funcionario;
@@ -99,7 +100,7 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
         funcionario.setSenha(et_senha.getText().toString());
 
         funcionario.setAcao("createFuncionario");
-        funcionario.setId_empresa(19);
+        funcionario.setId_empresa(id_empresa);
 
         //DADOS DOS DIAS DE TRABALHO
         funcionario.setDados_funcionamento(getDiaDeTrabalho());
