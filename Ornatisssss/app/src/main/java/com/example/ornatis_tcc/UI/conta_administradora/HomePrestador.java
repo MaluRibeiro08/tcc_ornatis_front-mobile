@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta;
 import com.example.ornatis_tcc.R;
+import com.example.ornatis_tcc.UI.conta_administradora.servico.PrestadorCadastroServico;
 import com.example.ornatis_tcc.model.Servico;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
@@ -32,12 +33,14 @@ public class HomePrestador extends AppCompatActivity {
     private ImageView engrenagem;
     private ImageView menu_hambuguer;
     private int id_empresa = 2;
+    private ImageView imgv_add_servico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_prestador);
 
+        imgv_add_servico = findViewById(R.id.imgv_add_servico);
         engrenagem = findViewById(R.id.engrenagem);
         menu_hambuguer = findViewById(R.id.menu_hambuguer);
 
@@ -53,6 +56,17 @@ public class HomePrestador extends AppCompatActivity {
         menu_hambuguer.setOnClickListener(view -> {
             abrindoMenu();
         });
+
+        imgv_add_servico.setOnClickListener(
+            view ->
+            {
+                startActivity(new Intent(
+                        HomePrestador.this,
+                        PrestadorCadastroServico.class
+                ));
+            }
+        );
+        
 
         getDadosServicosEstabelecimento(id_empresa);
 
@@ -184,10 +198,9 @@ public class HomePrestador extends AppCompatActivity {
                         {
                             Log.d("SERVICO_LISTENER_CARD", "Clicou no serviço" + id_servico + " :)") ;
 
-                            startActivity(new Intent(
-                                    HomePrestador.this,
-                                    PrestadorVizualizacaoPerfil.class
-                            ));
+                            Intent intent = new Intent(HomePrestador.this, PrestadorVizualizacaoPerfil.class);
+                            intent.putExtra("acao", "visualizar_servicos" );
+                            startActivity(intent);
                         }
                 );
             }

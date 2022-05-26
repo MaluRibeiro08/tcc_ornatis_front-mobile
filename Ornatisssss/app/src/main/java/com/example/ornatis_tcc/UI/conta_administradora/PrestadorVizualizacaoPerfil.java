@@ -128,6 +128,17 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
 
         getDadosPerfilEstabelecimento(id_empresa);
 
+        if (getIntent().getExtras() != null && getIntent().getExtras().getString("acao").equals("visualizar_servicos"))
+        {
+            trocarVisualizacaoAbas(container_servicos, tv_aba_servicos);
+            if (servicos_carregados == false)
+            {
+                getDadosServicosEstabelecimento(id_empresa);
+
+                servicos_carregados = true;
+            }
+        }
+
     }
 
     //BUSCA E PREENCHIMENTO ABA INICIO
