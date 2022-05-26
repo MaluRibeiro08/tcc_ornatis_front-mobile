@@ -53,7 +53,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         TextView tv_instagram_salao_perfil;
         TextView tv_facebook_salao_perfil;
         LinearLayout ln_container_formas_pagamento_perfil;
-        LinearLayout ln_link_listagem_funcionarios;
+        LinearLayout ln_link_listagem_funcionarios, ln_pai_btn_filtros;
 
     int id_empresa =2;
     boolean servicos_carregados = false;
@@ -116,30 +116,81 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                     }
                 );
 
-        //BUSCAR OS DADOS E PREENCHER SECAO 'INICIO'
-        ln_link_listagem_funcionarios.setOnClickListener(view ->
-        {
-            startActivity(new Intent(
-                    PrestadorVizualizacaoPerfil.this,
-                    PrestadorListagemFuncionarios.class
-            ));
 
-        });
-
-        getDadosPerfilEstabelecimento(id_empresa);
-
-        if (getIntent().getExtras() != null && getIntent().getExtras().getString("acao").equals("visualizar_servicos"))
-        {
-            trocarVisualizacaoAbas(container_servicos, tv_aba_servicos);
-            if (servicos_carregados == false)
+        //VISUALIZAÇÃO DA LISTA DE FUNCIONARIOS
+            ln_link_listagem_funcionarios.setOnClickListener(view ->
             {
-                getDadosServicosEstabelecimento(id_empresa);
+                startActivity(new Intent(
+                        PrestadorVizualizacaoPerfil.this,
+                        PrestadorListagemFuncionarios.class
+                ));
 
-                servicos_carregados = true;
+            });
+
+        //BUSCAR OS DADOS E PREENCHER SECAO 'INICIO'
+            getDadosPerfilEstabelecimento(id_empresa);
+
+        //VERIFICANDO NECESSIDADE DE ABRIR ABA SERVICOS
+            if (getIntent().getExtras() != null && getIntent().getExtras().getString("acao").equals("visualizar_servicos"))
+            {
+                trocarVisualizacaoAbas(container_servicos, tv_aba_servicos);
+                if (servicos_carregados == false)
+                {
+                    getDadosServicosEstabelecimento(id_empresa);
+
+                    servicos_carregados = true;
+                }
             }
-        }
+
+//        //FILTRAGEM DOS SERVICOS POR ESPECIALIDADE
+//            ln_pai_btn_filtros = findViewById(R.id.ln_pai_btn_filtros);
+//            int contador_filtros = 0;
+//
+//            while (contador_filtros < ln_pai_btn_filtros.getChildCount())
+//            {
+//                final int contador = contador_filtros;
+//                ln_pai_btn_filtros.getChildAt(contador_filtros).setOnClickListener(
+//                        view ->
+//                        {
+//                            filtrarServicos(ln_pai_btn_filtros.getChildAt(contador).getTag().toString())
+//                        }
+//                );
+//
+//                contador_filtros = contador_filtros+1;
+//            }
+
 
     }
+
+//    public void filtrarServicos (String tag_alvo)
+//    {
+//        LinearLayout pai_containers_listagem = findViewById(R.id.ln_container_geral_conteudo_listagem_perfil);
+//
+//        //DESAPARECENDO COM TODOS
+//            int contador_container_especialidades = 0;
+//            while (contador_container_especialidades < pai_containers_listagem.getChildCount())
+//            {
+//                pai_containers_listagem.getChildAt(contador_container_especialidades).setVisibility(View.GONE);
+//
+//                contador_container_especialidades = contador_container_especialidades+1;
+//            }
+//
+//        //FAZENDO APARECER O DESEJADO
+//            TextView alvo = ln_pai_btn_filtros.findViewWithTag(tag_alvo);
+//            String categoria = alvo.getText().toString();
+//
+//            int contador_container_especialidades_2 = 0;
+//            while (contador_container_especialidades_2 < pai_containers_listagem.getChildCount())
+//            {
+//
+//                LinearLayout container_categoria = (LinearLayout) pai_containers_listagem.getChildAt(contador_container_especialidades);
+//
+//                container_categoria.findViewWithTag("titulo_recycler_categoria")
+//                contador_container_especialidades = contador_container_especialidades_2+1;
+//            }
+//
+//
+//    }
 
     //BUSCA E PREENCHIMENTO ABA INICIO
         public ContaAdministradora getDadosPerfilEstabelecimento (int id_empresa)
@@ -485,6 +536,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                         Log.d("servicos", String.valueOf(arr_arr_servicos_por_especialidade.get(3).get(0).getNome_especialidade()));
 
                         int contador_recycler = 0;
+                        int id_btn_filtro = 1;
                         while (contador_recycler < arr_arr_servicos_por_especialidade.size())
                         {
                             if (arr_arr_servicos_por_especialidade.get(contador_recycler) != null)
@@ -502,6 +554,15 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
                                     String tag_tv_titulo = "titulo_recycler_categoria" + contador_recycler;
                                     TextView tv_titulo_categoria = container_listagem_servicos_categoria.findViewWithTag(tag_tv_titulo);
                                     tv_titulo_categoria.setText(lista_servicos_especialidade.get(0).getNome_especialidade());
+
+                                //CRIANDO UM BOTÃO DE FILTRO
+                                    String tag_btn_filtro = "btn_filtro_categoria" + id_btn_filtro;
+                                    TextView btn_filtro = findViewById(R.id.ln_pai_btn_filtros).findViewWithTag(tag_btn_filtro);
+
+                                    btn_filtro.setVisibility(View.VISIBLE);
+                                    btn_filtro.setText(lista_servicos_especialidade.get(0).getNome_especialidade());
+                                    id_btn_filtro = id_btn_filtro+1;
+
 
                                 //PEGANDO O RECICLERVIEW
                                     String tag_recycler_categoria =  "recyclerViewServicosPerfilCat"+ contador_recycler;

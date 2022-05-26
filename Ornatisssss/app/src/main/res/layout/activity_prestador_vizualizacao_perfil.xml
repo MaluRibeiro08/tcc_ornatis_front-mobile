@@ -1443,60 +1443,116 @@
                             android:scrollbars="none">
 
                             <LinearLayout
+                                android:id="@+id/ln_pai_btn_filtros"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 >
 
                                 <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
+                                    android:tag="btn_filtro_categoria1"
+                                    android:id="@+id/btn_filtro_categoria1"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="Cabelos"
                                     android:paddingHorizontal="15dp"
                                     android:paddingVertical="8dp"
                                     android:layout_marginHorizontal="5dp"
-                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"/>
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
 
                                 <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
+                                    android:tag="btn_filtro_categoria2"
+                                    android:id="@+id/btn_filtro_categoria2"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="Cabelos"
                                     android:paddingHorizontal="15dp"
                                     android:paddingVertical="8dp"
                                     android:layout_marginHorizontal="5dp"
-                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"/>
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
 
                                 <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
+                                    android:tag="btn_filtro_categoria3"
+                                    android:id="@+id/btn_filtro_categoria3"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="Cabelos"
                                     android:paddingHorizontal="15dp"
                                     android:paddingVertical="8dp"
                                     android:layout_marginHorizontal="5dp"
-                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"/>
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
 
                                 <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
+                                    android:tag="btn_filtro_categoria4"
+                                    android:id="@+id/btn_filtro_categoria4"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="Cabelos"
                                     android:paddingHorizontal="15dp"
                                     android:paddingVertical="8dp"
                                     android:layout_marginHorizontal="5dp"
-                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"/>
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
                                 
                                 <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_weight="1"
+                                    android:tag="btn_filtro_categoria5"
+                                    android:id="@+id/btn_filtro_categoria5"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="Cabelos"
                                     android:paddingHorizontal="15dp"
                                     android:paddingVertical="8dp"
                                     android:layout_marginHorizontal="5dp"
-                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"/>
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria6"
+                                    android:id="@+id/btn_filtro_categoria6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:tag="btn_filtro_categoria7"
+                                    android:id="@+id/btn_filtro_categoria7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:tag="btn_filtro_categoria8"
+                                    android:id="@+id/btn_filtro_categoria8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:tag="btn_filtro_categoria9"
+                                    android:id="@+id/btn_filtro_categoria9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
 
                             </LinearLayout>
 
