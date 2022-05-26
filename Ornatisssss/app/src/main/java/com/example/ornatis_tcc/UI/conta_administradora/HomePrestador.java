@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta;
 import com.example.ornatis_tcc.R;
@@ -23,7 +21,6 @@ import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -164,6 +161,7 @@ public class HomePrestador extends AppCompatActivity {
             //atributos da classe livroviewholder - eles quem vao receber dados lá na view holder
             private TextView tv_nome_servico, tv_valor_servico;
             private ImageView imv_foto_servico_listagem_home;
+            private LinearLayout ln_foto_servico_listagem_home;
             private int id_servico;
 
             public ServicoViewHolder(@NonNull View itemView) //elemento gráfico - no nosso caso o itemContainerServico
@@ -173,7 +171,10 @@ public class HomePrestador extends AppCompatActivity {
                 tv_nome_servico = itemView.findViewById(R.id.tv_nome_servico_listagem_home);
                 tv_valor_servico = itemView.findViewById(R.id.tv_preco_servico_listagem_home);
                 imv_foto_servico_listagem_home = itemView.findViewById(R.id.imv_foto_servico_listagem_home);
+                ln_foto_servico_listagem_home = itemView.findViewById(R.id.ln_foto_servico_listagem_home);
 
+                itemView.setClipToOutline(true);
+                ln_foto_servico_listagem_home.setClipToOutline(true);
                 imv_foto_servico_listagem_home.setClipToOutline(true);
 
                 //acao de click para editar servico e excluir servico
@@ -195,7 +196,7 @@ public class HomePrestador extends AppCompatActivity {
             public void setServicoData (Servico servico)
             {
                 tv_nome_servico.setText(servico.getNome_servico());
-                tv_valor_servico.setText(String.valueOf(servico.getPreco()));
+                tv_valor_servico.setText("R$ " + String.valueOf(servico.getPreco()).replace(".", ","));
                 id_servico = servico.getId_servico();
             }
         }
