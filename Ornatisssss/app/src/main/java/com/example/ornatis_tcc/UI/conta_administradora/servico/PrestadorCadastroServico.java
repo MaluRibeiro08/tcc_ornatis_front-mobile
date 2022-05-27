@@ -1,15 +1,21 @@
 package com.example.ornatis_tcc.UI.conta_administradora.servico;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
@@ -29,7 +35,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class PrestadorCadastroServico extends AppCompatActivity {
-
 
     RouterInterface routerInterface;
 
@@ -53,6 +58,8 @@ public class PrestadorCadastroServico extends AppCompatActivity {
     private Spinner spinner_publico_alvo;
     private Spinner spinner_especialidade;
     private Spinner spinner_parte_corpo;
+
+    private int id_empresa =2;
 
 
     @Override
@@ -114,6 +121,48 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         spinner_parte_corpo.setAdapter(adapterParteCorpo);
 
 
+        //Listagem funcionário
+        routerInterface = APIUtil.getEmpresaInterface();
+
+        Call<ArrayList<Funcionario>> call = routerInterface.getFuncionarios(id_empresa);
+
+        call.enqueue(new Callback<ArrayList<Funcionario>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Funcionario>> call, Response<ArrayList<Funcionario>> response) {
+//                            Log.d("listagem", "teste2222");
+
+                if (response.isSuccessful()){
+//                                 Log.d("listagem", "onResponse: chegou");
+                    ArrayList<Funcionario> funcionarios = new ArrayList<>();
+
+                    //RECEBE OS DADOS DA API
+                    ArrayList<Funcionario> arrayList = new ArrayList<Funcionario>();
+                    arrayList = response.body();
+
+                    Log.d("listagem", String.valueOf(arrayList.size()));
+
+                    for (int i = 0; i < arrayList.size(); i++){
+                        funcionarios.add(arrayList.get(i));
+                    }
+
+                    RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionariosCadastroServico);
+//                    recyclerView.setAdapter(new PrestadorListagemFuncionarios.FuncionarioAdapter(funcionarios));
+//                    recyclerView.setAdapter(new FuncionarioAdapter(funcionarios));
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Funcionario>> call, Throwable t) {
+                Log.d("listagem", "onResponse: ops");
+            }
+        });
+
+
+
+
+
         //AÇÃO DE CLIQUE PARA CRIAR UM NOVO SERVIÇO
         btn_cadastrar_servico.setOnClickListener(view -> {
             Servico servico = setDadosFormularioServico();
@@ -132,7 +181,205 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
         });
 
-    }
+    } //fim do método onCreate
+
+
+
+
+
+    /////////// ADAPTER -> FAZ PARTE DA LISTAGEM
+
+
+
+
+//
+//    private class FuncionarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+//
+//        ArrayList<Funcionario> funcionarios;
+//
+//        public FuncionarioAdapter(ArrayList<Funcionario> funcionarios) {
+//            this.funcionarios = funcionarios;
+//        }
+//
+//        @NonNull
+//        @Override
+//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//
+//            return new PrestadorListagemFuncionarios.FuncionarioAdapter.FuncionarioViewHolder(
+//                    LayoutInflater.from(
+//                            parent.getContext()).inflate(
+//                            R.layout.item_container_listagem_funcionario,
+//                            parent,
+//                            false
+//                    ));
+//        }
+//
+//        @Override
+//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+//
+//            /** DADOS DE FUNCIONÁRIO **/
+//
+//            Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
+//            Log.d("listagem", funcionario.getNome_funcionario());
+//            ((PrestadorListagemFuncionarios.FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionario);
+//
+//        }
+//
+//        @Override
+//        public int getItemCount() {
+//            return funcionarios.size();
+//        }
+//
+//
+//        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
+//        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
+//
+//            private TextView tv_nome_do_funcionario_card;
+//            //            private ImageView iv_foto_perfil_funcionario;
+//            private ImageView excluir_funcionario;
+//            private int id_funcionario;
+//
+//
+//            public FuncionarioViewHolder(@NonNull View itemViewFuncionario) {
+//                super(itemViewFuncionario);
+//
+//                tv_nome_do_funcionario_card = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
+//                excluir_funcionario = itemViewFuncionario.findViewById(R.id.excluir_funcionario);
+//
+//
+//                //AÇÃO DE CLIQUE NA LIXEIRA
+//                excluir_funcionario.setOnClickListener(view -> {
+//
+//                    routerInterface = APIUtil.getEmpresaInterface();
+//
+//                    Funcionario funcionario = new Funcionario();
+//                    funcionario.setAcao("desabilitarFuncionario");
+//                    funcionario.setId_funcionario(1);
+//
+//                    Call<Funcionario> call = routerInterface.deleteFuncionario(funcionario.getId_funcionario());
+//
+//                    call.enqueue(new Callback<Funcionario>() {
+//                        @Override
+//                        public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
+//                            Log.d("exclusao1", String.valueOf(response.body()));
+//                            Toast.makeText(PrestadorListagemFuncionarios.this,
+//                                    "O funcionário foi excluído da sua lista",
+//                                    Toast.LENGTH_SHORT).show();
+//
+//                            startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
+//                        }
+//
+//                        @Override
+//                        public void onFailure(Call<Funcionario> call, Throwable t) {
+//                            Log.d("exclusao2", "FALHOU!");
+//
+//
+//                            Toast.makeText(PrestadorListagemFuncionarios.this,
+//                                    "FALHA AO EXCLUIR FUNCIONÁRIO",
+//                                    Toast.LENGTH_SHORT).show();
+//
+//                        }
+//                    });
+//                });
+//
+//
+//            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
+//
+////                itemFuncionario.setOnClickListener(view -> {
+//
+////                });
+//
+//            public void setFuncionarioDados(Funcionario funcionario) {
+//                tv_nome_do_funcionario_card.setText(funcionario.getNome_funcionario());
+//                id_funcionario = funcionario.getId_funcionario();
+//            }
+//
+//        } /** FIM DA CLASSE VIEWHOLDER **/
+
+//    }
+
+
+
+
+
+
+
+
+
+
+//    private class FuncionarioAdapterCadastrandoServico extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+//
+//        ArrayList<Funcionario> funcionarios;
+//
+//        public FuncionarioAdapter(ArrayList<Funcionario> funcionarios) {
+//            this.funcionarios = funcionarios;
+//        }
+//
+//        @NonNull
+//        @Override
+//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//
+//            return new FuncionarioAdapterCadastrandoServico.FuncionarioAdapter.FuncionarioViewHolder(
+//                    LayoutInflater.from(
+//                            parent.getContext()).inflate(
+//                            R.layout.item_container_listagem_funcionario,
+//                            parent,
+//                            false
+//                    ));
+//
+//        }
+//
+//        @Override
+//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+//
+//            /** DADOS DE FUNCIONÁRIO **/
+//
+//            Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
+//            Log.d("listagem", funcionario.getNome_funcionario());
+//            ((PrestadorListagemFuncionarios.FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionario);
+//
+//        }
+//
+//        @Override
+//        public int getItemCount() {
+//            return funcionarios.size();
+//        }
+//
+//
+//        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
+//        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
+//
+//            private TextView tv_nome_do_funcionario_card;
+//            private int id_funcionario;
+//
+//
+//            public FuncionarioViewHolder(@NonNull View itemViewFuncionario) {
+//                super(itemViewFuncionario);
+//
+//
+//
+////                tv_nome_do_funcionario_card = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
+//
+//            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
+//
+//
+//
+//
+//            public void setFuncionarioDados(Funcionario funcionario) {
+//                tv_nome_do_funcionario_card.setText(funcionario.getNome_funcionario());
+//                id_funcionario = funcionario.getId_funcionario();
+//            }
+//
+//        } /** FIM DA CLASSE VIEWHOLDER **/
+//
+//    }
+
+    /////////// ADAPTER -> FAZ PARTE DA LISTAGEM
+
+
+
+
+
 
     private Servico setDadosFormularioServico() {
 
@@ -148,7 +395,7 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
         //tempo de duracao
 //        servico.setTempo_duracao();
-        
+
         //detalhes
         servico.setDetalhes(et_detalhes_servico.getText().toString());
         //publico alvo
@@ -184,4 +431,5 @@ public class PrestadorCadastroServico extends AppCompatActivity {
                 }
         );
     }
+
 }
