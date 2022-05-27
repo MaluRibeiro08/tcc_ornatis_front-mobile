@@ -193,27 +193,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/funcionario" />
 
-            <CheckBox
-                android:id="@+id/cb_nome_do_funcionario1"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:text="Sara"
-                android:textSize="13sp"
-                style="@style/checkbox"/>
-            <CheckBox
-                android:id="@+id/cb_nome_do_funcionario2"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:text="Maria Luiza"
-                android:textSize="13sp"
-                style="@style/checkbox"/>
-            <CheckBox
-                android:id="@+id/cb_nome_do_funcionario3"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:text="Ariely"
-                android:textSize="13sp"
-                style="@style/checkbox"/>
+                //RECYCLER VIEW
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewFuncionariosCadastroServico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/cb_nome_do_funcionario1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="35dp"-->
+<!--                android:text="Sara"-->
+<!--                android:textSize="13sp"-->
+<!--                style="@style/checkbox"/>-->
+<!--            <CheckBox-->
+<!--                android:id="@+id/cb_nome_do_funcionario2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="35dp"-->
+<!--                android:text="Maria Luiza"-->
+<!--                android:textSize="13sp"-->
+<!--                style="@style/checkbox"/>-->
+<!--            <CheckBox-->
+<!--                android:id="@+id/cb_nome_do_funcionario3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="35dp"-->
+<!--                android:text="Ariely"-->
+<!--                android:textSize="13sp"-->
+<!--                style="@style/checkbox"/>-->
 
 
             //local atendimento
