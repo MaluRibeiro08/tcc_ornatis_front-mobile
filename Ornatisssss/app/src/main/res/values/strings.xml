@@ -64,4 +64,7 @@
     <string name="hora_atendimento">Horário atendimento</string>
     <string name="categoria_servico">Cabelo</string>
     <string name="editarFuncionario">Editar Funcionário</string>
+    <string name="tipo_cabelo">Tipo de cabelo</string>
+    <string name="comprimento_cabelo">Comprimento do cabelo</string>
+    <string name="cor_cabelo">Cor do cabelo</string>
 </resources>
