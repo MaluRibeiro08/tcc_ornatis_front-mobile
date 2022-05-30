@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UI.conta_administradora.manutencao_conta.CadastroContaAdministradora"
+    tools:context=".UI.consumidor.manutencao_conta.CadastroConsumidor"
     android:orientation="vertical"
     android:gravity="top">
 
@@ -108,7 +108,7 @@
                                     android:text="@string/cpf" />
 
                                 <EditText
-                                    android:id="@+id/et_telefone_consumidor"
+                                    android:id="@+id/et_cpf_consumidor"
                                     style="@style/editText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -123,12 +123,57 @@
                                     android:text="@string/contato" />
 
                                 <EditText
-                                    android:id="@+id/et_cpf"
+                                    android:id="@+id/et_telefone_consumidor"
                                     style="@style/editText"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:inputType="phone"
                                     android:maxLength="14" />
+
+                                <TextView
+                                    android:id="@+id/tv_genero_consumidor"
+                                    style="@style/textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/contato" />
+
+                                <RadioGroup
+                                    android:id="@+id/radio_group_genero"
+                                    style="@style/editText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="phone"
+                                    android:maxLength="14" >
+
+                                    <RadioButton
+                                        android:id="@+id/radio_button_feminino"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Feminino"
+                                        android:onClick="verificarRadioGenero"/>
+
+                                    <RadioButton
+                                        android:id="@+id/radio_button_masculino"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Masculino"
+                                        android:onClick="verificarRadioGenero"/>
+
+                                    <RadioButton
+                                        android:id="@+id/radio_button_outro"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Outro"
+                                        android:onClick="verificarRadioGenero"/>
+
+                                    <RadioButton
+                                        android:id="@+id/radio_button_prefiro_nao_informar"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="Prefiro não informar"
+                                        android:onClick="verificarRadioGenero"/>
+
+                                </RadioGroup>
 
 
 <!--                                <TextView-->
@@ -199,7 +244,7 @@
                                 style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Desenha informar dados sobre seu cabelo?" />
+                                android:text="Deseja informar dados sobre seu cabelo?" />
 
                             <RadioGroup
                                 android:id="@+id/radio_group_sim_ou_nao"
@@ -304,7 +349,7 @@
                                                 android:background="@drawable/formato_circular_sem_preenchimento_borda"
                                                 android:padding="10dp"
                                                 android:layout_margin="10dp">
-                                                <ImageView
+                                                <RadioButton
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
                                                     android:src="@drawable/tipo_crespo"
@@ -357,6 +402,7 @@
                                         android:orientation="horizontal">
 
                                         <RadioGroup
+                                            android:id="@+id/radio_group_comprimento_cabelo"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent">
 
@@ -545,7 +591,7 @@
                                         android:inputType="text" />
 
                                     <EditText
-                                        android:id="@+id/et_numero_consumidor"
+                                        android:id="@+id/et_numero_endereco_consumidor"
                                         style="@style/editText"
                                         android:layout_width="56dp"
                                         android:layout_height="wrap_content"

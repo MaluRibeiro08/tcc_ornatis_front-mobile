@@ -1,5 +1,6 @@
 package com.example.ornatis_tcc.remote;
 
+import com.example.ornatis_tcc.model.Consumidor;
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.model.Funcionario;
 import com.example.ornatis_tcc.model.Servico;
@@ -14,6 +15,11 @@ import retrofit2.http.Body;
 import retrofit2.http.Path;
 
 public interface RouterInterface {
+
+//CONSUMIDOR
+    //CADASTRO DA CONTA
+    @POST("/consumidor/cadastrarConta")//rota da req e o verbo http
+    Call<Consumidor> addConsumidor(@Body Consumidor objConsumidor);
 
 //ADM
     //CONTA ADM
