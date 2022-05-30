@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,9 +85,9 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         //spinner público alvo
         spinner_publico_alvo = findViewById(R.id.spinner_publico_alvo);
         final List<String> publicoAlvo = new ArrayList<String>();
-        publicoAlvo.add("Ambos");
         publicoAlvo.add("Feminino");
         publicoAlvo.add("Masculino");
+        publicoAlvo.add("Ambos");
 
         ArrayAdapter<String> adapterPublicoAlvo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, publicoAlvo);
         adapterPublicoAlvo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -145,7 +147,8 @@ public class PrestadorCadastroServico extends AppCompatActivity {
                         funcionarios.add(arrayList.get(i));
                     }
 
-                    RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionariosCadastroServico);
+                    RecyclerView recyclerViewCadastroServicos = findViewById(R.id.recyclerViewFuncionariosCadastroServico);
+                    recyclerViewCadastroServicos.setAdapter(new FuncionarioAdapterCadastroServico(funcionarios));
 //                    recyclerView.setAdapter(new PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico(funcionarios));
 //                    recyclerView.setAdapter(new FuncionarioAdapterCadastrandoServico(funcionarios));
 
@@ -184,162 +187,76 @@ public class PrestadorCadastroServico extends AppCompatActivity {
     } //fim do método onCreate
 
 
-
-
-
-    /////////// ADAPTER -> FAZ PARTE DA LISTAGEM
-
-
-
-//    private class FuncionarioAdapterCadastrandoServico extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-//
-//        ArrayList<Funcionario> funcionarios;
-//
-//        public FuncionarioAdapterCadastrandoServico(ArrayList<Funcionario> funcionarios) {
-//            this.funcionarios = funcionarios;
-//        }
-//
-//        @NonNull
-//        @Override
-//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//            return new PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico.FuncionarioViewHolderCadastrandoServico(
-////                    LayoutInflater.from(
-////                            parent.getContext()).inflate(
-////                            R.layout.item_container_listagem_funcionario,
-////                            parent,
-////                            false
-//
-//
-//                    //nome do funcionário
-//                    );
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//
-//            /** DADOS DE FUNCIONÁRIO **/
-//
-//            Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
-//            Log.d("listagem", funcionario.getNome_funcionario());
-//            ((PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico.FuncionarioViewHolderCadastrandoServico) holder).setFuncionarioDados(funcionario);
-//
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return funcionarios.size();
-//        }
-//
-//
-//        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
-//        class FuncionarioViewHolderCadastrandoServico extends RecyclerView.ViewHolder {
-//
-//            private TextView tv_nome_do_funcionario_card;
-//            private int id_funcionario;
-//
-//
-//            public FuncionarioViewHolderCadastrandoServico(@NonNull View itemViewFuncionario) {
-//                super(itemViewFuncionario);
-//
-//                tv_nome_do_funcionario_card = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
-//
-//
-//            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
-//
-////                itemFuncionario.setOnClickListener(view -> {
-//
-////                });
-//
-//            public void setFuncionarioDados(Funcionario funcionario) {
-//                tv_nome_do_funcionario_card.setText(funcionario.getNome_funcionario());
-//                id_funcionario = funcionario.getId_funcionario();
-//            }
-//
-//        } /** FIM DA CLASSE VIEWHOLDER **/
-//
-//    }
-//
-//
-//
-
-
-
-
-
-
-
-//    private class FuncionarioAdapterCadastrandoServico extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-//
-//        ArrayList<Funcionario> funcionarios;
-//
-//        public FuncionarioAdapter(ArrayList<Funcionario> funcionarios) {
-//            this.funcionarios = funcionarios;
-//        }
-//
-//        @NonNull
-//        @Override
-//        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//            return new FuncionarioAdapterCadastrandoServico.FuncionarioAdapter.FuncionarioViewHolder(
-//                    LayoutInflater.from(
-//                            parent.getContext()).inflate(
-//                            R.layout.item_container_listagem_funcionario,
-//                            parent,
-//                            false
-//                    ));
-//
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//
-//            /** DADOS DE FUNCIONÁRIO **/
-//
-//            Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
-//            Log.d("listagem", funcionario.getNome_funcionario());
-//            ((PrestadorListagemFuncionarios.FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionario);
-//
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return funcionarios.size();
-//        }
-//
-//
-//        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
-//        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
-//
-//            private TextView tv_nome_do_funcionario_card;
-//            private int id_funcionario;
-//
-//
-//            public FuncionarioViewHolder(@NonNull View itemViewFuncionario) {
-//                super(itemViewFuncionario);
-//
-//
-//
-////                tv_nome_do_funcionario_card = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
-//
-//            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
-//
-//
-//
-//
-//            public void setFuncionarioDados(Funcionario funcionario) {
-//                tv_nome_do_funcionario_card.setText(funcionario.getNome_funcionario());
-//                id_funcionario = funcionario.getId_funcionario();
-//            }
-//
-//        } /** FIM DA CLASSE VIEWHOLDER **/
-//
-//    }
+    /** ADAPTER - RECYCLERVIEW **/
 
     /////////// ADAPTER -> FAZ PARTE DA LISTAGEM
+    private class FuncionarioAdapterCadastroServico extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+        ArrayList<Funcionario> funcionarios;
+
+        public FuncionarioAdapterCadastroServico(ArrayList<Funcionario> funcionarios) {
+            this.funcionarios = funcionarios;
+        }
+
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+            return new FuncionarioAdapterCadastroServico.FuncionarioViewHolderCadastroServico(
+                    LayoutInflater.from(
+                            parent.getContext()).inflate(
+                                    R.layout.item_lisatagem_funcionario_checkbox,
+                                    parent,
+                                    false
+                    ));
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+            /** DADOS DE FUNCIONÁRIO **/
+
+            Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
+            Log.d("listagem", funcionario.getNome_funcionario());
+            ((FuncionarioAdapterCadastroServico.FuncionarioViewHolderCadastroServico) holder).setFuncionarioDados(funcionario);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return funcionarios.size();
+        }
 
 
+        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
+        class FuncionarioViewHolderCadastroServico extends RecyclerView.ViewHolder {
 
+            private CheckBox listagem_fucnionarios;
+            private int id_funcionario;
+
+
+            public FuncionarioViewHolderCadastroServico(@NonNull View itemViewFuncionario) {
+                super(itemViewFuncionario);
+
+                listagem_fucnionarios = itemViewFuncionario.findViewById(R.id.listagem_fucnionarios);
+
+
+            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
+
+//                itemFuncionario.setOnClickListener(view -> {
+
+//                });
+
+            public void setFuncionarioDados(Funcionario funcionario) {
+                listagem_fucnionarios.setText(funcionario.getNome_funcionario());
+                id_funcionario = funcionario.getId_funcionario();
+            }
+
+        } /** FIM DA CLASSE VIEWHOLDER **/
+
+    }
+
+    /** FIM DO ADAPTER -> RECYCLER VIEW **/
 
 
 
@@ -348,6 +265,7 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         Servico servico = new Servico();
 
         servico.setNome_servico(et_nome_do_servico.getText().toString());
+//        servico.setPreco();
 
         //preco
 //        servico.setPreco();

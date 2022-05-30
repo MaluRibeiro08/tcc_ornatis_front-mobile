@@ -65,7 +65,7 @@
                         android:background="@drawable/formato_edit_text"
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:inputType="numberDecimal"
+                        android:inputType="numberSigned"
                         android:hint="R$"
                         android:padding="5dp"/>
 
@@ -248,7 +248,8 @@
                 android:layout_height="35dp"
                 android:text="@string/domicilio"
                 android:textSize="13sp"
-                style="@style/checkbox"/>
+                style="@style/checkbox"
+                android:enabled="false"/>
 
 
             //servico disponivel ou nao
