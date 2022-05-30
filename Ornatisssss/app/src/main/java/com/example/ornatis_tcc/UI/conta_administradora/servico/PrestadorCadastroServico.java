@@ -146,8 +146,8 @@ public class PrestadorCadastroServico extends AppCompatActivity {
                     }
 
                     RecyclerView recyclerView = findViewById(R.id.recyclerViewFuncionariosCadastroServico);
-//                    recyclerView.setAdapter(new PrestadorListagemFuncionarios.FuncionarioAdapter(funcionarios));
-//                    recyclerView.setAdapter(new FuncionarioAdapter(funcionarios));
+//                    recyclerView.setAdapter(new PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico(funcionarios));
+//                    recyclerView.setAdapter(new FuncionarioAdapterCadastrandoServico(funcionarios));
 
                 }
 
@@ -191,13 +191,11 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
 
 
-
-//
-//    private class FuncionarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+//    private class FuncionarioAdapterCadastrandoServico extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //
 //        ArrayList<Funcionario> funcionarios;
 //
-//        public FuncionarioAdapter(ArrayList<Funcionario> funcionarios) {
+//        public FuncionarioAdapterCadastrandoServico(ArrayList<Funcionario> funcionarios) {
 //            this.funcionarios = funcionarios;
 //        }
 //
@@ -205,13 +203,16 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 //        @Override
 //        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 //
-//            return new PrestadorListagemFuncionarios.FuncionarioAdapter.FuncionarioViewHolder(
-//                    LayoutInflater.from(
-//                            parent.getContext()).inflate(
-//                            R.layout.item_container_listagem_funcionario,
-//                            parent,
-//                            false
-//                    ));
+//            return new PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico.FuncionarioViewHolderCadastrandoServico(
+////                    LayoutInflater.from(
+////                            parent.getContext()).inflate(
+////                            R.layout.item_container_listagem_funcionario,
+////                            parent,
+////                            false
+//
+//
+//                    //nome do funcionário
+//                    );
 //        }
 //
 //        @Override
@@ -221,7 +222,7 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 //
 //            Funcionario funcionario = (Funcionario) this.funcionarios.get(position);
 //            Log.d("listagem", funcionario.getNome_funcionario());
-//            ((PrestadorListagemFuncionarios.FuncionarioAdapter.FuncionarioViewHolder) holder).setFuncionarioDados(funcionario);
+//            ((PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico.FuncionarioViewHolderCadastrandoServico) holder).setFuncionarioDados(funcionario);
 //
 //        }
 //
@@ -232,55 +233,16 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 //
 //
 //        /** CLASSE DE VIEWHOLDER DA RECYCLERVIEW **/
-//        class FuncionarioViewHolder extends RecyclerView.ViewHolder {
+//        class FuncionarioViewHolderCadastrandoServico extends RecyclerView.ViewHolder {
 //
 //            private TextView tv_nome_do_funcionario_card;
-//            //            private ImageView iv_foto_perfil_funcionario;
-//            private ImageView excluir_funcionario;
 //            private int id_funcionario;
 //
 //
-//            public FuncionarioViewHolder(@NonNull View itemViewFuncionario) {
+//            public FuncionarioViewHolderCadastrandoServico(@NonNull View itemViewFuncionario) {
 //                super(itemViewFuncionario);
 //
 //                tv_nome_do_funcionario_card = itemViewFuncionario.findViewById(R.id.tv_nome_do_funcionario_card);
-//                excluir_funcionario = itemViewFuncionario.findViewById(R.id.excluir_funcionario);
-//
-//
-//                //AÇÃO DE CLIQUE NA LIXEIRA
-//                excluir_funcionario.setOnClickListener(view -> {
-//
-//                    routerInterface = APIUtil.getEmpresaInterface();
-//
-//                    Funcionario funcionario = new Funcionario();
-//                    funcionario.setAcao("desabilitarFuncionario");
-//                    funcionario.setId_funcionario(1);
-//
-//                    Call<Funcionario> call = routerInterface.deleteFuncionario(funcionario.getId_funcionario());
-//
-//                    call.enqueue(new Callback<Funcionario>() {
-//                        @Override
-//                        public void onResponse(Call<Funcionario> call, Response<Funcionario> response) {
-//                            Log.d("exclusao1", String.valueOf(response.body()));
-//                            Toast.makeText(PrestadorListagemFuncionarios.this,
-//                                    "O funcionário foi excluído da sua lista",
-//                                    Toast.LENGTH_SHORT).show();
-//
-//                            startActivity(new Intent(PrestadorListagemFuncionarios.this, PrestadorListagemFuncionarios.class));
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<Funcionario> call, Throwable t) {
-//                            Log.d("exclusao2", "FALHOU!");
-//
-//
-//                            Toast.makeText(PrestadorListagemFuncionarios.this,
-//                                    "FALHA AO EXCLUIR FUNCIONÁRIO",
-//                                    Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                    });
-//                });
 //
 //
 //            } //FIM DO CONSTRUTOR DA CLASSE FuncionarioViewHolder
@@ -295,11 +257,11 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 //            }
 //
 //        } /** FIM DA CLASSE VIEWHOLDER **/
-
+//
 //    }
-
-
-
+//
+//
+//
 
 
 
@@ -398,7 +360,10 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
         //detalhes
         servico.setDetalhes(et_detalhes_servico.getText().toString());
+
         //publico alvo
+//        servico.setPublico_alvo(getPublicoAlvo());
+
         //especialidade
         //parte do corpo
         //lista de funcioanrio
@@ -408,6 +373,11 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
         return servico;
     }
+
+//
+//    private List getPublicoAlvo(){
+//
+//    }
 
     private void addServico(Servico servico) {
         Call<Servico> call = routerInterface.addServico(servico);

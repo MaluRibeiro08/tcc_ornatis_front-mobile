@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Servico {
 
@@ -56,19 +57,19 @@ public class Servico {
     private String detalhes;
 
     //PÚBLICO ALVO
-//    @SerializedName("publico_alvo")
-//    @Expose
-//    private ArrayList publico_alvo;
+    @SerializedName("publico_alvo")
+    @Expose
+    private List publico_alvo;
 
     //CATEGORIA
-//    @SerializedName("especialidade")
-//    @Expose
-//    private ArrayList especialidade;
+    @SerializedName("especialidade")
+    @Expose
+    private List especialidade;
 
     //PARTE DO CORPO
-//    @SerializedName("parte_corpo")
-//    @Expose
-//    private ArrayList parte_corpo;
+    @SerializedName("parte_corpo")
+    @Expose
+    private List parte_corpo;
 
 
     //LISTA DE FUNCIONÁRIO
@@ -88,8 +89,8 @@ public class Servico {
 
     public Servico(String acao, int id_empresa, int id_servico, String nome_servico,
                    float preco, int desconto, int tempo_duracao,
-                   String detalhes, ArrayList publico_alvo, ArrayList especialidade,
-                   ArrayList parte_corpo, int intervalo, String imagem_servico) {
+                   String detalhes, List publico_alvo, List especialidade,
+                   List parte_corpo, int intervalo, String imagem_servico) {
         this.acao = acao;
         this.id_empresa = id_empresa;
         this.id_servico = id_servico;
@@ -98,9 +99,9 @@ public class Servico {
         this.desconto = desconto;
         this.tempo_duracao = tempo_duracao;
         this.detalhes = detalhes;
-//        this.publico_alvo = publico_alvo;
-//        this.especialidade = especialidade;
-//        this.parte_corpo = parte_corpo;
+        this.publico_alvo = publico_alvo;
+        this.especialidade = especialidade;
+        this.parte_corpo = parte_corpo;
         this.intervalo = intervalo;
         this.imagem_servico = imagem_servico;
     }
@@ -170,14 +171,29 @@ public class Servico {
     }
 
 
-//    public ArrayList getPublico_alvo() {
-//        return publico_alvo;
-//    }
-//
-//    public void setPublico_alvo(ArrayList publico_alvo) {
-//        this.publico_alvo = publico_alvo;
-//    }
+    public List getPublico_alvo() {
+        return publico_alvo;
+    }
 
+    public void setPublico_alvo(List publico_alvo) {
+        this.publico_alvo = publico_alvo;
+    }
+
+    public List getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(List especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    public List getParte_corpo() {
+        return parte_corpo;
+    }
+
+    public void setParte_corpo(List parte_corpo) {
+        this.parte_corpo = parte_corpo;
+    }
 
     public int getIntervalo() {
         return intervalo;
