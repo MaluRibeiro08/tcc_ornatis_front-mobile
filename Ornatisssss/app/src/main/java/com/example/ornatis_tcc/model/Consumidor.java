@@ -44,7 +44,7 @@ public class Consumidor
 
     @SerializedName("id_comprimento_cabelo")
     @Expose
-    private int tipo_cabelo;
+    private int id_comprimento_cabelo;
 
     @SerializedName("email_consumidor")
     @Expose
@@ -85,7 +85,7 @@ public class Consumidor
     public Consumidor() {
     }
 
-    public Consumidor(String acao, String nome_consumidor, String data_nascimento_consumidor, LocalDate data_nascimento_type_date, String cpf_consumidor, String telefone_consumidor, int genero_consumidor, int id_cor_cabelo, int id_tipo_cabelo, int tipo_cabelo, String email_consumidor, String senha_consumidor, String bairro_consumidor, String rua_consumidor, String numero_endereco_consumidor, String cep_endereco_consumidor, String complemento_endereco_consumidor, String id_cidade) {
+    public Consumidor(String acao, String nome_consumidor, String data_nascimento_consumidor, LocalDate data_nascimento_type_date, String cpf_consumidor, String telefone_consumidor, int genero_consumidor, int id_cor_cabelo, int id_tipo_cabelo, int id_comprimento_cabelo, String email_consumidor, String senha_consumidor, String bairro_consumidor, String rua_consumidor, String numero_endereco_consumidor, String cep_endereco_consumidor, String complemento_endereco_consumidor, String id_cidade) {
         this.acao = acao;
         this.nome_consumidor = nome_consumidor;
         this.data_nascimento_consumidor = data_nascimento_consumidor;
@@ -95,7 +95,7 @@ public class Consumidor
         this.genero_consumidor = genero_consumidor;
         this.id_cor_cabelo = id_cor_cabelo;
         this.id_tipo_cabelo = id_tipo_cabelo;
-        this.tipo_cabelo = tipo_cabelo;
+        this.id_comprimento_cabelo = id_comprimento_cabelo;
         this.email_consumidor = email_consumidor;
         this.senha_consumidor = senha_consumidor;
         this.bairro_consumidor = bairro_consumidor;
@@ -174,12 +174,12 @@ public class Consumidor
         this.id_tipo_cabelo = id_tipo_cabelo;
     }
 
-    public int getTipo_cabelo() {
-        return tipo_cabelo;
+    public int getId_comprimento_cabelo() {
+        return id_comprimento_cabelo;
     }
 
-    public void setTipo_cabelo(int tipo_cabelo) {
-        this.tipo_cabelo = tipo_cabelo;
+    public void setId_comprimento_cabelo(int id_comprimento_cabelo) {
+        this.id_comprimento_cabelo = id_comprimento_cabelo;
     }
 
     public String getEmail_consumidor() {
@@ -245,4 +245,6 @@ public class Consumidor
     public void setId_cidade(String id_cidade) {
         this.id_cidade = id_cidade;
     }
+
+
 }

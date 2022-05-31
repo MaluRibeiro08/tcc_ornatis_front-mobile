@@ -44,6 +44,7 @@ public class CadastroConsumidor extends AppCompatActivity {
     private Button btn_cadastrar_consumidor;
     private RadioGroup radio_group_comprimento_cabelo;
     private int tipo_cabelo;
+    private int id_cor_cabelo = 0;
     private int id_genero = 0;
 
     private String id_cidade = "3510609";
@@ -127,8 +128,9 @@ public class CadastroConsumidor extends AppCompatActivity {
         consumidor.setNumero_endereco_consumidor(et_numero_endereco_consumidor.getText().toString());
         consumidor.setCep_endereco_consumidor(et_cep_consumidor.getText().toString());
         consumidor.setComplemento_endereco_consumidor(et_complemento_consumidor.getText().toString());
-        consumidor.setId_cidade(id_cidade);
-        //ainda
+        consumidor.setId_cidade(this.id_cidade);
+        consumidor.setId_cor_cabelo(this.id_cor_cabelo);
+        //ainda falta comprimento do cabelo e tipo
         //DATA NASCIMENTO
             // passamos um localDate e o setter guarda essa data e também converte para string e guarda
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -141,6 +143,9 @@ public class CadastroConsumidor extends AppCompatActivity {
     public void addConsumidor (Consumidor consumidor)
     {
         Log.d("CADASTRO_ADD-CONSUMIDOR", "Esse é o método add consumidor");
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_cor_cabelo()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_tipo_cabelo()));
+//        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_comprimento_cabelo()));
         //Call<Consumidor> call = routerInterface.addConsumidor(consumidor);
         //call.enqueue();
     }
@@ -269,4 +274,43 @@ public class CadastroConsumidor extends AppCompatActivity {
         }
     }
 
+    public void settarCorCabelo(View view) {
+        LinearLayout ln_pai_cores_cabelos = findViewById(R.id.ln_pai_cores_cabelos);
+
+        int contador_cor_cabelo = 0;
+
+        while (contador_cor_cabelo < ln_pai_cores_cabelos.getChildCount())
+        {
+            ln_pai_cores_cabelos.getChildAt(contador_cor_cabelo).setBackgroundTintList(null);
+            contador_cor_cabelo = contador_cor_cabelo+1;
+        }
+
+        view.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_clarinho));
+
+        switch(view.getId()) {
+            case R.id.ln_cor_cabelo_preto:
+                this.id_cor_cabelo = 1;
+                break;
+
+            case R.id.ln_cor_cabelo_loiro:
+                this.id_cor_cabelo = 6;
+                break;
+
+            case R.id.ln_cor_cabelo_ruivo:
+                this.id_cor_cabelo = 7;
+                break;
+
+            case R.id.ln_cor_cabelo_castanho:
+                this.id_cor_cabelo = 8;
+                break;
+
+            case R.id.ln_cor_cabelo_grisalho:
+                this.id_cor_cabelo = 9;
+                break;
+
+            case R.id.ln_cor_cabelo_colorido:
+                this.id_cor_cabelo = 0;
+                break;
+        }
+    }
 }

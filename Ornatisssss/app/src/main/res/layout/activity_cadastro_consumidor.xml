@@ -59,7 +59,7 @@
                         <ScrollView
                             android:id="@+id/scrollView2"
                             android:layout_width="match_parent"
-                            android:layout_height="470dp">
+                            android:layout_height="wrap_content">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                                     style="@style/textView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/contato" />
+                                    android:text="@string/genero" />
 
                                 <RadioGroup
                                     android:id="@+id/radio_group_genero"
@@ -174,40 +174,6 @@
                                         android:onClick="verificarRadioGenero"/>
 
                                 </RadioGroup>
-
-
-<!--                                <TextView-->
-<!--                                    android:id="@+id/tv_foto_adm"-->
-<!--                                    style="@style/textView"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:text="@string/foto" />-->
-
-
-<!--                                <androidx.cardview.widget.CardView-->
-<!--                                    android:layout_width="120dp"-->
-<!--                                    android:layout_height="120dp"-->
-<!--                                    android:layout_gravity="center"-->
-<!--                                    app:cardBackgroundColor="#ff0000"-->
-<!--                                    app:cardCornerRadius="60dp">-->
-
-<!--                                    <ImageView-->
-<!--                                        android:id="@+id/iv_foto_perfil_adm"-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:scaleType="centerCrop"-->
-<!--                                        android:src="@drawable/profile" />-->
-
-<!--                                </androidx.cardview.widget.CardView>-->
-
-
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_gravity="center"-->
-<!--                                    android:layout_marginTop="10dp"-->
-<!--                                    android:text="@string/opicional"-->
-<!--                                    android:textSize="10dp" />-->
 
                             </LinearLayout>
 
@@ -273,7 +239,7 @@
                             android:id="@+id/sv_dados_cabelo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="gone">
+                            android:visibility="visible">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -349,7 +315,7 @@
                                                 android:background="@drawable/formato_circular_sem_preenchimento_borda"
                                                 android:padding="10dp"
                                                 android:layout_margin="10dp">
-                                                <RadioButton
+                                                <ImageView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
                                                     android:src="@drawable/tipo_crespo"
@@ -480,11 +446,177 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/cor_cabelo" />
 
-                                <Spinner
+                                <LinearLayout
+                                    android:id="@+id/ln_pai_cores_cabelos"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingStart="15dp">
 
-                                </Spinner>
+                                    <LinearLayout
+                                        android:id="@+id/ln_cor_cabelo_preto"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="32dp"
+                                        android:orientation="horizontal"
+                                        android:layout_marginVertical="8dp"
+                                        android:gravity="center_vertical"
+                                        android:background="@drawable/formato_retangulo_arredondado_cor_cabelo"
+                                        android:onClick="settarCorCabelo">
+                                        <ImageView
+                                            android:tag="imgv_cor_preto"
+                                            android:layout_width="28dp"
+                                            android:layout_height="28dp"
+                                            android:orientation="vertical"
+                                            android:background="@drawable/formato_circular_sem_preenchimento_borda"
+                                            android:backgroundTint="#000000"
+                                            />
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:paddingStart="10dp"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp"
+                                            android:text="Preto"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_cor_cabelo_loiro"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="32dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:layout_marginVertical="8dp"
+                                        android:background="@drawable/formato_retangulo_arredondado_cor_cabelo"
+                                        android:onClick="settarCorCabelo">
+                                        <ImageView
+                                            android:tag="imgv_cor_preto"
+                                            android:layout_width="28dp"
+                                            android:layout_height="28dp"
+                                            android:orientation="vertical"
+                                            android:background="@drawable/formato_circular_sem_preenchimento_borda"
+                                            android:backgroundTint="#F0E68C"
+                                            />
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:paddingStart="10dp"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp"
+                                            android:text="Loiro"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_cor_cabelo_ruivo"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="32dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:layout_marginVertical="8dp"
+                                        android:background="@drawable/formato_retangulo_arredondado_cor_cabelo"
+                                        android:onClick="settarCorCabelo">
+                                        <ImageView
+                                            android:tag="imgv_cor_preto"
+                                            android:layout_width="28dp"
+                                            android:layout_height="28dp"
+                                            android:orientation="vertical"
+                                            android:background="@drawable/formato_circular_sem_preenchimento_borda"
+                                            android:backgroundTint="#B7410E"
+                                            />
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:paddingStart="10dp"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp"
+                                            android:text="Ruivo"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_cor_cabelo_castanho"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="32dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:layout_marginVertical="8dp"
+                                        android:background="@drawable/formato_retangulo_arredondado_cor_cabelo"
+                                        android:onClick="settarCorCabelo">
+                                        <ImageView
+                                            android:tag="imgv_cor_preto"
+                                            android:layout_width="28dp"
+                                            android:layout_height="28dp"
+                                            android:orientation="vertical"
+                                            android:background="@drawable/formato_circular_sem_preenchimento_borda"
+                                            android:backgroundTint="#A0522D"
+                                            />
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:paddingStart="10dp"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp"
+                                            android:text="Castanho"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_cor_cabelo_grisalho"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="32dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:layout_marginVertical="8dp"
+                                        android:background="@drawable/formato_retangulo_arredondado_cor_cabelo"
+                                        android:onClick="settarCorCabelo">
+                                        <ImageView
+                                            android:tag="imgv_cor_preto"
+                                            android:layout_width="28dp"
+                                            android:layout_height="28dp"
+                                            android:orientation="vertical"
+                                            android:background="@drawable/formato_circular_sem_preenchimento_borda"
+                                            android:backgroundTint="#F8F8FF"
+                                            />
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:paddingStart="10dp"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp"
+                                            android:text="Grisalho"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_cor_cabelo_colorido"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="32dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:layout_marginVertical="8dp"
+                                        android:background="@drawable/formato_retangulo_arredondado_cor_cabelo"
+                                        android:onClick="settarCorCabelo">
+                                        <ImageView
+                                            android:tag="imgv_cor_preto"
+                                            android:layout_width="28dp"
+                                            android:layout_height="28dp"
+                                            android:orientation="vertical"
+                                            android:background="@drawable/formato_circular_aroco_iris_borda"
+                                            />
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:paddingStart="10dp"
+                                            android:gravity="center_vertical"
+                                            android:textSize="15sp"
+                                            android:text="Colorido"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
 
 
                             </LinearLayout>
