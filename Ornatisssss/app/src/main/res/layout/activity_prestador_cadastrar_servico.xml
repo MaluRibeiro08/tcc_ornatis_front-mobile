@@ -65,7 +65,7 @@
                         android:background="@drawable/formato_edit_text"
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:inputType="numberSigned"
+                        android:inputType="text"
                         android:hint="R$"
                         android:padding="5dp"/>
 
@@ -91,7 +91,8 @@
                         android:layout_width="60dp"
                         android:layout_height="30dp"
                         android:padding="5dp"
-                        android:inputType="number" />
+                        android:hint="%"
+                        android:inputType="text" />
 
                 </LinearLayout>
 
