@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -94,6 +96,16 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         spinner_publico_alvo.setAdapter(adapterPublicoAlvo);
 
 
+
+//        ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNomeCategoria);
+//
+//        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        categoriaEvento.setAdapter(arrayAdapter);
+
+
+
+
         //spinner categoria
         spinner_especialidade = findViewById(R.id.spinner_especialidade);
         final List<String> especialidade = new ArrayList<String>();
@@ -149,8 +161,6 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
                     RecyclerView recyclerViewCadastroServicos = findViewById(R.id.recyclerViewFuncionariosCadastroServico);
                     recyclerViewCadastroServicos.setAdapter(new FuncionarioAdapterCadastroServico(funcionarios));
-//                    recyclerView.setAdapter(new PrestadorListagemFuncionarios.FuncionarioAdapterCadastrandoServico(funcionarios));
-//                    recyclerView.setAdapter(new FuncionarioAdapterCadastrandoServico(funcionarios));
 
                 }
 
@@ -265,6 +275,7 @@ public class PrestadorCadastroServico extends AppCompatActivity {
         Servico servico = new Servico();
 
         servico.setNome_servico(et_nome_do_servico.getText().toString());
+
 //        servico.setPreco();
 
         //preco
@@ -284,13 +295,89 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
         //especialidade
         //parte do corpo
-        //lista de funcioanrio
+        //lista de funcionário
         //local de atendimento
         //intervalo
-        //imagem
 
         return servico;
     }
+
+//    private List getPublicoAlvo() {
+
+
+
+////////////////////////////
+//        Call<List<Categoria>> getCategorias = routerInterface.getCategorias();
+//
+//        getCategorias.enqueue(
+//                new Callback<List<Categoria>>() {
+//
+//                    @Override
+//
+//                    public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+//
+//
+//                        if(response.isSuccessful()){
+//
+//                            List<Categoria> list = new ArrayList<Categoria>();
+//                            List<String> listNomeCategoria = new ArrayList<String>();
+//                            List<Integer> listIdCategoria = new ArrayList<Integer>();
+//
+//                            list = response.body();
+//
+////                                 int quantidadeIndicesArray = list.size();
+//
+////                                 String [] teste = new String[quantidadeIndicesArray];
+//
+//                            for(int i = 0 ; i < list.size(); i++){
+////                                     teste[i] = list.get(i).getCategoriaEvento();
+//                                listNomeCategoria.add(list.get(i).getCategoriaEvento());
+//                                listIdCategoria.add(list.get(i).getIdCategoriaEvento());
+//                            }
+//
+//
+//                            ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNomeCategoria);
+//
+//                            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//                            categoriaEvento.setAdapter(arrayAdapter);
+//                            categoriaEvento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//
+//                                @Override
+//                                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//                                    for(int ii = 0 ; ii < listIdCategoria.size(); ii++){
+//
+//                                        if (categoriaEvento.getSelectedItemPosition() == listIdCategoria.get(ii)){
+//
+//                                            idCategoria = listIdCategoria.get(ii);
+//                                        }
+//                                    }
+//                                }
+//
+//                                @Override
+//
+//                                public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                                    Toast.makeText(EventRegisterActivity.this, "Escolha uma categoria", Toast.LENGTH_SHORT).show();
+//                                }
+//                            });
+//                        }
+//                    }
+//
+//                    @Override
+//
+//                    public void onFailure(Call<List<Categoria>> call, Throwable t) {
+//
+//                        Log.d("ErrorEvento", "onFailure: Categorias não foram capturadas");
+//
+//                    }
+//                }
+//        );
+////////////////////////
+//    }
+
+
 
 //
 //    private List getPublicoAlvo(){
