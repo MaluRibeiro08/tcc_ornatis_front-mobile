@@ -69,4 +69,5 @@
     <string name="cor_cabelo">Cor do cabelo</string>
     <string name="nome_funcioanrio">Nome funcionário</string>
     <string name="genero">Gênero</string>
+    <string name="sugestaoSaloes">Sugestão de salões</string>
 </resources>

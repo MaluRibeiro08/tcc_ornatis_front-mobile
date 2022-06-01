@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ornatis_tcc">
+    package="com.example.ornatis_tcc" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -12,31 +12,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ornatis_TCC"
-        android:usesCleartextTraffic="true">
-
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".ConsumidorAgendamento"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLoginPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLoginConsumidor"
+            android:exported="false" />
+        <activity
+            android:name=".IdentificacaoPrestadorOuConsumidor"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".HomeSemCadastroSemLogin" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".UI.conta_administradora.funcionario.PrestadorEditarFuncionario"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"-->
-<!--            android:exported="true" />-->
-<!--        <activity -->
-<!--         android:name=".UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario" -->
-<!--         android:exported="true" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".UI.conta_administradora.servico.PrestadorCadastroServico" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".UI.conta_administradora.funcionario.PrestadorListagemFuncionarios"
             android:exported="true" />
-
         <activity
-            android:name=".UI.conta_administradora.PrestadorVizualizacaoPerfil"
-            android:exported="true">
+            android:name=".HomeSemCadastroSemLogin"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta"
             android:exported="false" />
