@@ -239,7 +239,7 @@
                             android:id="@+id/sv_dados_cabelo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -265,16 +265,19 @@
                                         android:layout_height="match_parent">
 
                                         <LinearLayout
+                                            android:id="@+id/ln_pai_tipos_cabelo"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:orientation="horizontal">
 
                                             <LinearLayout
+                                                android:id="@+id/ln_tipo_cabelo_liso_1"
                                                android:layout_width="90dp"
                                                 android:layout_height="90dp"
                                                 android:background="@drawable/formato_circular_sem_preenchimento_borda"
                                                 android:padding="10dp"
-                                                android:layout_margin="10dp">
+                                                android:layout_margin="10dp"
+                                                android:onClick="settarTipoCabelo">
                                                 <ImageView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
@@ -283,11 +286,13 @@
                                             </LinearLayout>
 
                                             <LinearLayout
+                                                android:id="@+id/ln_tipo_cabelo_ondulado_2"
                                                android:layout_width="90dp"
                                                 android:layout_height="90dp"
                                                 android:background="@drawable/formato_circular_sem_preenchimento_borda"
                                                 android:padding="10dp"
-                                                android:layout_margin="10dp">
+                                                android:layout_margin="10dp"
+                                                android:onClick="settarTipoCabelo">
                                                 <ImageView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
@@ -296,11 +301,13 @@
                                             </LinearLayout>
 
                                             <LinearLayout
+                                                android:id="@+id/ln_tipo_cabelo_cacheado_3"
                                                android:layout_width="90dp"
                                                 android:layout_height="90dp"
                                                 android:background="@drawable/formato_circular_sem_preenchimento_borda"
                                                 android:padding="10dp"
-                                                android:layout_margin="10dp">
+                                                android:layout_margin="10dp"
+                                                android:onClick="settarTipoCabelo">
 
                                                 <ImageView
                                                     android:layout_width="match_parent"
@@ -310,11 +317,13 @@
                                             </LinearLayout>
 
                                             <LinearLayout
-                                               android:layout_width="90dp"
+                                                android:id="@+id/ln_tipo_cabelo_crespo_4"
+                                                android:layout_width="90dp"
                                                 android:layout_height="90dp"
                                                 android:background="@drawable/formato_circular_sem_preenchimento_borda"
                                                 android:padding="10dp"
-                                                android:layout_margin="10dp">
+                                                android:layout_margin="10dp"
+                                                android:onClick="settarTipoCabelo">
                                                 <ImageView
                                                     android:layout_width="match_parent"
                                                     android:layout_height="match_parent"
@@ -380,6 +389,7 @@
                                                 android:text="1"
                                                 android:textSize="15sp"
                                                 android:layout_gravity="bottom"
+                                                android:onClick="verificandoRadioButton"
                                                 />
 
                                             <RadioButton
@@ -390,6 +400,7 @@
                                                 android:text="2"
                                                 android:textSize="15sp"
                                                 android:layout_gravity="bottom"
+                                                android:onClick="verificandoRadioButton"
                                                 />
 
                                             <RadioButton
@@ -400,6 +411,7 @@
                                                 android:text="3"
                                                 android:textSize="15sp"
                                                 android:layout_gravity="bottom"
+                                                android:onClick="verificandoRadioButton"
                                                 />
 
                                             <RadioButton
@@ -410,6 +422,7 @@
                                                 android:text="4"
                                                 android:textSize="15sp"
                                                 android:layout_gravity="bottom"
+                                                android:onClick="verificandoRadioButton"
                                                 />
 
                                             <RadioButton
@@ -420,6 +433,7 @@
                                                 android:text="5"
                                                 android:textSize="15sp"
                                                 android:layout_gravity="bottom"
+                                                android:onClick="verificandoRadioButton"
                                                 />
 
                                             <RadioButton
@@ -428,6 +442,7 @@
                                                 android:layout_height="0dp"
                                                 android:layout_weight="1"
                                                 android:textSize="15sp"
+                                                android:onClick="verificandoRadioButton"
                                                 android:text="Não tenho cabelo"/>
 
 

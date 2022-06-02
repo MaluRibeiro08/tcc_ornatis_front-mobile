@@ -12,6 +12,10 @@ public class Consumidor
     @Expose
     private String acao;
 
+    @SerializedName("id_consumidor")
+    @Expose
+    private int id_consumidor;
+
     @SerializedName("nome_consumidor")
     @Expose
     private String nome_consumidor;
@@ -36,15 +40,15 @@ public class Consumidor
 
     @SerializedName("id_cor_cabelo")
     @Expose
-    private int id_cor_cabelo;
+    private Integer id_cor_cabelo;
 
     @SerializedName("id_tipo_cabelo")
     @Expose
-    private int id_tipo_cabelo;
+    private Integer id_tipo_cabelo;
 
     @SerializedName("id_comprimento_cabelo")
     @Expose
-    private int id_comprimento_cabelo;
+    private Integer id_comprimento_cabelo;
 
     @SerializedName("email_consumidor")
     @Expose
@@ -158,27 +162,27 @@ public class Consumidor
         this.genero_consumidor = genero_consumidor;
     }
 
-    public int getId_cor_cabelo() {
+    public Integer getId_cor_cabelo() {
         return id_cor_cabelo;
     }
 
-    public void setId_cor_cabelo(int id_cor_cabelo) {
+    public void setId_cor_cabelo(Integer id_cor_cabelo) {
         this.id_cor_cabelo = id_cor_cabelo;
     }
 
-    public int getId_tipo_cabelo() {
+    public Integer getId_tipo_cabelo() {
         return id_tipo_cabelo;
     }
 
-    public void setId_tipo_cabelo(int id_tipo_cabelo) {
+    public void setId_tipo_cabelo(Integer id_tipo_cabelo) {
         this.id_tipo_cabelo = id_tipo_cabelo;
     }
 
-    public int getId_comprimento_cabelo() {
+    public Integer getId_comprimento_cabelo() {
         return id_comprimento_cabelo;
     }
 
-    public void setId_comprimento_cabelo(int id_comprimento_cabelo) {
+    public void setId_comprimento_cabelo(Integer id_comprimento_cabelo) {
         this.id_comprimento_cabelo = id_comprimento_cabelo;
     }
 
@@ -246,5 +250,11 @@ public class Consumidor
         this.id_cidade = id_cidade;
     }
 
+    public int getId_consumidor() {
+        return id_consumidor;
+    }
 
+    public void setId_consumidor(int id_consumidor) {
+        this.id_consumidor = id_consumidor;
+    }
 }

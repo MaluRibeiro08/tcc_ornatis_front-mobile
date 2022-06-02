@@ -2,6 +2,7 @@ package com.example.ornatis_tcc.UI.consumidor.manutencao_conta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,10 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ornatis_tcc.R;
+import com.example.ornatis_tcc.UI.consumidor.HomeConsumidor;
+import com.example.ornatis_tcc.UI.conta_administradora.HomePrestador;
+import com.example.ornatis_tcc.UI.conta_administradora.PrestadorVizualizacaoPerfil;
+import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.CadastroContaAdministradora;
 import com.example.ornatis_tcc.model.Consumidor;
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.remote.APIUtil;
@@ -22,6 +27,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CadastroConsumidor extends AppCompatActivity {
 
@@ -42,10 +49,13 @@ public class CadastroConsumidor extends AppCompatActivity {
     private EditText et_email_consumidor;
     private EditText et_senha_consumidor;
     private Button btn_cadastrar_consumidor;
-    private RadioGroup radio_group_comprimento_cabelo;
-    private int tipo_cabelo;
-    private int id_cor_cabelo = 0;
+
+    private Integer id_cor_cabelo = null;
+    private Integer id_comprimento_cabelo = null;
+    private Integer id_tipo_cabelo = null;
+
     private int id_genero = 0;
+
 
     private String id_cidade = "3510609";
 
@@ -100,7 +110,6 @@ public class CadastroConsumidor extends AppCompatActivity {
             et_email_consumidor = findViewById(R.id.et_email_consumidor);
             et_senha_consumidor = findViewById(R.id.et_senha_consumidor);
             btn_cadastrar_consumidor = findViewById(R.id.btn_cadastrar_consumidor);
-            radio_group_comprimento_cabelo = findViewById(R.id.radio_group_comprimento_cabelo);
             //createConsumidor
 
         btn_cadastrar_consumidor.setOnClickListener(view -> {
@@ -130,7 +139,8 @@ public class CadastroConsumidor extends AppCompatActivity {
         consumidor.setComplemento_endereco_consumidor(et_complemento_consumidor.getText().toString());
         consumidor.setId_cidade(this.id_cidade);
         consumidor.setId_cor_cabelo(this.id_cor_cabelo);
-        //ainda falta comprimento do cabelo e tipo
+        consumidor.setId_comprimento_cabelo(this.id_comprimento_cabelo);
+        consumidor.setId_tipo_cabelo(this.id_tipo_cabelo);
         //DATA NASCIMENTO
             // passamos um localDate e o setter guarda essa data e também converte para string e guarda
             DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -143,12 +153,72 @@ public class CadastroConsumidor extends AppCompatActivity {
     public void addConsumidor (Consumidor consumidor)
     {
         Log.d("CADASTRO_ADD-CONSUMIDOR", "Esse é o método add consumidor");
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getNome_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getData_nascimento_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getAcao()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getCpf_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getTelefone_consumidor()));
         Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_cor_cabelo()));
         Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_tipo_cabelo()));
-//        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_comprimento_cabelo()));
-        //Call<Consumidor> call = routerInterface.addConsumidor(consumidor);
-        //call.enqueue();
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getGenero_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_comprimento_cabelo()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getEmail_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getSenha_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getId_cidade()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getBairro_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getRua_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getNumero_endereco_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getCep_endereco_consumidor()));
+        Log.d("CADASTRO_ADD-CONSUMIDOR", String.valueOf(consumidor.getComplemento_endereco_consumidor()));
+
+
+
+        Call<Consumidor> call = routerInterface.addConsumidor(consumidor);
+        call.enqueue(
+                new Callback<Consumidor>() {
+                    @Override
+                    public void onResponse(Call<Consumidor> call, Response<Consumidor> response)
+                    {
+                        if (response.isSuccessful()) //categoria 200
+                        {
+                            Consumidor teste = response.body();
+
+                            Log.d("DEBUG_ENVIO_DADOS", String.valueOf(response.raw()));
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste.getId_consumidor());
+
+                            Toast.makeText(CadastroConsumidor.this, "Consumidor cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(CadastroConsumidor.this, HomeConsumidor.class);
+                            intent.putExtra("id_consumidor", teste.getId_consumidor());
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Toast.makeText(CadastroConsumidor.this, "OPS", Toast.LENGTH_SHORT).show();
+
+                            String teste = response.message();
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste);
+
+                            String teste1 = String.valueOf(response.raw());
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste1);
+
+                            String teste2 = String.valueOf(response.errorBody());
+                            Log.d("DEBUG_ENVIO_DADOS", "onResponse: " + teste2);
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Consumidor> call, Throwable t)
+                    {
+                        Toast.makeText(CadastroConsumidor.this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+                        Log.d("DEBUG_ENVIO_DADOS=>ERRO-API ", t.getMessage());
+
+                    }
+                }
+        );
     }
+
     public void verificandoRadioButton(View view){
 
         // Is the button now checked?
@@ -168,6 +238,35 @@ public class CadastroConsumidor extends AppCompatActivity {
                     findViewById(R.id.sv_dados_cabelo).setVisibility(View.GONE);
                 break;
 
+            case R.id.comprimento0:
+                if (checked)
+                    this.id_comprimento_cabelo = null;
+                break;
+
+            case R.id.comprimento1:
+                if (checked)
+                    this.id_comprimento_cabelo = 1;
+                break;
+
+            case R.id.comprimento2:
+                if (checked)
+                    this.id_comprimento_cabelo = 2;
+                break;
+
+            case R.id.comprimento3:
+                if (checked)
+                    this.id_comprimento_cabelo = 3;
+                break;
+
+            case R.id.comprimento4:
+                if (checked)
+                    this.id_comprimento_cabelo = 4;
+                break;
+
+            case R.id.comprimento5:
+                if (checked)
+                    this.id_comprimento_cabelo = 5;
+                break;
         }
 
     }
@@ -312,5 +411,39 @@ public class CadastroConsumidor extends AppCompatActivity {
                 this.id_cor_cabelo = 0;
                 break;
         }
+    }
+
+    public void settarTipoCabelo(View view) {
+
+        LinearLayout ln_pai_tipos_cabelo = findViewById(R.id.ln_pai_tipos_cabelo);
+
+        int contador_tipo_cabelo = 0;
+
+        while (contador_tipo_cabelo < ln_pai_tipos_cabelo.getChildCount())
+        {
+            ln_pai_tipos_cabelo.getChildAt(contador_tipo_cabelo).setBackgroundTintList(null);
+            contador_tipo_cabelo = contador_tipo_cabelo+1;
+        }
+
+        view.setBackgroundTintList(this.getResources().getColorStateList(R.color.cinza_clarinho));
+
+        switch(view.getId()) {
+            case R.id.ln_tipo_cabelo_liso_1:
+                this.id_tipo_cabelo = 1;
+                break;
+
+            case R.id.ln_tipo_cabelo_ondulado_2:
+                this.id_tipo_cabelo = 2;
+                break;
+
+            case R.id.ln_tipo_cabelo_cacheado_3:
+                this.id_cor_cabelo = 3;
+                break;
+
+            case R.id.ln_tipo_cabelo_crespo_4:
+                this.id_cor_cabelo = 4;
+                break;
+        }
+
     }
 }
