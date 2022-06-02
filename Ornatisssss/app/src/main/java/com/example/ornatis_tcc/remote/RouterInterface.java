@@ -2,7 +2,9 @@ package com.example.ornatis_tcc.remote;
 
 import com.example.ornatis_tcc.model.Consumidor;
 import com.example.ornatis_tcc.model.ContaAdministradora;
+import com.example.ornatis_tcc.model.Especialidade;
 import com.example.ornatis_tcc.model.Funcionario;
+import com.example.ornatis_tcc.model.PartesCorpo;
 import com.example.ornatis_tcc.model.Servico;
 
 import java.util.ArrayList;
@@ -48,6 +50,14 @@ public interface RouterInterface {
         //INSERÇÃO DE SERVIÇO
         @POST("/contaAdministradora/cadastrarServico")
         Call<Servico> addServico(@Body Servico objServico);
+
+        //GET CATEGORIAS
+        @GET("/contaAdministradora/getEspecialidades/{id_empresa}")
+        Call<ArrayList<Especialidade>> getEspecialidades(@Path("id_empresa") int id_empresa);
+
+        //GET PARTES DO CORPO
+        @GET("/contaAdministradora/getPartesCorpo/{id_empresa}")
+        Call<ArrayList<PartesCorpo>> getPartesCorpo(@Path("id_empresa") int id_empresa);
 
         //LISTAGEM DE SERVIÇOS
         @GET("/contaAdministradora/listarServicos/{id_empresa}")

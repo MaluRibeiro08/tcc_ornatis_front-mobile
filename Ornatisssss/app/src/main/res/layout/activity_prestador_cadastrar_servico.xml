@@ -250,38 +250,10 @@
                 android:text="@string/domicilio"
                 android:textSize="13sp"
                 style="@style/checkbox"
-                android:enabled="false"/>
+                />
 
 
-            //servico disponivel ou nao
-            <TextView
-                android:id="@+id/tv_servico_disponivel"
-                style="@style/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/servico_disponivel" />
-
-
-            <RadioGroup
-                android:id="@+id/radio_group_sim_ou_nao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rb_cancelamento_sim"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sim"/>
-
-                <RadioButton
-                    android:id="@+id/rb_cancelamento_nao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
-                    android:text="Não"/>
-            </RadioGroup>
-
+            /
 
             <LinearLayout
                 android:layout_width="match_parent"

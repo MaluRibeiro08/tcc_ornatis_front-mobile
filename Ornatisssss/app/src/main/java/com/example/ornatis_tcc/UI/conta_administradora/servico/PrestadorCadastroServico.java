@@ -26,11 +26,14 @@ import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.UI.conta_administradora.HomePrestador;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorCadastrarFuncionario;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorListagemFuncionarios;
+import com.example.ornatis_tcc.model.Especialidade;
 import com.example.ornatis_tcc.model.Funcionario;
+import com.example.ornatis_tcc.model.PartesCorpo;
 import com.example.ornatis_tcc.model.Servico;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,12 +67,15 @@ public class PrestadorCadastroServico extends AppCompatActivity {
     private Spinner spinner_parte_corpo;
 
     private int id_empresa =2;
-
+    
+    private int id_especialidade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_cadastrar_servico);
+
+        routerInterface = APIUtil.getEmpresaInterface();
 
         btn_cadastrar_servico = findViewById(R.id.btn_cadastrar_servico);
         btn_cancelar_servico = findViewById(R.id.btn_cancelar_servico);
@@ -85,50 +91,144 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
 
         //spinner público alvo
-        spinner_publico_alvo = findViewById(R.id.spinner_publico_alvo);
-        final List<String> publicoAlvo = new ArrayList<String>();
-        publicoAlvo.add("Feminino");
-        publicoAlvo.add("Masculino");
-        publicoAlvo.add("Ambos");
+            spinner_publico_alvo = findViewById(R.id.spinner_publico_alvo);
+            final List<String> publicoAlvo = new ArrayList<String>();
+            publicoAlvo.add("Feminino");
+            publicoAlvo.add("Masculino");
+            publicoAlvo.add("Ambos");
 
-        ArrayAdapter<String> adapterPublicoAlvo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, publicoAlvo);
-        adapterPublicoAlvo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_publico_alvo.setAdapter(adapterPublicoAlvo);
-
-
-
-//        ArrayAdapter arrayAdapter = new ArrayAdapter(EventRegisterActivity.this, android.R.layout.simple_spinner_item, listNomeCategoria);
-//
-//        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//
-//        categoriaEvento.setAdapter(arrayAdapter);
-
-
+            ArrayAdapter<String> adapterPublicoAlvo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, publicoAlvo);
+            adapterPublicoAlvo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner_publico_alvo.setAdapter(adapterPublicoAlvo);
 
 
         //spinner categoria
-        spinner_especialidade = findViewById(R.id.spinner_especialidade);
-        final List<String> especialidade = new ArrayList<String>();
-        especialidade.add("especialidade1");
-        especialidade.add("especialidade2");
-        especialidade.add("especialidade3");
-        especialidade.add("especialidade4");
+            spinner_especialidade = findViewById(R.id.spinner_especialidade);
+            Call<ArrayList<Especialidade>> callEspecialidades = routerInterface.getEspecialidades(id_empresa);
+            callEspecialidades.enqueue
+            (
+                new Callback<ArrayList<Especialidade>>()
+                {
+                    @Override
+                    public void onResponse(Call<ArrayList<Especialidade>> call, Response<ArrayList<Especialidade>> response)
+                    {
+                       if (response.isSuccessful())
+                       {
+                           ArrayList<Especialidade> list = response.body();
 
-        ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, especialidade);
-        adapterEspecialidade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_especialidade.setAdapter(adapterEspecialidade);
+                           final List<String> especialidade = new ArrayList<String>();
+                           ArrayList<Integer> arr_id_especialidade = new ArrayList<Integer>();
+                           
+                           int contador_especialidades = 0;
+
+                           while (contador_especialidades < list.size())
+                           {
+                               especialidade.add(list.get(contador_especialidades).getNome_especialidade());
+                               arr_id_especialidade.add(list.get(contador_especialidades).getId_especialidade());
+                               
+                               contador_especialidades = contador_especialidades+1;
+                           }
+
+                           ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<String>(PrestadorCadastroServico.this, R.layout.support_simple_spinner_dropdown_item, especialidade);
+                           adapterEspecialidade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                           spinner_especialidade.setAdapter(adapterEspecialidade);
+                           
+                           spinner_especialidade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                               @Override
+                               public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                                   
+                                   for (int contador = 0; contador<arr_id_especialidade.size(); contador++)
+                                   {
+                                       if (spinner_especialidade.getSelectedItemPosition() == arr_id_especialidade.get(contador))
+                                       {
+                                           id_especialidade = arr_id_especialidade.get(contador);
+                                       }
+                                   }
+                               }
+
+                               @Override
+                               public void onNothingSelected(AdapterView<?> adapterView) {
+                                   Toast.makeText(PrestadorCadastroServico.this, "Escolha uma especialidade", Toast.LENGTH_SHORT).show();
+                               }
+                           });
+                       }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<Especialidade>> call, Throwable t)
+                    {
+                        Log.d("LISTAGEM-ESPPECIALIDADES_ON-FAILURE  ", t.getMessage());
+                    }
+                }
+            );
+
+
+
+
 
 
         //spinner parte do corpo
         spinner_parte_corpo = findViewById(R.id.spinner_parte_corpo);
         final List<String> parteCorpo = new ArrayList<String>();
-        parteCorpo.add("Rosto");
-        parteCorpo.add("Olhos");
-        parteCorpo.add("Sobrancelhas");
-        parteCorpo.add("Boca");
-        parteCorpo.add("Cabeça");
-        parteCorpo.add("Pés");
-        parteCorpo.add("Mãos");
+
+
+        Call<ArrayList<PartesCorpo>> callPartesCorpo = routerInterface.getPartesCorpo(id_empresa);
+        callPartesCorpo.enqueue
+                (
+                        new Callback<ArrayList<PartesCorpo>>()
+                        {
+                            @Override
+                            public void onResponse(Call<ArrayList<PartesCorpo>> call, Response<ArrayList<PartesCorpo>> response)
+                            {
+                                if (response.isSuccessful())
+                                {
+                                    ArrayList<PartesCorpo> list = response.body();
+
+                                    final List<String> partesCorpo = new ArrayList<String>();
+                                    ArrayList<Integer> arr_id_partesCorpo = new ArrayList<Integer>();
+
+                                    int contador_PartesCorpos = 0;
+
+                                    while (contador_PartesCorpos < list.size())
+                                    {
+                                        partesCorpo.add(list.get(contador_PartesCorpos).getNome_parte_corpo());
+                                        arr_id_partesCorpo.add(list.get(contador_PartesCorpos).getId_parte_corpo());
+
+                                        contador_PartesCorpos = contador_PartesCorpos+1;
+                                    }
+
+                                    ArrayAdapter<String> adapterPartesCorpo = new ArrayAdapter<String>(PrestadorCadastroServico.this, R.layout.support_simple_spinner_dropdown_item, partesCorpo);
+                                    adapterPartesCorpo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                    spinner_parte_corpo.setAdapter(adapterPartesCorpo);
+
+                                    spinner_parte_corpo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                        @Override
+                                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                                            for (int contador = 0; contador<arr_id_partesCorpo.size(); contador++)
+                                            {
+                                                if (spinner_parte_corpo.getSelectedItemPosition() == arr_id_partesCorpo.get(contador))
+                                                {
+                                                    id_especialidade = arr_id_partesCorpo.get(contador);
+                                                }
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onNothingSelected(AdapterView<?> adapterView) {
+                                            Toast.makeText(PrestadorCadastroServico.this, "Escolha uma especialidade", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ArrayList<PartesCorpo>> call, Throwable t)
+                            {
+                                Log.d("LISTAGEM-ESPPECIALIDADES_ON-FAILURE  ", t.getMessage());
+                            }
+                        }
+                );
 
         ArrayAdapter<String> adapterParteCorpo = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, parteCorpo);
         adapterParteCorpo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -136,8 +236,6 @@ public class PrestadorCadastroServico extends AppCompatActivity {
 
 
         //Listagem funcionário
-        routerInterface = APIUtil.getEmpresaInterface();
-
         Call<ArrayList<Funcionario>> call = routerInterface.getFuncionarios(id_empresa);
 
         call.enqueue(new Callback<ArrayList<Funcionario>>() {
