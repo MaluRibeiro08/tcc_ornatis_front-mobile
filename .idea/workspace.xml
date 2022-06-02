@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2999ae1-e629-4890-b302-32d9e3c3c75b" name="Default Changelist" comment="" />
+    <list default="true" id="b2999ae1-e629-4890-b302-32d9e3c3c75b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/java/com/example/ornatis_tcc/PesquisarFiltrar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_pesquisar_filtrar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_home_prestador.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_home_prestador.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_home_sem_cadastro_sem_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_home_sem_cadastro_sem_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_identificacao_prestador_ou_consumidor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_identificacao_prestador_ou_consumidor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_tela_login_consumidor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_tela_login_consumidor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_tela_login_prestador.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/layout/activity_tela_login_prestador.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/menu/bottom_navigation_cadastrado.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/menu/prestador_bottom_navigation_cadastrado.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/menu/bottom_navigation_sem_cadastro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ornatisssss/app/src/main/res/menu/bottom_navigation_sem_cadastro.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

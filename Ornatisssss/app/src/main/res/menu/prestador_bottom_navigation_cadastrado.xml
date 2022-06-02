@@ -11,10 +11,10 @@
         android:icon="@drawable/ic_baseline_search_24"
         android:title="Agenda"/>
 
-    <item
-        android:id="@+id/menu_agenda"
-        android:icon="@drawable/ic_comment_24"
-        android:title="Feedback"/>
+<!--    <item-->
+<!--        android:id="@+id/menu_agenda"-->
+<!--        android:icon="@drawable/ic_comment_24"-->
+<!--        android:title="Feedback"/>-->
 
     <item
         android:id="@+id/menu_feedback"
