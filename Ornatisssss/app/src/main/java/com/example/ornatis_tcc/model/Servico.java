@@ -28,10 +28,6 @@ public class Servico {
     @Expose
     private int id_parte_corpo;
 
-    @SerializedName("nome_parte_corpo")
-    @Expose
-    private String nome_parte_corpo;
-
     @SerializedName("id_servico")
     @Expose
     private int id_servico;
@@ -57,23 +53,28 @@ public class Servico {
     private String detalhes;
 
     //PÚBLICO ALVO
-    @SerializedName("publico_alvo")
+    @SerializedName("generos")
     @Expose
-    private List publico_alvo;
+    private ArrayList<Genero> publico_alvo;
 
     //CATEGORIA
     @SerializedName("especialidade")
     @Expose
     private List especialidade;
 
-    //PARTE DO CORPO
-    @SerializedName("parte_corpo")
+    @SerializedName("ativo_para_uso")
     @Expose
-    private List parte_corpo;
+    private int ativo_para_uso;
 
 
     //LISTA DE FUNCIONÁRIO
-    //LOCAL DE ATENDIMENTO
+    @SerializedName("funcionarios")
+    @Expose
+    private ArrayList<Funcionario> funcionarios;
+
+    @SerializedName("tipos_atendimento")
+    @Expose
+    private ArrayList<TipoAtendimento> tipos_atendimento;
 
 
     @SerializedName("intervalo")
@@ -89,8 +90,8 @@ public class Servico {
 
     public Servico(String acao, int id_empresa, int id_servico, String nome_servico,
                    float preco, int desconto, int tempo_duracao,
-                   String detalhes, List publico_alvo, List especialidade,
-                   List parte_corpo, int intervalo, String imagem_servico) {
+                   String detalhes, ArrayList<Genero> publico_alvo, List especialidade,
+                   int parte_corpo, int intervalo, String imagem_servico) {
         this.acao = acao;
         this.id_empresa = id_empresa;
         this.id_servico = id_servico;
@@ -101,7 +102,7 @@ public class Servico {
         this.detalhes = detalhes;
         this.publico_alvo = publico_alvo;
         this.especialidade = especialidade;
-        this.parte_corpo = parte_corpo;
+//        this.parte_corpo = parte_corpo;
         this.intervalo = intervalo;
         this.imagem_servico = imagem_servico;
     }
@@ -175,7 +176,7 @@ public class Servico {
         return publico_alvo;
     }
 
-    public void setPublico_alvo(List publico_alvo) {
+    public void setPublico_alvo(ArrayList<Genero> publico_alvo) {
         this.publico_alvo = publico_alvo;
     }
 
@@ -187,13 +188,13 @@ public class Servico {
         this.especialidade = especialidade;
     }
 
-    public List getParte_corpo() {
-        return parte_corpo;
-    }
-
-    public void setParte_corpo(List parte_corpo) {
-        this.parte_corpo = parte_corpo;
-    }
+//    public int getParte_corpo() {
+//        return parte_corpo;
+//    }
+//
+//    public void setParte_corpo(int parte_corpo) {
+//        this.parte_corpo = parte_corpo;
+//    }
 
     public int getIntervalo() {
         return intervalo;
@@ -235,11 +236,35 @@ public class Servico {
         this.nome_especialidade = nome_especialidade;
     }
 
-    public String getNome_parte_corpo() {
-        return nome_parte_corpo;
+//    public String getNome_parte_corpo() {
+//        return nome_parte_corpo;
+//    }
+//
+//    public void setNome_parte_corpo(String nome_parte_corpo) {
+//        this.nome_parte_corpo = nome_parte_corpo;
+//    }
+
+    public int getAtivo_para_uso() {
+        return ativo_para_uso;
     }
 
-    public void setNome_parte_corpo(String nome_parte_corpo) {
-        this.nome_parte_corpo = nome_parte_corpo;
+    public void setAtivo_para_uso(int ativo_para_uso) {
+        this.ativo_para_uso = ativo_para_uso;
+    }
+
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public ArrayList<TipoAtendimento> getTipos_atendimento() {
+        return tipos_atendimento;
+    }
+
+    public void setTipos_atendimento(ArrayList<TipoAtendimento> tipos_atendimento) {
+        this.tipos_atendimento = tipos_atendimento;
     }
 }
