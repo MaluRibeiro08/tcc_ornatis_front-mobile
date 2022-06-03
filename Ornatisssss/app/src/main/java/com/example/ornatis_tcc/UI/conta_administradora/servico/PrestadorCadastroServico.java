@@ -505,9 +505,18 @@ public class PrestadorCadastroServico extends AppCompatActivity {
                 new Callback<Servico>() {
                     @Override
                     public void onResponse(Call<Servico> call, Response<Servico> response) {
-                        Toast.makeText(PrestadorCadastroServico.this,
-                                "Serviço cadastrado com sucesso",
-                                Toast.LENGTH_SHORT).show();
+                        if (response.isSuccessful())
+                        {
+                            Toast.makeText(PrestadorCadastroServico.this,
+                                    "Serviço cadastrado com sucesso",
+                                    Toast.LENGTH_SHORT).show();
+                            Log.d("ADD_SERVICO", "onResponse: " + response.body());
+
+                            Intent intent = new Intent(PrestadorCadastroServico.this, PrestadorListagemServicos.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
                     }
 
                     @Override
