@@ -75,7 +75,10 @@ public class PrestadorCadastrarFuncionario extends AppCompatActivity {
             routerInterface = APIUtil.getEmpresaInterface();
             addFuncionario(funcionario);
 
+        });
 
+        btn_cancelar_funcionario.setOnClickListener(view -> {
+            startActivity(new Intent(PrestadorCadastrarFuncionario.this, PrestadorListagemFuncionarios.class));
         });
 
             //clique para cancelar

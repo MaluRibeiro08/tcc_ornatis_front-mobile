@@ -15,15 +15,15 @@
         android:usesCleartextTraffic="true" >
 
         <activity
-            android:name=".ConsumidorAgendamento"
+            android:name=".UI.consumidor.ConsumidorAgendamento"
             android:exported="false" />
 
         <activity
-            android:name=".TelaLoginPrestador"
+            android:name=".UI.conta_administradora.TelaLoginPrestador"
             android:exported="false" />
 
         <activity
-            android:name=".TelaLoginConsumidor"
+            android:name=".UI.consumidor.TelaLoginConsumidor"
             android:exported="false" />
 
         <activity
