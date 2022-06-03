@@ -16,13 +16,11 @@
         tools:ignore="MissingConstraints" >
 
         <TextView
-            style="@style/textViewTituloCadastroFuncionario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="90dp"
             android:background="@drawable/formato_retangulo_curvado_cinza"
             android:text="Lista de funcionários"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="40dp" />
+            style="@style/textViewTituloCadastroFuncionario"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
