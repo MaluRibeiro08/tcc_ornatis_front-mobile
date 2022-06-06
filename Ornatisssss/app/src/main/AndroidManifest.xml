@@ -28,7 +28,15 @@
 
         <activity
             android:name=".IdentificacaoPrestadorOuConsumidor"
-            android:exported="false" />
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <!-- <activity -->
         <!-- android:name=".HomeSemCadastroSemLogin" -->
@@ -58,11 +66,7 @@
         <activity
             android:name=".UI.conta_administradora.servico.PrestadorCadastroServico"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -81,7 +85,9 @@
 
         <activity
             android:name=".UI.conta_administradora.HomePrestador"
-            android:exported="true"/>
+            android:exported="true">
+
+        </activity>
 
         <activity
             android:name=".UI.consumidor.HomeConsumidor"

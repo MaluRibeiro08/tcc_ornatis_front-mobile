@@ -33,6 +33,14 @@ public class TelaLoginConsumidor extends AppCompatActivity {
         nao_tem_cadastro_consumidor = findViewById(R.id.nao_tem_cadastro_consumidor);
         btn_fazer_login_consumidor = findViewById(R.id.btn_fazer_login_consumidor);
 
+        nao_tem_cadastro_consumidor.setOnClickListener(view -> {
+            startActivity(new Intent(TelaLoginConsumidor.this, CadastroConsumidor.class));
+        });
+
+        btn_fazer_login_consumidor.setOnClickListener(view -> {
+            startActivity(new Intent(TelaLoginConsumidor.this, HomeConsumidor.class));
+        });
+
 //        nao_tem_cadastro_consumidor.setOnClickListener(view -> {
 //            startActivity(new Intent(TelaLoginConsumidor.this, CadastroConsumidor.class));
 //        });

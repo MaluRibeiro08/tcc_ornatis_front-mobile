@@ -73,11 +73,11 @@ public class HomePrestador extends AppCompatActivity {
     }
 
     public void abrindoMenu(){
-//        menu_hambuguer.setOnClickListener(view -> {
-            if (menu_hambuguer.isClickable()){
+        menu_hambuguer.setOnClickListener(view -> {
+//            if (menu_hambuguer.isClickable()){
                 menu_hambuguer.setVisibility(View.VISIBLE);
-            }
-//        });
+//            }
+        });
 
 
     }

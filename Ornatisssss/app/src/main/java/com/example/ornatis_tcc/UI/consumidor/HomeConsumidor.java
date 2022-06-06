@@ -17,9 +17,9 @@ public class HomeConsumidor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_consumidor);
 
-        tv_id_consumidor = findViewById(R.id.tv_id_consumidor);
+//        tv_id_consumidor = findViewById(R.id.tv_id_consumidor);
 
-        tv_id_consumidor.setText(String.valueOf(getIntent().getExtras().getInt("id_consumidor")));
+//        tv_id_consumidor.setText(String.valueOf(getIntent().getExtras().getInt("id_consumidor")));
 
     }
 }
