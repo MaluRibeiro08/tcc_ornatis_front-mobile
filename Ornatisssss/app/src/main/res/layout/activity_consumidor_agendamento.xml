@@ -1,10 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.consumidor.ConsumidorAgendamento">
+    tools:context=".UI.consumidor.ConsumidorAgendamento"
+    android:orientation="vertical">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--      <TextView-->
+<!--          style="@style/textViewTituloAgendamento"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="90dp"-->
+<!--          android:text="" />-->
+
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:src="@drawable/agendar_servico"
+          android:layout_margin="55dp"/>
+
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint = "O que você está procurando?"
+        android:layout_gravity="center">
+
+      <requestFocus/>
+    </SearchView>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_marginStart="55dp"
+      android:layout_marginEnd="55dp"
+      android:layout_marginTop="25dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewServicos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/header_listagem_funcionarios" />
+
+  </LinearLayout>
+
+  <ImageView
+      android:id="@+id/proxima_div"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/ic_arrow_forward_24"
+      android:layout_marginTop="20dp"
+      android:layout_marginStart="335dp"/>
+
+
+
+  </LinearLayout>

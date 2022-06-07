@@ -300,10 +300,11 @@
                                 app:cardCornerRadius="60dp">
 
                                 <ImageView
+                                    android:id="@+id/imagem_salao1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/logo_salao_teste" />
+                                    android:src="@drawable/ellipse70" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -316,6 +317,7 @@
                                 android:layout_marginStart="20dp">
 
                                 <ImageView
+                                    android:id="@+id/imagem_salao2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
@@ -332,6 +334,7 @@
                                 android:layout_marginStart="20dp">
 
                                 <ImageView
+                                    android:id="@+id/imagem_salao3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"

@@ -1,0 +1,1742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        //TELA INTEIRA
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="700px"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/card_menu">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_menu"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    app:cardCornerRadius="100dp">
+
+                    <ImageView
+                        android:id="@+id/iv_foto_perfil_estabelecimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ellipse70" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_nome_do_negocio_perfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_menu"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="1dp"
+                    android:text="Beauty Hair"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/avalicao_salao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_below="@id/tv_nome_do_negocio_perfil"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="3dp"
+                    android:drawableStart="@drawable/img_estrela"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:paddingTop="3dp"
+                    android:text="5.0" />
+
+
+            </RelativeLayout>
+
+            //ABAS PARA MUDAR DE TELA
+            <LinearLayout
+                android:id="@+id/ln_links_abas_principais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="35dp">
+
+                <TextView
+                    android:id="@+id/tv_aba_inicio_adm"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inicio"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/formato_aba_navegacao_perfil"
+                    android:backgroundTint="@color/verde_claro"/>
+
+                <TextView
+                    android:id="@+id/tv_aba_servicos_adm"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servicos"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/formato_aba_navegacao_perfil"/>
+
+                <TextView
+                    android:id="@+id/tv_aba_produtos_adm"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/produtos"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/formato_aba_navegacao_perfil"/>
+
+                <TextView
+                    android:id="@+id/tv_aba_feedback_adm"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feedbacks"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/formato_aba_navegacao_perfil"/>
+
+            </LinearLayout>
+
+
+            //LINEAR INÍCIO
+            <LinearLayout
+                android:id="@+id/linear_container_aba_inicio_adm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                //Biografia
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_quotation_mark_24" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_biografia_perfil"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="Um salão feito para trazer bem estar e confiança para os nossos clientes! Agende já os eu horário"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="bottom">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_quotation_mark_24"
+                            android:gravity="bottom"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //Slide de imagens
+                <!--                <HorizontalScrollView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="150dp">-->
+
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_marginStart="20dp"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:orientation="horizontal">-->
+
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="200dp"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:src="@drawable/cabelos"-->
+                <!--                            android:scaleType="centerCrop" />-->
+
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="200dp"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:src="@drawable/cabelos"-->
+                <!--                            android:scaleType="centerCrop"-->
+                <!--                            android:layout_marginStart="10dp"/>-->
+
+
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="200dp"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:src="@drawable/cabelos"-->
+                <!--                            android:scaleType="centerCrop"-->
+                <!--                            android:layout_marginStart="10dp"/>-->
+
+                <!--                    </LinearLayout>-->
+
+                <!--                </HorizontalScrollView>-->
+
+                //Container de informações salão
+                <LinearLayout
+                    android:id="@+id/container_de_informacoes_salao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="40dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hora_atendimento"
+                        android:layout_marginBottom="20dp"
+                        style="@style/textView"/>
+
+                    <LinearLayout
+                        android:id="@+id/ln_container_geral_funcionamento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ln_container_geral_dia_semana"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+
+                            <TextView
+                                android:tag="tv_dia_semana_1"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Dom"
+                                android:gravity="center"
+                                />
+
+                            <TextView
+                                android:tag="tv_dia_semana_2"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Seg"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                />
+                            <TextView
+                                android:tag="tv_dia_semana_3"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Ter"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                />
+                            <TextView
+                                android:tag="tv_dia_semana_4"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Qua"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                />
+
+                            <TextView
+                                android:tag="tv_dia_semana_5"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Qui"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                />
+
+                            <TextView
+                                android:tag="tv_dia_semana_6"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Sex"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                />
+
+                            <TextView
+                                android:tag="tv_dia_semana_7"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="25dp"
+                                android:textColor="@color/verde_escuro"
+                                android:textStyle="bold"
+                                android:background="@drawable/formato_tv_dias_semana_perfil"
+                                android:text="Sab"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/container_geral_dos_horarios"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="@color/cinza_horarios"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="#f8f8f8"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="@color/cinza_horarios"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"
+                                        android:visibility="gone"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="@color/cinza_horarios"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="@color/cinza_horarios"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="@color/cinza_horarios"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:tag="ln_container_horarios_dia_7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:gravity="center"
+                                android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                                android:backgroundTint="#f8f8f8"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:tag="ln_primeiros_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:tag="primeiro_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="primeiro_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:tag="simbolo_e_comercial"
+                                    android:layout_width="15dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="|"
+                                    android:textSize="20sp"
+                                    android:visibility="gone"/>
+
+                                <LinearLayout
+                                    android:tag="ln_segundos_horarios"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:tag="segundo_horario_inicio"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+                                    <TextView
+                                        android:layout_width="15dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="às"/>
+                                    <TextView
+                                        android:tag="segundo_horario_termino"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:text="00:00"
+                                        android:textSize="16sp"
+                                        android:gravity="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    //ATENDIMENTO
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Atendimento:"-->
+                    <!--                        style="@style/textView"-->
+                    <!--                        android:layout_marginTop="40dp"-->
+                    <!--                        android:layout_marginBottom="10dp"-->
+                    <!--                        />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ainda não consumo essa parte"/>
+
+
+                    //DADOS DE CONTATO
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dados de contato:"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="10dp"
+                        style="@style/textView"/>
+
+                    <TextView
+                        android:id="@+id/tv_contato_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="  Clique aqui para falar conosco"
+                        android:drawableStart="@drawable/whatsapp"
+                        />
+
+
+                    //ENDEREÇO
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Endereço:"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="10dp"
+                        style="@style/textView"/>
+
+                    <TextView
+                        android:id="@+id/tv_endereco_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Av. Pátria Amada Brasil, 1440"/>
+
+
+                    //REDES SOCIAIS
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Redes Sociais:"
+                        android:layout_marginTop="32dp"
+                        style="@style/textView"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_instagram_salao_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BeatyHair_"
+                        android:drawablePadding="12dp"
+                        android:drawableStart="@drawable/img_redes_sociais2" />
+
+                    <TextView
+                        android:id="@+id/tv_facebook_salao_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Beaty Hair"
+                        android:drawablePadding="12dp"
+                        android:layout_marginTop="8dp"
+                        android:drawableStart="@drawable/img_redes_sociais1"/>
+
+
+                    //LISTA DE FUNCIONÁRIOS
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nossos funcionários:"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="10dp"
+                        style="@style/textView"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/ln_link_listagem_funcionarios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:background="@drawable/formato_container_horarios_dias_semana_perfil"
+                        android:backgroundTint="@color/cinza_horarios"
+                        android:elevation="1dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Clique para acessar os seus funcionários"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+
+
+                    //FORMAS DE PAGAMENTO
+                    <LinearLayout
+                        android:id="@+id/ln_container_formas_pagamento_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Formas de pagamento:"
+                            style="@style/textView"
+                            android:paddingBottom="10dp"/>
+
+                        <TextView
+                            android:tag="tv_forma_pagto_3"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_moeda_cifrao"
+                            android:drawablePadding="3dp"
+                            android:drawableTint="@color/verde_escuro"
+                            android:layout_marginBottom="10dp"
+                            android:text="Dinheiro"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:tag="tv_forma_pagto_2"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_cartao"
+                            android:drawablePadding="3dp"
+                            android:drawableTint="@color/verde_escuro"
+                            android:layout_marginBottom="10dp"
+                            android:text="Cartão - débito"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:tag="tv_forma_pagto_1"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_cartao"
+                            android:drawablePadding="3dp"
+                            android:drawableTint="@color/verde_escuro"
+                            android:layout_marginBottom="10dp"
+                            android:text="Cartao - crédito"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:tag="tv_forma_pagto_5"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_scanner_qrcode"
+                            android:drawablePadding="3dp"
+                            android:drawableTint="@color/verde_escuro"
+                            android:layout_marginBottom="10dp"
+                            android:text="Pix"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:tag="tv_forma_pagto_4"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_smartphone"
+                            android:drawablePadding="3dp"
+                            android:drawableTint="@color/verde_escuro"
+                            android:layout_marginBottom="10dp"
+                            android:text="Via App"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/tv_observacoes_pagamento_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="40dp"
+                            android:text=""
+                            android:textAlignment="textStart"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_primarios_regras_negocio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ln_container_titulo_secoes_regras_negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Regras de Cancelamento:"
+                                style="@style/textView"
+                                android:paddingBottom="10dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ln_container_conteudo_secao_regras_negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ln_container_taxa_unica_nula"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_taxa_unica_nula_perfil"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cancelamentos não são cobrados!"
+                                    android:drawableStart="@drawable/ic_bloqueado_proibido"
+                                    android:drawableTint="@color/verde_padrao"
+                                    android:gravity="center_vertical"
+                                    android:drawablePadding="3dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ln_container_geral_regras_variadas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible"
+                                >
+                                <LinearLayout
+                                    android:id="@+id/ln_container_explicacao"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp">
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Valor serviço"/>
+
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/formato_container_categorias_regras_cancelamento">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Valor em fução da antecedência do cancelamento"
+                                            android:paddingStart="8dp"
+                                            android:layout_margin="5dp"
+                                            />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_container_geral_regras_abaixo_cem"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp"
+                                    android:visibility="gone"
+                                    >
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Abaixo de cem"/>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_container_regras_abaixo_cem"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/formato_container_categorias_regras_cancelamento">
+
+                                        <!--                                        <LinearLayout-->
+                                        <!--                                            android:layout_width="match_parent"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:orientation="horizontal">-->
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_valor"-->
+                                        <!--                                                android:layout_width="80dp"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="15%"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_antecedencia"-->
+                                        <!--                                                android:layout_width="0dp"-->
+                                        <!--                                                android:layout_weight="1"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="6 h"-->
+                                        <!--                                                android:background="@drawable/formato_container_categorias_regras_cancelamento"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+                                        <!--                                        </LinearLayout>-->
+
+                                        <!--                                        <LinearLayout-->
+                                        <!--                                            android:layout_width="match_parent"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:orientation="horizontal">-->
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_valor"-->
+                                        <!--                                                android:layout_width="80dp"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="R$ 20,00"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_antecedencia"-->
+                                        <!--                                                android:layout_width="0dp"-->
+                                        <!--                                                android:layout_weight="1"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="6 h"-->
+                                        <!--                                                android:background="@drawable/formato_container_categorias_regras_cancelamento"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+                                        <!--                                        </LinearLayout>-->
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_container_geral_regras_acima_cem"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Acima cem"/>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/ln_container_regras_acima_cem"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@drawable/formato_container_categorias_regras_cancelamento">
+
+                                        <!--                                        <LinearLayout-->
+                                        <!--                                            android:layout_width="match_parent"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:orientation="horizontal">-->
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_valor"-->
+                                        <!--                                                android:layout_width="80dp"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="R$ 20,00"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_antecedencia"-->
+                                        <!--                                                android:layout_width="0dp"-->
+                                        <!--                                                android:layout_weight="1"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="6 h"-->
+                                        <!--                                                android:background="@drawable/formato_container_categorias_regras_cancelamento"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+                                        <!--                                        </LinearLayout>-->
+                                        <!--                                        <LinearLayout-->
+                                        <!--                                            android:layout_width="match_parent"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:orientation="horizontal">-->
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_valor"-->
+                                        <!--                                                android:layout_width="80dp"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="R$ 20,00"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_antecedencia"-->
+                                        <!--                                                android:layout_width="0dp"-->
+                                        <!--                                                android:layout_weight="1"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="6 h"-->
+                                        <!--                                                android:background="@drawable/formato_container_categorias_regras_cancelamento"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+                                        <!--                                        </LinearLayout>-->
+                                        <!--                                        <LinearLayout-->
+                                        <!--                                            android:layout_width="match_parent"-->
+                                        <!--                                            android:layout_height="wrap_content"-->
+                                        <!--                                            android:orientation="horizontal">-->
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_valor"-->
+                                        <!--                                                android:layout_width="80dp"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="R$ 20,00"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+
+                                        <!--                                            <TextView-->
+                                        <!--                                                android:tag="tv_antecedencia"-->
+                                        <!--                                                android:layout_width="0dp"-->
+                                        <!--                                                android:layout_weight="1"-->
+                                        <!--                                                android:layout_height="wrap_content"-->
+                                        <!--                                                android:text="6 h"-->
+                                        <!--                                                android:background="@drawable/formato_container_categorias_regras_cancelamento"-->
+                                        <!--                                                android:paddingStart="8dp"-->
+                                        <!--                                                android:layout_margin="5dp"-->
+                                        <!--                                                />-->
+                                        <!--                                        </LinearLayout>-->
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:id="@+id/btn_fazer_agendamento"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="100dp"
+                            android:text="Fazer um agendamneto"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout> //container_de_informacoes_salao
+
+            </LinearLayout> // linear_inicio
+
+            //LINEAR SERVIÇOS
+            <LinearLayout
+                android:id="@+id/linear_container_aba_servicos_adm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="25dp">
+
+                <LinearLayout
+                    android:id="@+id/ln_container_barra_pesquisa_servico_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="O que você procura?"
+                            android:drawableStart="@drawable/ic_lupa_pesquisa"
+                            android:drawablePadding="8dp"
+                            android:padding="15dp"
+                            android:textSize="18sp"
+                            android:background="@drawable/formato_barra_pesquisa" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/ln_pai_btn_filtros"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria1"
+                                    android:id="@+id/btn_filtro_categoria1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria2"
+                                    android:id="@+id/btn_filtro_categoria2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria3"
+                                    android:id="@+id/btn_filtro_categoria3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria4"
+                                    android:id="@+id/btn_filtro_categoria4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria5"
+                                    android:id="@+id/btn_filtro_categoria5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:tag="btn_filtro_categoria6"
+                                    android:id="@+id/btn_filtro_categoria6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:tag="btn_filtro_categoria7"
+                                    android:id="@+id/btn_filtro_categoria7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:tag="btn_filtro_categoria8"
+                                    android:id="@+id/btn_filtro_categoria8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:tag="btn_filtro_categoria9"
+                                    android:id="@+id/btn_filtro_categoria9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Cabelos"
+                                    android:paddingHorizontal="15dp"
+                                    android:paddingVertical="8dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/formato_retangulo_arredondado_funcionario"
+                                    android:visibility="gone"/>
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_container_geral_conteudo_listagem_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:tag="ln_container_geral_listagem_categoria_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:tag="titulo_recycler_categoria1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cabelos"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:tag="recyclerViewServicosPerfilCat1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:tag="ln_container_geral_listagem_categoria_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:tag="titulo_recycler_categoria2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cabelos"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:tag="recyclerViewServicosPerfilCat2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:tag="ln_container_geral_listagem_categoria_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:tag="titulo_recycler_categoria3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cabelos"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:tag="recyclerViewServicosPerfilCat3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //LINEAR PRODUTOS
+            <LinearLayout
+                android:id="@+id/linear_container_aba_produtos_adm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Funcionalidade em desenvolvimento! :)"
+                    android:textSize="25sp"
+                    android:textColor="@color/cinza_padrao"
+                    style="@style/textView"
+                    android:layout_margin="40dp"/>
+
+                <!--                <androidx.cardview.widget.CardView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent">-->
+
+                <!--                </androidx.cardview.widget.CardView>-->
+
+            </LinearLayout>
+
+            //LINEAR FEEDBAKS
+            <LinearLayout
+                android:id="@+id/linear_container_aba_feedbacks_adm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Funcionalidade em desenvolvimento! :)"
+                    android:textSize="25sp"
+                    android:textColor="@color/cinza_padrao"
+                    style="@style/textView"
+                    android:layout_margin="40dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout> //linear tela inteira
+
+
+
+    </ScrollView>
+
+</LinearLayout>
