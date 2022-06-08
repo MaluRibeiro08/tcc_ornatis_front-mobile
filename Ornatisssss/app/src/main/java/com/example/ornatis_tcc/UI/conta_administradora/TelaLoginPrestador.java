@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.CadastroContaAdministradora;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TelaLoginPrestador extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class TelaLoginPrestador extends AppCompatActivity {
     private TextView esqueci_senha_prestador;
     private TextView nao_tem_cadastro_prestador;
     private Button btn_fazer_login_prestador;
+
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class TelaLoginPrestador extends AppCompatActivity {
 
         nao_tem_cadastro_prestador.setOnClickListener(view -> {
             startActivity(new Intent(TelaLoginPrestador.this, CadastroContaAdministradora.class));
+
+            bottomNavigationView.setSelectedItemId(R.id.menu_perfil);
 
 
             /**** ALERT DIOLOG***/

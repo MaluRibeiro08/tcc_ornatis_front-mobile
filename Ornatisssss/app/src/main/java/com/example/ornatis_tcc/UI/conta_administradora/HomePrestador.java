@@ -39,6 +39,7 @@ public class HomePrestador extends AppCompatActivity {
     private ImageView menu_hambuguer;
     private int id_empresa = 2;
     private ImageView imgv_add_servico;
+    private ImageView logout;
 
     BottomNavigationView bottomNavigationView;
 
@@ -50,6 +51,7 @@ public class HomePrestador extends AppCompatActivity {
         imgv_add_servico = findViewById(R.id.imgv_add_servico);
         engrenagem = findViewById(R.id.engrenagem);
         menu_hambuguer = findViewById(R.id.menu_hambuguer);
+        logout = findViewById(R.id.logout);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_cadastrado);
 
@@ -79,6 +81,13 @@ public class HomePrestador extends AppCompatActivity {
             startActivity(new Intent(
                     HomePrestador.this,
                     PrestadorConfiguracaoConta.class
+            ));
+        });
+
+        logout.setOnClickListener(view -> {
+            startActivity(new Intent(
+                    HomePrestador.this,
+                    IdentificacaoPrestadorOuConsumidor.class
             ));
         });
 
