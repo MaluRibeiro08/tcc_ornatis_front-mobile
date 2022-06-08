@@ -24,7 +24,7 @@ public class IdentificacaoPrestadorOuConsumidor extends AppCompatActivity {
         setContentView(R.layout.activity_identificacao_prestador_ou_consumidor);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_sem_cadastro);
-        bottomNavigationView.setSelectedItemId(R.id.menu_pesquisar);
+        bottomNavigationView.setSelectedItemId(R.id.menu_perfil);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -49,13 +49,13 @@ public class IdentificacaoPrestadorOuConsumidor extends AppCompatActivity {
         card_sou_consumidor = findViewById(R.id.card_sou_consumidor);
 
 
-//        card_sou_prestador.setOnClickListener(view -> {
-//            startActivity(new Intent(IdentificacaoPrestadorOuConsumidor.this, TelaLoginPrestador.class));
-//        });
-//
-//        card_sou_consumidor.setOnClickListener(view -> {
-//            startActivity(new Intent(IdentificacaoPrestadorOuConsumidor.this, TelaLoginConsumidor.class));
-//        });
+        card_sou_prestador.setOnClickListener(view -> {
+            startActivity(new Intent(IdentificacaoPrestadorOuConsumidor.this, TelaLoginPrestador.class));
+        });
+
+        card_sou_consumidor.setOnClickListener(view -> {
+            startActivity(new Intent(IdentificacaoPrestadorOuConsumidor.this, TelaLoginConsumidor.class));
+        });
 
     }
 }
