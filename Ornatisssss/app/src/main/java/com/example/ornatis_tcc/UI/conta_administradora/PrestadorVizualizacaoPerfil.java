@@ -9,18 +9,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ornatis_tcc.MainActivity;
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.UI.conta_administradora.funcionario.PrestadorListagemFuncionarios;
 import com.example.ornatis_tcc.model.ContaAdministradora;
 import com.example.ornatis_tcc.model.Servico;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.ArrayList;
@@ -55,6 +58,8 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         LinearLayout ln_container_formas_pagamento_perfil;
         LinearLayout ln_link_listagem_funcionarios, ln_pai_btn_filtros;
 
+        BottomNavigationView bottomNavigationView;
+
     int id_empresa =2;
     boolean servicos_carregados = false;
 
@@ -63,6 +68,32 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_vizualizacao_perfil);
+
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation_cadastrado);
+
+        bottomNavigationView.setSelectedItemId(R.id.menu_profile_cadastrado);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.menu_profile_cadastrado:{
+                        return true;
+                    }
+//                    case R.id.menu_agenda:{
+//                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                    }
+                    case R.id.menu_home_cadastrado:{
+                        startActivity(new Intent(getApplicationContext(), HomePrestador.class));
+                    }
+                }
+
+                return false;
+            }
+        });
+
+
 
         //REFERENCIAS AOS ELEMENTOS GRAFICOS
             //ABA INICIAL

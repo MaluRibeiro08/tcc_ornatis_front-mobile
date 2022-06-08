@@ -8,18 +8,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.ornatis_tcc.IdentificacaoPrestadorOuConsumidor;
+import com.example.ornatis_tcc.MainActivity;
+import com.example.ornatis_tcc.PesquisarFiltrar;
 import com.example.ornatis_tcc.UI.conta_administradora.manutencao_conta.PrestadorConfiguracaoConta;
 import com.example.ornatis_tcc.R;
 import com.example.ornatis_tcc.UI.conta_administradora.servico.PrestadorCadastroServico;
 import com.example.ornatis_tcc.model.Servico;
 import com.example.ornatis_tcc.remote.APIUtil;
 import com.example.ornatis_tcc.remote.RouterInterface;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +40,8 @@ public class HomePrestador extends AppCompatActivity {
     private int id_empresa = 2;
     private ImageView imgv_add_servico;
 
+    BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +50,29 @@ public class HomePrestador extends AppCompatActivity {
         imgv_add_servico = findViewById(R.id.imgv_add_servico);
         engrenagem = findViewById(R.id.engrenagem);
         menu_hambuguer = findViewById(R.id.menu_hambuguer);
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation_cadastrado);
+
+        bottomNavigationView.setSelectedItemId(R.id.menu_home_cadastrado);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.menu_home_cadastrado:{
+                        return true;
+                    }
+//                    case R.id.menu_agenda:{
+//                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                    }
+                    case R.id.menu_profile_cadastrado:{
+                        startActivity(new Intent(getApplicationContext(), PrestadorVizualizacaoPerfil.class));
+                    }
+                }
+
+                return false;
+            }
+        });
 
         engrenagem.setOnClickListener(view -> {
 

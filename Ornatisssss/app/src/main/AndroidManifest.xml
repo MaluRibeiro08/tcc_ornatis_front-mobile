@@ -14,13 +14,13 @@
         android:theme="@style/Theme.Ornatis_TCC"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ConsumidorVizualizandoPerfilSalao3"
+            android:name=".UI.consumidor.ConsumidorVizualizandoPerfilSalao3"
             android:exported="false" />
         <activity
-            android:name=".ConsumidorVizualizandoPerfilSalao2"
+            android:name=".UI.consumidor.ConsumidorVizualizandoPerfilSalao2"
             android:exported="false" />
         <activity
-            android:name=".ConsumidorVizualizandoPerfilSalao1"
+            android:name=".UI.consumidor.ConsumidorVizualizandoPerfilSalao1"
             android:exported="false" />
         <activity
             android:name=".ConsumidorFeedNovidades"
@@ -36,7 +36,9 @@
             android:exported="false" />
         <activity
             android:name=".IdentificacaoPrestadorOuConsumidor"
-            android:exported="true" /> <!-- <activity -->
+            android:exported="true" >
+
+        </activity> <!-- <activity -->
         <!-- android:name=".HomeSemCadastroSemLogin" -->
         <!-- android:exported="false" /> -->
         <activity
@@ -50,7 +52,9 @@
             android:exported="true" />
         <activity
             android:name=".HomeSemCadastroSemLogin"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".UI.consumidor.manutencao_conta.CadastroConsumidor"
             android:exported="true" />
@@ -68,10 +72,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.conta_administradora.HomePrestador"
-            android:exported="true" />
-        <activity
-            android:name=".UI.consumidor.HomeConsumidor"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -79,14 +80,26 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".UI.consumidor.HomeConsumidor"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".PesquisarFiltrar"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Spalsh"
-            android:exported="true" />
+            android:exported="true" >
+
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.ornatis_tcc;
+package com.example.ornatis_tcc.UI.consumidor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.ornatis_tcc.UI.consumidor.ConsumidorAgendamento;
+import com.example.ornatis_tcc.R;
 
 public class ConsumidorVizualizandoPerfilSalao1 extends AppCompatActivity {
 

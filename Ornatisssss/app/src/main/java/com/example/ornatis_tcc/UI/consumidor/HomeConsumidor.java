@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ornatis_tcc.ConsumidorVizualizandoPerfilSalao1;
 import com.example.ornatis_tcc.R;
 
 public class HomeConsumidor extends AppCompatActivity {

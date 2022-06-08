@@ -1,245 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PesquisarFiltrar">
+    tools:context=".PesquisarFiltrar"
+    android:orientation="vertical">
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        tools:ignore="MissingConstraints"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
+        android:layout_marginTop="80dp">
 
-        <SearchView
-            android:id="@+id/simpleSearchView"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:queryHint = "O que você está procurando?"
-            android:background="@drawable/formato_barra_pesquisa">
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
 
-            <requestFocus/>
-        </SearchView>
-
-<!--        <ListView-->
-<!--            android:id="@+id/listView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="200dp"/>-->
-
-
-<!--        <EditText-->
-<!--            android:layout_width="320dp"-->
-<!--            android:layout_height="45dp"-->
-<!--            android:background="@drawable/formato_barra_pesquisa"-->
-<!--            android:padding="10dp"-->
-<!--            android:drawableStart="@drawable/ic_search"-->
-<!--            android:drawableTint="@color/cinza_padrao"-->
-<!--            android:hint="   O que você está procurando?" />-->
-
-
-
-        <TextView
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/servicos"/>
-
-        <LinearLayout
-            android:layout_width="330dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+            <SearchView
+                android:id="@+id/simpleSearchView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp">
+                android:iconifiedByDefault="false"
+                android:layout_marginTop="80dp"
+                android:queryHint = "O que você está procurando?"
+                android:background="@drawable/formato_barra_pesquisa">
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+                <requestFocus/>
+            </SearchView>
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="95dp"
-                    android:src="@drawable/cabelos_servico"/>
+            <!--        <ListView-->
+            <!--            android:id="@+id/listView"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="200dp"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cabelos"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"/>
-            </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+            <!--        <EditText-->
+            <!--            android:layout_width="320dp"-->
+            <!--            android:layout_height="45dp"-->
+            <!--            android:background="@drawable/formato_barra_pesquisa"-->
+            <!--            android:padding="10dp"-->
+            <!--            android:drawableStart="@drawable/ic_search"-->
+            <!--            android:drawableTint="@color/cinza_padrao"-->
+            <!--            android:hint="   O que você está procurando?" />-->
+
+
+
+            <TextView
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                app:cardCornerRadius="20dp">
+                android:layout_marginTop="25dp"
+                android:text="@string/servicos"/>
 
-                <ImageView
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/formato_servicos_area_de_pesquisa"/>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="95dp"
-                    android:src="@drawable/make_servico"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Maquiagem"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"/>
-            </androidx.cardview.widget.CardView>
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="95dp"
+                        android:src="@drawable/cabelos_servico"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cabelos"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="25dp"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="95dp"
+                        android:src="@drawable/make_servico"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maquiagem"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="25dp"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="99dp"
+                        android:src="@drawable/sobrancellhas_servico"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sobrancelha"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="25dp"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="95dp"
+                        android:src="@drawable/barba_servico"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barba"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="25dp"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="95dp" />
+
+                    <!--                android:src=""-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unhas"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="25dp"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/formato_servicos_area_de_pesquisa"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="95dp"/>
+
+                    <!--                android:src=""-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cabelos"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="25dp"/>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
         </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        <LinearLayout
-            android:layout_width="330dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/formato_servicos_area_de_pesquisa"/>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="99dp"
-                    android:src="@drawable/sobrancellhas_servico"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sobrancelha"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"/>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/formato_servicos_area_de_pesquisa"/>
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="95dp"
-                    android:src="@drawable/barba_servico"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Barba"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"/>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="330dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/formato_servicos_area_de_pesquisa"/>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="95dp" />
-
-<!--                android:src=""-->
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Unhas"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"/>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/formato_servicos_area_de_pesquisa"/>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="95dp"/>
-
-<!--                android:src=""-->
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cabelos"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="25dp"/>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="402dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/bottom_navigation_sem_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigation_sem_cadastro"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation_principal"
+        tools:ignore="MissingConstraints" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
