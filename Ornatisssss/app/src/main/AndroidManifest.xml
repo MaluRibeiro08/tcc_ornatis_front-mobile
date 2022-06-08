@@ -73,11 +73,8 @@
         <activity
             android:name=".UI.conta_administradora.HomePrestador"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".UI.consumidor.HomeConsumidor"
@@ -98,6 +95,11 @@
             android:name=".Spalsh"
             android:exported="true" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -26,7 +27,10 @@ public class PesquisarFiltrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisar_filtrar);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation_sem_cadastro);
+        Log.d("TESTE NAVEGACAO", "onNavigationItemSelected: testeeee ENTROU");
+
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation_pesquisar_filtrar);
         bottomNavigationView.setSelectedItemId(R.id.menu_pesquisar);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -38,9 +42,11 @@ public class PesquisarFiltrar extends AppCompatActivity {
                     }
                     case R.id.menu_home:{
                         startActivity(new Intent(getApplicationContext(), HomeSemCadastroSemLogin.class));
+                        break;
                     }
                     case R.id.menu_perfil:{
                         startActivity(new Intent(getApplicationContext(), IdentificacaoPrestadorOuConsumidor.class));
+                        break;
                     }
                 }
 

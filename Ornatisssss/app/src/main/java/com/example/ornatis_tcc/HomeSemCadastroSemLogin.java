@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,7 +19,9 @@ public class HomeSemCadastroSemLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_sem_cadastro_sem_login);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation_sem_cadastro);
+        Log.d("TESTE NAVEGACAO", "onNavigationItemSelected: testeeee2");
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation_sem_cadastro_teste);
         bottomNavigationView.setSelectedItemId(R.id.menu_home);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,10 +32,14 @@ public class HomeSemCadastroSemLogin extends AppCompatActivity {
                        return true;
                    }
                    case R.id.menu_pesquisar:{
+                       Log.d("TESTE NAVEGACAO", "onNavigationItemSelected: testeeee");
                        startActivity(new Intent(getApplicationContext(), PesquisarFiltrar.class));
+                       break;
+
                    }
                    case R.id.menu_perfil:{
                        startActivity(new Intent(getApplicationContext(), IdentificacaoPrestadorOuConsumidor.class));
+                       break;
                    }
                }
 

@@ -69,8 +69,7 @@ public class PrestadorVizualizacaoPerfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prestador_vizualizacao_perfil);
 
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation_cadastrado);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_perfil_salao);
 
         bottomNavigationView.setSelectedItemId(R.id.menu_profile_cadastrado);
 
